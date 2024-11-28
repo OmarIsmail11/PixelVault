@@ -1,4 +1,15 @@
-CREATE TABLE Omar
-(
-	TEST VARCHAR(20)
-)
+CREATE TABLE GameEngine(
+	EngineName CHAR(20) ,
+	Language VARCHAR(20) NOT NULL ,
+	Platform CHAR(20) NOT NULL ,
+	PRIMARY KEY(EngineName)
+	);
+
+	GO
+
+	CREATE TABLE Manufacturer (
+	ManufacturerName CHAR(30),
+	Country CHAR(20) NULL,
+	PRIMARY KEY(ManufacturerName)
+
+	);
