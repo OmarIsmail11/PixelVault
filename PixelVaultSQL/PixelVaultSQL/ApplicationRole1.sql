@@ -1,17 +1,5 @@
 ﻿/*CREATE APPLICATION ROLE [ApplicationRole1]
 	WITH PASSWORD = 'xjr{m.zRULisofsqnRTht|crmsFT7_&#$!~<fqqjfeau%iy;'*/
-<<<<<<< Updated upstream
-=======
-
-	CREATE TABLE Manufacturer (
-	ManufacturerName CHAR(30),
-	Country CHAR(20) NULL,
-	PRIMARY KEY(ManufacturerName)
-
-	);
-
-
->>>>>>> Stashed changes
 
 
 	CREATE TABLE GameEngine(
