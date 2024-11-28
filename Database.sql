@@ -25,8 +25,11 @@
 	TournamentType	VARCHAR(20) NOT NULL CHECK (TournamentType IN ('Sports' , 'Racing' , 'Fighting', 'Battle Royale' , 'FPS' ) ) ,
 	TLocation	CHAR(20) NOT NULL,
 	BeginDate	DATE ,
-	PRIMARY KEY(TName)
-
+	Organizer	varchar(30),
+	PRIMARY KEY(TName) ,
+	FOREIGN KEY (Organizer) REFERENCES GamingStore
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 	);
 
 	GO
@@ -80,4 +83,14 @@
 		Rating int not null CHECK (Rating Between 1 AND 5),
 		Hotline int not null ,
 		PRIMARY KEY (StoreName)
+	);
+
+	GO
+
+	CREATE TABLE Gamer(
+	GamerID		INT,
+	UserName	VARCHAR(20) NOT NULL,
+	Country		CHAR(20)	NOT NULL,
+	BirthDate	DATE,
+
 	);
