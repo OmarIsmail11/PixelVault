@@ -1,0 +1,4 @@
+CREATE TABLE Omar
+(
+	TEST VARCHAR(20)
+)
