@@ -7,7 +7,7 @@
 	PRIMARY KEY(EngineName)
 	);
 
-	GO
+	
 
 	CREATE TABLE Manufacturer (
 	ManufacturerName CHAR(30),
@@ -16,9 +16,47 @@
 
 	);
 
-	GO
 
-	CREATE TABLE Tournament(
+	CREATE TABLE GameReviewer(
+    ReviewerName varchar(30),
+    ReviewerURL text NOT NULL,
+    LaunchDate date,
+    PRIMARY KEY (ReviewerName),
+
+	);
+
+
+	CREATE TABLE Console(
+	ConsoleName	CHAR(20) ,
+	ReleaseDate	DATE NOT NULL,
+	Develop CHAR(30) ,
+	PRIMARY KEY (ConsoleName),
+	FOREIGN KEY (Develop) REFERENCES Manufacturer (ManufacturerName)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE
+	);
+
+	
+
+	CREATE TABLE GamePublisher(
+    PublisherName varchar(30),
+    Country char(30) NOT NULL,
+    ConsoleType varchar(30) NOT NULL,
+    StartDate date,
+    PRIMARY KEY (PublisherName)
+	);
+
+
+
+	CREATE TABLE GamingStore
+	(
+		StoreName varchar(30),
+		Rating int not null CHECK (Rating Between 1 AND 5),
+		Hotline int not null ,
+		PRIMARY KEY (StoreName)
+	);
+
+		CREATE TABLE Tournament(
 	TName CHAR(20),
 	Capacity INT NOT NULL,
 	PrizeMoney DECIMAL(7,2) ,
@@ -32,65 +70,7 @@
 		ON UPDATE CASCADE
 	);
 
-	GO
-
-	CREATE TABLE GameReviewer(
-    ReviewerName varchar(30),
-    ReviewerURL text NOT NULL,
-    LaunchDate date,
-    PRIMARY KEY (ReviewerName),
-
-	);
-
-	GO
-
-	CREATE TABLE Award(
-	AwardName CHAR(20) NOT NULL,
-	Genre CHAR(20) NOT NULL,
-	Reward CHAR(20) ,
-	Won	CHAR(20) ,
-	YearWon	INT ,
-	FOREIGN KEY (Reward) REFERENCES GameReviewer(ReviewerName)
-		ON DELETE CASCADE
-		ON UPDATE CASCADE,
-	FOREIGN KEY (Won) REFERENCES Game(GameName)
-		ON DELETE CASCADE 
-		ON UPDATE CASCADE
-
-	);
-
-	GO
-
-	CREATE TABLE Console(
-	ConsoleName	CHAR(20) ,
-	ReleaseDate	DATE NOT NULL,
-	Develop CHAR(30) ,
-	FOREIGN KEY (Develop) REFERENCES Manufacturer (ManufacturerName)
-		ON DELETE SET NULL
-		ON UPDATE CASCADE
-	);
-
-	GO
-
-	CREATE TABLE GamePublisher(
-    PublisherName varchar(30),
-    Country char(30) NOT NULL,
-    ConsoleType varchar(30) NOT NULL,
-    StartDate date,
-    PRIMARY KEY (PublisherName)
-	);
-
-	GO
-
-	CREATE TABLE GamingStore
-	(
-		StoreName varchar(30),
-		Rating int not null CHECK (Rating Between 1 AND 5),
-		Hotline int not null ,
-		PRIMARY KEY (StoreName)
-	);
-
-	GO
+	
 
 	CREATE TABLE Gamer(
 	GamerID		INT,
@@ -101,7 +81,7 @@
 	PRIMARY KEY(GamerID)
 	);
 
-	GO
+	
 
 	CREATE TABLE Game(
     GameName varchar(50),
@@ -109,7 +89,7 @@
     ReleaseDate date,
     ConsoleName char(20),
     EngineName char(20),
-    Publisher char(20),
+    Publisher varchar(30),
     Rating int default 0,
     Reviewer varchar(30),
     primary key (GameName),
@@ -124,17 +104,33 @@
         ON DELETE SET NULL,
     foreign key (Reviewer) references GameReviewer(ReviewerName)
         ON UPDATE CASCADE
-        ON DELETE SET NULL,
+        ON DELETE SET NULL
 	);
 
-	GO
+	CREATE TABLE Award(
+	AwardName CHAR(20) NOT NULL,
+	Genre CHAR(20) NOT NULL,
+	Reviewer VARCHAR(30) ,
+	Won	VARCHAR(50) ,
+	YearWon	INT ,
+	PRIMARY KEY (AwardName),
+	FOREIGN KEY (Reviewer) REFERENCES GameReviewer(ReviewerName)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (Won) REFERENCES Game(GameName)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+
+	);
+
+	
 
 	CREATE TABLE Inventory(
-	GameName	CHAR(20),
+	GameName	VARCHAR(50),
 	StoreName varchar(30),
 	Price	Decimal(3,2) NOT NULL,
 	PRIMARY KEY(GameName,StoreName),
-	FOREIGN KEY (Gamename) REFERENCES Game(GameName)
+	FOREIGN KEY (GameName) REFERENCES Game(GameName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY (StoreName) REFERENCES GamingStore(StoreName)
@@ -142,16 +138,16 @@
 		ON UPDATE CASCADE
 	);
 
-	GO
+	
 
 	CREATE TABLE Plays(
-	GameName	CHAR(20),
+	GameName	VARCHAR(50),
 	GamerID		INT,
 	CompletionStatus		CHAR(3) CHECK(CompletionStatus IN ('Yes','No')),
 	Difficulty	CHAR(6) CHECK(Difficulty IN('Hard' , 'Medium' , 'Easy')) NOT NULL,
 	UserRating INT CHECK(UserRating Between 1 AND 5),
 	PRIMARY KEY(GameName,GamerID),
-	FOREIGN KEY (Gamename) REFERENCES Game(GameName)
+	FOREIGN KEY (GameName) REFERENCES Game(GameName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY (GamerID) REFERENCES Gamer(GamerID)
@@ -159,7 +155,7 @@
 		ON UPDATE CASCADE
 	);
 
-	GO
+	
 
 	CREATE TABLE Enroll(
 	GamerID INT,
