@@ -1,6 +1,6 @@
 	
-	CREATE DATABASE Pixel_Vault
-	USE Pixel_Vault
+	CREATE DATABASE PixelVault
+	USE PixelVault
 
 	CREATE TABLE GameEngine(
 	EngineName CHAR(20) ,
@@ -58,7 +58,7 @@
 		PRIMARY KEY (StoreName)
 	);
 
-		CREATE TABLE Tournament(
+	CREATE TABLE Tournament(
 	TName CHAR(20),
 	Capacity INT NOT NULL,
 	TournamentType	VARCHAR(20) NOT NULL CHECK (TournamentType IN ('Sports' , 'Racing' , 'Fighting', 'Battle Royale' , 'FPS' ) ) ,
@@ -110,12 +110,12 @@
 	);
 
 	CREATE TABLE Award(
-	AwardName CHAR(20) NOT NULL,
+	AwardName CHAR(25) NOT NULL,
 	Genre CHAR(20) NOT NULL,
 	Reviewer VARCHAR(30) ,
 	Won	VARCHAR(50) ,
 	YearWon	INT ,
-	PRIMARY KEY (AwardName),
+	PRIMARY KEY (AwardName,YearWon),
 	FOREIGN KEY (Reviewer) REFERENCES GameReviewer(ReviewerName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
@@ -306,11 +306,11 @@
 	('GameStop', 3, 1800123468),
 	('Best Buy', 4, 1800123469),
 	('Walmart', 3, 1800123470),
-	('Battle.net', 4, '1800123457'),
-	('Rockstar Games', 5, '1800123492'),   
-	('Ubisoft Store', 4, '1800123493'),     
-	('CD Projekt Red', 5, '1800123494'),     
-	('Discord Store', 3, '1800123496');
+	('Battle.net', 4, 1800123457),
+	('Rockstar Games', 5, 1800123492),   
+	('Ubisoft Store', 4, 1800123493),     
+	('CD Projekt Red', 5, 1800123494),     
+	('Discord Store', 3, 1800123496);
 
 
 
@@ -341,7 +341,7 @@
 	('Battlefield 2042', 'FPS', '2021-11-19', 'PlayStation 5', 'Frostbite', 'Electronic Arts', 4, 'IGN'),
 	('Call of Duty: Modern Warfare', 'FPS', '2019-10-25', 'Xbox Series X', 'Havok', 'Activision', 4, 'Metacritic'),
 	('Call of Duty: Vanguard', 'FPS', '2021-11-05', 'Xbox Series X', 'CryEngine', 'Activision', 4, 'GameSpot'),
-	('CS:GO', 'FPS', '2012-08-21', 'Xbox One', 'Godot', 'Take-Two', 5, 'RockPaperShotgun'),
+	('CS:GO', 'FPS', '2012-08-21', 'Xbox One', 'Godot', 'Take-Two', 5, 'Rock Paper Shotgun'),
 	('FIFA 22', 'Sports', '2021-10-01', 'PlayStation 4', 'Frostbite', 'Electronic Arts', 5, 'Kotaku'),
 	('FIFA 23', 'Sports', '2022-09-30', 'PlayStation 5', 'Frostbite', 'Electronic Arts', 4, 'Polygon'),
 	('Fortnite', 'Battle Royale', '2017-07-25', 'Nintendo DS', 'Unreal', 'Capcom', 4, 'Eurogamer'),
@@ -357,9 +357,6 @@
 	('Street Fighter V', 'Fighting', '2016-02-16', 'PlayStation 5', 'Unreal', 'Capcom', 5, 'Kotaku'),
 	('Tekken 7', 'Fighting', '2015-03-18', 'PlayStation 3', 'Unreal', 'Ubisoft', 4, 'The Escapist'),
 	('Valorant', 'FPS', '2020-06-02', 'PlayStation 3', 'Unreal', 'Bethesda', 5, 'VentureBeat');
-
-
-
 
 
 
@@ -383,7 +380,7 @@
 	('Fall Brawl', 250, 'Fighting', 'London', '2023-09-01', 'GameStop', 200000),
 	('Spring Clash', 500, 'FPS', 'Los Angeles', '2023-06-01', 'GameStop', 250000),
 	('Summer Clash', 600, 'FPS', 'Miami', '2023-07-15', 'GameStop', 300000),
-	('Winter War', 400, 'RPG', 'Chicago', '2023-09-15', 'Walmart', 300000);
+	('Winter War', 400, 'Fighting', 'Chicago', '2023-09-15', 'Walmart', 300000);
 
 	INSERT INTO Award VALUES
 	('Best Competitive Game', 'Battle Royale', 'Polygon', 'Apex Legends', 2020),
@@ -404,5 +401,5 @@
 	('Best Indie Game', 'Indie', 'PC Gamer', 'Overwatch', 2021),      
 	('Best Art Direction', 'Adventure', 'IGN', 'CS:GO', 2020), 
 	('Best Narrative', 'Adventure', 'Polygon', 'Need for Speed Heat', 2021), 
-	('Best Soundtrack', 'Action', 'GameSpot', 'Need for Speed Heat', 2020), 
+	('Best Soundtrack', 'Action', 'GameSpot', 'Need for Speed Heat', 2010), 
 	('Best VR Game', 'VR', 'IGN', 'Rocket League', 2020);        
