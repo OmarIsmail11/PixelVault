@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Omar\\Database Managment Systems\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj": {}
+    "C:\\Users\\osama\\OneDrive\\Desktop\\Pixel_Vault\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj": {}
   },
   "projects": {
-    "D:\\Omar\\Database Managment Systems\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj": {
+    "C:\\Users\\osama\\OneDrive\\Desktop\\Pixel_Vault\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Omar\\Database Managment Systems\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
+        "projectUniqueName": "C:\\Users\\osama\\OneDrive\\Desktop\\Pixel_Vault\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
         "projectName": "PixelVaultGUI",
-        "projectPath": "D:\\Omar\\Database Managment Systems\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\Omar\\Database Managment Systems\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\obj\\",
+        "projectPath": "C:\\Users\\osama\\OneDrive\\Desktop\\Pixel_Vault\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
+        "packagesPath": "C:\\Users\\osama\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\osama\\OneDrive\\Desktop\\Pixel_Vault\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\osama\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +44,12 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -63,7 +69,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
