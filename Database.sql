@@ -1,6 +1,13 @@
-	
+	USE master;
+	GO
+	ALTER DATABASE PixelVault SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	GO
+	DROP DATABASE IF EXISTS PixelVault;
+	GO
 	CREATE DATABASE PixelVault
-	USE PixelVault
+	GO
+	USE PixelVault;
+	GO	
 
 	CREATE TABLE GameEngine(
 	EngineName CHAR(20) ,
@@ -21,7 +28,7 @@
 
 	CREATE TABLE GameReviewer(
     ReviewerName varchar(30),
-    ReviewerURL text NOT NULL,
+    ReviewerURL NVARCHAR(255) UNIQUE NOT NULL,
     LaunchDate date,
     PRIMARY KEY (ReviewerName),
 
@@ -75,12 +82,13 @@
 	
 
 	CREATE TABLE Gamer(
-	GamerID		INT,
-	UserName	VARCHAR(20) NOT NULL,
+	UserName	VARCHAR(30),
+	FirstName	VARCHAR(20) NOT NULL,
+	LastName	VARCHAR(20) NOT NULL,
+	Email		NVARCHAR(255) UNIQUE NOT NULL,
 	Country		CHAR(20)	NOT NULL,
 	BirthDate	DATE,
-
-	PRIMARY KEY(GamerID)
+	PRIMARY KEY(UserName)
 	);
 
 	
@@ -144,15 +152,15 @@
 
 	CREATE TABLE Plays(
 	GameName	VARCHAR(50),
-	GamerID		INT,
-	CompletionStatus		CHAR(3) CHECK(CompletionStatus IN ('Yes','No')),
+	GamerUserName	VARCHAR(30),
+	CompletionStatus	CHAR(3) CHECK(CompletionStatus IN ('Yes','No')),
 	Difficulty	CHAR(6) CHECK(Difficulty IN('Hard' , 'Medium' , 'Easy')) NOT NULL,
 	UserRating INT CHECK(UserRating Between 1 AND 5),
-	PRIMARY KEY(GameName,GamerID),
+	PRIMARY KEY(GameName,GamerUserName),
 	FOREIGN KEY (GameName) REFERENCES Game(GameName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
-	FOREIGN KEY (GamerID) REFERENCES Gamer(GamerID)
+	FOREIGN KEY (GamerUserName) REFERENCES Gamer(UserName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 	);
@@ -160,11 +168,11 @@
 	
 
 	CREATE TABLE Enroll(
-	GamerID INT,
+	GamerUserName VARCHAR(30),
 	TName CHAR(20),
 	Ranking INT DEFAULT 0,
-	PRIMARY KEY(GamerID,TName),
-	FOREIGN KEY (GamerID) REFERENCES Gamer(GamerID)
+	PRIMARY KEY(GamerUserName,TName),
+	FOREIGN KEY (GamerUserName) REFERENCES Gamer(UserName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY(TName) REFERENCES Tournament(TName)
@@ -314,27 +322,28 @@
 
 
 
-	INSERT INTO Gamer VALUES
-	(1, 'PlayerOne', 'USA', '1990-01-01'),
-	(2, 'NoobMaster', 'Canada', '1995-06-15'),
-	(3, 'ProGamer', 'Japan', '2000-09-25'),
-	(4, 'GameWizard', 'India', '1985-03-12'),
-	(5, 'Speedster', 'UK', '1992-12-05'),
-	(6, 'BattleKing', 'Germany', '1998-07-18'),
-	(7, 'FPSLord', 'France', '1987-04-30'),
-	(8, 'RacerX', 'Italy', '1993-10-20'),
-	(9, 'FighterGirl', 'Australia', '1997-02-11'),
-	(10, 'StealthNinja', 'China', '2002-05-22'),
-	(11, 'TankMaster', 'Russia', '1990-08-09'),
-	(12, 'CasualJoe', 'USA', '1980-09-14'),
-	(13, 'ArcadePro', 'South Korea', '1999-01-03'),
-	(14, 'VRKing', 'Brazil', '1996-11-06'),
-	(15, 'PuzzleMaster', 'Sweden', '1993-03-30'),
-	(16, 'GamerGirl', 'USA', '1998-08-15'),
-	(17, 'EpicDude', 'USA', '1996-11-23'),
-	(18, 'NoobMaster', 'Germany', '1995-11-01'),
-	(19, 'HeroicPlayer', 'Australia', '1994-03-15'),
-	(20, 'ShadowHunter', 'Germany', '1995-09-10');
+	INSERT INTO Gamer (UserName, FirstName, LastName, Email, Country, BirthDate) VALUES
+	('NoobMaster69', 'John', 'Doe', 'john.doe@gmail.com', 'USA', '1990-05-15'),
+	('AliceTheAce', 'Alice', 'Smith', 'alice.smith@gmail.com', 'Canada', '1985-12-20'),
+	('DragonHunter92', 'Bob', 'Brown', 'bob.brown@gmail.com', 'UK', '1992-03-10'),
+	('Pixel_Queen97', 'Emma', 'Johnson', 'emma.johnson@gmail.com', 'Australia', '1997-07-25'),
+	('FireFuryX', 'Liam', 'Davis', 'liam.davis@gmail.com', 'India', '1995-11-05'),
+	('Sophia_Warrior', 'Sophia', 'Wilson', 'sophia.wilson@gmail.com', 'Germany', '1993-04-17'),
+	('Oliver007', 'Oliver', 'Moore', 'oliver.moore@gmail.com', 'France', '1989-09-30'),
+	('IceDragonXX', 'Isabella', 'Taylor', 'isabella.taylor@gmail.com', 'Japan', '2000-02-18'),
+	('BattleKing94', 'James', 'Anderson', 'james.anderson@gmail.com', 'Italy', '1994-08-12'),
+	('QuickMia9', 'Mia', 'Martinez', 'mia.martinez@gmail.com', 'Mexico', '1996-01-09'),
+	('Dark.Knight', 'Lucas', 'Garcia', 'lucas.garcia@gmail.com', 'Spain', '1998-11-22'),
+	('SpeedyElla14', 'Ella', 'Martins', 'ella.martins@gmail.com', 'Brazil', '2001-03-14'),
+	('SavageWolf1999', 'Ethan', 'Kim', 'ethan.kim@gmail.com', 'South Korea', '1999-12-05'),
+	('BlazeStorm202', 'Ava', 'Lee', 'ava.lee@gmail.com', 'Singapore', '2002-07-19'),
+	('Thunder_Hawk', 'Henry', 'White', 'henry.white@gmail.com', 'New Zealand', '1993-10-25'),
+	('EpicGamer123', 'Chris', 'Evans', 'chris.evans@gmail.com', 'USA', '1990-06-20'),
+	('MagicMia', 'Mia', 'Thomas', 'mia.thomas@gmail.com', 'Canada', '1991-04-12'),
+	('StealthyFox', 'Nathan', 'Fox', 'nathan.fox@gmail.com', 'UK', '1988-03-19'),
+	('FirePhoenix', 'Sophia', 'Martinez', 'sophia.martinez@gmail.com', 'Australia', '1999-11-25'),
+	('HyperHunter', 'James', 'Miller', 'james.miller@gmail.com', 'USA', '1994-02-14');
+
 
 	INSERT INTO Game VALUES
 	('Apex Legends', 'Battle Royale', '2019-02-04', 'PlayStation 5', 'Source', 'Electronic Arts', 5, 'Polygon'),
