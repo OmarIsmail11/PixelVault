@@ -180,6 +180,14 @@
 		ON UPDATE CASCADE
 	);
 
+	CREATE TABLE UserPasswordsAuthorization
+	(
+		UserName VARCHAR(30),
+		Password VARCHAR(20) NOT NULL,
+		AuthorizationLevel VARCHAR(30) NOT NULL CHECK (AuthorizationLevel in ('Gamer', 'Game Publisher', 'Game Store', 'Admin')),
+		PRIMARY KEY (UserName)
+	);
+
 	INSERT INTO GameEngine VALUES
 	('Unity', 'C#', 'Cross-Platform'),
 	('Unreal', 'C++', 'Cross-Platform'),
@@ -315,7 +323,7 @@
 	('Best Buy', 4, 1800123469),
 	('Walmart', 3, 1800123470),
 	('Battle.net', 4, 1800123457),
-	('Rockstar Games', 5, 1800123492),   
+	('Rockstar Games Store', 5, 1800123492),   
 	('Ubisoft Store', 4, 1800123493),     
 	('CD Projekt Red', 5, 1800123494),     
 	('Discord Store', 3, 1800123496);
@@ -412,3 +420,69 @@
 	('Best Narrative', 'Adventure', 'Polygon', 'Need for Speed Heat', 2021), 
 	('Best Soundtrack', 'Action', 'GameSpot', 'Need for Speed Heat', 2010), 
 	('Best VR Game', 'VR', 'IGN', 'Rocket League', 2020);        
+
+	INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES
+	('NoobMaster69', 'Y6m5o2#F9z', 'Gamer'),
+	('AliceTheAce', 'N7u!lQm1Pz', 'Gamer'),
+	('DragonHunter92', 'H@2Xn8lZ0d', 'Gamer'),
+	('Pixel_Queen97', 'Q!7zP4iZm0', 'Gamer'),
+	('FireFuryX', 'Sx9l#jF1yP', 'Gamer'),
+	('Sophia_Warrior', 'Q8r8ZxF@w', 'Gamer'),
+	('Oliver007', 'd0x1I!9sKq', 'Gamer'),
+	('IceDragonXX', 'V9rLk@pE2u', 'Gamer'),
+	('BattleKing94', 'X5vXg8W!b0', 'Gamer'),
+	('QuickMia9', 'J3zX9qQ#M0', 'Gamer'),
+	('Dark.Knight', 'B5uL!l7G2R', 'Gamer'),
+	('SpeedyElla14', 'Y8c8U!zB3j', 'Gamer'),
+	('SavageWolf1999', 'C6h3qX9lD2m', 'Gamer'),
+	('BlazeStorm202', 'A2o3R6z!P1s', 'Gamer'),
+	('Thunder_Hawk', 'Q5aX8gW9Jz', 'Gamer'),
+	('EpicGamer123', 'P7rL#9G2dB', 'Gamer'),
+	('MagicMia', 'W9lA0!yV8z', 'Gamer'),
+	('StealthyFox', 'M8qL1wS4zB', 'Gamer'),
+	('FirePhoenix', 'T7vX2wK3qR', 'Gamer'),
+	('HyperHunter', 'C4yU8Zl6pT', 'Gamer'),
+
+	('Steam', 'd#V8gZp1Q3', 'Game Store'),
+	('Epic Games', 'rP7xW0!uQ2', 'Game Store'),
+	('GOG', 'H3lT1#uX9', 'Game Store'),
+	('PlayStation Store', 'V5yB8!P2hL', 'Game Store'),
+	('Microsoft Store', 'R6cI9#qB4U', 'Game Store'),
+	('Nintendo eShop', 'F3tS!0Z9pW', 'Game Store'),
+	('Origin', 'B4iO7s#3Q1', 'Game Store'),
+	('Uplay', 'J7hD3!tN9X', 'Game Store'),
+	('Itch.io', 'Y6cX0uP2#R', 'Game Store'),
+	('Green Man Gaming', 'M5pX1bQ4yR', 'Game Store'),
+	('Humble Bundle', 'Z2wD5lE9pJ', 'Game Store'),
+	('Fanatical', 'C8hI2tF0qA', 'Game Store'),
+	('GameStop', 'X9jF5!wL2p', 'Game Store'),
+	('Best Buy', 'J4yZ!8wV0g', 'Game Store'),
+	('Walmart', 'F7nD2zQ#6K', 'Game Store'),
+	('Battle.net', 'Y8qP3gR9zH', 'Game Store'),
+	('Rockstar Games Store', 'D7cQ!xF3yT', 'Game Store'),
+	('Ubisoft Store', 'P1oQ2gR9zU', 'Game Store'),
+	('CD Projekt Red', 'S8iT4yJ3Wz', 'Game Store'),
+	('Discord Store', 'V6hF1eJ9qN', 'Game Store'),
+
+	('Nintendo', 'A9s3l!oP2r', 'Game Publisher'),
+	('Sony Interactive', 'X1dV5#yM3p', 'Game Publisher'),
+	('Microsoft Studios', 'B7vZ9kT2aQ', 'Game Publisher'),
+	('Electronic Arts', 'P8wB2rI5nK', 'Game Publisher'),
+	('Ubisoft', 'Q6jC4#zM9h', 'Game Publisher'),
+	('Square Enix', 'L2vP1zF7yB', 'Game Publisher'),
+	('Bethesda', 'U9dK4rJ2wX', 'Game Publisher'),
+	('Activision', 'W3mN0vX5pT', 'Game Publisher'),
+	('Rockstar Games', 'J8tF4kL9wZ', 'Game Publisher'),
+	('Bandai Namco', 'A0pQ3wG1tY', 'Game Publisher'),
+	('Take-Two', 'N5xC2zH8lB', 'Game Publisher'),
+	('CD Projekt', 'P9tV4fJ3Wm', 'Game Publisher'),
+	('Capcom', 'S7jZ2oA9qB', 'Game Publisher'),
+	('Konami', 'D3yQ8rL1uF', 'Game Publisher'),
+	('Sega', 'V0iS2bF9jX', 'Game Publisher'),
+	('FromSoftware', 'Q5wZ8yP3mJ', 'Game Publisher'),
+	('GearBox', 'L4bJ1mO9xY', 'Game Publisher'),
+	('Insomniac Games', 'M8pV3rZ2tF', 'Game Publisher'),
+	('Naughty Dog', 'T9nB5wP0uS', 'Game Publisher'),
+	('Valve', 'I0dJ2fM6oQ', 'Game Publisher'),
+	('THQ Nordic', 'N6yZ5tP1xA', 'Game Publisher'),
+	('505 Games', 'L7jQ9pV2rB', 'Game Publisher');
