@@ -139,9 +139,9 @@
             label4.Image = (Image)resources.GetObject("label4.Image");
             label4.Location = new Point(313, 385);
             label4.Name = "label4";
-            label4.Size = new Size(230, 28);
+            label4.Size = new Size(223, 28);
             label4.TabIndex = 11;
-            label4.Text = "Don't have an account ?";
+            label4.Text = "Don't have an account?";
             // 
             // SignUpButton
             // 
@@ -154,6 +154,7 @@
             SignUpButton.TabIndex = 12;
             SignUpButton.Text = "Sign Up";
             SignUpButton.UseVisualStyleBackColor = false;
+            SignUpButton.Click += SignUpButton_Click;
             // 
             // ShowHideButton
             // 

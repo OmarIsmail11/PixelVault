@@ -60,7 +60,7 @@ namespace PixelVaultGUI
                 PasswordSignInTextBox.Text = "";
                 return;
             }
-            
+
             string Authorization = controllerObj.CheckCredentials(UserName, Password);
             if (Authorization == "")
             {
@@ -91,6 +91,13 @@ namespace PixelVaultGUI
                 //Ba2ollak ya tarek ma3ak shelen ? Eh ? Arken Belen.
             }
 
+        }
+
+        private void SignUpButton_Click(object sender, EventArgs e)
+        {
+            SignUp signUp = new SignUp();
+            signUp.Show();
+            this.Hide();
         }
     }
 }

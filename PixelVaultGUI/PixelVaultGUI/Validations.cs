@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Net.Mail;
+using DBapplication;
 
 namespace PixelVaultGUI
 {
     internal static class Validations
     {
+
         public static bool Isinteger(string input, out int val)
         {
             return int.TryParse((input), out val);
@@ -77,18 +80,42 @@ namespace PixelVaultGUI
 
         public static bool ValidatePassword(string password)
         {
-            if (Isempty(password)) return false; //Checks if empty
-            if (!Isinrange(password, 8, 20)) return false; //Checks if length between 8-20
+            if (Isempty(password)) //Checks if empty
+            {
+                MessageBox.Show( "Password is empty!");
+                return false; 
+            }
+            if (!StringLengthIsinrange(password, 8, 20)) //Checks if length between 8-20
+            {
+                MessageBox.Show("Password must be at least 8 characters!");
+                return false;
+            }
 
             var hasNumber = new Regex("[0-9]+");
             var hasUpperChar = new Regex("[A-Z]+");
             var hasLowerChar = new Regex("[a-z]+");
             var hasSpecialSymbol = new Regex(@"[!@#$%^&*()_+=\[{\]};:<>|./?,-]");
 
-            if (!hasNumber.IsMatch(password)) return false; //Checks if has at least one number
-            if (!hasUpperChar.IsMatch(password)) return false; //Checks if has at least one uppercase letter
-            if (!hasLowerChar.IsMatch(password)) return false; //Checks if has at least one lowercase letter
-            if (!hasSpecialSymbol.IsMatch(password)) return false; //Checks if has at least one special symbol
+            if (!hasNumber.IsMatch(password)) //Checks if has at least one number
+            {
+                MessageBox.Show("Password must contain at least one number!");
+                return false;
+            }
+            if (!hasUpperChar.IsMatch(password)) //Checks if has at least one uppercase letter
+            {
+                MessageBox.Show("Password must contain at least one uppercase letter!");
+                return false;
+            }
+            if (!hasLowerChar.IsMatch(password)) //Checks if has at least one lowercase letter
+            {
+                MessageBox.Show("Password must contain at least one lowercase letter!");
+                return false;
+            }
+            if (!hasSpecialSymbol.IsMatch(password)) //Checks if has at least one special symbol
+            {
+                MessageBox.Show("Password must contain at least one special symbol!");
+                return false;
+            }
 
             return true;
         }
@@ -97,22 +124,22 @@ namespace PixelVaultGUI
         {
             if (Isempty(userName))
             {
-                MessageBox.Show("Invalid ! Username is empty !");
+                MessageBox.Show("Username is empty!");
                 return false;
             }
             if (!StringLengthIsinrange(userName, 5, 30))
             {
-                MessageBox.Show("Invalid ! Username length is out of the valid range (min 8 characters & max 30 characters) !");
+                MessageBox.Show("Username must be at least 5 characters!");
                 return false;
             }
             if (hasWhiteSpace(userName))
             {
-                MessageBox.Show("Invalid ! Username can't have whitespaces !");
+                MessageBox.Show("Username can't have whitespaces!");
                 return false;
             }
             if (startsWithNumber(userName))
             {
-                MessageBox.Show("Invalid ! Username can't start with a number !");
+                MessageBox.Show("Username can't start with a number!");
                 return false;
             }
 
@@ -121,10 +148,103 @@ namespace PixelVaultGUI
 
             if (hasInvalidSpecialSymbol.IsMatch(userName))
             {
-                MessageBox.Show("Invalid ! Username can only have the following symbols ($,_,.,-)");
+                MessageBox.Show("Username can only contain any of the following symbols ($,_,.,-)");
                 return false;
             }
             return true;
+        }
+
+        public static bool CheckIfNewUserNameNotAlreadyExisiting(string userName)
+        {
+            Controller controllerObj = new Controller();
+            int UserNameExists = controllerObj.CheckIfUserNameExists(userName); //1 for exists & 0 otherwise
+            if (UserNameExists == 1)
+            {
+                MessageBox.Show("Username is already taken!");
+                return false;
+            }
+            return true;
+        }
+        public static bool ValidateName(string name)
+        {
+            if (Isempty(name))
+            {
+                MessageBox.Show("Name is empty!");
+                return false;
+            }
+            if (!IsAlphabetic(name))
+            {
+                MessageBox.Show("Name must contain only alphabetic letters!");
+                return false;
+            }
+            if (!StringLengthIsinrange(name,5, 30))
+            {
+                MessageBox.Show("Name must be at least 5 characters!");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool ValidateFirstName(string name)
+        {
+            if (Isempty(name))
+            {
+                MessageBox.Show("First Name is empty!");
+                return false;
+            }
+            if (!IsAlphabetic(name))
+            {
+                MessageBox.Show("First name must contain only alphabetic letters!");
+                return false;
+            }
+            if (!StringLengthIsinrange(name, 1, 30))
+            {
+                MessageBox.Show("First name is too long!");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool ValidateLastName(string name)
+        {
+            if (Isempty(name))
+            {
+                MessageBox.Show("Last Name is empty!");
+                return false;
+            }
+            if (!IsAlphabetic(name))
+            {
+                MessageBox.Show("Last name must contain only alphabetic letters!");
+                return false;
+            }
+            if (!StringLengthIsinrange(name, 1, 30))
+            {
+                MessageBox.Show("Last name is too long!");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool isValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("Email is empty!");
+                return false;
+            }
+
+            try
+            {
+                // Use MailAddress class to validate email format
+                var addr = new MailAddress(email);
+                return true;
+
+            }
+            catch
+            {
+                MessageBox.Show("Invalid email address!");
+                return false;
+            }
         }
     }
 }
