@@ -48,21 +48,23 @@
 	
 
 	CREATE TABLE GamePublisher(
-    PublisherName varchar(30),
+    PublisherUserName varchar(30),
+	PublisherRealName varchar(30) UNIQUE NOT NULL,
     Country char(30) NOT NULL,
     ConsoleType varchar(30) NOT NULL,
     StartDate date,
-    PRIMARY KEY (PublisherName)
+    PRIMARY KEY (PublisherUserName)
 	);
 
 
 
 	CREATE TABLE GamingStore
 	(
-		StoreName varchar(30),
+		StoreUserName varchar(30),
+		StoreRealName varchar(30) UNIQUE NOT NULL,
 		Rating int not null CHECK (Rating Between 1 AND 5),
 		Hotline int not null ,
-		PRIMARY KEY (StoreName)
+		PRIMARY KEY (StoreUserName)
 	);
 
 	CREATE TABLE Tournament(
@@ -74,7 +76,7 @@
 	Organizer	varchar(30),
 	PrizeMoney DECIMAL(10,2),
 	PRIMARY KEY(TName) ,
-	FOREIGN KEY (Organizer) REFERENCES GamingStore(StoreName)
+	FOREIGN KEY (Organizer) REFERENCES GamingStore(StoreUserName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 	);
@@ -109,7 +111,7 @@
     foreign key (EngineName) references GameEngine(EngineName)
         ON UPDATE CASCADE
         ON DELETE SET NULL,
-    foreign key (Publisher) references GamePublisher(PublisherName)
+    foreign key (Publisher) references GamePublisher(PublisherUserName)
         ON UPDATE CASCADE
         ON DELETE SET NULL,
     foreign key (Reviewer) references GameReviewer(ReviewerName)
@@ -143,7 +145,7 @@
 	FOREIGN KEY (GameName) REFERENCES Game(GameName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
-	FOREIGN KEY (StoreName) REFERENCES GamingStore(StoreName)
+	FOREIGN KEY (StoreName) REFERENCES GamingStore(StoreUserName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 	);
@@ -282,53 +284,52 @@
 
 
 	INSERT INTO GamePublisher VALUES
-	('Nintendo', 'Japan', 'Switch', '1983-07-01'),
-	('Sony Interactive', 'Japan', 'PlayStation', '1993-11-16'),
-	('Microsoft Studios', 'USA', 'Xbox', '2002-03-01'),
-	('Electronic Arts', 'USA', 'Cross-Platform', '1982-05-28'),
-	('Ubisoft', 'France', 'Cross-Platform', '1986-03-28'),
-	('Square Enix', 'Japan', 'PlayStation', '2003-04-01'),
-	('Bethesda', 'USA', 'Cross-Platform', '1986-06-28'),
-	('Activision', 'USA', 'Cross-Platform', '1979-10-01'),
-	('Rockstar Games', 'USA', 'Cross-Platform', '1998-12-01'),
-	('Bandai Namco', 'Japan', 'PlayStation', '1955-06-01'),
-	('Take-Two', 'USA', 'Cross-Platform', '1993-09-30'),
-	('CD Projekt', 'Poland', 'PC', '1994-05-01'),
-	('Capcom', 'Japan', 'PlayStation', '1979-05-30'),
-	('Konami', 'Japan', 'PlayStation', '1969-03-21'),
-	('Sega', 'Japan', 'Genesis', '1940-06-03'),
-	('FromSoftware', 'Japan', 'All', '1986-11-15'),
-	('GearBox', 'USA', 'Cross-Platform', '1999-11-01'),
-	('Insomniac Games', 'USA', 'PlayStation', '1994-02-28'),
-	('Naughty Dog', 'USA', 'PlayStation', '1984-05-08'),
-	('Valve', 'USA', 'PC', '1996-08-24'),          
-	('THQ Nordic', 'Austria', 'Cross-Platform', '2011-08-01'), 
-	('505 Games', 'Italy', 'Cross-Platform', '2006-06-01');    
+	('Nintendo', 'Nintendo', 'Japan', 'Switch', '1983-07-01'),
+	('Sony_Interactive', 'Sony Interactive', 'Japan', 'PlayStation', '1993-11-16'),
+	('Microsoft_Studios', 'Microsoft Studios', 'USA', 'Xbox', '2002-03-01'),
+	('Electronic_Arts', 'Electronic Arts', 'USA', 'Cross-Platform', '1982-05-28'),
+	('Ubisoft', 'Ubisoft', 'France', 'Cross-Platform', '1986-03-28'),
+	('Square_Enix', 'Square Enix', 'Japan', 'PlayStation', '2003-04-01'),
+	('Bethesda', 'Bethesda', 'USA', 'Cross-Platform', '1986-06-28'),
+	('Activision', 'Activision', 'USA', 'Cross-Platform', '1979-10-01'),
+	('Rockstar_Games', 'Rockstar Games', 'USA', 'Cross-Platform', '1998-12-01'),
+	('Bandai_Namco', 'Bandai Namco', 'Japan', 'PlayStation', '1955-06-01'),
+	('Take-Two', 'Take-Two', 'USA', 'Cross-Platform', '1993-09-30'),
+	('CD_Projekt', 'CD Projekt', 'Poland', 'PC', '1994-05-01'),
+	('Capcom', 'Capcom', 'Japan', 'PlayStation', '1979-05-30'),
+	('Konami', 'Konami', 'Japan', 'PlayStation', '1969-03-21'),
+	('Sega', 'Sega', 'Japan', 'Genesis', '1940-06-03'),
+	('FromSoftware', 'FromSoftware', 'Japan', 'All', '1986-11-15'),
+	('GearBox', 'GearBox', 'USA', 'Cross-Platform', '1999-11-01'),
+	('Insomniac_Games', 'Insomniac Games', 'USA', 'PlayStation', '1994-02-28'),
+	('Naughty_Dog', 'Naughty Dog', 'USA', 'PlayStation', '1984-05-08'),
+	('Valve', 'Valve', 'USA', 'PC', '1996-08-24'),
+	('THQ_Nordic', 'THQ Nordic', 'Austria', 'Cross-Platform', '2011-08-01'),
+	('FiveHundredFive_Games', 'FiveHundredFive Games', 'Italy', 'Cross-Platform', '2006-06-01');
+    
 
 
 	INSERT INTO GamingStore VALUES
-	('Steam', 5, 1800123456),
-	('Epic Games', 4, 1800123457),
-	('GOG', 5, 1800123458),
-	('PlayStation Store', 5, 1800123459),
-	('Microsoft Store', 4, 1800123460),
-	('Nintendo eShop', 4, 1800123461),
-	('Origin', 3, 1800123462),
-	('Uplay', 3, 1800123463),
-	('Itch.io', 5, 1800123464),
-	('Green Man Gaming', 4, 1800123465),
-	('Humble Bundle', 5, 1800123466),
-	('Fanatical', 4, 1800123467),
-	('GameStop', 3, 1800123468),
-	('Best Buy', 4, 1800123469),
-	('Walmart', 3, 1800123470),
-	('Battle.net', 4, 1800123457),
-	('Rockstar Games Store', 5, 1800123492),   
-	('Ubisoft Store', 4, 1800123493),     
-	('CD Projekt Red', 5, 1800123494),     
-	('Discord Store', 3, 1800123496);
-
-
+	('Steam', 'Steam', 5, 1800123456),
+	('Epic_Games', 'Epic Games', 4, 1800123457),
+	('GOG', 'GOG', 5, 1800123458),
+	('PlayStation_Store', 'PlayStation Store', 5, 1800123459),
+	('Microsoft_Store', 'Microsoft Store', 4, 1800123460),
+	('Nintendo_eShop', 'Nintendo eShop', 4, 1800123461),
+	('Origin', 'Origin', 3, 1800123462),
+	('Uplay', 'Uplay', 3, 1800123463),
+	('Itch.io', 'Itch.io', 5, 1800123464),
+	('Green_Man_Gaming', 'Green Man Gaming', 4, 1800123465),
+	('Humble_Bundle', 'Humble Bundle', 5, 1800123466),
+	('Fanatical', 'Fanatical', 4, 1800123467),
+	('GameStop', 'GameStop', 3, 1800123468),
+	('Best_Buy', 'Best Buy', 4, 1800123469),
+	('Walmart', 'Walmart', 3, 1800123470),
+	('Battle.net', 'Battle.net', 4, 1800123457),
+	('Rockstar_Games_Store', 'Rockstar Games Store', 5, 1800123492),
+	('Ubisoft_Store', 'Ubisoft Store', 4, 1800123493),
+	('CD_Projekt_Red', 'CD Projekt Red', 5, 1800123494),
+	('Discord_Store', 'Discord Store', 3, 1800123496);
 
 	INSERT INTO Gamer (UserName, FirstName, LastName, Email, Country, BirthDate) VALUES
 	('NoobMaster69', 'John', 'Doe', 'john.doe@gmail.com', 'USA', '1990-05-15'),
@@ -354,23 +355,23 @@
 
 
 	INSERT INTO Game VALUES
-	('Apex Legends', 'Battle Royale', '2019-02-04', 'PlayStation 5', 'Source', 'Electronic Arts', 5, 'Polygon'),
-	('Battlefield 2042', 'FPS', '2021-11-19', 'PlayStation 5', 'Frostbite', 'Electronic Arts', 4, 'IGN'),
+	('Apex Legends', 'Battle Royale', '2019-02-04', 'PlayStation 5', 'Source', 'Electronic_Arts', 5, 'Polygon'),
+	('Battlefield 2042', 'FPS', '2021-11-19', 'PlayStation 5', 'Frostbite', 'Electronic_Arts', 4, 'IGN'),
 	('Call of Duty: Modern Warfare', 'FPS', '2019-10-25', 'Xbox Series X', 'Havok', 'Activision', 4, 'Metacritic'),
 	('Call of Duty: Vanguard', 'FPS', '2021-11-05', 'Xbox Series X', 'CryEngine', 'Activision', 4, 'GameSpot'),
 	('CS:GO', 'FPS', '2012-08-21', 'Xbox One', 'Godot', 'Take-Two', 5, 'Rock Paper Shotgun'),
-	('FIFA 22', 'Sports', '2021-10-01', 'PlayStation 4', 'Frostbite', 'Electronic Arts', 5, 'Kotaku'),
-	('FIFA 23', 'Sports', '2022-09-30', 'PlayStation 5', 'Frostbite', 'Electronic Arts', 4, 'Polygon'),
+	('FIFA 22', 'Sports', '2021-10-01', 'PlayStation 4', 'Frostbite', 'Electronic_Arts', 5, 'Kotaku'),
+	('FIFA 23', 'Sports', '2022-09-30', 'PlayStation 5', 'Frostbite', 'Electronic_Arts', 4, 'Polygon'),
 	('Fortnite', 'Battle Royale', '2017-07-25', 'Nintendo DS', 'Unreal', 'Capcom', 4, 'Eurogamer'),
 	('Forza Horizon 4', 'Racing', '2021-11-09', 'Xbox Series X', 'Source', 'Konami', 5, 'Polygon'),
-	('Forza Horizon 5', 'Racing', '2021-11-09', 'Xbox Series X', 'Construct', 'Square Enix', 5, 'Polygon'),
-	('Gran Turismo 7', 'Racing', '2022-03-04', 'PlayStation 5', 'RenPy', 'Sony Interactive', 5, 'Game Informer'),
-	('Halo Infinite', 'FPS', '2021-12-08', 'Xbox Series X', 'CryEngine', 'Microsoft Studios', 4, 'Destructoid'),
-	('Need for Speed Heat', 'Racing', '2019-11-08', 'Xbox Series X', 'Frostbite', 'Electronic Arts', 4, 'GameSpot'),
+	('Forza Horizon 5', 'Racing', '2021-11-09', 'Xbox Series X', 'Construct', 'Square_Enix', 5, 'Polygon'),
+	('Gran Turismo 7', 'Racing', '2022-03-04', 'PlayStation 5', 'RenPy', 'Sony_Interactive', 5, 'Game Informer'),
+	('Halo Infinite', 'FPS', '2021-12-08', 'Xbox Series X', 'CryEngine', 'Microsoft_Studios', 4, 'Destructoid'),
+	('Need for Speed Heat', 'Racing', '2019-11-08', 'Xbox Series X', 'Frostbite', 'Electronic_Arts', 4, 'GameSpot'),
 	('Overwatch', 'FPS', '2016-05-24', 'PlayStation 3', 'RAGE', 'Activision', 5, 'IGN'),
 	('PUBG', 'Battle Royale', '2017-12-20', 'Xbox One', 'Unreal', 'Capcom', 3, 'PC Gamer'),
 	('Resident Evil Village', 'FPS', '2021-05-07', 'PlayStation 5', 'Unity', 'Capcom', 5, 'Game Informer'),
-	('Rocket League', 'Sports', '2015-07-07', 'PlayStation 3', 'Unreal', 'CD Projekt', 5, 'Joystiq'),
+	('Rocket League', 'Sports', '2015-07-07', 'PlayStation 3', 'Unreal', 'CD_Projekt', 5, 'Joystiq'),
 	('Street Fighter V', 'Fighting', '2016-02-16', 'PlayStation 5', 'Unreal', 'Capcom', 5, 'Kotaku'),
 	('Tekken 7', 'Fighting', '2015-03-18', 'PlayStation 3', 'Unreal', 'Ubisoft', 4, 'The Escapist'),
 	('Valorant', 'FPS', '2020-06-02', 'PlayStation 3', 'Unreal', 'Bethesda', 5, 'VentureBeat');
@@ -379,20 +380,20 @@
 
 	INSERT INTO Tournament VALUES
 	('EVO', 500, 'Fighting', 'Las Vegas', '2023-07-07', 'Steam', 250000.00),
-	('ESL Pro League', 1000, 'FPS', 'Katowice', '2023-02-01', 'Epic Games', 1000000.00),
+	('ESL Pro League', 1000, 'FPS', 'Katowice', '2023-02-01', 'Epic_Games', 1000000.00),
 	('The International', 500, 'Battle Royale', 'Seattle', '2023-10-15', 'Steam', 50000000.00),
 	('DreamHack', 800, 'FPS', 'Stockholm', '2023-06-15', 'GOG', 500000.00),
-	('PAX', 400, 'Sports', 'Boston', '2023-03-01', 'PlayStation Store', 100000.00),
-	('Capcom Cup', 250, 'Fighting', 'Tokyo', '2023-12-05', 'Microsoft Store', 300000.00),
-	('Fortnite World Cup', 500, 'Battle Royale', 'New York', '2023-07-01', 'Nintendo eShop', 3000000.00),
+	('PAX', 400, 'Sports', 'Boston', '2023-03-01', 'PlayStation_Store', 100000.00),
+	('Capcom Cup', 250, 'Fighting', 'Tokyo', '2023-12-05', 'Microsoft_Store', 300000.00),
+	('Fortnite World Cup', 500, 'Battle Royale', 'New York', '2023-07-01', 'Nintendo_eShop', 3000000.00),
 	('Overwatch League', 300, 'FPS', 'Los Angeles', '2023-05-15', 'Origin', 500000.00),
 	('RLCS', 600, 'Racing', 'San Francisco', '2023-08-20', 'Uplay', 200000.00),
 	('FIFAe World Cup', 128, 'Sports', 'London', '2023-07-15', 'Itch.io', 500000.00),
-	('CS:GO Major', 1000, 'FPS', 'Berlin', '2023-11-05', 'Green Man Gaming', 2000000.00),
-	('Call of Duty League', 400, 'FPS', 'Dallas', '2023-09-20', 'Humble Bundle', 1500000.00),
+	('CS:GO Major', 1000, 'FPS', 'Berlin', '2023-11-05', 'Green_Man_Gaming', 2000000.00),
+	('Call of Duty League', 400, 'FPS', 'Dallas', '2023-09-20', 'Humble_Bundle', 1500000.00),
 	('Halo Championship', 300, 'FPS', 'Chicago', '2023-10-10', 'Fanatical', 400000.00),
 	('Tekken World Tour', 150, 'Fighting', 'Seoul', '2023-11-25', 'GameStop', 200000.00),
-	('Gran Turismo Cup', 128, 'Racing', 'Paris', '2023-12-12', 'Best Buy', 300000.00),
+	('Gran Turismo Cup', 128, 'Racing', 'Paris', '2023-12-12', 'Best_Buy', 300000.00),
 	('Epic Games Cup', 600, 'FPS', 'Xatowice', '2023-03-15', 'GOG', 750000),
 	('Fall Brawl', 250, 'Fighting', 'London', '2023-09-01', 'GameStop', 200000),
 	('Spring Clash', 500, 'FPS', 'Los Angeles', '2023-06-01', 'GameStop', 250000),
@@ -444,45 +445,45 @@
 	('HyperHunter', 'C4yU8Zl6pT', 'Gamer'),
 
 	('Steam', 'd#V8gZp1Q3', 'Game Store'),
-	('Epic Games', 'rP7xW0!uQ2', 'Game Store'),
+	('Epic_Games', 'rP7xW0!uQ2', 'Game Store'),
 	('GOG', 'H3lT1#uX9', 'Game Store'),
-	('PlayStation Store', 'V5yB8!P2hL', 'Game Store'),
-	('Microsoft Store', 'R6cI9#qB4U', 'Game Store'),
-	('Nintendo eShop', 'F3tS!0Z9pW', 'Game Store'),
+	('PlayStation_Store', 'V5yB8!P2hL', 'Game Store'),
+	('Microsoft_Store', 'R6cI9#qB4U', 'Game Store'),
+	('Nintendo_eShop', 'F3tS!0Z9pW', 'Game Store'),
 	('Origin', 'B4iO7s#3Q1', 'Game Store'),
 	('Uplay', 'J7hD3!tN9X', 'Game Store'),
 	('Itch.io', 'Y6cX0uP2#R', 'Game Store'),
-	('Green Man Gaming', 'M5pX1bQ4yR', 'Game Store'),
-	('Humble Bundle', 'Z2wD5lE9pJ', 'Game Store'),
+	('Green_Man_Gaming', 'M5pX1bQ4yR', 'Game Store'),
+	('Humble_Bundle', 'Z2wD5lE9pJ', 'Game Store'),
 	('Fanatical', 'C8hI2tF0qA', 'Game Store'),
 	('GameStop', 'X9jF5!wL2p', 'Game Store'),
-	('Best Buy', 'J4yZ!8wV0g', 'Game Store'),
+	('Best_Buy', 'J4yZ!8wV0g', 'Game Store'),
 	('Walmart', 'F7nD2zQ#6K', 'Game Store'),
 	('Battle.net', 'Y8qP3gR9zH', 'Game Store'),
-	('Rockstar Games Store', 'D7cQ!xF3yT', 'Game Store'),
-	('Ubisoft Store', 'P1oQ2gR9zU', 'Game Store'),
-	('CD Projekt Red', 'S8iT4yJ3Wz', 'Game Store'),
-	('Discord Store', 'V6hF1eJ9qN', 'Game Store'),
+	('Rockstar_Games_Store', 'D7cQ!xF3yT', 'Game Store'),
+	('Ubisoft_Store', 'P1oQ2gR9zU', 'Game Store'),
+	('CD_Projekt_Red', 'S8iT4yJ3Wz', 'Game Store'),
+	('Discord_Store', 'V6hF1eJ9qN', 'Game Store'),
 
 	('Nintendo', 'A9s3l!oP2r', 'Game Publisher'),
-	('Sony Interactive', 'X1dV5#yM3p', 'Game Publisher'),
-	('Microsoft Studios', 'B7vZ9kT2aQ', 'Game Publisher'),
-	('Electronic Arts', 'P8wB2rI5nK', 'Game Publisher'),
+	('Sony_Interactive', 'X1dV5#yM3p', 'Game Publisher'),
+	('Microsoft_Studios', 'B7vZ9kT2aQ', 'Game Publisher'),
+	('Electronic_Arts', 'P8wB2rI5nK', 'Game Publisher'),
 	('Ubisoft', 'Q6jC4#zM9h', 'Game Publisher'),
-	('Square Enix', 'L2vP1zF7yB', 'Game Publisher'),
+	('Square_Enix', 'L2vP1zF7yB', 'Game Publisher'),
 	('Bethesda', 'U9dK4rJ2wX', 'Game Publisher'),
 	('Activision', 'W3mN0vX5pT', 'Game Publisher'),
-	('Rockstar Games', 'J8tF4kL9wZ', 'Game Publisher'),
-	('Bandai Namco', 'A0pQ3wG1tY', 'Game Publisher'),
+	('Rockstar_Games', 'J8tF4kL9wZ', 'Game Publisher'),
+	('Bandai_Namco', 'A0pQ3wG1tY', 'Game Publisher'),
 	('Take-Two', 'N5xC2zH8lB', 'Game Publisher'),
-	('CD Projekt', 'P9tV4fJ3Wm', 'Game Publisher'),
+	('CD_Projekt', 'P9tV4fJ3Wm', 'Game Publisher'),
 	('Capcom', 'S7jZ2oA9qB', 'Game Publisher'),
 	('Konami', 'D3yQ8rL1uF', 'Game Publisher'),
 	('Sega', 'V0iS2bF9jX', 'Game Publisher'),
 	('FromSoftware', 'Q5wZ8yP3mJ', 'Game Publisher'),
 	('GearBox', 'L4bJ1mO9xY', 'Game Publisher'),
 	('Insomniac Games', 'M8pV3rZ2tF', 'Game Publisher'),
-	('Naughty Dog', 'T9nB5wP0uS', 'Game Publisher'),
+	('Naughty_Dog', 'T9nB5wP0uS', 'Game Publisher'),
 	('Valve', 'I0dJ2fM6oQ', 'Game Publisher'),
-	('THQ Nordic', 'N6yZ5tP1xA', 'Game Publisher'),
-	('505 Games', 'L7jQ9pV2rB', 'Game Publisher');
+	('THQ_Nordic', 'N6yZ5tP1xA', 'Game Publisher'),
+	('FiveHundredFive_Games', 'L7jQ9pV2rB', 'Game Publisher');

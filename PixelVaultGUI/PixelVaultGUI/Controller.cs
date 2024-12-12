@@ -16,8 +16,19 @@ namespace DBapplication
             dbMan = new DBManager();
         }
 
-        
-        // TODO: ADD your functions here
+        // Query Functions
+        public DataTable SelectAllUserNamesPasswords()
+        {
+            string query = "SELECT * FROM UserPasswordsAuthorization;";
+            return dbMan.ExecuteReader(query);
+        }
+        public string CheckCredentials(string UserName, string password)
+        {
+            string query = "SELECT AuthorizationLevel FROM UserPasswordsAuthorization WHERE UserName = '" + UserName + "' AND Password = '" + password + "';";
+            object result = dbMan.ExecuteScalar(query);
+            if (result == null) return "";
+            else return Convert.ToString(result);
+        }
 
         public void TerminateConnection()
         {

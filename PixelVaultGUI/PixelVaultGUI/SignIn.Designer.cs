@@ -37,9 +37,10 @@
             label2 = new Label();
             PasswordSignInTextBox = new TextBox();
             pictureBox3 = new PictureBox();
-            button1 = new Button();
             label4 = new Label();
-            button2 = new Button();
+            SignUpButton = new Button();
+            ShowHideButton = new Button();
+            SignInButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -48,7 +49,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.White;
-            pictureBox1.BackgroundImage = Properties.Resources.Logo1;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
@@ -61,7 +62,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Image = Properties.Resources.solid_color_image;
+            label3.Image = (Image)resources.GetObject("label3.Image");
             label3.Location = new Point(414, 49);
             label3.Name = "label3";
             label3.Size = new Size(153, 54);
@@ -81,7 +82,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Image = Properties.Resources.solid_color_image;
+            label1.Image = (Image)resources.GetObject("label1.Image");
             label1.Location = new Point(243, 130);
             label1.Name = "label1";
             label1.Size = new Size(131, 31);
@@ -90,7 +91,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.BackgroundImage = Properties.Resources.solid_color_image;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(194, 155);
             pictureBox2.Name = "pictureBox2";
@@ -103,7 +104,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Image = Properties.Resources.solid_color_image;
+            label2.Image = (Image)resources.GetObject("label2.Image");
             label2.Location = new Point(243, 216);
             label2.Name = "label2";
             label2.Size = new Size(114, 31);
@@ -122,7 +123,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.BackgroundImage = Properties.Resources.solid_color_image;
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(194, 241);
             pictureBox3.Name = "pictureBox3";
@@ -130,52 +131,64 @@
             pictureBox3.TabIndex = 9;
             pictureBox3.TabStop = false;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.Black;
-            button1.BackgroundImage = Properties.Resources.solid_color_image__1_;
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(437, 300);
-            button1.Name = "button1";
-            button1.Size = new Size(142, 44);
-            button1.TabIndex = 10;
-            button1.Text = "Sign In";
-            button1.UseVisualStyleBackColor = false;
-            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Image = Properties.Resources.solid_color_image;
+            label4.Image = (Image)resources.GetObject("label4.Image");
             label4.Location = new Point(313, 385);
             label4.Name = "label4";
             label4.Size = new Size(230, 28);
             label4.TabIndex = 11;
             label4.Text = "Don't have an account ?";
             // 
-            // button2
+            // SignUpButton
             // 
-            button2.BackColor = Color.Black;
-            button2.BackgroundImage = Properties.Resources.solid_color_image__1_;
-            button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(558, 377);
-            button2.Name = "button2";
-            button2.Size = new Size(142, 44);
-            button2.TabIndex = 12;
-            button2.Text = "Sign Up";
-            button2.UseVisualStyleBackColor = false;
+            SignUpButton.BackColor = Color.Black;
+            SignUpButton.BackgroundImage = (Image)resources.GetObject("SignUpButton.BackgroundImage");
+            SignUpButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SignUpButton.Location = new Point(558, 377);
+            SignUpButton.Name = "SignUpButton";
+            SignUpButton.Size = new Size(142, 44);
+            SignUpButton.TabIndex = 12;
+            SignUpButton.Text = "Sign Up";
+            SignUpButton.UseVisualStyleBackColor = false;
+            // 
+            // ShowHideButton
+            // 
+            ShowHideButton.Image = Properties.Resources.Show_password;
+            ShowHideButton.Location = new Point(833, 239);
+            ShowHideButton.Name = "ShowHideButton";
+            ShowHideButton.Size = new Size(41, 38);
+            ShowHideButton.TabIndex = 14;
+            ShowHideButton.UseVisualStyleBackColor = true;
+            ShowHideButton.Click += ShowHideButton_Click;
+            // 
+            // SignInButton
+            // 
+            SignInButton.BackColor = Color.Black;
+            SignInButton.BackgroundImage = (Image)resources.GetObject("SignInButton.BackgroundImage");
+            SignInButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SignInButton.Location = new Point(439, 306);
+            SignInButton.Name = "SignInButton";
+            SignInButton.Size = new Size(142, 44);
+            SignInButton.TabIndex = 15;
+            SignInButton.Text = "Sign In";
+            SignInButton.UseVisualStyleBackColor = false;
+            SignInButton.Click += SignInButton_Click;
             // 
             // SignIn
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            BackgroundImage = Properties.Resources.dark_purple_colour;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(953, 501);
-            Controls.Add(button2);
+            Controls.Add(SignInButton);
+            Controls.Add(ShowHideButton);
+            Controls.Add(SignUpButton);
             Controls.Add(label4);
-            Controls.Add(button1);
             Controls.Add(pictureBox3);
             Controls.Add(PasswordSignInTextBox);
             Controls.Add(label2);
@@ -203,8 +216,9 @@
         private Label label2;
         private TextBox PasswordSignInTextBox;
         private PictureBox pictureBox3;
-        private Button button1;
         private Label label4;
-        private Button button2;
+        private Button SignUpButton;
+        private Button ShowHideButton;
+        private Button SignInButton;
     }
 }
