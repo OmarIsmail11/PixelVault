@@ -31,8 +31,8 @@ namespace PixelVaultGUI
 
             string[] countries =
                 {
-                    "Italy", "Singapore", "Spain", "UK", "USA", "India", "Australia", "Japan", "Canada",
-                    "France", "Mexico", "South Korea", "Germany", "Spain", "Brazil", "New Zealand", "Egypt"
+                    "Australia", "Brazil", "Canada", "Egypt", "France", "Germany", "India", "Italy", 
+                    "Japan", "Mexico", "New Zealand", "Singapore", "South Korea","Spain", "UK", "USA"
                 };
 
             CountryComboBox.DataSource = countries;
@@ -114,6 +114,11 @@ namespace PixelVaultGUI
                 ReEnterPasswordTextBox.UseSystemPasswordChar = true;
             }
             PasswordIsHidden = !PasswordIsHidden;
+        }
+
+        private void CountryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
