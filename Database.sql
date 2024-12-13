@@ -299,7 +299,7 @@
 	('Capcom', 'Capcom', 'Japan', 'PlayStation', '1979-05-30'),
 	('Konami', 'Konami', 'Japan', 'PlayStation', '1969-03-21'),
 	('Sega', 'Sega', 'Japan', 'Genesis', '1940-06-03'),
-	('FromSoftware', 'FromSoftware', 'Japan', 'All', '1986-11-15'),
+	('FromSoftware', 'FromSoftware', 'Japan', 'Cross-Platform', '1986-11-15'),
 	('GearBox', 'GearBox', 'USA', 'Cross-Platform', '1999-11-01'),
 	('Insomniac_Games', 'Insomniac Games', 'USA', 'PlayStation', '1994-02-28'),
 	('Naughty_Dog', 'Naughty Dog', 'USA', 'PlayStation', '1984-05-08'),
