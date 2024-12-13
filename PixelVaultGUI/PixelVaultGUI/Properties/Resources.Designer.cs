@@ -63,6 +63,16 @@ namespace PixelVaultGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap controller {
+            get {
+                object obj = ResourceManager.GetObject("controller", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dark_purple_colour {
             get {
                 object obj = ResourceManager.GetObject("dark purple colour", resourceCulture);
@@ -123,6 +133,16 @@ namespace PixelVaultGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap publisher {
+            get {
+                object obj = ResourceManager.GetObject("publisher", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Show_password {
             get {
                 object obj = ResourceManager.GetObject("Show password", resourceCulture);
@@ -146,6 +166,16 @@ namespace PixelVaultGUI.Properties {
         internal static System.Drawing.Bitmap solid_color_image__1_ {
             get {
                 object obj = ResourceManager.GetObject("solid-color-image (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap store {
+            get {
+                object obj = ResourceManager.GetObject("store", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
