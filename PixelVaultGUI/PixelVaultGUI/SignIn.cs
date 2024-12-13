@@ -95,9 +95,11 @@ namespace PixelVaultGUI
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-            SignUp signUp = new SignUp();
-            signUp.Show();
             this.Hide();
+            SignUp signUp = new SignUp();
+            signUp.ShowDialog();
+            this.Show();
+            
         }
     }
 }

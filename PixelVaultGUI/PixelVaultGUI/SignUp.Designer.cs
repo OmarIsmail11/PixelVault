@@ -37,6 +37,7 @@
             GamerButton = new Button();
             GameStoreButton = new Button();
             GamePublisherButton = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -129,6 +130,17 @@
             GamePublisherButton.TabIndex = 18;
             GamePublisherButton.Text = "Game Publisher";
             GamePublisherButton.UseVisualStyleBackColor = false;
+            GamePublisherButton.Click += GamePublisherButton_Click;
+            // 
+            // button1
+            // 
+            button1.Image = Properties.Resources.images1;
+            button1.Location = new Point(40, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 69);
+            button1.TabIndex = 19;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // SignUp
             // 
@@ -136,6 +148,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.solid_color_image;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(GamePublisherButton);
             Controls.Add(GameStoreButton);
             Controls.Add(GamerButton);
@@ -146,6 +159,7 @@
             Controls.Add(label3);
             Name = "SignUp";
             Text = "SignUp";
+            Load += SignUp_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -163,5 +177,6 @@
         private Button GamerButton;
         private Button GameStoreButton;
         private Button GamePublisherButton;
+        private Button button1;
     }
 }

@@ -225,6 +225,20 @@ namespace PixelVaultGUI
             return true;
         }
 
+        public static bool ValidateRealName(string name)
+        {
+            if (Isempty(name))
+            {
+                MessageBox.Show("Real Name is empty!");
+                return false;
+            }
+            if (!StringLengthIsinrange(name, 1, 30))
+            {
+                MessageBox.Show("Real name is too long!");
+                return false;
+            }
+            return true;
+        }
         public static bool isValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))

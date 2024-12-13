@@ -19,9 +19,28 @@ namespace PixelVaultGUI
 
         private void GamerButton_Click(object sender, EventArgs e)
         {
-            GamerSignUp signUp = new GamerSignUp();
-            signUp.Show();
             this.Hide();
+            GamerSignUp signUp = new GamerSignUp();
+            signUp.ShowDialog();
+            this.Show();
+        }
+
+        private void GamePublisherButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GamePublisherSignUp signUp = new GamePublisherSignUp();
+            signUp.ShowDialog();
+            this.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void SignUp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

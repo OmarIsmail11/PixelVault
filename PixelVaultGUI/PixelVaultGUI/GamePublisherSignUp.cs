@@ -8,21 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace PixelVaultGUI
 {
-    public partial class GamerSignUp : Form
+    public partial class GamePublisherSignUp : Form
     {
+        private static bool PasswordIsHidden = false;
         Controller controllerObj = new Controller();
-
-
-        public static bool PasswordIsHidden = true;
-        public GamerSignUp()
+        public GamePublisherSignUp()
         {
             InitializeComponent();
+            ShowHideButton.Image = Properties.Resources.Hide_password;
         }
 
-        private void GamerSignUp_Load(object sender, EventArgs e)
+        private void GamePublisherSignUp_Load(object sender, EventArgs e)
         {
             // Set the DateTimePicker format to custom
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
@@ -37,67 +37,10 @@ namespace PixelVaultGUI
                 };
 
             CountryComboBox.DataSource = countries;
-        }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SignInButton_Click(object sender, EventArgs e)
-        {
-            string UserName = UserNameTextBox.Text;
-            if (!Validations.ValidateUserName(UserName)) return;
-
-            string FirstName = FirstNameTextBox.Text;
-            if (!Validations.ValidateFirstName(FirstName)) return;
-
-            string LastName = LastNameTextBox.Text;
-            if (!Validations.ValidateLastName(LastName)) return;
-
-            string email = EmailTextBox.Text;
-            if (!Validations.isValidEmail(email)) return;
-
-            string password = PasswordTextBox.Text;
-            if (!Validations.ValidatePassword(password)) return;
-
-            string ReEnterPassword = ReEnterPasswordTextBox.Text;
-            if (ReEnterPassword == "")
-            {
-                MessageBox.Show("Invalid! Please re-enter password in the required field!");
-                return;
-            }
-            if (password != ReEnterPassword)
-            {
-                MessageBox.Show("Invalid! Passwords must be the same!");
-                return;
-            }
-
-            DateTime selectedDate = dateTimePicker1.Value;
-            string BirthDate = selectedDate.ToString("yyyy-MM-dd");
-
-            string country = CountryComboBox.Text;
-
-            if (!Validations.CheckIfNewUserNameNotAlreadyExisiting(UserName)) return;
-
-            int InsertResult = controllerObj.InsertNewGamerIntoGamerTable(UserName, FirstName, LastName, email, country, BirthDate);
-            if (InsertResult == 0)
-            {
-                MessageBox.Show("Error ! Account was not created!");
-                return;
-            }
-
-            int InsertResult2 = controllerObj.InsertNewGamerIntoUserPasswordsAuthorizationTable(UserName, password);
-            if (InsertResult == 0)
-            {
-                MessageBox.Show("Error ! Account was not created!");
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Account created succesfully !");
-                return;
-            }
+            DataTable consoleTypes = controllerObj.RetrieveAllConsoleTypes();
+            ConsoleTypeComboBox.DataSource = consoleTypes;
+            ConsoleTypeComboBox.DisplayMember = "ConsoleType";
         }
 
         private void ShowHideButton_Click(object sender, EventArgs e)
@@ -117,9 +60,56 @@ namespace PixelVaultGUI
             PasswordIsHidden = !PasswordIsHidden;
         }
 
-        private void CountryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void SignInButton_Click(object sender, EventArgs e)
         {
+            string UserName = UserNameTextBox.Text;
+            if (!Validations.ValidateUserName(UserName)) return;
 
+            string RealName = RealNameTextBox.Text;
+            if (!Validations.ValidateRealName(RealName)) return;
+
+            DateTime selectedDate = dateTimePicker1.Value;
+            string StartDate = selectedDate.ToString("yyyy-MM-dd");
+
+            string country = CountryComboBox.Text;
+
+            string ConsoleType = ConsoleTypeComboBox.Text;
+
+            string password = PasswordTextBox.Text;
+            if (!Validations.ValidatePassword(password)) return;
+
+            string ReEnterPassword = ReEnterPasswordTextBox.Text;
+            if (ReEnterPassword == "")
+            {
+                MessageBox.Show("Invalid! Please re-enter password in the required field!");
+                return;
+            }
+            if (password != ReEnterPassword)
+            {
+                MessageBox.Show("Invalid! Passwords must be the same!");
+                return;
+            }
+
+            if (!Validations.CheckIfNewUserNameNotAlreadyExisiting(UserName)) return;
+
+            int InsertResult = controllerObj.InsertNewGamePublisherIntoGamePublisherTable(UserName, RealName, country, ConsoleType, StartDate);
+            if (InsertResult == 0)
+            {
+                MessageBox.Show("Error ! Account was not created!");
+                return;
+            }
+
+            int InsertResult2 = controllerObj.InsertNewGamePublisherIntoUserPasswordsAuthorizationTable(UserName, password);
+            if (InsertResult == 0)
+            {
+                MessageBox.Show("Error ! Account was not created!");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Account created succesfully !");
+                return;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

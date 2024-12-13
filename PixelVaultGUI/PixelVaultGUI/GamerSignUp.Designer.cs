@@ -48,6 +48,7 @@
             label8 = new Label();
             label9 = new Label();
             ShowHideButton = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label3
@@ -239,12 +240,23 @@
             ShowHideButton.UseVisualStyleBackColor = true;
             ShowHideButton.Click += ShowHideButton_Click;
             // 
+            // button1
+            // 
+            button1.Image = Properties.Resources.images1;
+            button1.Location = new Point(12, 9);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 69);
+            button1.TabIndex = 34;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // GamerSignUp
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.solid_color_image;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(ShowHideButton);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -292,5 +304,6 @@
         private Label label8;
         private Label label9;
         private Button ShowHideButton;
+        private Button button1;
     }
 }

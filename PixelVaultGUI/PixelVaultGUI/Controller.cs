@@ -48,6 +48,25 @@ namespace DBapplication
             string query = "INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Gamer');";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable RetrieveAllConsoleTypes()
+        {
+            string query = "SELECT DISTINCT ConsoleType FROM GamePublisher;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int InsertNewGamePublisherIntoGamePublisherTable(string PublisherUserName, string PublisherRealName, string Country, string ConsoleType, string StartDate)
+        {
+            string query = "INSERT INTO GamePublisher (PublisherUserName, PublisherRealName, Country, ConsoleType, StartDate) VALUES " +
+                "('" + PublisherUserName + "','" + PublisherRealName + "','" + Country + "', '" + ConsoleType + "', '" + StartDate + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertNewGamePublisherIntoUserPasswordsAuthorizationTable(string UserName, string Password)
+        {
+            string query = "INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Publisher');";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
