@@ -156,7 +156,7 @@
 	GameName	VARCHAR(50),
 	GamerUserName	VARCHAR(30),
 	CompletionStatus	CHAR(3) CHECK(CompletionStatus IN ('Yes','No')),
-	Difficulty	CHAR(6) CHECK(Difficulty IN('Hard' , 'Medium' , 'Easy')) NOT NULL,
+	Difficulty	CHAR(6) CHECK(Difficulty IN('Hard' , 'Medium' , 'Easy')) NULL,
 	UserRating INT CHECK(UserRating Between 1 AND 5),
 	PRIMARY KEY(GameName,GamerUserName),
 	FOREIGN KEY (GameName) REFERENCES Game(GameName)

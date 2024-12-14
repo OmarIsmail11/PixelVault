@@ -71,7 +71,13 @@ namespace PixelVaultGUI
             }
             if (Authorization == "Gamer")
             {
-                MessageBox.Show("Welcome back " + UserName + "! (Opens gamer)");
+                MessageBox.Show("Welcome back " + UserName + "!");
+                this.Hide();
+                GamerMain gamerMain = new GamerMain(UserName);
+                gamerMain.ShowDialog();
+                this.Show();
+
+
                 //Open Gamer Form
             }
             else if (Authorization == "Game Store")
@@ -99,7 +105,11 @@ namespace PixelVaultGUI
             SignUp signUp = new SignUp();
             signUp.ShowDialog();
             this.Show();
-            
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

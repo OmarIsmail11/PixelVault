@@ -63,7 +63,7 @@
             label3.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Image = (Image)resources.GetObject("label3.Image");
-            label3.Location = new Point(414, 49);
+            label3.Location = new Point(330, 54);
             label3.Name = "label3";
             label3.Size = new Size(153, 54);
             label3.TabIndex = 3;
@@ -71,7 +71,7 @@
             // 
             // UserNameSignInTextBox
             // 
-            UserNameSignInTextBox.Location = new Point(243, 164);
+            UserNameSignInTextBox.Location = new Point(118, 169);
             UserNameSignInTextBox.Multiline = true;
             UserNameSignInTextBox.Name = "UserNameSignInTextBox";
             UserNameSignInTextBox.Size = new Size(574, 27);
@@ -83,7 +83,7 @@
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Image = (Image)resources.GetObject("label1.Image");
-            label1.Location = new Point(243, 130);
+            label1.Location = new Point(118, 135);
             label1.Name = "label1";
             label1.Size = new Size(131, 31);
             label1.TabIndex = 5;
@@ -93,11 +93,12 @@
             // 
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(194, 155);
+            pictureBox2.Location = new Point(69, 160);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(34, 36);
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // label2
             // 
@@ -105,7 +106,7 @@
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Image = (Image)resources.GetObject("label2.Image");
-            label2.Location = new Point(243, 216);
+            label2.Location = new Point(118, 221);
             label2.Name = "label2";
             label2.Size = new Size(114, 31);
             label2.TabIndex = 7;
@@ -113,7 +114,7 @@
             // 
             // PasswordSignInTextBox
             // 
-            PasswordSignInTextBox.Location = new Point(243, 250);
+            PasswordSignInTextBox.Location = new Point(118, 255);
             PasswordSignInTextBox.MaxLength = 20;
             PasswordSignInTextBox.Multiline = true;
             PasswordSignInTextBox.Name = "PasswordSignInTextBox";
@@ -125,7 +126,7 @@
             // 
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(194, 241);
+            pictureBox3.Location = new Point(69, 246);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(34, 36);
             pictureBox3.TabIndex = 9;
@@ -137,7 +138,7 @@
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Image = (Image)resources.GetObject("label4.Image");
-            label4.Location = new Point(313, 385);
+            label4.Location = new Point(215, 380);
             label4.Name = "label4";
             label4.Size = new Size(223, 28);
             label4.TabIndex = 11;
@@ -148,7 +149,7 @@
             SignUpButton.BackColor = Color.Black;
             SignUpButton.BackgroundImage = (Image)resources.GetObject("SignUpButton.BackgroundImage");
             SignUpButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SignUpButton.Location = new Point(558, 377);
+            SignUpButton.Location = new Point(460, 372);
             SignUpButton.Name = "SignUpButton";
             SignUpButton.Size = new Size(142, 44);
             SignUpButton.TabIndex = 12;
@@ -159,7 +160,7 @@
             // ShowHideButton
             // 
             ShowHideButton.Image = Properties.Resources.Show_password;
-            ShowHideButton.Location = new Point(833, 239);
+            ShowHideButton.Location = new Point(698, 246);
             ShowHideButton.Name = "ShowHideButton";
             ShowHideButton.Size = new Size(41, 38);
             ShowHideButton.TabIndex = 14;
@@ -171,7 +172,7 @@
             SignInButton.BackColor = Color.Black;
             SignInButton.BackgroundImage = (Image)resources.GetObject("SignInButton.BackgroundImage");
             SignInButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SignInButton.Location = new Point(439, 306);
+            SignInButton.Location = new Point(341, 301);
             SignInButton.Name = "SignInButton";
             SignInButton.Size = new Size(142, 44);
             SignInButton.TabIndex = 15;
@@ -185,7 +186,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(953, 501);
+            ClientSize = new Size(782, 453);
             Controls.Add(SignInButton);
             Controls.Add(ShowHideButton);
             Controls.Add(SignUpButton);
@@ -199,6 +200,7 @@
             Controls.Add(label3);
             Controls.Add(pictureBox1);
             Name = "SignIn";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Sign In";
             Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

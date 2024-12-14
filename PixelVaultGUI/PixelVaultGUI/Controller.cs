@@ -67,6 +67,31 @@ namespace DBapplication
             string query = "INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Publisher');";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable RetreiveGamerGamesLibrary(string UserName)
+        {
+            string query = "SELECT GameName AS Name, CompletionStatus AS Completed, Difficulty, UserRating AS Rating FROM Plays WHERE GamerUserName = '" + UserName + "';";
+            return dbMan.ExecuteReader(query);
+
+        }
+
+        public int RemoveGameFromLibrary(string GameName)
+        {
+            string query = "DELETE FROM Plays WHERE GameName = '" + GameName + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int UpdateCompletionStatus(string GameName, string status, string GamerUserName)
+        {
+            string query = "UPDATE Plays SET CompletionStatus = '" + status + "' WHERE GamerUserName = '" + GamerUserName + "' AND GameName = '" + GameName + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int UpdateRatingandDifficulty(string GameName, string UserName, string Difficulty, int Rating)
+        {
+            string query = "UPDATE Plays SET Difficulty = '" + Difficulty + "', UserRating = '" + Rating + "' WHERE GamerUserName = '" + UserName + "' AND GameName = '" + GameName + "'";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
