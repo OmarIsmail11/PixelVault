@@ -92,7 +92,7 @@
             // pictureBox2
             // 
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Image = Properties.Resources.userlogo;
             pictureBox2.Location = new Point(69, 160);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(34, 36);

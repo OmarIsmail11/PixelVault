@@ -38,6 +38,7 @@
             GameStoreButton = new Button();
             GamePublisherButton = new Button();
             button1 = new Button();
+            ExitButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -78,7 +79,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Image = Properties.Resources.store;
             pictureBox2.Location = new Point(306, 141);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(196, 178);
@@ -142,12 +143,23 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // ExitButton
+            // 
+            ExitButton.Image = Properties.Resources.close;
+            ExitButton.Location = new Point(707, 25);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(52, 42);
+            ExitButton.TabIndex = 20;
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
+            // 
             // SignUp
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.solid_color_image;
             ClientSize = new Size(800, 450);
+            Controls.Add(ExitButton);
             Controls.Add(button1);
             Controls.Add(GamePublisherButton);
             Controls.Add(GameStoreButton);
@@ -158,6 +170,7 @@
             Controls.Add(label1);
             Controls.Add(label3);
             Name = "SignUp";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SignUp";
             Load += SignUp_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -178,5 +191,6 @@
         private Button GameStoreButton;
         private Button GamePublisherButton;
         private Button button1;
+        private Button ExitButton;
     }
 }

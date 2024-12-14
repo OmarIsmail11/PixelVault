@@ -42,5 +42,10 @@ namespace PixelVaultGUI
         {
 
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
