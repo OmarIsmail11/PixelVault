@@ -82,12 +82,12 @@ namespace PixelVaultGUI
         {
             if (Isempty(password)) //Checks if empty
             {
-                MessageBox.Show( "Password is empty!");
+                MessageBox.Show( "Password is empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false; 
             }
             if (!StringLengthIsinrange(password, 8, 20)) //Checks if length between 8-20
             {
-                MessageBox.Show("Password must be at least 8 characters!");
+                MessageBox.Show("Password must be at least 8 characters!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -98,22 +98,22 @@ namespace PixelVaultGUI
 
             if (!hasNumber.IsMatch(password)) //Checks if has at least one number
             {
-                MessageBox.Show("Password must contain at least one number!");
+                MessageBox.Show("Password must contain at least one number!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!hasUpperChar.IsMatch(password)) //Checks if has at least one uppercase letter
             {
-                MessageBox.Show("Password must contain at least one uppercase letter!");
+                MessageBox.Show("Password must contain at least one uppercase letter!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!hasLowerChar.IsMatch(password)) //Checks if has at least one lowercase letter
             {
-                MessageBox.Show("Password must contain at least one lowercase letter!");
+                MessageBox.Show("Password must contain at least one lowercase letter!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!hasSpecialSymbol.IsMatch(password)) //Checks if has at least one special symbol
             {
-                MessageBox.Show("Password must contain at least one special symbol!");
+                MessageBox.Show("Password must contain at least one special symbol!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -124,22 +124,22 @@ namespace PixelVaultGUI
         {
             if (Isempty(userName))
             {
-                MessageBox.Show("Username is empty!");
+                MessageBox.Show("Username is empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!StringLengthIsinrange(userName, 5, 30))
             {
-                MessageBox.Show("Username must be at least 5 characters!");
+                MessageBox.Show("Username must be at least 5 characters!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (hasWhiteSpace(userName))
             {
-                MessageBox.Show("Username can't have whitespaces!");
+                MessageBox.Show("Username can't have whitespaces!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (startsWithNumber(userName))
             {
-                MessageBox.Show("Username can't start with a number!");
+                MessageBox.Show("Username can't start with a number!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -148,7 +148,7 @@ namespace PixelVaultGUI
 
             if (hasInvalidSpecialSymbol.IsMatch(userName))
             {
-                MessageBox.Show("Username can only contain any of the following symbols ($,_,.,-)");
+                MessageBox.Show("Username can only contain any of the following symbols ($,_,.,-)", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -160,7 +160,7 @@ namespace PixelVaultGUI
             int UserNameExists = controllerObj.CheckIfUserNameExists(userName); //1 for exists & 0 otherwise
             if (UserNameExists == 1)
             {
-                MessageBox.Show("Username is already taken!");
+                MessageBox.Show("Username is already taken!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -169,17 +169,17 @@ namespace PixelVaultGUI
         {
             if (Isempty(name))
             {
-                MessageBox.Show("Name is empty!");
+                MessageBox.Show("Name is empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!IsAlphabetic(name))
             {
-                MessageBox.Show("Name must contain only alphabetic letters!");
+                MessageBox.Show("Name must contain only alphabetic letters!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!StringLengthIsinrange(name,5, 30))
             {
-                MessageBox.Show("Name must be at least 5 characters!");
+                MessageBox.Show("Name must be at least 5 characters!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -189,17 +189,17 @@ namespace PixelVaultGUI
         {
             if (Isempty(name))
             {
-                MessageBox.Show("First Name is empty!");
+                MessageBox.Show("First Name is empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!IsAlphabetic(name))
             {
-                MessageBox.Show("First name must contain only alphabetic letters!");
+                MessageBox.Show("First name must contain only alphabetic letters!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!StringLengthIsinrange(name, 1, 30))
             {
-                MessageBox.Show("First name is too long!");
+                MessageBox.Show("First name is too long!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -209,17 +209,17 @@ namespace PixelVaultGUI
         {
             if (Isempty(name))
             {
-                MessageBox.Show("Last Name is empty!");
+                MessageBox.Show("Last Name is empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!IsAlphabetic(name))
             {
-                MessageBox.Show("Last name must contain only alphabetic letters!");
+                MessageBox.Show("Last name must contain only alphabetic letters!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!StringLengthIsinrange(name, 1, 30))
             {
-                MessageBox.Show("Last name is too long!");
+                MessageBox.Show("Last name is too long!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -229,12 +229,12 @@ namespace PixelVaultGUI
         {
             if (Isempty(name))
             {
-                MessageBox.Show("Real Name is empty!");
+                MessageBox.Show("Real Name is empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!StringLengthIsinrange(name, 1, 30))
             {
-                MessageBox.Show("Real name is too long!");
+                MessageBox.Show("Real name is too long!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -243,7 +243,7 @@ namespace PixelVaultGUI
         {
             if (string.IsNullOrWhiteSpace(email))
             {
-                MessageBox.Show("Email is empty!");
+                MessageBox.Show("Email is empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -256,7 +256,7 @@ namespace PixelVaultGUI
             }
             catch
             {
-                MessageBox.Show("Invalid email address!");
+                MessageBox.Show("Invalid email address!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

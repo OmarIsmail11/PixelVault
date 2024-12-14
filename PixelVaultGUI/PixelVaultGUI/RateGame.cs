@@ -160,6 +160,7 @@ namespace PixelVaultGUI
             Name = "RateGame";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Rate Game";
+            Load += RateGame_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -191,7 +192,7 @@ namespace PixelVaultGUI
             }
 
             int rating = Convert.ToInt16(numericUpDown1.Value);
-            
+
             int result = controllerObj.UpdateRatingandDifficulty(GameName, UserName, difficulty, rating);
             if (result == 0)
             {
@@ -206,6 +207,11 @@ namespace PixelVaultGUI
                 this.Close();
                 return;
             }
+        }
+
+        private void RateGame_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

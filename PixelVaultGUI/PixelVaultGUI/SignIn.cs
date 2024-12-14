@@ -55,7 +55,7 @@ namespace PixelVaultGUI
             string Password = PasswordSignInTextBox.Text;
             if (Validations.Isempty(Password))
             {
-                MessageBox.Show("Invalid ! Password is empty !");
+                MessageBox.Show("Invalid ! Password is empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 UserNameSignInTextBox.Text = "";
                 PasswordSignInTextBox.Text = "";
                 return;
@@ -64,14 +64,14 @@ namespace PixelVaultGUI
             string Authorization = controllerObj.CheckCredentials(UserName, Password);
             if (Authorization == "")
             {
-                MessageBox.Show("Incorrect username or password !");
+                MessageBox.Show("Incorrect username or password!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 UserNameSignInTextBox.Text = "";
                 PasswordSignInTextBox.Text = "";
                 return;
             }
             if (Authorization == "Gamer")
             {
-                MessageBox.Show("Welcome back " + UserName + "!");
+                MessageBox.Show($"Welcome back, {UserName}!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 GamerMain gamerMain = new GamerMain(UserName);
                 gamerMain.ShowDialog();

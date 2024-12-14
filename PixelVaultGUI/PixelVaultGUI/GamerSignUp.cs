@@ -64,12 +64,12 @@ namespace PixelVaultGUI
             string ReEnterPassword = ReEnterPasswordTextBox.Text;
             if (ReEnterPassword == "")
             {
-                MessageBox.Show("Invalid! Please re-enter password in the required field!");
+                MessageBox.Show("Invalid! Please re-enter password in the required field!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (password != ReEnterPassword)
             {
-                MessageBox.Show("Invalid! Passwords must be the same!");
+                MessageBox.Show("Invalid! Passwords must be the same!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -83,19 +83,19 @@ namespace PixelVaultGUI
             int InsertResult = controllerObj.InsertNewGamerIntoGamerTable(UserName, FirstName, LastName, email, country, BirthDate);
             if (InsertResult == 0)
             {
-                MessageBox.Show("Error ! Account was not created!");
+                MessageBox.Show("Error ! Account was not created!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             int InsertResult2 = controllerObj.InsertNewGamerIntoUserPasswordsAuthorizationTable(UserName, password);
             if (InsertResult == 0)
             {
-                MessageBox.Show("Error ! Account was not created!");
+                MessageBox.Show("Error ! Account was not created!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
-                MessageBox.Show("Account created succesfully !");
+                MessageBox.Show("Account created succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
         }

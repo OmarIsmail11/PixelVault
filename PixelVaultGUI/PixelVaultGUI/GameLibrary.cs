@@ -37,7 +37,7 @@ namespace PixelVaultGUI
             {
                 gameName = YourGamesDataGridView.SelectedRows[0].Cells["Name"].Value.ToString();
 
-                var output = MessageBox.Show($"Are you sure you want to remove the game: {gameName}?", "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var output = MessageBox.Show($"Are you sure you want to remove the game: {gameName}?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (output == DialogResult.Yes)
                 {
