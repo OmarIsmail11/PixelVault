@@ -158,6 +158,7 @@ namespace PixelVaultGUI
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "RateGame";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Rate Game";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

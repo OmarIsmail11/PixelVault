@@ -31,6 +31,7 @@ namespace PixelVaultGUI
         private void GamerLibraryButton_Click(object sender, EventArgs e)
         {
             GamerLibraryButton.BackColor = Color.Thistle;
+            TournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             gameLibrary1.Visible = true;
         }
 
