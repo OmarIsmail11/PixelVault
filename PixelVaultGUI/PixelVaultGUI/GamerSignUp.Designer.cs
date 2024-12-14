@@ -49,6 +49,7 @@
             label9 = new Label();
             ShowHideButton = new Button();
             button1 = new Button();
+            ExitButton = new Label();
             SuspendLayout();
             // 
             // label3
@@ -242,13 +243,26 @@
             // 
             // button1
             // 
-            button1.Image = Properties.Resources.images1;
+            button1.Image = Properties.Resources.prev;
             button1.Location = new Point(12, 9);
             button1.Name = "button1";
-            button1.Size = new Size(81, 69);
+            button1.Size = new Size(50, 51);
             button1.TabIndex = 34;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // ExitButton
+            // 
+            ExitButton.AutoSize = true;
+            ExitButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ExitButton.ForeColor = SystemColors.ButtonHighlight;
+            ExitButton.Image = Properties.Resources.dark_purple_colour;
+            ExitButton.Location = new Point(753, 12);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(35, 38);
+            ExitButton.TabIndex = 35;
+            ExitButton.Text = "X";
+            ExitButton.Click += ExitButton_Click;
             // 
             // GamerSignUp
             // 
@@ -256,6 +270,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.solid_color_image;
             ClientSize = new Size(800, 450);
+            Controls.Add(ExitButton);
             Controls.Add(button1);
             Controls.Add(ShowHideButton);
             Controls.Add(label9);
@@ -276,7 +291,9 @@
             Controls.Add(SignInButton);
             Controls.Add(label1);
             Controls.Add(label3);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "GamerSignUp";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "GamerSignUp";
             Load += GamerSignUp_Load;
             ResumeLayout(false);
@@ -305,5 +322,6 @@
         private Label label9;
         private Button ShowHideButton;
         private Button button1;
+        private Label ExitButton;
     }
 }

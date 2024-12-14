@@ -16,7 +16,7 @@ namespace PixelVaultGUI
         public string UserName;
         public string GameName;
         private DataGridViewRow rowToUpdate;
-
+        private Button button2;
         Controller controllerObj = new Controller();
         public RateGame(string gamerusername, string gamename, DataGridViewRow row)
         {
@@ -38,6 +38,7 @@ namespace PixelVaultGUI
             numericUpDown1 = new NumericUpDown();
             label1 = new Label();
             button1 = new Button();
+            button2 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((ISupportInitialize)numericUpDown1).BeginInit();
@@ -50,7 +51,7 @@ namespace PixelVaultGUI
             panel1.Controls.Add(MediumRadioButton);
             panel1.Controls.Add(EasyRadioButton);
             panel1.Controls.Add(Rating);
-            panel1.Location = new Point(47, 33);
+            panel1.Location = new Point(43, 78);
             panel1.Name = "panel1";
             panel1.Size = new Size(583, 144);
             panel1.TabIndex = 0;
@@ -109,7 +110,7 @@ namespace PixelVaultGUI
             panel2.BackgroundImage = Properties.Resources.dark_purple_colour;
             panel2.Controls.Add(numericUpDown1);
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(151, 217);
+            panel2.Location = new Point(151, 250);
             panel2.Name = "panel2";
             panel2.Size = new Size(403, 85);
             panel2.TabIndex = 4;
@@ -142,7 +143,7 @@ namespace PixelVaultGUI
             button1.BackgroundImage = Properties.Resources.solid_color_image;
             button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(279, 337);
+            button1.Location = new Point(279, 356);
             button1.Name = "button1";
             button1.Size = new Size(163, 67);
             button1.TabIndex = 5;
@@ -150,13 +151,25 @@ namespace PixelVaultGUI
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.Image = Properties.Resources.prev;
+            button2.Location = new Point(12, 12);
+            button2.Name = "button2";
+            button2.Size = new Size(49, 51);
+            button2.TabIndex = 20;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // RateGame
             // 
             BackgroundImage = Properties.Resources.solid_color_image__1_;
             ClientSize = new Size(682, 453);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "RateGame";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Rate Game";
@@ -212,6 +225,11 @@ namespace PixelVaultGUI
         private void RateGame_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

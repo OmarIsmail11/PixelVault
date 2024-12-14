@@ -38,7 +38,7 @@
             GameStoreButton = new Button();
             GamePublisherButton = new Button();
             button1 = new Button();
-            ExitButton = new Button();
+            ExitButton = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -135,22 +135,25 @@
             // 
             // button1
             // 
-            button1.Image = Properties.Resources.images1;
-            button1.Location = new Point(40, 12);
+            button1.Image = Properties.Resources.prev;
+            button1.Location = new Point(12, 12);
             button1.Name = "button1";
-            button1.Size = new Size(81, 69);
+            button1.Size = new Size(49, 51);
             button1.TabIndex = 19;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // ExitButton
             // 
-            ExitButton.Image = Properties.Resources.close;
-            ExitButton.Location = new Point(707, 25);
+            ExitButton.AutoSize = true;
+            ExitButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ExitButton.ForeColor = SystemColors.ButtonHighlight;
+            ExitButton.Image = Properties.Resources.dark_purple_colour;
+            ExitButton.Location = new Point(741, 13);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(52, 42);
+            ExitButton.Size = new Size(35, 38);
             ExitButton.TabIndex = 20;
-            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Text = "X";
             ExitButton.Click += ExitButton_Click;
             // 
             // SignUp
@@ -169,6 +172,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(label3);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "SignUp";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SignUp";
@@ -191,6 +195,6 @@
         private Button GameStoreButton;
         private Button GamePublisherButton;
         private Button button1;
-        private Button ExitButton;
+        private Label ExitButton;
     }
 }

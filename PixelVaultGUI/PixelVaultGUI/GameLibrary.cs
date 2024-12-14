@@ -20,6 +20,7 @@ namespace PixelVaultGUI
             InitializeComponent();
             DataTable yourGames = controllerObj.RetreiveGamerGamesLibrary(GamerUserName);
             YourGamesDataGridView.DataSource = yourGames;
+            YourGamesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             YourGamesDataGridView.Refresh();
         }
 
@@ -121,6 +122,11 @@ namespace PixelVaultGUI
                 MessageBox.Show("Please select a game to rate.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

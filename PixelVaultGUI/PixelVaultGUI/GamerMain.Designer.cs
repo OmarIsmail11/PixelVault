@@ -35,6 +35,8 @@
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             gameLibrary1 = new GameLibrary();
+            label1 = new Label();
+            LogOutButton = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -43,6 +45,8 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.dark_purple_colour;
+            panel1.Controls.Add(LogOutButton);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(TournamentsButton);
             panel1.Controls.Add(GamerLibraryButton);
             panel1.Controls.Add(WelcomeUserLabel);
@@ -115,6 +119,28 @@
             gameLibrary1.TabIndex = 0;
             gameLibrary1.Load += gameLibrary1_Load;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Image = Properties.Resources.dark_purple_colour;
+            label1.Location = new Point(109, 598);
+            label1.Name = "label1";
+            label1.Size = new Size(108, 31);
+            label1.TabIndex = 19;
+            label1.Text = "Sign Out";
+            // 
+            // LogOutButton
+            // 
+            LogOutButton.Image = Properties.Resources.logoutbutton;
+            LogOutButton.Location = new Point(36, 595);
+            LogOutButton.Name = "LogOutButton";
+            LogOutButton.Size = new Size(55, 45);
+            LogOutButton.TabIndex = 20;
+            LogOutButton.UseVisualStyleBackColor = true;
+            LogOutButton.Click += LogOutButton_Click;
+            // 
             // GamerMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -122,9 +148,10 @@
             ClientSize = new Size(1282, 653);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "GamerMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "GamerMain";
+            Text = "Game Library";
             Load += GamerMain_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -142,5 +169,7 @@
         private Button GamerLibraryButton;
         private Button TournamentsButton;
         private GameLibrary gameLibrary1;
+        private Label label1;
+        private Button LogOutButton;
     }
 }

@@ -34,6 +34,7 @@
             button1 = new Button();
             UpdateGameCompletionButton = new Button();
             RateGameButton = new Button();
+            ExitButton = new Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)YourGamesDataGridView).BeginInit();
             SuspendLayout();
@@ -44,9 +45,9 @@
             panel3.BackgroundImage = Properties.Resources.dark_purple_colour;
             panel3.Controls.Add(YourGamesDataGridView);
             panel3.Controls.Add(label1);
-            panel3.Location = new Point(20, 24);
+            panel3.Location = new Point(21, 48);
             panel3.Name = "panel3";
-            panel3.Size = new Size(969, 299);
+            panel3.Size = new Size(969, 315);
             panel3.TabIndex = 1;
             // 
             // YourGamesDataGridView
@@ -55,7 +56,7 @@
             YourGamesDataGridView.Location = new Point(24, 59);
             YourGamesDataGridView.Name = "YourGamesDataGridView";
             YourGamesDataGridView.RowHeadersWidth = 51;
-            YourGamesDataGridView.Size = new Size(922, 212);
+            YourGamesDataGridView.Size = new Size(922, 236);
             YourGamesDataGridView.TabIndex = 1;
             // 
             // label1
@@ -75,7 +76,7 @@
             button1.BackgroundImage = Properties.Resources.solid_color_image;
             button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(328, 339);
+            button1.Location = new Point(328, 382);
             button1.Name = "button1";
             button1.Size = new Size(362, 67);
             button1.TabIndex = 2;
@@ -88,7 +89,7 @@
             UpdateGameCompletionButton.BackgroundImage = Properties.Resources.solid_color_image;
             UpdateGameCompletionButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             UpdateGameCompletionButton.ForeColor = SystemColors.ButtonHighlight;
-            UpdateGameCompletionButton.Location = new Point(328, 422);
+            UpdateGameCompletionButton.Location = new Point(328, 466);
             UpdateGameCompletionButton.Name = "UpdateGameCompletionButton";
             UpdateGameCompletionButton.Size = new Size(358, 67);
             UpdateGameCompletionButton.TabIndex = 3;
@@ -101,7 +102,7 @@
             RateGameButton.BackgroundImage = Properties.Resources.solid_color_image;
             RateGameButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RateGameButton.ForeColor = SystemColors.ButtonHighlight;
-            RateGameButton.Location = new Point(324, 511);
+            RateGameButton.Location = new Point(328, 551);
             RateGameButton.Name = "RateGameButton";
             RateGameButton.Size = new Size(362, 67);
             RateGameButton.TabIndex = 4;
@@ -109,11 +110,25 @@
             RateGameButton.UseVisualStyleBackColor = true;
             RateGameButton.Click += RateGameButton_Click;
             // 
+            // ExitButton
+            // 
+            ExitButton.AutoSize = true;
+            ExitButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ExitButton.ForeColor = SystemColors.ButtonHighlight;
+            ExitButton.Image = Properties.Resources.dark_purple_colour;
+            ExitButton.Location = new Point(976, 0);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(35, 38);
+            ExitButton.TabIndex = 17;
+            ExitButton.Text = "X";
+            ExitButton.Click += ExitButton_Click;
+            // 
             // GameLibrary
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 188, 212);
+            Controls.Add(ExitButton);
             Controls.Add(RateGameButton);
             Controls.Add(UpdateGameCompletionButton);
             Controls.Add(button1);
@@ -125,6 +140,7 @@
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)YourGamesDataGridView).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -135,5 +151,6 @@
         private Button button1;
         private Button UpdateGameCompletionButton;
         private Button RateGameButton;
+        private Label ExitButton;
     }
 }

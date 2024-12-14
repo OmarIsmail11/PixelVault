@@ -47,6 +47,7 @@
             ConsoleTypeComboBox = new ComboBox();
             label4 = new Label();
             button1 = new Button();
+            ExitButton = new Label();
             SuspendLayout();
             // 
             // label3
@@ -221,13 +222,26 @@
             // 
             // button1
             // 
-            button1.Image = Properties.Resources.images1;
+            button1.Image = Properties.Resources.prev;
             button1.Location = new Point(25, 9);
             button1.Name = "button1";
-            button1.Size = new Size(81, 69);
+            button1.Size = new Size(39, 40);
             button1.TabIndex = 55;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // ExitButton
+            // 
+            ExitButton.AutoSize = true;
+            ExitButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ExitButton.ForeColor = SystemColors.ButtonHighlight;
+            ExitButton.Image = Properties.Resources.dark_purple_colour;
+            ExitButton.Location = new Point(753, 11);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(35, 38);
+            ExitButton.TabIndex = 56;
+            ExitButton.Text = "X";
+            ExitButton.Click += ExitButton_Click;
             // 
             // GamePublisherSignUp
             // 
@@ -235,6 +249,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.solid_color_image;
             ClientSize = new Size(800, 450);
+            Controls.Add(ExitButton);
             Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(ConsoleTypeComboBox);
@@ -253,7 +268,9 @@
             Controls.Add(SignInButton);
             Controls.Add(label1);
             Controls.Add(label3);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "GamePublisherSignUp";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Game Publisher Sign Up";
             Load += GamePublisherSignUp_Load;
             ResumeLayout(false);
@@ -283,5 +300,6 @@
         private ComboBox ConsoleTypeComboBox;
         private Label label4;
         private Button button1;
+        private Label ExitButton;
     }
 }

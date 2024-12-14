@@ -41,6 +41,7 @@
             SignUpButton = new Button();
             ShowHideButton = new Button();
             SignInButton = new Button();
+            ExitButton = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -172,13 +173,26 @@
             SignInButton.BackColor = Color.Black;
             SignInButton.BackgroundImage = (Image)resources.GetObject("SignInButton.BackgroundImage");
             SignInButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SignInButton.Location = new Point(341, 301);
+            SignInButton.Location = new Point(330, 307);
             SignInButton.Name = "SignInButton";
             SignInButton.Size = new Size(142, 44);
             SignInButton.TabIndex = 15;
             SignInButton.Text = "Sign In";
             SignInButton.UseVisualStyleBackColor = false;
             SignInButton.Click += SignInButton_Click;
+            // 
+            // ExitButton
+            // 
+            ExitButton.AutoSize = true;
+            ExitButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ExitButton.ForeColor = SystemColors.ButtonHighlight;
+            ExitButton.Image = Properties.Resources.dark_purple_colour;
+            ExitButton.Location = new Point(735, 9);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(35, 38);
+            ExitButton.TabIndex = 16;
+            ExitButton.Text = "X";
+            ExitButton.Click += ExitButton_Click;
             // 
             // SignIn
             // 
@@ -187,6 +201,7 @@
             BackColor = Color.AliceBlue;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(782, 453);
+            Controls.Add(ExitButton);
             Controls.Add(SignInButton);
             Controls.Add(ShowHideButton);
             Controls.Add(SignUpButton);
@@ -199,6 +214,7 @@
             Controls.Add(UserNameSignInTextBox);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "SignIn";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sign In";
@@ -223,5 +239,6 @@
         private Button SignUpButton;
         private Button ShowHideButton;
         private Button SignInButton;
+        private Label ExitButton;
     }
 }
