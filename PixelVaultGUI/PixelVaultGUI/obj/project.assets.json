@@ -1687,24 +1687,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\osama\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Uni\\Upper Level\\Junior\\First Term\\CMPS202-Introduction to database\\Project\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
+      "projectUniqueName": "C:\\Users\\osama\\OneDrive\\Desktop\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
       "projectName": "PixelVaultGUI",
-      "projectPath": "D:\\Uni\\Upper Level\\Junior\\First Term\\CMPS202-Introduction to database\\Project\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Uni\\Upper Level\\Junior\\First Term\\CMPS202-Introduction to database\\Project\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\obj\\",
+      "projectPath": "C:\\Users\\osama\\OneDrive\\Desktop\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
+      "packagesPath": "C:\\Users\\osama\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\osama\\OneDrive\\Desktop\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\osama\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1712,7 +1707,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1760,7 +1754,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

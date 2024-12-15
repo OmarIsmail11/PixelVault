@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PixelVaultGUI
 {
-    public partial class Admin : Form
+    public partial class Admin_Add : Form
     {
-        public Admin()
+        public Admin_Add()
         {
             InitializeComponent();
         }

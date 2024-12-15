@@ -11,6 +11,39 @@ namespace PixelVaultGUI
 {
     internal static class Validations
     {
+        public static bool IsValidUrl(string url)
+        {
+            // Regular expression for validating a URL
+            string pattern = @"^(http|https)://[^ ""]+$";
+            Regex regex = new Regex(pattern);
+            if ((!regex.IsMatch(url)))
+            {
+                MessageBox.Show("Error ! Invalid URL!", "", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                return false;
+            }
+            return true;
+        }
+
+        public static bool IsComboBoxEmpty(ComboBox comboBox)
+        {
+            if (comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select from the list!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        public static bool Isint(string input)
+        {
+            if (!(input.All(char.IsNumber)))
+            {
+                MessageBox.Show("Error ! Invalid Number", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
         public static bool Isinteger(string input, out int val)
         {
             return int.TryParse((input), out val);
@@ -49,7 +82,7 @@ namespace PixelVaultGUI
 
         public static bool Isempty(string input)
         {
-            if (input == "") return true;
+            if (string.IsNullOrWhiteSpace(input)) return true;
             return false;
         }
         public static bool Istoolong(string input, int maxlen)

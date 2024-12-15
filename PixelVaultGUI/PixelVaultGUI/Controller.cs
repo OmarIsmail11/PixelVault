@@ -178,6 +178,50 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int addadmin(string UserName, string Password)
+        {
+            string query = $"INSERT INTO UserPasswordsAuthorization VALUES ('{UserName}','{Password}', 'Admin');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int addman(string Name, string Country)
+        {
+            string query = $"INSERT INTO Manufacturer VALUES ('{Name}','{Country}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int addeng(string Name, string language, string platform)
+        {
+            string query = $"INSERT INTO GameEngine VALUES ('{Name}','{language}','{platform}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int addrev(string Name, string URL, string date)
+        {
+            string query = $"INSERT INTO GameReviewer VALUES ('{Name}','{URL}','{date}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int addcon(string Name, string date, string man)
+        {
+            string query = $"INSERT INTO Console VALUES ('{Name}','{date}','{man}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int addstor(string Name, int rate, int hotline)
+        {
+            string query = $"INSERT INTO GamingStore VALUES ('{Name}',{rate},{hotline});";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int addpub(string Name, string country, string type, string date)
+        {
+            string query = $"INSERT INTO GamingStore VALUES ('{Name}','{country}','{type}','{date}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        //**********************************************************************************
+
         public int CheckIfEmailAlreadyAssociatedWithAnAccount(string email)
         {
             string query = "SELECT COUNT(*) FROM Gamer WHERE Email = '" + email + "';";
