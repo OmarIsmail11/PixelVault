@@ -93,6 +93,10 @@ namespace PixelVaultGUI
             else if (Authorization == "Admin")
             {
                 MessageBox.Show("Welcome back " + UserName + "! (Opens Admin)");
+                this.Hide();
+                Admin_Edit admin_Edit = new Admin_Edit();
+                admin_Edit.ShowDialog();
+                this.Show();
                 //Open Admin Form
                 //Ba2ollak ya tarek ma3ak shelen ? Eh ? Arken Belen.
             }
