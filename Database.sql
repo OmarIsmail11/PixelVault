@@ -70,9 +70,10 @@
 	CREATE TABLE Tournament(
 	TName CHAR(20),
 	Capacity INT NOT NULL,
+	AvailableSpots INT NOT NULL,
 	TournamentType	VARCHAR(20) NOT NULL CHECK (TournamentType IN ('Sports' , 'Racing' , 'Fighting', 'Battle Royale' , 'FPS' ) ) ,
 	TLocation	CHAR(20) NOT NULL,
-	BeginDate	DATE ,
+	StartDate	DATE ,
 	Organizer	varchar(30),
 	PrizeMoney DECIMAL(10,2),
 	PRIMARY KEY(TName) ,
@@ -172,7 +173,6 @@
 	CREATE TABLE Enroll(
 	GamerUserName VARCHAR(30),
 	TName CHAR(20),
-	Ranking INT DEFAULT 0,
 	PRIMARY KEY(GamerUserName,TName),
 	FOREIGN KEY (GamerUserName) REFERENCES Gamer(UserName)
 		ON DELETE CASCADE
@@ -379,26 +379,26 @@
 
 
 	INSERT INTO Tournament VALUES
-	('EVO', 500, 'Fighting', 'Las Vegas', '2023-07-07', 'Steam', 250000.00),
-	('ESL Pro League', 1000, 'FPS', 'Katowice', '2023-02-01', 'Epic_Games', 1000000.00),
-	('The International', 500, 'Battle Royale', 'Seattle', '2023-10-15', 'Steam', 50000000.00),
-	('DreamHack', 800, 'FPS', 'Stockholm', '2023-06-15', 'GOG', 500000.00),
-	('PAX', 400, 'Sports', 'Boston', '2023-03-01', 'PlayStation_Store', 100000.00),
-	('Capcom Cup', 250, 'Fighting', 'Tokyo', '2023-12-05', 'Microsoft_Store', 300000.00),
-	('Fortnite World Cup', 500, 'Battle Royale', 'New York', '2023-07-01', 'Nintendo_eShop', 3000000.00),
-	('Overwatch League', 300, 'FPS', 'Los Angeles', '2023-05-15', 'Origin', 500000.00),
-	('RLCS', 600, 'Racing', 'San Francisco', '2023-08-20', 'Uplay', 200000.00),
-	('FIFAe World Cup', 128, 'Sports', 'London', '2023-07-15', 'Itch.io', 500000.00),
-	('CS:GO Major', 1000, 'FPS', 'Berlin', '2023-11-05', 'Green_Man_Gaming', 2000000.00),
-	('Call of Duty League', 400, 'FPS', 'Dallas', '2023-09-20', 'Humble_Bundle', 1500000.00),
-	('Halo Championship', 300, 'FPS', 'Chicago', '2023-10-10', 'Fanatical', 400000.00),
-	('Tekken World Tour', 150, 'Fighting', 'Seoul', '2023-11-25', 'GameStop', 200000.00),
-	('Gran Turismo Cup', 128, 'Racing', 'Paris', '2023-12-12', 'Best_Buy', 300000.00),
-	('Epic Games Cup', 600, 'FPS', 'Xatowice', '2023-03-15', 'GOG', 750000),
-	('Fall Brawl', 250, 'Fighting', 'London', '2023-09-01', 'GameStop', 200000),
-	('Spring Clash', 500, 'FPS', 'Los Angeles', '2023-06-01', 'GameStop', 250000),
-	('Summer Clash', 600, 'FPS', 'Miami', '2023-07-15', 'GameStop', 300000),
-	('Winter War', 400, 'Fighting', 'Chicago', '2023-09-15', 'Walmart', 300000);
+	('EVO', 500, 500, 'Fighting', 'Las Vegas', '2023-07-07', 'Steam', 250000.00),
+	('ESL Pro League', 1000, 1000, 'FPS', 'Katowice', '2023-02-01', 'Epic_Games', 1000000.00),
+	('The International', 500, 500, 'Battle Royale', 'Seattle', '2023-10-15', 'Steam', 50000000.00),
+	('DreamHack', 800, 800, 'FPS', 'Stockholm', '2023-06-15', 'GOG', 500000.00),
+	('PAX', 400, 400, 'Sports', 'Boston', '2023-03-01', 'PlayStation_Store', 100000.00),
+	('Capcom Cup', 250, 250, 'Fighting', 'Tokyo', '2023-12-05', 'Microsoft_Store', 300000.00),
+	('Fortnite World Cup', 500, 500, 'Battle Royale', 'New York', '2023-07-01', 'Nintendo_eShop', 3000000.00),
+	('Overwatch League', 300, 300, 'FPS', 'Los Angeles', '2023-05-15', 'Origin', 500000.00),
+	('RLCS', 600, 600, 'Racing', 'San Francisco', '2023-08-20', 'Uplay', 200000.00),
+	('FIFAe World Cup', 128, 128, 'Sports', 'London', '2023-07-15', 'Itch.io', 500000.00),
+	('CS:GO Major', 1000, 1000, 'FPS', 'Berlin', '2023-11-05', 'Green_Man_Gaming', 2000000.00),
+	('Call of Duty League', 400, 400, 'FPS', 'Dallas', '2023-09-20', 'Humble_Bundle', 1500000.00),
+	('Halo Championship', 300, 300, 'FPS', 'Chicago', '2023-10-10', 'Fanatical', 400000.00),
+	('Tekken World Tour', 150, 150, 'Fighting', 'Seoul', '2023-11-25', 'GameStop', 200000.00),
+	('Gran Turismo Cup', 128, 128, 'Racing', 'Paris', '2023-12-12', 'Best_Buy', 300000.00),
+	('Epic Games Cup', 600, 600, 'FPS', 'Xatowice', '2023-03-15', 'GOG', 750000),
+	('Fall Brawl', 250, 250, 'Fighting', 'London', '2023-09-01', 'GameStop', 200000),
+	('Spring Clash', 500, 500, 'FPS', 'Los Angeles', '2023-06-01', 'GameStop', 250000),
+	('Summer Clash', 600, 600, 'FPS', 'Miami', '2023-07-15', 'GameStop', 300000),
+	('Winter War', 400, 400, 'Fighting', 'Chicago', '2023-09-15', 'Walmart', 300000);
 
 	INSERT INTO Award VALUES
 	('Best Competitive Game', 'Battle Royale', 'Polygon', 'Apex Legends', 2020),
