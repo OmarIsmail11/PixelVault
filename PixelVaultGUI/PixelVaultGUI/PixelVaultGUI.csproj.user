@@ -28,6 +28,12 @@
     <Compile Update="SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="StoreMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StoreSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Tournaments.cs">
       <SubType>UserControl</SubType>
     </Compile>

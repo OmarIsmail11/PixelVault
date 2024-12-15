@@ -15,6 +15,10 @@ namespace PixelVaultGUI
         {
             return int.TryParse((input), out val);
         }
+        public static bool IsLongInteger(string input,out long val)
+        {
+            return long.TryParse((input), out val);
+        }
         public static bool IsAlphabetic(string input)
         {
             foreach (char c in input)
@@ -269,6 +273,14 @@ namespace PixelVaultGUI
                 return false;
             }
             return true;
+        }
+        public static bool IsPositive(string Number)
+        {
+            int num;
+            int.TryParse(Number, out num);
+            if (num >= 0) return true;
+            return false;
+
         }
     }
 }

@@ -212,6 +212,18 @@ namespace DBapplication
             string query = "UPDATE Tournament SET AvailableSpots = AvailableSpots - 1 WHERE TName = '" + Tname + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public int InsertNewStoreIntoStoreTable(string UserName, string StoreName,int Rating,int Hotline)
+        {
+            string query = "INSERT INTO GamingStore VALUES ('" + UserName + "','"+StoreName+"','"+Rating+"','"+Hotline+"')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertNewStoreIntoUserPasswordsAuthorizationTable(string UserName, string Password)
+        {
+            string query = "INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Store');";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();

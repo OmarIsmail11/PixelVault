@@ -100,7 +100,7 @@ namespace PixelVaultGUI
             }
 
             int InsertResult2 = controllerObj.InsertNewGamePublisherIntoUserPasswordsAuthorizationTable(UserName, password);
-            if (InsertResult == 0)
+            if (InsertResult2 == 0)
             {
                 MessageBox.Show("Error ! Account was not created!");
                 return;
@@ -115,6 +115,8 @@ namespace PixelVaultGUI
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+            SignUp signUp = new SignUp();
+            signUp.Show();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

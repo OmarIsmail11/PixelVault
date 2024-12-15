@@ -50,5 +50,12 @@ namespace PixelVaultGUI
         {
             Environment.Exit(0);
         }
+
+        private void GameStoreButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StoreSignUp signUp = new StoreSignUp();
+            signUp.ShowDialog();
+        }
     }
 }
