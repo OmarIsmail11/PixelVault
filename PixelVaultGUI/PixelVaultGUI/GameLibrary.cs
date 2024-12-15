@@ -28,6 +28,7 @@ namespace PixelVaultGUI
         {
             DataTable yourGames = controllerObj.RetreiveGamerGamesLibrary(GamerUserName);
             YourGamesDataGridView.DataSource = yourGames;
+            YourGamesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             YourGamesDataGridView.Refresh();
         }
 

@@ -184,6 +184,34 @@ namespace DBapplication
             return Convert.ToInt16(dbMan.ExecuteScalar(query));
         }
 
+        public DataTable RetreieveTournaments()
+        {
+            string query = "SELECT TName AS Name, Capacity, AvailableSpots, TournamentType AS Type, TLocation AS Location, StartDate, Organizer, PrizeMoney FROM Tournament;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable RetreieveTournamentsEntrolledIn(string UserName)
+        {
+            string query = "SELECT T.TName AS Name, Capacity, T.AvailableSpots, TournamentType AS Type, TLocation AS Location, T.StartDate, Organizer, PrizeMoney FROM Tournament AS T, Enroll AS E WHERE GamerUserName = '" + UserName + "' AND E.TName = T.TName;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int UnenrollFromTournament(string UserName, string TournamentName)
+        {
+            string query = "DELETE FROM Enroll WHERE GamerUserName = '" + UserName + "' AND TName = '" + TournamentName + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int IncrementAvailableSlots(string Tname)
+        {
+            string query = "UPDATE Tournament SET AvailableSpots = AvailableSpots + 1 WHERE TName = '" + Tname + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int DecrementAvailableSlots(string Tname)
+        {
+            string query = "UPDATE Tournament SET AvailableSpots = AvailableSpots - 1 WHERE TName = '" + Tname + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();

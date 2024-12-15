@@ -45,14 +45,16 @@
             panel3.BackgroundImage = Properties.Resources.dark_purple_colour;
             panel3.Controls.Add(YourGamesDataGridView);
             panel3.Controls.Add(label1);
-            panel3.Location = new Point(21, 48);
+            panel3.Location = new Point(21, 41);
             panel3.Name = "panel3";
-            panel3.Size = new Size(969, 315);
+            panel3.Size = new Size(969, 322);
             panel3.TabIndex = 1;
             // 
             // YourGamesDataGridView
             // 
             YourGamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            YourGamesDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            YourGamesDataGridView.GridColor = Color.Black;
             YourGamesDataGridView.Location = new Point(24, 59);
             YourGamesDataGridView.Name = "YourGamesDataGridView";
             YourGamesDataGridView.RowHeadersWidth = 51;
@@ -76,7 +78,7 @@
             button1.BackgroundImage = Properties.Resources.solid_color_image;
             button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(328, 382);
+            button1.Location = new Point(45, 393);
             button1.Name = "button1";
             button1.Size = new Size(362, 67);
             button1.TabIndex = 2;
@@ -89,7 +91,7 @@
             UpdateGameCompletionButton.BackgroundImage = Properties.Resources.solid_color_image;
             UpdateGameCompletionButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             UpdateGameCompletionButton.ForeColor = SystemColors.ButtonHighlight;
-            UpdateGameCompletionButton.Location = new Point(328, 466);
+            UpdateGameCompletionButton.Location = new Point(565, 393);
             UpdateGameCompletionButton.Name = "UpdateGameCompletionButton";
             UpdateGameCompletionButton.Size = new Size(358, 67);
             UpdateGameCompletionButton.TabIndex = 3;
@@ -102,7 +104,7 @@
             RateGameButton.BackgroundImage = Properties.Resources.solid_color_image;
             RateGameButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RateGameButton.ForeColor = SystemColors.ButtonHighlight;
-            RateGameButton.Location = new Point(328, 551);
+            RateGameButton.Location = new Point(333, 505);
             RateGameButton.Name = "RateGameButton";
             RateGameButton.Size = new Size(362, 67);
             RateGameButton.TabIndex = 4;

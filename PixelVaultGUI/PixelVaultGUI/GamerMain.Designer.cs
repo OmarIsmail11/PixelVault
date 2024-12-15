@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            LogOutButton = new Button();
+            label1 = new Label();
             TournamentsButton = new Button();
             GamerLibraryButton = new Button();
             WelcomeUserLabel = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             gameLibrary1 = new GameLibrary();
-            label1 = new Label();
-            LogOutButton = new Button();
+            tournaments1 = new Tournaments();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -55,6 +56,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(277, 653);
             panel1.TabIndex = 0;
+            // 
+            // LogOutButton
+            // 
+            LogOutButton.Image = Properties.Resources.logoutbutton;
+            LogOutButton.Location = new Point(36, 595);
+            LogOutButton.Name = "LogOutButton";
+            LogOutButton.Size = new Size(55, 45);
+            LogOutButton.TabIndex = 20;
+            LogOutButton.UseVisualStyleBackColor = true;
+            LogOutButton.Click += LogOutButton_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Image = Properties.Resources.dark_purple_colour;
+            label1.Location = new Point(109, 598);
+            label1.Name = "label1";
+            label1.Size = new Size(108, 31);
+            label1.TabIndex = 19;
+            label1.Text = "Sign Out";
             // 
             // TournamentsButton
             // 
@@ -104,6 +127,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(tournaments1);
             panel2.Controls.Add(gameLibrary1);
             panel2.Location = new Point(272, 0);
             panel2.Name = "panel2";
@@ -119,27 +143,13 @@
             gameLibrary1.TabIndex = 0;
             gameLibrary1.Load += gameLibrary1_Load;
             // 
-            // label1
+            // tournaments1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Image = Properties.Resources.dark_purple_colour;
-            label1.Location = new Point(109, 598);
-            label1.Name = "label1";
-            label1.Size = new Size(108, 31);
-            label1.TabIndex = 19;
-            label1.Text = "Sign Out";
-            // 
-            // LogOutButton
-            // 
-            LogOutButton.Image = Properties.Resources.logoutbutton;
-            LogOutButton.Location = new Point(36, 595);
-            LogOutButton.Name = "LogOutButton";
-            LogOutButton.Size = new Size(55, 45);
-            LogOutButton.TabIndex = 20;
-            LogOutButton.UseVisualStyleBackColor = true;
-            LogOutButton.Click += LogOutButton_Click;
+            tournaments1.BackColor = Color.FromArgb(192, 188, 212);
+            tournaments1.Location = new Point(0, 0);
+            tournaments1.Name = "tournaments1";
+            tournaments1.Size = new Size(1264, 816);
+            tournaments1.TabIndex = 1;
             // 
             // GamerMain
             // 
@@ -171,5 +181,6 @@
         private GameLibrary gameLibrary1;
         private Label label1;
         private Button LogOutButton;
+        private Tournaments tournaments1;
     }
 }

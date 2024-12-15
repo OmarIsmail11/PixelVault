@@ -19,7 +19,9 @@ namespace PixelVaultGUI
             UserName = username;
             WelcomeUserLabel.Text = "Welcome, " + UserName + "";
             gameLibrary1.GamerUserName = UserName;
+            tournaments1.GamerUserName = UserName;
             gameLibrary1.Visible = true;
+            tournaments1.Visible = false;
 
         }
 
@@ -33,6 +35,7 @@ namespace PixelVaultGUI
             GamerLibraryButton.BackColor = Color.Thistle;
             TournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             gameLibrary1.Visible = true;
+            tournaments1.Visible = false;
         }
 
         private void gameLibrary1_Load(object sender, EventArgs e)
@@ -44,6 +47,7 @@ namespace PixelVaultGUI
         {
             TournamentsButton.BackColor = Color.Thistle;
             GamerLibraryButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            tournaments1.Visible = true;
             gameLibrary1.Visible = false;
         }
 
