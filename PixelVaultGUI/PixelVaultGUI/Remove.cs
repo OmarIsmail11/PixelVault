@@ -50,8 +50,8 @@ namespace PixelVaultGUI
 
             DataTable dt6 = controllerObj.selectrev();
             rev.DataSource = dt6;
-            rev.DisplayMember = "StoreUserName";
-            rev.ValueMember = "StoreUserName";
+            rev.DisplayMember = "ReviewerName";
+            rev.ValueMember = "ReviewerName";
         }
 
         private void Remove_Load(object sender, EventArgs e)

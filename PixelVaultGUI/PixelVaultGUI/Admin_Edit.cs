@@ -16,5 +16,21 @@ namespace PixelVaultGUI
         {
             InitializeComponent();
         }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Admin_Add form1 = new Admin_Add();
+            form1.ShowDialog();
+            Show();
+        }
+
+        private void remove_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Remove form1 = new Remove();
+            form1.ShowDialog();
+            Show();
+        }
     }
 }

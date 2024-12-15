@@ -28,12 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Admin_Edit";
+            add = new Button();
+            remove = new Button();
+            SuspendLayout();
+            // 
+            // add
+            // 
+            add.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            add.Location = new Point(225, 213);
+            add.Name = "add";
+            add.Size = new Size(146, 56);
+            add.TabIndex = 0;
+            add.Text = "Add";
+            add.UseVisualStyleBackColor = true;
+            add.Click += add_Click;
+            // 
+            // remove
+            // 
+            remove.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            remove.Location = new Point(470, 213);
+            remove.Name = "remove";
+            remove.Size = new Size(146, 56);
+            remove.TabIndex = 1;
+            remove.Text = "Remove";
+            remove.UseVisualStyleBackColor = true;
+            remove.Click += remove_Click;
+            // 
+            // Admin_Edit
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(remove);
+            Controls.Add(add);
+            Name = "Admin_Edit";
+            Text = "Admin_Edit";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button add;
+        private Button remove;
     }
 }
