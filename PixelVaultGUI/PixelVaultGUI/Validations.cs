@@ -11,7 +11,6 @@ namespace PixelVaultGUI
 {
     internal static class Validations
     {
-
         public static bool Isinteger(string input, out int val)
         {
             return int.TryParse((input), out val);
@@ -259,6 +258,17 @@ namespace PixelVaultGUI
                 MessageBox.Show("Invalid email address!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+        public static bool CheckIfEmailTaken(string email)
+        {
+            Controller controllerObj = new Controller();
+            int UserNameExists = controllerObj.CheckIfEmailAlreadyAssociatedWithAnAccount(email); //1 for exists & 0 otherwise
+            if (UserNameExists == 1)
+            {
+                MessageBox.Show("This email is associated with an account!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -104,7 +104,7 @@ namespace PixelVaultGUI
             this.Hide();
             SignUp signUp = new SignUp();
             signUp.ShowDialog();
-            this.Show();
+            //this.Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

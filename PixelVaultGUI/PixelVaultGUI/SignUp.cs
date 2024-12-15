@@ -22,7 +22,7 @@ namespace PixelVaultGUI
             this.Hide();
             GamerSignUp signUp = new GamerSignUp();
             signUp.ShowDialog();
-            this.Show();
+            //this.Show();
         }
 
         private void GamePublisherButton_Click(object sender, EventArgs e)
@@ -30,12 +30,15 @@ namespace PixelVaultGUI
             this.Hide();
             GamePublisherSignUp signUp = new GamePublisherSignUp();
             signUp.ShowDialog();
-            this.Show();
+            //this.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+            SignIn signIn = new SignIn();
+            signIn.ShowDialog();
+
         }
 
         private void SignUp_Load(object sender, EventArgs e)

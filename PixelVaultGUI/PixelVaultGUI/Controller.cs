@@ -178,6 +178,11 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int CheckIfEmailAlreadyAssociatedWithAnAccount(string email)
+        {
+            string query = "SELECT COUNT(*) FROM Gamer WHERE Email = '" + email + "';";
+            return Convert.ToInt16(dbMan.ExecuteScalar(query));
+        }
 
         public void TerminateConnection()
         {

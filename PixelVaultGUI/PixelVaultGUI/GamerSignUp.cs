@@ -57,6 +57,7 @@ namespace PixelVaultGUI
 
             string email = EmailTextBox.Text;
             if (!Validations.isValidEmail(email)) return;
+            if (!Validations.CheckIfEmailTaken(email)) return;
 
             string password = PasswordTextBox.Text;
             if (!Validations.ValidatePassword(password)) return;
@@ -96,6 +97,10 @@ namespace PixelVaultGUI
             else
             {
                 MessageBox.Show("Account created succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Welcome, {UserName}!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GamerMain gamer = new GamerMain(UserName);
+                gamer.Show();
+                this.Hide();
                 return;
             }
         }
@@ -124,7 +129,9 @@ namespace PixelVaultGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            SignUp signUp = new SignUp();
+            signUp.Show();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
