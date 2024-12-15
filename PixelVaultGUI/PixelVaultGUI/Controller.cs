@@ -92,6 +92,93 @@ namespace DBapplication
             string query = "UPDATE Plays SET Difficulty = '" + Difficulty + "', UserRating = '" + Rating + "' WHERE GamerUserName = '" + UserName + "' AND GameName = '" + GameName + "'";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        //Tarek's Functions
+        public DataTable selectcon()
+        {
+            string query = "SELECT * FROM Console;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable selecteng()
+        {
+            string query = "SELECT * FROM GameEngine;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable selectgamer()
+        {
+            string query = "SELECT * FROM Gamer;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable selectman()
+        {
+            string query = "SELECT * FROM Manufacturer;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable selectstor()
+        {
+            string query = "SELECT * FROM GamingStore;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable selectpub()
+        {
+            string query = "SELECT * FROM GamePublisher;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable selectrev()
+        {
+            string query = "SELECT * FROM GameReviewer;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int deletecon(string name)
+        {
+            string query = $"DELETE FROM Console WHERE ConsoleName = '{name}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int deleteeng(string name)
+        {
+            string query = $"DELETE FROM GameEngine WHERE EngineName = '{name}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int deletestor(string name)
+        {
+            string query = $"DELETE FROM GamingStore WHERE StoreUserName = '{name}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int deletegamer(string name)
+        {
+            string query = $"DELETE FROM Gamer WHERE Anumber = '{name}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int deletepub(string name)
+        {
+            string query = $"DELETE FROM GamePublisher WHERE PublisherUserName = '{name}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int deleteman(string name)
+        {
+            string query = $"DELETE FROM Manufacturer WHERE ManufacturerName = '{name}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int deleterev(string name)
+        {
+            string query = $"DELETE FROM GameReviewer WHERE ReviewerName = '{name}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
         public void TerminateConnection()
         {
             dbMan.CloseConnection();

@@ -12,7 +12,7 @@
 	CREATE TABLE GameEngine(
 	EngineName CHAR(20) ,
 	Language VARCHAR(20) NOT NULL ,
-	Platform CHAR(20) NOT NULL ,
+	Platform CHAR(20) NOT NULL CHECK(Platform in ('Windows','Mobile','Cross-Platform','Playstation')) ,
 	PRIMARY KEY(EngineName)
 	);
 
