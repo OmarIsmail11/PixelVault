@@ -486,4 +486,5 @@
 	('Naughty_Dog', 'T9nB5wP0uS', 'Game Publisher'),
 	('Valve', 'I0dJ2fM6oQ', 'Game Publisher'),
 	('THQ_Nordic', 'N6yZ5tP1xA', 'Game Publisher'),
-	('FiveHundredFive_Games', 'L7jQ9pV2rB', 'Game Publisher');
+	('FiveHundredFive_Games', 'L7jQ9pV2rB', 'Game Publisher'),
+	('Doksh', 'Doksh1234_', 'Admin');
