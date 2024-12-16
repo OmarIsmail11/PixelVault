@@ -38,9 +38,9 @@ namespace PixelVaultGUI
             string tournamentName;
             if (EnrolledInTournaments.SelectedRows.Count > 0)
             {
-                tournamentName = EnrolledInTournaments.SelectedRows[0].Cells["Name"].Value.ToString();
+                tournamentName = EnrolledInTournaments.SelectedRows[0].Cells["Name"].Value.ToString().Trim();
 
-                var output = MessageBox.Show($"Are you sure you want to unenroll from the tournament: {tournamentName}?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var output = MessageBox.Show($"Are you sure you want to unenroll from: {tournamentName}?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (output == DialogResult.Yes)
                 {

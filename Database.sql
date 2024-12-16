@@ -332,6 +332,7 @@
 	('Discord_Store', 'Discord Store', 3, 1800123496);
 
 	INSERT INTO Gamer (UserName, FirstName, LastName, Email, Country, BirthDate) VALUES
+	('OmarReda', 'Omar', 'Reda', 'omar.reda@gmail.com', 'Egypt', '2004-4-9'),
 	('NoobMaster69', 'John', 'Doe', 'john.doe@gmail.com', 'USA', '1990-05-15'),
 	('AliceTheAce', 'Alice', 'Smith', 'alice.smith@gmail.com', 'Canada', '1985-12-20'),
 	('DragonHunter92', 'Bob', 'Brown', 'bob.brown@gmail.com', 'UK', '1992-03-10'),
@@ -423,6 +424,7 @@
 	('Best VR Game', 'VR', 'IGN', 'Rocket League', 2020);        
 
 	INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES
+	('OmarReda', 'TestTest12_','Gamer'),
 	('NoobMaster69', 'Y6m5o2#F9z', 'Gamer'),
 	('AliceTheAce', 'N7u!lQm1Pz', 'Gamer'),
 	('DragonHunter92', 'H@2Xn8lZ0d', 'Gamer'),
@@ -488,3 +490,14 @@
 	('THQ_Nordic', 'N6yZ5tP1xA', 'Game Publisher'),
 	('FiveHundredFive_Games', 'L7jQ9pV2rB', 'Game Publisher'),
 	('Doksh', 'Doksh1234_', 'Admin');
+
+	INSERT INTO Plays VALUES
+	('Fortnite', 'OmarReda', NULL, NULL, NULL),
+	('Apex Legends', 'OmarReda', NULL, NULL, NULL),
+	('FIFA 23', 'OmarReda', NULL, NULL, NULL),
+	('FIFA 22', 'OmarReda', NULL, NULL, NULL);
+
+	INSERT INTO Enroll VALUES
+	('OmarReda', 'FIFAe World Cup'),
+	('OmarReda', 'Tekken World Tour'),
+	('OmarReda', 'DreamHack');
