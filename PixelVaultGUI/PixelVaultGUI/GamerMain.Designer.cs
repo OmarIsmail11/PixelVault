@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            BrowseTournamentsButton = new Button();
+            BrowseGamesButton = new Button();
             LogOutButton = new Button();
             label1 = new Label();
             TournamentsButton = new Button();
@@ -38,8 +40,6 @@
             panel2 = new Panel();
             tournaments1 = new Tournaments();
             gameLibrary1 = new GameLibrary();
-            BrowseGamesButton = new Button();
-            BrowseTournamentsButton = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -60,6 +60,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(277, 653);
             panel1.TabIndex = 0;
+            // 
+            // BrowseTournamentsButton
+            // 
+            BrowseTournamentsButton.BackColor = Color.FromArgb(186, 186, 212);
+            BrowseTournamentsButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BrowseTournamentsButton.Location = new Point(26, 450);
+            BrowseTournamentsButton.Name = "BrowseTournamentsButton";
+            BrowseTournamentsButton.Size = new Size(221, 44);
+            BrowseTournamentsButton.TabIndex = 22;
+            BrowseTournamentsButton.Text = "Browse Tournaments";
+            BrowseTournamentsButton.UseVisualStyleBackColor = false;
+            // 
+            // BrowseGamesButton
+            // 
+            BrowseGamesButton.BackColor = Color.FromArgb(186, 186, 212);
+            BrowseGamesButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BrowseGamesButton.Location = new Point(26, 384);
+            BrowseGamesButton.Name = "BrowseGamesButton";
+            BrowseGamesButton.Size = new Size(221, 44);
+            BrowseGamesButton.TabIndex = 21;
+            BrowseGamesButton.Text = "Browse Games";
+            BrowseGamesButton.UseVisualStyleBackColor = false;
             // 
             // LogOutButton
             // 
@@ -89,7 +111,7 @@
             TournamentsButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TournamentsButton.Location = new Point(26, 317);
             TournamentsButton.Name = "TournamentsButton";
-            TournamentsButton.Size = new Size(210, 44);
+            TournamentsButton.Size = new Size(221, 44);
             TournamentsButton.TabIndex = 18;
             TournamentsButton.Text = "My Tournaments";
             TournamentsButton.UseVisualStyleBackColor = false;
@@ -101,7 +123,7 @@
             GamerLibraryButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             GamerLibraryButton.Location = new Point(26, 247);
             GamerLibraryButton.Name = "GamerLibraryButton";
-            GamerLibraryButton.Size = new Size(205, 44);
+            GamerLibraryButton.Size = new Size(221, 44);
             GamerLibraryButton.TabIndex = 17;
             GamerLibraryButton.Text = "My Games";
             GamerLibraryButton.UseVisualStyleBackColor = false;
@@ -154,28 +176,6 @@
             gameLibrary1.Size = new Size(1264, 816);
             gameLibrary1.TabIndex = 0;
             gameLibrary1.Load += gameLibrary1_Load;
-            // 
-            // BrowseGamesButton
-            // 
-            BrowseGamesButton.BackColor = Color.FromArgb(186, 186, 212);
-            BrowseGamesButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BrowseGamesButton.Location = new Point(26, 384);
-            BrowseGamesButton.Name = "BrowseGamesButton";
-            BrowseGamesButton.Size = new Size(210, 44);
-            BrowseGamesButton.TabIndex = 21;
-            BrowseGamesButton.Text = "Browse Games";
-            BrowseGamesButton.UseVisualStyleBackColor = false;
-            // 
-            // BrowseTournamentsButton
-            // 
-            BrowseTournamentsButton.BackColor = Color.FromArgb(186, 186, 212);
-            BrowseTournamentsButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BrowseTournamentsButton.Location = new Point(26, 450);
-            BrowseTournamentsButton.Name = "BrowseTournamentsButton";
-            BrowseTournamentsButton.Size = new Size(221, 44);
-            BrowseTournamentsButton.TabIndex = 22;
-            BrowseTournamentsButton.Text = "Browse Tournaments";
-            BrowseTournamentsButton.UseVisualStyleBackColor = false;
             // 
             // GamerMain
             // 
