@@ -44,6 +44,7 @@
             Show_Hide_Pass = new Button();
             SignUp = new Button();
             Back = new Button();
+            ExitButton = new Label();
             SuspendLayout();
             // 
             // label1
@@ -206,6 +207,20 @@
             Back.UseVisualStyleBackColor = true;
             Back.Click += Back_Click;
             // 
+            // ExitButton
+            // 
+            ExitButton.AutoSize = true;
+            ExitButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ExitButton.ForeColor = SystemColors.ButtonHighlight;
+            ExitButton.Image = Properties.Resources.dark_purple_colour;
+            ExitButton.Location = new Point(851, 29);
+            ExitButton.Margin = new Padding(4, 0, 4, 0);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(42, 45);
+            ExitButton.TabIndex = 21;
+            ExitButton.Text = "X";
+            ExitButton.Click += ExitButton_Click;
+            // 
             // StoreSignUp
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -213,6 +228,7 @@
             BackColor = Color.Black;
             BackgroundImage = Properties.Resources.dark_purple_colour;
             ClientSize = new Size(931, 509);
+            Controls.Add(ExitButton);
             Controls.Add(Back);
             Controls.Add(SignUp);
             Controls.Add(Show_Hide_Pass);
@@ -229,6 +245,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "StoreSignUp";
             Text = "StoreSignUp";
             ResumeLayout(false);
@@ -253,5 +270,6 @@
         private Button Show_Hide_Pass;
         private Button SignUp;
         private Button Back;
+        private Label ExitButton;
     }
 }

@@ -12,9 +12,28 @@ namespace PixelVaultGUI
 {
     public partial class StoreMain : Form
     {
-        public StoreMain()
+        public string UserName;
+        public StoreMain(string username_in)
         {
             InitializeComponent();
+            Inventory.Hide();
+            UserName = username_in;
+            Welcome.Text = "Welcome, " + UserName + "";
+        }
+
+        private void StoreMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

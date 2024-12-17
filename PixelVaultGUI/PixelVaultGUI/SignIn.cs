@@ -82,7 +82,11 @@ namespace PixelVaultGUI
             }
             else if (Authorization == "Game Store")
             {
-                MessageBox.Show("Welcome back " + UserName + "! (Opens Store)");
+                MessageBox.Show($"Welcome back, {UserName}!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                StoreMain storeMain = new StoreMain(UserName);
+                storeMain.ShowDialog();
+                storeMain.Show();
                 //Open Game Store Form
             }
             else if (Authorization == "Game Publisher")
