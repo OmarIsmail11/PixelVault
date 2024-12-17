@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PixelVaultGUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a979e8871354cfaaf18c7c636ff3649174f4c3f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5df346cd24b6f5e7490c068b9552aff789f42ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("PixelVaultGUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PixelVaultGUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

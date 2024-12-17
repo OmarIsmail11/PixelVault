@@ -36,10 +36,13 @@
             label2 = new Label();
             groupBox1 = new GroupBox();
             checkedListBox1 = new CheckedListBox();
+            groupBox2 = new GroupBox();
+            checkedListBox2 = new CheckedListBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)YourGamesDataGridView).BeginInit();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // panel3
@@ -92,6 +95,7 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.dark_purple_colour;
+            panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(20, 390);
@@ -137,6 +141,32 @@
             checkedListBox1.Size = new Size(129, 125);
             checkedListBox1.TabIndex = 0;
             // 
+            // groupBox2
+            // 
+            groupBox2.BackgroundImage = Properties.Resources.dark_purple_colour;
+            groupBox2.Controls.Add(checkedListBox2);
+            groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.ForeColor = SystemColors.ButtonFace;
+            groupBox2.Location = new Point(230, 50);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(167, 170);
+            groupBox2.TabIndex = 3;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Region";
+            // 
+            // checkedListBox2
+            // 
+            checkedListBox2.BackColor = Color.FromArgb(29, 29, 57);
+            checkedListBox2.BorderStyle = BorderStyle.None;
+            checkedListBox2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkedListBox2.ForeColor = SystemColors.ButtonHighlight;
+            checkedListBox2.FormattingEnabled = true;
+            checkedListBox2.Items.AddRange(new object[] { "North America", "South America", "Europe", "Asia", "Africa" });
+            checkedListBox2.Location = new Point(16, 33);
+            checkedListBox2.Name = "checkedListBox2";
+            checkedListBox2.Size = new Size(145, 125);
+            checkedListBox2.TabIndex = 0;
+            // 
             // BrowseTournaments
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -154,6 +184,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -168,5 +199,7 @@
         private GroupBox groupBox1;
         private Label label2;
         private CheckedListBox checkedListBox1;
+        private GroupBox groupBox2;
+        private CheckedListBox checkedListBox2;
     }
 }
