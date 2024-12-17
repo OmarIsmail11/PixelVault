@@ -12,9 +12,22 @@ namespace PixelVaultGUI
 {
     public partial class StoreInfo : Form
     {
-        public StoreInfo()
+        public string UserName;
+        public StoreInfo(string username)
         {
             InitializeComponent();
+            UserName = username;
+        }
+
+        private void StoreInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

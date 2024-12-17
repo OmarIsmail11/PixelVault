@@ -116,6 +116,9 @@ namespace PixelVaultGUI
             else
             {
                 MessageBox.Show("Account created succesfully !");
+                this.Close();
+                SignIn signIn = new SignIn();
+                signIn.Show();
                 return;
             }
         }
@@ -130,6 +133,11 @@ namespace PixelVaultGUI
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void StoreSignUp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
