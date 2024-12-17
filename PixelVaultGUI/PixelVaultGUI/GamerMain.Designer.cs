@@ -40,6 +40,7 @@
             panel2 = new Panel();
             tournaments1 = new Tournaments();
             gameLibrary1 = new GameLibrary();
+            browseTournaments1 = new BrowseTournaments();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -71,6 +72,7 @@
             BrowseTournamentsButton.TabIndex = 22;
             BrowseTournamentsButton.Text = "Browse Tournaments";
             BrowseTournamentsButton.UseVisualStyleBackColor = false;
+            BrowseTournamentsButton.Click += BrowseTournamentsButton_Click;
             // 
             // BrowseGamesButton
             // 
@@ -153,6 +155,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(browseTournaments1);
             panel2.Controls.Add(tournaments1);
             panel2.Controls.Add(gameLibrary1);
             panel2.Location = new Point(272, 0);
@@ -176,6 +179,14 @@
             gameLibrary1.Size = new Size(1264, 816);
             gameLibrary1.TabIndex = 0;
             gameLibrary1.Load += gameLibrary1_Load;
+            // 
+            // browseTournaments1
+            // 
+            browseTournaments1.BackColor = Color.FromArgb(192, 188, 212);
+            browseTournaments1.Location = new Point(0, 0);
+            browseTournaments1.Name = "browseTournaments1";
+            browseTournaments1.Size = new Size(1264, 816);
+            browseTournaments1.TabIndex = 2;
             // 
             // GamerMain
             // 
@@ -210,5 +221,6 @@
         private Tournaments tournaments1;
         private Button BrowseTournamentsButton;
         private Button BrowseGamesButton;
+        private BrowseTournaments browseTournaments1;
     }
 }

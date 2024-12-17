@@ -235,7 +235,7 @@ namespace DBapplication
         }
         public DataTable RetreieveTournamentsEntrolledIn(string UserName)
         {
-            string query = "SELECT T.TName AS Name, Capacity, T.AvailableSpots, TournamentType AS Type, TLocation AS Location, T.StartDate, Organizer, PrizeMoney FROM Tournament AS T, Enroll AS E WHERE GamerUserName = '" + UserName + "' AND E.TName = T.TName;";
+            string query = "SELECT T.TName AS Name, Capacity, T.AvailableSpots, TournamentType AS Type, Region, T.StartDate, Organizer, PrizeMoney FROM Tournament AS T, Enroll AS E WHERE GamerUserName = '" + UserName + "' AND E.TName = T.TName;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -267,6 +267,12 @@ namespace DBapplication
         {
             string query = "INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Store');";
             return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable RetreiveAllLiveTournaments()
+        {
+            string query = "SELECT * FROM Tournament";
+            return dbMan.ExecuteReader(query);
         }
         public void TerminateConnection()
         {

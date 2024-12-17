@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace PixelVaultGUI
 {
     public partial class BrowseTournaments : UserControl
     {
+        Controller controllerObj = new Controller();
         public BrowseTournaments()
         {
             InitializeComponent();
@@ -24,7 +26,9 @@ namespace PixelVaultGUI
 
         private void BrowseTournaments_Load(object sender, EventArgs e)
         {
-            
+            DataTable LiveTournaments = controllerObj.RetreiveAllLiveTournaments();
+            LiveTournamentsDataGrid.DataSource = LiveTournaments;
+            LiveTournamentsDataGrid.Refresh();
         }
     }
 }
