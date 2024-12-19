@@ -1,13 +1,4 @@
 ﻿using DBapplication;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PixelVaultGUI
 {
@@ -66,11 +57,11 @@ namespace PixelVaultGUI
             {
                 if (Validations.IsPositive(Hotline.Text))
                 {
-                    if (Validations.StringLengthIsinrange(Hotline.Text, 10, 10))
+                    if (Validations.StringLengthIsinrange(Hotline.Text, 1, 10))
                         hotline = Convert.ToInt32(Hotline.Text);
                     else
                     {
-                        MessageBox.Show("Hotline must be 10 numbers!");
+                        MessageBox.Show("Hotline must be max 10 numbers!");
                         return;
                     }
                 }

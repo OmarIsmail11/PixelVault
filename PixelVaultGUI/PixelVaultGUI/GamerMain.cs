@@ -84,5 +84,10 @@ namespace PixelVaultGUI
             gameLibrary1.Visible = false;
             tournaments1.Visible = false;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

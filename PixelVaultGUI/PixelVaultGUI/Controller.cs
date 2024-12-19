@@ -274,6 +274,42 @@ namespace DBapplication
             string query = "SELECT * FROM Tournament";
             return dbMan.ExecuteReader(query);
         }
+        public string GetStoreRealName(string username)
+        {
+            string query = "SELECT StoreRealName FROM GamingStore WHERE StoreUserName='" + username + "'";
+            return dbMan.ExecuteScalar(query).ToString();
+        }
+        public int GetStoreRating(string username)
+        {
+            string query = "SELECT Rating FROM GamingStore WHERE StoreUserName='" + username + "'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int GetStoreHotline(string username)
+        {
+            string query = "SELECT Hotline FROM GamingStore WHERE StoreUserName='" + username + "'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+       /* public int InsertNewTournament(string Tname,int Capacity,string type,string region,string sdate,string org,float prizemoney)
+        {
+            string query = "Insert into Tournament Values('" + Tname + "',)";
+            return dbMan.ExecuteNonQuery(query);
+        }*/
+       public DataTable Tournamentdata(string Susername)
+        {
+            string query = "Select * from Tournament where Organizer='" + Susername + "' ";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable TName(string username)
+        {
+            string query="Select TName from Tournament where Organizer='"+username+"'";
+            return dbMan.ExecuteReader(query);
+        }
+       public int RegStatus(string TName , string status)
+        {
+            string query = "UPDATE Tournaments Set Registration_Status='" + status + "' where TName='" + TName + "'  ";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
