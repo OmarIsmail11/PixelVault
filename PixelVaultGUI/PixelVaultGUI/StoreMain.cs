@@ -151,6 +151,7 @@ namespace PixelVaultGUI
             Manage_TReg.BackColor = Color.Thistle;
             Reg_panel.Visible=true;
             Add_Tournament_Panel.Visible = false;
+            Reg_panel.BringToFront();
             
 
         }
