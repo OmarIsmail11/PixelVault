@@ -473,6 +473,7 @@
             manhead.Name = "manhead";
             manhead.Size = new Size(171, 33);
             manhead.TabIndex = 48;
+            manhead.SelectedIndexChanged += manhead_SelectedIndexChanged;
             // 
             // Admin_Add
             // 

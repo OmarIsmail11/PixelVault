@@ -402,6 +402,7 @@
 	('Summer Clash', 600, 600, 'FPS', 'South America', '2023-07-15', 'GameStop', 300000,'Open'),
 	('Winter War', 400, 400, 'Fighting', 'South America', '2023-09-15', 'Walmart', 300000,'Open');
 
+
 	INSERT INTO Award VALUES
 	('Best Competitive Game', 'Battle Royale', 'Polygon', 'Apex Legends', 2020),
 	('Best Action Game', 'FPS', 'IGN', 'Call of Duty: Modern Warfare', 2019),
