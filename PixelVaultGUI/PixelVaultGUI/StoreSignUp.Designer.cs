@@ -248,6 +248,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "StoreSignUp";
             Text = "StoreSignUp";
+            Load += StoreSignUp_Load;
             ResumeLayout(false);
             PerformLayout();
         }

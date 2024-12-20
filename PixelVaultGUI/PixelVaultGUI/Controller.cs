@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Windows.Forms;
+using System.Security.Permissions;
 
 namespace DBapplication
 {
@@ -32,20 +33,20 @@ namespace DBapplication
 
         public int CheckIfUserNameExists(string UserName)
         {
-            string query = "SELECT COUNT(*) FROM UserPasswordsAuthorization WHERE UserName = '" + UserName + "';";
+            string query = "SELECT COUNT(*) FROM UserPasswordsAuthorization WHERE RegUserName = '" + UserName + "';";
             return Convert.ToInt16(dbMan.ExecuteScalar(query));
         }
 
         public int InsertNewGamerIntoGamerTable(string UserName, string FirstName, string LastName, string Email, string Country, string BirthDate)
         {
-            string query = "INSERT INTO Gamer (UserName, FirstName, LastName, Email, Country, BirthDate) VALUES " +
+            string query = "INSERT INTO Gamer (RegUserName, FirstName, LastName, Email, Country, BirthDate) VALUES " +
                 "('" + UserName + "','" + FirstName + "', '" + LastName + "', '" + Email + "', '" + Country + "', '" + BirthDate + "');";
             return dbMan.ExecuteNonQuery(query);
         }
 
         public int InsertNewGamerIntoUserPasswordsAuthorizationTable(string UserName, string Password)
         {
-            string query = "INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Gamer');";
+            string query = "INSERT INTO UserPasswordsAuthorization (RegUserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Gamer');";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -64,7 +65,7 @@ namespace DBapplication
 
         public int InsertNewGamePublisherIntoUserPasswordsAuthorizationTable(string UserName, string Password)
         {
-            string query = "INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Publisher');";
+            string query = "INSERT INTO UserPasswordsAuthorization (RegUserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Publisher');";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -265,7 +266,7 @@ namespace DBapplication
 
         public int InsertNewStoreIntoUserPasswordsAuthorizationTable(string UserName, string Password)
         {
-            string query = "INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Store');";
+            string query = "INSERT INTO UserPasswordsAuthorization (RegUserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Store');";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -273,6 +274,71 @@ namespace DBapplication
         {
             string query = "SELECT * FROM Tournament";
             return dbMan.ExecuteReader(query);
+        }
+        public string GetStoreRealName(string username)
+        {
+            string query = "SELECT StoreRealName FROM GamingStore WHERE StoreUserName='" + username + "'";
+            return dbMan.ExecuteScalar(query).ToString();
+        }
+        public int GetStoreRating(string username)
+        {
+            string query = "SELECT Rating FROM GamingStore WHERE StoreUserName='" + username + "'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int GetStoreHotline(string username)
+        {
+            string query = "SELECT Hotline FROM GamingStore WHERE StoreUserName='" + username + "'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+      public int InsertNewTournament(string Tname,int Capacity,string type,string region,string sdate,string org,float prizemoney)
+        {
+            string Status = "Open";
+            string query = "Insert into Tournament Values('" + Tname + "',"+Capacity+","+Capacity+",'"+type+"','"+sdate+"','"+org+"',"+prizemoney+",'"+Status+"')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+       public DataTable Tournamentdata(string Susername)
+        {
+            string query = "Select * from Tournament where Organizer='" + Susername + "' ";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable TName(string username)
+        {
+            string query="Select TName from Tournament where Organizer='"+username+"'";
+            return dbMan.ExecuteReader(query);
+        }
+       public int RegStatus(string TName , string status)
+        {
+            string query = "UPDATE Tournaments Set Registration_Status='" + status + "' where TName='" + TName + "'  ";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable Regions()
+        {
+            string query = "SELECT Distinct Region FROM Tournament";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable Types()
+        {
+            string query = "Select distinct TournamentType from Tournament";
+            return dbMan.ExecuteReader(query);
+        }
+        public int InsertNewTournamentWithoutDate(string name, int Capacity, string type, string region, string org, float prizemoney)
+        {
+            string Status = "Open";
+            string query = "Insert into Tournament(TName,Capacity,AvailableSpots,TournamentType,Region,Organizer,PrizeMoney,Registration_Status) Values('" + name + "'," + Capacity + "," + Capacity + ",'" + type + "','" + org + "'," + prizemoney + ",'" + Status + "')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertNewTournamentWithoutMoney(string name, int Capacity, string type, string region,string date, string org)
+        {
+            string Status = "Open";
+            string query = "Insert into Tournament(TName,Capacity,AvailableSpots,TournamentType,Region,StartDate,Organizer,Registration_Status) Values('" + name + "'," + Capacity + "," + Capacity + ",'" + type + "','"+date+"','" + org + "','" + Status + "')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertNewTournamentWithoutMoneyAndDate(string name, int Capacity, string type, string region, string org)
+        {
+            string Status = "Open";
+            string query = "Insert into Tournament(TName,Capacity,AvailableSpots,TournamentType,Region,Organizer,Registration_Status) Values('" + name + "'," + Capacity + "," + Capacity + ",'" + type + "','"+region+"','" + org + "','" + Status + "')";
+            return dbMan.ExecuteNonQuery(query);
         }
         public void TerminateConnection()
         {

@@ -203,5 +203,10 @@ namespace PixelVaultGUI
                 return;
             }
         }
+
+        private void manhead_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
