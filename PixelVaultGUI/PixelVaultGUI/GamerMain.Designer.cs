@@ -38,9 +38,9 @@
             WelcomeUserLabel = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            browseTournaments1 = new BrowseTournaments();
             tournaments1 = new Tournaments();
             gameLibrary1 = new GameLibrary();
-            browseTournaments1 = new BrowseTournaments();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -163,6 +163,14 @@
             panel2.Size = new Size(1011, 653);
             panel2.TabIndex = 1;
             // 
+            // browseTournaments1
+            // 
+            browseTournaments1.BackColor = Color.FromArgb(192, 188, 212);
+            browseTournaments1.Location = new Point(0, 0);
+            browseTournaments1.Name = "browseTournaments1";
+            browseTournaments1.Size = new Size(1264, 816);
+            browseTournaments1.TabIndex = 2;
+            // 
             // tournaments1
             // 
             tournaments1.BackColor = Color.FromArgb(192, 188, 212);
@@ -179,14 +187,6 @@
             gameLibrary1.Size = new Size(1264, 816);
             gameLibrary1.TabIndex = 0;
             gameLibrary1.Load += gameLibrary1_Load;
-            // 
-            // browseTournaments1
-            // 
-            browseTournaments1.BackColor = Color.FromArgb(192, 188, 212);
-            browseTournaments1.Location = new Point(0, 0);
-            browseTournaments1.Name = "browseTournaments1";
-            browseTournaments1.Size = new Size(1264, 816);
-            browseTournaments1.TabIndex = 2;
             // 
             // GamerMain
             // 
