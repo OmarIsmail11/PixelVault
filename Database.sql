@@ -509,3 +509,4 @@
 	('Fortnite','Epic_Games',25.00),
 	('Apex Legends','PlayStation_Store',300.000),
 	('FIFA 23','PlayStation_Store',600.00);
+

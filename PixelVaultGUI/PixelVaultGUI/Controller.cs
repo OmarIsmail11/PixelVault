@@ -352,13 +352,27 @@ namespace DBapplication
             string query = "SELECT COUNT(*) FROM ENROLL WHERE GamerUserName = '" + UserName + "' AND TName = '" + TournamentName + "';";
             return Convert.ToInt16(dbMan.ExecuteScalar(query));
         }
-
         public DataTable GameNameInventory(string username)
         {
             string query = "Select distinct GameName From Inventory Where StoreName='" + username + "'";
             return dbMan.ExecuteReader(query);
         }
-        
+
+        public DataTable RetreiveAllGamesInTournaments()
+        {
+            string query = "SELECT DISTINCT GameName FROM Tournament;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable FilterTournaments(string Genre, string Region, string Type, string Game, string SortBy)
+        {
+            string query = "DECLARE @SortColumn AS VARCHAR(20) = '" + SortBy + "' SELECT T.* FROM Tournament T JOIN Game G ON T.GameName = G.GameName WHERE (G.Genre = '" + Genre + "' OR '" + Genre + "' = '') AND (T.Region = '" + Region + "' OR '" + Region + "' = '') AND (T.TournamentType = '" + Type + "' OR '" + Type + "' = '') AND (G.GameName = '" + Game + "' OR '" + Game + "' = '') ORDER BY CASE WHEN @SortColumn = 'Available Spots' THEN T.AvailableSpots END ASC, CASE WHEN @SortColumn = 'Prize Money' THEN T.PrizeMoney END DESC, CASE WHEN @SortColumn = 'Start Date' THEN T.StartDate END ASC;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SearchTournamentGame(string search)
+        {
+            string query = "SELECT * FROM Tournament WHERE TName LIKE '%" + search + "%' OR GameName LIKE '%" + search + "%';";
+            return dbMan.ExecuteReader(query);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();

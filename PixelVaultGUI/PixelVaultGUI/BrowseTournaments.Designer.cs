@@ -29,41 +29,43 @@
         private void InitializeComponent()
         {
             panel3 = new Panel();
+            SearchButton = new Button();
             label3 = new Label();
-            SearchSpecificTournamentButton = new TextBox();
+            SearchTextBox = new TextBox();
             LiveTournamentsDataGrid = new DataGridView();
             label1 = new Label();
             ExitButton = new Label();
             panel1 = new Panel();
+            groupBox4 = new GroupBox();
+            GameComboBox = new ComboBox();
+            groupBox3 = new GroupBox();
+            TypeCheckedListBox = new CheckedListBox();
             EnrollButton = new Button();
             FilterButton = new Button();
             SortBy = new GroupBox();
-            checkedListBox3 = new CheckedListBox();
+            SortByCheckedListBox = new CheckedListBox();
             groupBox2 = new GroupBox();
-            checkedListBox2 = new CheckedListBox();
+            RegionCheckedListBox = new CheckedListBox();
             groupBox1 = new GroupBox();
-            Genre = new CheckedListBox();
+            GenreCheckedListBox = new CheckedListBox();
             label2 = new Label();
-            groupBox3 = new GroupBox();
-            checkedListBox4 = new CheckedListBox();
-            groupBox4 = new GroupBox();
-            comboBox1 = new ComboBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LiveTournamentsDataGrid).BeginInit();
             panel1.SuspendLayout();
+            groupBox4.SuspendLayout();
+            groupBox3.SuspendLayout();
             SortBy.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
-            groupBox3.SuspendLayout();
-            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
             panel3.BackgroundImage = Properties.Resources.dark_purple_colour;
+            panel3.Controls.Add(SearchButton);
             panel3.Controls.Add(label3);
-            panel3.Controls.Add(SearchSpecificTournamentButton);
+            panel3.Controls.Add(SearchTextBox);
             panel3.Controls.Add(LiveTournamentsDataGrid);
             panel3.Controls.Add(label1);
             panel3.Location = new Point(17, 44);
@@ -71,24 +73,39 @@
             panel3.Size = new Size(969, 322);
             panel3.TabIndex = 2;
             // 
+            // SearchButton
+            // 
+            SearchButton.Image = Properties.Resources.search2;
+            SearchButton.Location = new Point(912, 17);
+            SearchButton.Name = "SearchButton";
+            SearchButton.Size = new Size(34, 31);
+            SearchButton.TabIndex = 4;
+            SearchButton.UseVisualStyleBackColor = true;
+            SearchButton.Click += SearchButton_Click;
+            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Image = Properties.Resources.dark_purple_colour;
-            label3.Location = new Point(558, 20);
+            label3.Location = new Point(547, 22);
             label3.Name = "label3";
             label3.Size = new Size(61, 23);
             label3.TabIndex = 3;
             label3.Text = "Search";
             // 
-            // SearchSpecificTournamentButton
+            // SearchTextBox
             // 
-            SearchSpecificTournamentButton.Location = new Point(625, 17);
-            SearchSpecificTournamentButton.Name = "SearchSpecificTournamentButton";
-            SearchSpecificTournamentButton.Size = new Size(314, 27);
-            SearchSpecificTournamentButton.TabIndex = 2;
+            SearchTextBox.ForeColor = Color.Gray;
+            SearchTextBox.Location = new Point(617, 19);
+            SearchTextBox.Name = "SearchTextBox";
+            SearchTextBox.Size = new Size(289, 27);
+            SearchTextBox.TabIndex = 2;
+            SearchTextBox.Text = "Search game or tournament";
+            SearchTextBox.TextChanged += SearchTextBox_TextChanged;
+            SearchTextBox.Enter += SearchTextBox_Enter;
+            SearchTextBox.Leave += SearchTextBox_Leave;
             // 
             // LiveTournamentsDataGrid
             // 
@@ -142,13 +159,63 @@
             panel1.Size = new Size(967, 241);
             panel1.TabIndex = 19;
             // 
+            // groupBox4
+            // 
+            groupBox4.BackgroundImage = Properties.Resources.dark_purple_colour;
+            groupBox4.Controls.Add(GameComboBox);
+            groupBox4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox4.ForeColor = SystemColors.ButtonFace;
+            groupBox4.Location = new Point(534, 144);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(208, 76);
+            groupBox4.TabIndex = 24;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Game";
+            // 
+            // GameComboBox
+            // 
+            GameComboBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            GameComboBox.FormattingEnabled = true;
+            GameComboBox.Location = new Point(16, 33);
+            GameComboBox.Name = "GameComboBox";
+            GameComboBox.Size = new Size(176, 28);
+            GameComboBox.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            groupBox3.BackgroundImage = Properties.Resources.dark_purple_colour;
+            groupBox3.Controls.Add(TypeCheckedListBox);
+            groupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox3.ForeColor = SystemColors.ButtonFace;
+            groupBox3.Location = new Point(399, 131);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(110, 89);
+            groupBox3.TabIndex = 5;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Type";
+            // 
+            // TypeCheckedListBox
+            // 
+            TypeCheckedListBox.BackColor = Color.FromArgb(29, 29, 57);
+            TypeCheckedListBox.BorderStyle = BorderStyle.None;
+            TypeCheckedListBox.CheckOnClick = true;
+            TypeCheckedListBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TypeCheckedListBox.ForeColor = SystemColors.ButtonHighlight;
+            TypeCheckedListBox.FormattingEnabled = true;
+            TypeCheckedListBox.Items.AddRange(new object[] { "1v1", "Teams" });
+            TypeCheckedListBox.Location = new Point(16, 33);
+            TypeCheckedListBox.Name = "TypeCheckedListBox";
+            TypeCheckedListBox.Size = new Size(84, 50);
+            TypeCheckedListBox.TabIndex = 0;
+            TypeCheckedListBox.ItemCheck += TypeCheckedListBox_ItemCheck;
+            // 
             // EnrollButton
             // 
             EnrollButton.BackColor = Color.FromArgb(186, 186, 212);
             EnrollButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            EnrollButton.Location = new Point(711, 40);
+            EnrollButton.Location = new Point(683, 39);
             EnrollButton.Name = "EnrollButton";
-            EnrollButton.Size = new Size(161, 44);
+            EnrollButton.Size = new Size(167, 43);
             EnrollButton.TabIndex = 23;
             EnrollButton.Text = "Enroll";
             EnrollButton.UseVisualStyleBackColor = false;
@@ -158,9 +225,9 @@
             // 
             FilterButton.BackColor = Color.FromArgb(186, 186, 212);
             FilterButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            FilterButton.Location = new Point(455, 40);
+            FilterButton.Location = new Point(437, 39);
             FilterButton.Name = "FilterButton";
-            FilterButton.Size = new Size(161, 44);
+            FilterButton.Size = new Size(155, 43);
             FilterButton.TabIndex = 22;
             FilterButton.Text = "Filter";
             FilterButton.UseVisualStyleBackColor = false;
@@ -169,33 +236,35 @@
             // SortBy
             // 
             SortBy.BackgroundImage = Properties.Resources.dark_purple_colour;
-            SortBy.Controls.Add(checkedListBox3);
+            SortBy.Controls.Add(SortByCheckedListBox);
             SortBy.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SortBy.ForeColor = SystemColors.ButtonFace;
-            SortBy.Location = new Point(399, 99);
+            SortBy.Location = new Point(766, 99);
             SortBy.Name = "SortBy";
             SortBy.Size = new Size(167, 121);
             SortBy.TabIndex = 4;
             SortBy.TabStop = false;
             SortBy.Text = "Sort By";
             // 
-            // checkedListBox3
+            // SortByCheckedListBox
             // 
-            checkedListBox3.BackColor = Color.FromArgb(29, 29, 57);
-            checkedListBox3.BorderStyle = BorderStyle.None;
-            checkedListBox3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkedListBox3.ForeColor = SystemColors.ButtonHighlight;
-            checkedListBox3.FormattingEnabled = true;
-            checkedListBox3.Items.AddRange(new object[] { "Available Spots", "Start Date", "Prize Money" });
-            checkedListBox3.Location = new Point(16, 33);
-            checkedListBox3.Name = "checkedListBox3";
-            checkedListBox3.Size = new Size(145, 75);
-            checkedListBox3.TabIndex = 0;
+            SortByCheckedListBox.BackColor = Color.FromArgb(29, 29, 57);
+            SortByCheckedListBox.BorderStyle = BorderStyle.None;
+            SortByCheckedListBox.CheckOnClick = true;
+            SortByCheckedListBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SortByCheckedListBox.ForeColor = SystemColors.ButtonHighlight;
+            SortByCheckedListBox.FormattingEnabled = true;
+            SortByCheckedListBox.Items.AddRange(new object[] { "Available Spots", "Start Date", "Prize Money" });
+            SortByCheckedListBox.Location = new Point(16, 33);
+            SortByCheckedListBox.Name = "SortByCheckedListBox";
+            SortByCheckedListBox.Size = new Size(145, 75);
+            SortByCheckedListBox.TabIndex = 0;
+            SortByCheckedListBox.ItemCheck += SortByCheckedListBox_ItemCheck;
             // 
             // groupBox2
             // 
             groupBox2.BackgroundImage = Properties.Resources.dark_purple_colour;
-            groupBox2.Controls.Add(checkedListBox2);
+            groupBox2.Controls.Add(RegionCheckedListBox);
             groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox2.ForeColor = SystemColors.ButtonFace;
             groupBox2.Location = new Point(206, 50);
@@ -205,23 +274,25 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Region";
             // 
-            // checkedListBox2
+            // RegionCheckedListBox
             // 
-            checkedListBox2.BackColor = Color.FromArgb(29, 29, 57);
-            checkedListBox2.BorderStyle = BorderStyle.None;
-            checkedListBox2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkedListBox2.ForeColor = SystemColors.ButtonHighlight;
-            checkedListBox2.FormattingEnabled = true;
-            checkedListBox2.Items.AddRange(new object[] { "North America", "South America", "Europe", "Asia", "Africa" });
-            checkedListBox2.Location = new Point(16, 33);
-            checkedListBox2.Name = "checkedListBox2";
-            checkedListBox2.Size = new Size(145, 125);
-            checkedListBox2.TabIndex = 0;
+            RegionCheckedListBox.BackColor = Color.FromArgb(29, 29, 57);
+            RegionCheckedListBox.BorderStyle = BorderStyle.None;
+            RegionCheckedListBox.CheckOnClick = true;
+            RegionCheckedListBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            RegionCheckedListBox.ForeColor = SystemColors.ButtonHighlight;
+            RegionCheckedListBox.FormattingEnabled = true;
+            RegionCheckedListBox.Items.AddRange(new object[] { "North America", "South America", "Europe", "Asia", "Africa" });
+            RegionCheckedListBox.Location = new Point(16, 33);
+            RegionCheckedListBox.Name = "RegionCheckedListBox";
+            RegionCheckedListBox.Size = new Size(145, 125);
+            RegionCheckedListBox.TabIndex = 0;
+            RegionCheckedListBox.ItemCheck += RegionCheckedListBox_ItemCheck;
             // 
             // groupBox1
             // 
             groupBox1.BackgroundImage = Properties.Resources.dark_purple_colour;
-            groupBox1.Controls.Add(Genre);
+            groupBox1.Controls.Add(GenreCheckedListBox);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.ButtonFace;
             groupBox1.Location = new Point(27, 50);
@@ -231,19 +302,20 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Genre";
             // 
-            // Genre
+            // GenreCheckedListBox
             // 
-            Genre.BackColor = Color.FromArgb(29, 29, 57);
-            Genre.BorderStyle = BorderStyle.None;
-            Genre.CheckOnClick = true;
-            Genre.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Genre.ForeColor = SystemColors.ButtonHighlight;
-            Genre.FormattingEnabled = true;
-            Genre.Items.AddRange(new object[] { "Sports", "Racing", "Fighting", "Battle Royale", "FPS" });
-            Genre.Location = new Point(16, 33);
-            Genre.Name = "Genre";
-            Genre.Size = new Size(129, 125);
-            Genre.TabIndex = 0;
+            GenreCheckedListBox.BackColor = Color.FromArgb(29, 29, 57);
+            GenreCheckedListBox.BorderStyle = BorderStyle.None;
+            GenreCheckedListBox.CheckOnClick = true;
+            GenreCheckedListBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            GenreCheckedListBox.ForeColor = SystemColors.ButtonHighlight;
+            GenreCheckedListBox.FormattingEnabled = true;
+            GenreCheckedListBox.Items.AddRange(new object[] { "Sports", "Racing", "Fighting", "FPS", "Battle Royale" });
+            GenreCheckedListBox.Location = new Point(18, 33);
+            GenreCheckedListBox.Name = "GenreCheckedListBox";
+            GenreCheckedListBox.Size = new Size(130, 125);
+            GenreCheckedListBox.TabIndex = 1;
+            GenreCheckedListBox.ItemCheck += GenreCheckedListBox_ItemCheck;
             // 
             // label2
             // 
@@ -256,53 +328,6 @@
             label2.Size = new Size(177, 31);
             label2.TabIndex = 1;
             label2.Text = "Filter Results By";
-            // 
-            // groupBox3
-            // 
-            groupBox3.BackgroundImage = Properties.Resources.dark_purple_colour;
-            groupBox3.Controls.Add(checkedListBox4);
-            groupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox3.ForeColor = SystemColors.ButtonFace;
-            groupBox3.Location = new Point(598, 131);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(110, 89);
-            groupBox3.TabIndex = 5;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Type";
-            // 
-            // checkedListBox4
-            // 
-            checkedListBox4.BackColor = Color.FromArgb(29, 29, 57);
-            checkedListBox4.BorderStyle = BorderStyle.None;
-            checkedListBox4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkedListBox4.ForeColor = SystemColors.ButtonHighlight;
-            checkedListBox4.FormattingEnabled = true;
-            checkedListBox4.Items.AddRange(new object[] { "1v1", "Teams" });
-            checkedListBox4.Location = new Point(16, 33);
-            checkedListBox4.Name = "checkedListBox4";
-            checkedListBox4.Size = new Size(84, 50);
-            checkedListBox4.TabIndex = 0;
-            // 
-            // groupBox4
-            // 
-            groupBox4.BackgroundImage = Properties.Resources.dark_purple_colour;
-            groupBox4.Controls.Add(comboBox1);
-            groupBox4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox4.ForeColor = SystemColors.ButtonFace;
-            groupBox4.Location = new Point(735, 132);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(208, 89);
-            groupBox4.TabIndex = 24;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Game";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(16, 33);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(176, 36);
-            comboBox1.TabIndex = 0;
             // 
             // BrowseTournaments
             // 
@@ -320,11 +345,11 @@
             ((System.ComponentModel.ISupportInitialize)LiveTournamentsDataGrid).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
             SortBy.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
-            groupBox4.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -338,18 +363,19 @@
         private Panel panel1;
         private GroupBox groupBox1;
         private Label label2;
-        private CheckedListBox Genre;
         private GroupBox groupBox2;
-        private CheckedListBox checkedListBox2;
+        private CheckedListBox RegionCheckedListBox;
         private GroupBox SortBy;
-        private CheckedListBox checkedListBox3;
+        private CheckedListBox SortByCheckedListBox;
         private Button EnrollButton;
         private Button FilterButton;
         private Label label3;
-        private TextBox SearchSpecificTournamentButton;
+        private TextBox SearchTextBox;
         private GroupBox groupBox3;
-        private CheckedListBox checkedListBox4;
+        private CheckedListBox TypeCheckedListBox;
         private GroupBox groupBox4;
-        private ComboBox comboBox1;
+        private ComboBox GameComboBox;
+        private Button SearchButton;
+        private CheckedListBox GenreCheckedListBox;
     }
 }

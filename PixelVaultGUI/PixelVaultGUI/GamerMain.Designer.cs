@@ -35,12 +35,12 @@
             label1 = new Label();
             TournamentsButton = new Button();
             GamerLibraryButton = new Button();
-            WelcomeUserLabel = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             browseTournaments1 = new BrowseTournaments();
             tournaments1 = new Tournaments();
             gameLibrary1 = new GameLibrary();
+            WelcomeTextBox = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -49,13 +49,13 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.dark_purple_colour;
+            panel1.Controls.Add(WelcomeTextBox);
             panel1.Controls.Add(BrowseTournamentsButton);
             panel1.Controls.Add(BrowseGamesButton);
             panel1.Controls.Add(LogOutButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(TournamentsButton);
             panel1.Controls.Add(GamerLibraryButton);
-            panel1.Controls.Add(WelcomeUserLabel);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(-1, 1);
             panel1.Name = "panel1";
@@ -132,18 +132,6 @@
             GamerLibraryButton.UseVisualStyleBackColor = false;
             GamerLibraryButton.Click += GamerLibraryButton_Click;
             // 
-            // WelcomeUserLabel
-            // 
-            WelcomeUserLabel.AutoSize = true;
-            WelcomeUserLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            WelcomeUserLabel.ForeColor = SystemColors.ButtonHighlight;
-            WelcomeUserLabel.Image = Properties.Resources.solid_color_image;
-            WelcomeUserLabel.Location = new Point(26, 199);
-            WelcomeUserLabel.Name = "WelcomeUserLabel";
-            WelcomeUserLabel.Size = new Size(148, 28);
-            WelcomeUserLabel.TabIndex = 1;
-            WelcomeUserLabel.Text = "Welcome, User";
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.User1;
@@ -168,7 +156,7 @@
             // 
             browseTournaments1.BackColor = Color.FromArgb(192, 188, 212);
             browseTournaments1.Location = new Point(0, 0);
-            browseTournaments1.Margin = new Padding(4, 4, 4, 4);
+            browseTournaments1.Margin = new Padding(4);
             browseTournaments1.Name = "browseTournaments1";
             browseTournaments1.Size = new Size(1264, 816);
             browseTournaments1.TabIndex = 2;
@@ -178,7 +166,7 @@
             // 
             tournaments1.BackColor = Color.FromArgb(192, 188, 212);
             tournaments1.Location = new Point(0, 0);
-            tournaments1.Margin = new Padding(4, 4, 4, 4);
+            tournaments1.Margin = new Padding(4);
             tournaments1.Name = "tournaments1";
             tournaments1.Size = new Size(1264, 816);
             tournaments1.TabIndex = 1;
@@ -187,11 +175,25 @@
             // 
             gameLibrary1.BackColor = Color.FromArgb(192, 188, 212);
             gameLibrary1.Location = new Point(0, 0);
-            gameLibrary1.Margin = new Padding(4, 4, 4, 4);
+            gameLibrary1.Margin = new Padding(4);
             gameLibrary1.Name = "gameLibrary1";
             gameLibrary1.Size = new Size(1264, 816);
             gameLibrary1.TabIndex = 0;
             gameLibrary1.Load += gameLibrary1_Load;
+            // 
+            // WelcomeTextBox
+            // 
+            WelcomeTextBox.BackColor = Color.FromArgb(29, 29, 57);
+            WelcomeTextBox.BorderStyle = BorderStyle.None;
+            WelcomeTextBox.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            WelcomeTextBox.ForeColor = SystemColors.Window;
+            WelcomeTextBox.Location = new Point(26, 201);
+            WelcomeTextBox.Name = "WelcomeTextBox";
+            WelcomeTextBox.ReadOnly = true;
+            WelcomeTextBox.Size = new Size(221, 31);
+            WelcomeTextBox.TabIndex = 23;
+            WelcomeTextBox.Text = "Welcome, User";
+            WelcomeTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // GamerMain
             // 
@@ -216,7 +218,6 @@
 
         private Panel panel1;
         private Panel panel2;
-        private Label WelcomeUserLabel;
         private PictureBox pictureBox1;
         private Button GamerLibraryButton;
         private Button TournamentsButton;
@@ -227,5 +228,6 @@
         private Button BrowseTournamentsButton;
         private Button BrowseGamesButton;
         private BrowseTournaments browseTournaments1;
+        private TextBox WelcomeTextBox;
     }
 }

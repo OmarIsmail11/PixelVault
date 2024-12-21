@@ -30,11 +30,37 @@ namespace PixelVaultGUI
             DataTable LiveTournaments = controllerObj.RetreiveAllLiveTournaments();
             LiveTournamentsDataGrid.DataSource = LiveTournaments;
             LiveTournamentsDataGrid.Refresh();
+            DataTable GamesInTournaments = controllerObj.RetreiveAllGamesInTournaments();
+            GameComboBox.DataSource = GamesInTournaments;
+            GameComboBox.DisplayMember = "GameName";
+            GameComboBox.SelectedIndex = -1;
         }
 
         private void FilterButton_Click(object sender, EventArgs e)
         {
+            string Genre;
+            if (GenreCheckedListBox.SelectedItem != null) Genre = GenreCheckedListBox.Text;
+            else Genre = "";
 
+            string Region;
+            if (RegionCheckedListBox.SelectedItem != null) Region = RegionCheckedListBox.Text;
+            else Region = "";
+
+            string Type;
+            if (TypeCheckedListBox.SelectedItem != null) Type = TypeCheckedListBox.Text;
+            else Type = "";
+
+            string SortBy;
+            if (SortByCheckedListBox.SelectedItem != null) SortBy = SortByCheckedListBox.Text;
+            else SortBy = "";
+
+            string Game;
+            if (GameComboBox.SelectedItem != null) Game = GameComboBox.Text;
+            else Game = "";
+
+            DataTable result = controllerObj.FilterTournaments(Genre, Region, Type, Game, SortBy);
+            LiveTournamentsDataGrid.DataSource = result;
+            LiveTournamentsDataGrid.Refresh();
         }
 
         private void EnrollButton_Click(object sender, EventArgs e)
@@ -50,8 +76,9 @@ namespace PixelVaultGUI
                     return;
                 }
                 int AvailableSpots = Convert.ToInt16(selectedRow.Cells["AvailableSpots"].Value);
+                string Status = selectedRow.Cells["Registration_Status"].Value.ToString();
 
-                if (AvailableSpots != 0)
+                if (AvailableSpots != 0 && Status != "Closed")
                 {
                     selectedRow.Cells["AvailableSpots"].Value = AvailableSpots - 1;
                     int result = controllerObj.EnrollInTournament(UserName, TournamentName);
@@ -68,12 +95,125 @@ namespace PixelVaultGUI
                 }
                 else
                 {
-                    MessageBox.Show("Sorry tournament is full!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Sorry tournament is full or registration is closed!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 MessageBox.Show("Please select a tournament!", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (SearchTextBox.Text == "") return;
+            else
+            {
+                string search = SearchTextBox.Text;
+                DataTable result = controllerObj.SearchTournamentGame(search);
+                LiveTournamentsDataGrid.DataSource = result;
+                LiveTournamentsDataGrid.Refresh();
+            }
+        }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchTextBox_Enter(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox; // Cast sender to TextBox
+            if (textBox != null && textBox.Text == "Search game or tournament")
+            {
+                textBox.Text = "";
+                textBox.ForeColor = Color.Black;
+            }
+        }
+
+        private void SearchTextBox_Leave(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox; // Cast sender to TextBox
+            if (textBox != null && string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = "Search game or tournament"; // Restore placeholder text
+                textBox.ForeColor = Color.Gray;
+            }
+        }
+
+        private void GenreCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+            {
+                for (int i = 0; i < GenreCheckedListBox.Items.Count; i++)
+                {
+                    if (i != e.Index)
+                    {
+                        GenreCheckedListBox.SetItemChecked(i, false); // Uncheck all other items
+                    }
+                }
+            }
+            else if (e.NewValue == CheckState.Unchecked)
+            {
+                // Clear the selection when an item is unchecked
+                GenreCheckedListBox.SelectedItem = null;
+            }
+        }
+
+        private void RegionCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+            {
+                for (int i = 0; i < RegionCheckedListBox.Items.Count; i++)
+                {
+                    if (i != e.Index)
+                    {
+                        RegionCheckedListBox.SetItemChecked(i, false); // Uncheck all other items
+                    }
+                }
+            }
+            else if (e.NewValue == CheckState.Unchecked)
+            {
+                // Clear the selection when an item is unchecked
+                RegionCheckedListBox.SelectedItem = null;
+            }
+        }
+
+        private void TypeCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+            {
+                for (int i = 0; i < TypeCheckedListBox.Items.Count; i++)
+                {
+                    if (i != e.Index)
+                    {
+                        TypeCheckedListBox.SetItemChecked(i, false); // Uncheck all other items
+                    }
+                }
+            }
+            else if (e.NewValue == CheckState.Unchecked)
+            {
+                // Clear the selection when an item is unchecked
+                TypeCheckedListBox.SelectedItem = null;
+            }
+        }
+
+        private void SortByCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+            {
+                for (int i = 0; i < SortByCheckedListBox.Items.Count; i++)
+                {
+                    if (i != e.Index)
+                    {
+                        SortByCheckedListBox.SetItemChecked(i, false); // Uncheck all other items
+                    }
+                }
+            }
+            else if (e.NewValue == CheckState.Unchecked)
+            {
+                // Clear the selection when an item is unchecked
+                SortByCheckedListBox.SelectedItem = null;
             }
         }
     }

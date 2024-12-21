@@ -17,14 +17,13 @@ namespace PixelVaultGUI
         {
             InitializeComponent();
             UserName = username;
-            WelcomeUserLabel.Text = "Welcome, " + UserName + "";
+            WelcomeTextBox.Text = "Welcome, " + UserName + "";
             gameLibrary1.GamerUserName = UserName;
             tournaments1.GamerUserName = UserName;
             browseTournaments1.UserName = UserName;
             gameLibrary1.Visible = true;
             tournaments1.Visible = false;
             browseTournaments1.Visible = false;
-
         }
 
         private void GamerMain_Load(object sender, EventArgs e)
