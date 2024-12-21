@@ -143,7 +143,7 @@
 	CREATE TABLE Inventory(
 	GameName	VARCHAR(50),
 	StoreName varchar(30),
-	Price	Decimal(3,2) NOT NULL,
+	Price	Decimal(6,2) NOT NULL,
 	PRIMARY KEY(GameName,StoreName),
 	FOREIGN KEY (GameName) REFERENCES Game(GameName)
 		ON DELETE CASCADE
@@ -504,3 +504,8 @@
 	('OmarReda', 'FIFAe World Cup'),
 	('OmarReda', 'Tekken World Tour'),
 	('OmarReda', 'DreamHack');
+
+	INSERT INTO Inventory VALUES 
+	('Fortnite','Epic_Games',25.00),
+	('Apex Legends','PlayStation_Store',300.000),
+	('FIFA 23','PlayStation_Store',600.00);

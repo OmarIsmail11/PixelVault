@@ -44,6 +44,8 @@
             label3 = new Label();
             label2 = new Label();
             TName = new TextBox();
+            label1 = new Label();
+            GameName = new ComboBox();
             Add_Tournament_Panel.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,6 +53,8 @@
             // 
             Add_Tournament_Panel.BackColor = Color.Transparent;
             Add_Tournament_Panel.BackgroundImage = Properties.Resources.solid_color_image__1_;
+            Add_Tournament_Panel.Controls.Add(GameName);
+            Add_Tournament_Panel.Controls.Add(label1);
             Add_Tournament_Panel.Controls.Add(ExitButton);
             Add_Tournament_Panel.Controls.Add(Add_Tournament_val);
             Add_Tournament_Panel.Controls.Add(PMoney);
@@ -68,7 +72,7 @@
             Add_Tournament_Panel.Controls.Add(TName);
             Add_Tournament_Panel.Location = new Point(2, 3);
             Add_Tournament_Panel.Name = "Add_Tournament_Panel";
-            Add_Tournament_Panel.Size = new Size(760, 586);
+            Add_Tournament_Panel.Size = new Size(760, 666);
             Add_Tournament_Panel.TabIndex = 27;
             Add_Tournament_Panel.Paint += Add_Tournament_Panel_Paint;
             // 
@@ -92,7 +96,7 @@
             Add_Tournament_val.BackgroundImage = Properties.Resources.dark_purple_colour;
             Add_Tournament_val.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             Add_Tournament_val.ForeColor = SystemColors.ButtonHighlight;
-            Add_Tournament_val.Location = new Point(192, 511);
+            Add_Tournament_val.Location = new Point(192, 551);
             Add_Tournament_val.Name = "Add_Tournament_val";
             Add_Tournament_val.Size = new Size(324, 56);
             Add_Tournament_val.TabIndex = 25;
@@ -103,7 +107,7 @@
             // PMoney
             // 
             PMoney.Font = new Font("Segoe UI", 12F);
-            PMoney.Location = new Point(298, 438);
+            PMoney.Location = new Point(298, 492);
             PMoney.Name = "PMoney";
             PMoney.Size = new Size(363, 39);
             PMoney.TabIndex = 12;
@@ -113,7 +117,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14F);
-            label8.Location = new Point(27, 439);
+            label8.Location = new Point(27, 493);
             label8.Name = "label8";
             label8.Size = new Size(172, 38);
             label8.TabIndex = 11;
@@ -121,7 +125,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(298, 362);
+            dateTimePicker1.Location = new Point(298, 435);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(300, 31);
             dateTimePicker1.TabIndex = 10;
@@ -131,7 +135,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14F);
-            label7.Location = new Point(27, 362);
+            label7.Location = new Point(27, 435);
             label7.Name = "label7";
             label7.Size = new Size(139, 38);
             label7.TabIndex = 9;
@@ -141,7 +145,7 @@
             // 
             Region.Font = new Font("Segoe UI", 12F);
             Region.FormattingEnabled = true;
-            Region.Location = new Point(298, 288);
+            Region.Location = new Point(298, 361);
             Region.Name = "Region";
             Region.Size = new Size(363, 40);
             Region.TabIndex = 8;
@@ -150,7 +154,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14F);
-            label6.Location = new Point(27, 290);
+            label6.Location = new Point(27, 363);
             label6.Name = "label6";
             label6.Size = new Size(103, 38);
             label6.TabIndex = 7;
@@ -160,7 +164,7 @@
             // 
             Type.Font = new Font("Segoe UI", 12F);
             Type.FormattingEnabled = true;
-            Type.Location = new Point(298, 215);
+            Type.Location = new Point(298, 288);
             Type.Name = "Type";
             Type.Size = new Size(363, 40);
             Type.TabIndex = 6;
@@ -169,7 +173,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14F);
-            label5.Location = new Point(27, 217);
+            label5.Location = new Point(27, 290);
             label5.Name = "label5";
             label5.Size = new Size(231, 38);
             label5.TabIndex = 5;
@@ -221,11 +225,30 @@
             TName.Size = new Size(363, 39);
             TName.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14F);
+            label1.Location = new Point(27, 227);
+            label1.Name = "label1";
+            label1.Size = new Size(171, 38);
+            label1.TabIndex = 27;
+            label1.Text = "Game Name";
+            // 
+            // GameName
+            // 
+            GameName.Font = new Font("Segoe UI", 12F);
+            GameName.FormattingEnabled = true;
+            GameName.Location = new Point(298, 225);
+            GameName.Name = "GameName";
+            GameName.Size = new Size(363, 40);
+            GameName.TabIndex = 28;
+            // 
             // Add_Tournament
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(764, 587);
+            ClientSize = new Size(764, 622);
             Controls.Add(Add_Tournament_Panel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Add_Tournament";
@@ -253,5 +276,7 @@
         private Label label2;
         private TextBox TName;
         private Label ExitButton;
+        private ComboBox GameName;
+        private Label label1;
     }
 }
