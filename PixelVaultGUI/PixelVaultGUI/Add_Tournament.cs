@@ -20,12 +20,13 @@ namespace PixelVaultGUI
             InitializeComponent();
             UserName = userName;
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "";
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             Region.DataSource = controller.Regions();
             Region.DisplayMember = "Region";
             Type.DataSource = controller.Types();
             Type.DisplayMember = "TournamentType";
+            GameName.DataSource = controller.GameNameInventory(UserName);
+            GameName.DisplayMember = "GameName";
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -37,7 +38,11 @@ namespace PixelVaultGUI
 
         private void Add_Tournament_val_Click_1(object sender, EventArgs e)
         {
-            if (TName.Text == "") MessageBox.Show("Please Enter Tournament Name");
+            if (TName.Text == "") 
+            {
+                MessageBox.Show("Please Enter Tournament Name");
+                return;
+            }
             string tname = TName.Text;
             int capacity;
             if (!(Capacity.Text == ""))
@@ -91,21 +96,15 @@ namespace PixelVaultGUI
             string type = Type.Text;
             string region = Region.Text;
             string organizer = UserName;
+            string gamename = GameName.Text;
             int result;
             if (Prize != 0)
             {
-                if (dateTimePicker1.Text != "")
-                    result = controller.InsertNewTournament(tname, capacity, type, region, StartDate, organizer, Prize);
-                else
-                    result = controller.InsertNewTournamentWithoutDate(tname, capacity, type, region, organizer, Prize);
-
+                result = controller.InsertNewTournament(tname, capacity, gamename, type, region, StartDate, organizer, Prize);
             }
             else
             {
-                if (dateTimePicker1.Text != "")
-                    result = controller.InsertNewTournamentWithoutMoney(tname, capacity, type, region, StartDate, organizer);
-                else
-                    result = controller.InsertNewTournamentWithoutMoneyAndDate(tname, capacity, type, region, organizer);
+                    result = controller.InsertNewTournamentWithoutMoney(tname, capacity,gamename, type, region, StartDate, organizer);
             }
             if (result == 0)
             {

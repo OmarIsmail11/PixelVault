@@ -291,10 +291,10 @@ namespace DBapplication
             return (int)dbMan.ExecuteScalar(query);
         }
 
-      public int InsertNewTournament(string Tname,int Capacity,string type,string region,string sdate,string org,float prizemoney)
+      public int InsertNewTournament(string Tname,int Capacity,string gamename,string type,string region,string sdate,string org,float prizemoney)
         {
             string Status = "Open";
-            string query = "Insert into Tournament Values('" + Tname + "',"+Capacity+","+Capacity+",'"+type+"','"+sdate+"','"+org+"',"+prizemoney+",'"+Status+"')";
+            string query = "Insert into Tournament Values('" + Tname + "',"+Capacity+","+Capacity+",'"+gamename+"','"+type+"','"+sdate+"','"+org+"',"+prizemoney+",'"+Status+"')";
             return dbMan.ExecuteNonQuery(query);
         }
        public DataTable Tournamentdata(string Susername)
@@ -328,10 +328,10 @@ namespace DBapplication
             string query = "Insert into Tournament(TName,Capacity,AvailableSpots,TournamentType,Region,Organizer,PrizeMoney,Registration_Status) Values('" + name + "'," + Capacity + "," + Capacity + ",'" + type + "','" + org + "'," + prizemoney + ",'" + Status + "')";
             return dbMan.ExecuteNonQuery(query);
         }
-        public int InsertNewTournamentWithoutMoney(string name, int Capacity, string type, string region,string date, string org)
+        public int InsertNewTournamentWithoutMoney(string name, int Capacity,string gamename, string type, string region,string date, string org)
         {
             string Status = "Open";
-            string query = "Insert into Tournament(TName,Capacity,AvailableSpots,TournamentType,Region,StartDate,Organizer,Registration_Status) Values('" + name + "'," + Capacity + "," + Capacity + ",'" + type + "','"+region+"','"+date+"','" + org + "','" + Status + "')";
+            string query = "Insert into Tournament(TName,Capacity,AvailableSpots,GameName,TournamentType,Region,StartDate,Organizer,Registration_Status) Values('" + name + "'," + Capacity + "," + Capacity + ",'"+gamename+"','" + type + "','"+region+"','"+date+"','" + org + "','" + Status + "')";
             return dbMan.ExecuteNonQuery(query);
         }
         public int InsertNewTournamentWithoutMoneyAndDate(string name, int Capacity, string type, string region, string org)
@@ -339,6 +339,11 @@ namespace DBapplication
             string Status = "Open";
             string query = "Insert into Tournament(TName,Capacity,AvailableSpots,TournamentType,Region,Organizer,Registration_Status) Values('" + name + "'," + Capacity + "," + Capacity + ",'" + type + "','"+region+"','" + org + "','" + Status + "')";
             return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable GameNameInventory(string username)
+        {
+            string query = "Select distinct GameName From Inventory Where StoreName='" + username + "'";
+            return dbMan.ExecuteReader(query);
         }
         public void TerminateConnection()
         {
