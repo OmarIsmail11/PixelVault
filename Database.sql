@@ -73,7 +73,7 @@
 	AvailableSpots INT NOT NULL,
 	TournamentType	VARCHAR(20) NOT NULL CHECK (TournamentType IN ('Sports' , 'Racing' , 'Fighting', 'Battle Royale' , 'FPS' ) ) ,
 	Region	CHAR(20) NOT NULL CHECK (Region IN ('North America', 'South America', 'Europe', 'Africa', 'Asia')),
-	StartDate	DATE ,
+	StartDate	DATE NOT NULL ,
 	Organizer	varchar(30),
 	PrizeMoney DECIMAL(10,2),
 	Registration_Status Char(6) Not Null default 'Open' Check(Registration_Status In('Open','Closed')),
@@ -398,7 +398,7 @@
 	('Gran Turismo Cup', 128, 128, 'Racing', 'Europe', '2023-12-12', 'Best_Buy', 300000.00,'Open'),
 	('Epic Games Cup', 600, 600, 'FPS', 'Africa', '2023-03-15', 'GOG', 750000,'Open'),
 	('Fall Brawl', 250, 250, 'Fighting', 'Europe', '2023-09-01', 'GameStop', 200000,'Open'),
-	('Spring Clash', 500, 500, 'FPS', 'Africa', '2023-06-01', 'GameStop', 250000,'Open'),
+	('Spring Clash', 500, 500, 'FPS', 'Africa', '2023-06-01', 'GameStop', 250000,'Closed'),
 	('Summer Clash', 600, 600, 'FPS', 'South America', '2023-07-15', 'GameStop', 300000,'Open'),
 	('Winter War', 400, 400, 'Fighting', 'South America', '2023-09-15', 'Walmart', 300000,'Open');
 

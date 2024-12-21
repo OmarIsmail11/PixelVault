@@ -48,7 +48,7 @@
             Store_Info.Image = Properties.Resources.store;
             Store_Info.Location = new Point(10, 12);
             Store_Info.Name = "Store_Info";
-            Store_Info.Size = new Size(143, 126);
+            Store_Info.Size = new Size(169, 139);
             Store_Info.SizeMode = PictureBoxSizeMode.StretchImage;
             Store_Info.TabIndex = 0;
             Store_Info.TabStop = false;
@@ -57,6 +57,7 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.dark_purple_colour;
+            panel1.Controls.Add(ExitButton);
             panel1.Controls.Add(Manage_TReg);
             panel1.Controls.Add(Manage_Partner);
             panel1.Controls.Add(LogOutButton);
@@ -68,14 +69,14 @@
             panel1.Controls.Add(Store_Info);
             panel1.Location = new Point(2, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(481, 623);
+            panel1.Size = new Size(1204, 623);
             panel1.TabIndex = 1;
             // 
             // Manage_TReg
             // 
             Manage_TReg.BackColor = Color.FromArgb(186, 186, 212);
             Manage_TReg.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            Manage_TReg.Location = new Point(22, 474);
+            Manage_TReg.Location = new Point(22, 415);
             Manage_TReg.Name = "Manage_TReg";
             Manage_TReg.Size = new Size(370, 56);
             Manage_TReg.TabIndex = 28;
@@ -87,7 +88,7 @@
             // 
             Manage_Partner.BackColor = Color.FromArgb(186, 186, 212);
             Manage_Partner.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            Manage_Partner.Location = new Point(22, 159);
+            Manage_Partner.Location = new Point(22, 190);
             Manage_Partner.Name = "Manage_Partner";
             Manage_Partner.Size = new Size(370, 56);
             Manage_Partner.TabIndex = 27;
@@ -97,7 +98,7 @@
             // LogOutButton
             // 
             LogOutButton.Image = Properties.Resources.logoutbutton;
-            LogOutButton.Location = new Point(69, 547);
+            LogOutButton.Location = new Point(966, 548);
             LogOutButton.Margin = new Padding(4);
             LogOutButton.Name = "LogOutButton";
             LogOutButton.RightToLeft = RightToLeft.No;
@@ -112,7 +113,7 @@
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Image = Properties.Resources.dark_purple_colour;
-            label1.Location = new Point(160, 551);
+            label1.Location = new Point(1057, 552);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(132, 38);
@@ -124,7 +125,7 @@
             // 
             Add_Tournament.BackColor = Color.FromArgb(186, 186, 212);
             Add_Tournament.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            Add_Tournament.Location = new Point(22, 394);
+            Add_Tournament.Location = new Point(500, 308);
             Add_Tournament.Name = "Add_Tournament";
             Add_Tournament.Size = new Size(370, 56);
             Add_Tournament.TabIndex = 24;
@@ -136,7 +137,7 @@
             // 
             Promotions.BackColor = Color.FromArgb(186, 186, 212);
             Promotions.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            Promotions.Location = new Point(22, 316);
+            Promotions.Location = new Point(22, 308);
             Promotions.Name = "Promotions";
             Promotions.Size = new Size(370, 56);
             Promotions.TabIndex = 23;
@@ -147,7 +148,7 @@
             // 
             Manage_Inventory.BackColor = Color.FromArgb(186, 186, 212);
             Manage_Inventory.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            Manage_Inventory.Location = new Point(22, 236);
+            Manage_Inventory.Location = new Point(500, 190);
             Manage_Inventory.Name = "Manage_Inventory";
             Manage_Inventory.Size = new Size(370, 56);
             Manage_Inventory.TabIndex = 1;
@@ -158,11 +159,11 @@
             // 
             Welcome.AutoSize = true;
             Welcome.BackColor = Color.Transparent;
-            Welcome.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Welcome.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             Welcome.ForeColor = Color.White;
-            Welcome.Location = new Point(160, 46);
+            Welcome.Location = new Point(532, 42);
             Welcome.Name = "Welcome";
-            Welcome.Size = new Size(96, 38);
+            Welcome.Size = new Size(121, 48);
             Welcome.TabIndex = 0;
             Welcome.Text = "label1";
             // 
@@ -172,7 +173,7 @@
             ExitButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ExitButton.ForeColor = SystemColors.ActiveCaptionText;
             ExitButton.Image = Properties.Resources.solid_color_image__1_;
-            ExitButton.Location = new Point(1142, 0);
+            ExitButton.Location = new Point(1147, 9);
             ExitButton.Margin = new Padding(4, 0, 4, 0);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(42, 45);
@@ -186,7 +187,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.solid_color_image__1_;
             ClientSize = new Size(1204, 622);
-            Controls.Add(ExitButton);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "StoreMain";
@@ -197,7 +197,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

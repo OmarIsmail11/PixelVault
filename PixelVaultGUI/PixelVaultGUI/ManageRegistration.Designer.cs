@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             Reg_panel = new Panel();
+            ExitButton = new Label();
             Refresh = new Button();
             TName_combobox = new ComboBox();
             label9 = new Label();
             Close = new CheckBox();
             Open = new CheckBox();
             dataGridView1 = new DataGridView();
-            ExitButton = new Label();
             Reg_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -55,6 +55,20 @@
             Reg_panel.Size = new Size(1151, 580);
             Reg_panel.TabIndex = 32;
             // 
+            // ExitButton
+            // 
+            ExitButton.AutoSize = true;
+            ExitButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ExitButton.ForeColor = SystemColors.ActiveCaptionText;
+            ExitButton.Image = Properties.Resources.solid_color_image__1_;
+            ExitButton.Location = new Point(1109, 0);
+            ExitButton.Margin = new Padding(4, 0, 4, 0);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(42, 45);
+            ExitButton.TabIndex = 25;
+            ExitButton.Text = "X";
+            ExitButton.Click += ExitButton_Click;
+            // 
             // Refresh
             // 
             Refresh.BackgroundImage = Properties.Resources.dark_purple_colour;
@@ -66,6 +80,7 @@
             Refresh.TabIndex = 5;
             Refresh.Text = "Refresh";
             Refresh.UseVisualStyleBackColor = true;
+            Refresh.Click += Refresh_Click_1;
             // 
             // TName_combobox
             // 
@@ -95,6 +110,7 @@
             Close.TabIndex = 2;
             Close.Text = "Close";
             Close.UseVisualStyleBackColor = true;
+            Close.CheckedChanged += Close_CheckedChanged_1;
             // 
             // Open
             // 
@@ -106,29 +122,16 @@
             Open.TabIndex = 1;
             Open.Text = "Open";
             Open.UseVisualStyleBackColor = true;
+            Open.CheckedChanged += Open_CheckedChanged_1;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(7, 13);
+            dataGridView1.Location = new Point(24, 10);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(693, 340);
+            dataGridView1.Size = new Size(1023, 340);
             dataGridView1.TabIndex = 0;
-            // 
-            // ExitButton
-            // 
-            ExitButton.AutoSize = true;
-            ExitButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.ForeColor = SystemColors.ActiveCaptionText;
-            ExitButton.Image = Properties.Resources.solid_color_image__1_;
-            ExitButton.Location = new Point(1109, 0);
-            ExitButton.Margin = new Padding(4, 0, 4, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(42, 45);
-            ExitButton.TabIndex = 25;
-            ExitButton.Text = "X";
-            ExitButton.Click += ExitButton_Click;
             // 
             // ManageRegistration
             // 

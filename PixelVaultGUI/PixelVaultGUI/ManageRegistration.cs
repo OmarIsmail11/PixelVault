@@ -31,19 +31,22 @@ namespace PixelVaultGUI
             TName_combobox.DisplayMember = "TName";
             Open.Checked = true;
         }
-        private void Open_CheckedChanged(object sender, EventArgs e)
+
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StoreMain storeMain = new StoreMain(UserName);
+            storeMain.Show();
+        }
+
+        private void Open_CheckedChanged_1(object sender, EventArgs e)
         {
             if (Open.Checked == true)
                 Close.Checked = false;
         }
 
-        private void Close_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Close.Checked == true)
-                Open.Checked = false;
-        }
-
-        private void Refresh_Click(object sender, EventArgs e)
+        private void Refresh_Click_1(object sender, EventArgs e)
         {
             string Status = " ";
             if (Open.Checked == true)
@@ -55,14 +58,17 @@ namespace PixelVaultGUI
             dt = controller.Tournamentdata(UserName);
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
-
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
+        private void Close_CheckedChanged_1(object sender, EventArgs e)
         {
-            this.Close();
-            StoreMain storeMain = new StoreMain(UserName);
-            storeMain.Show();
+            if (Close.Checked == true)
+                Open.Checked = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

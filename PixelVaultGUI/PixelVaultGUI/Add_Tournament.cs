@@ -20,7 +20,7 @@ namespace PixelVaultGUI
             InitializeComponent();
             UserName = userName;
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = " ";
+            dateTimePicker1.CustomFormat = "";
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             Region.DataSource = controller.Regions();
             Region.DisplayMember = "Region";

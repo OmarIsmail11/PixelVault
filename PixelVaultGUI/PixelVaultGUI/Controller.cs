@@ -309,7 +309,7 @@ namespace DBapplication
         }
        public int RegStatus(string TName , string status)
         {
-            string query = "UPDATE Tournaments Set Registration_Status='" + status + "' where TName='" + TName + "'  ";
+            string query = "UPDATE Tournament Set Registration_Status='" + status + "' where TName='" + TName + "'  ";
             return dbMan.ExecuteNonQuery(query);
         }
         public DataTable Regions()
@@ -331,7 +331,7 @@ namespace DBapplication
         public int InsertNewTournamentWithoutMoney(string name, int Capacity, string type, string region,string date, string org)
         {
             string Status = "Open";
-            string query = "Insert into Tournament(TName,Capacity,AvailableSpots,TournamentType,Region,StartDate,Organizer,Registration_Status) Values('" + name + "'," + Capacity + "," + Capacity + ",'" + type + "','"+date+"','" + org + "','" + Status + "')";
+            string query = "Insert into Tournament(TName,Capacity,AvailableSpots,TournamentType,Region,StartDate,Organizer,Registration_Status) Values('" + name + "'," + Capacity + "," + Capacity + ",'" + type + "','"+region+"','"+date+"','" + org + "','" + Status + "')";
             return dbMan.ExecuteNonQuery(query);
         }
         public int InsertNewTournamentWithoutMoneyAndDate(string name, int Capacity, string type, string region, string org)

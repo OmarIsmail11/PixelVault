@@ -61,7 +61,7 @@ namespace PixelVaultGUI
 
         private void Add_Tournament_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Add_Tournament add_Tournament = new Add_Tournament(UserName);
             add_Tournament.Show();
         }
@@ -71,7 +71,7 @@ namespace PixelVaultGUI
         private void Manage_TReg_Click(object sender, EventArgs e)
         {
             
-            this.Close();
+            this.Hide();
             ManageRegistration manageRegistration= new ManageRegistration(UserName);
             manageRegistration.Show();
         }
