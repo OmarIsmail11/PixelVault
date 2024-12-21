@@ -20,6 +20,7 @@ namespace PixelVaultGUI
             WelcomeUserLabel.Text = "Welcome, " + UserName + "";
             gameLibrary1.GamerUserName = UserName;
             tournaments1.GamerUserName = UserName;
+            browseTournaments1.UserName = UserName;
             gameLibrary1.Visible = true;
             tournaments1.Visible = false;
             browseTournaments1.Visible = false;
@@ -54,6 +55,7 @@ namespace PixelVaultGUI
             tournaments1.Visible = true;
             gameLibrary1.Visible = false;
             browseTournaments1.Visible = false;
+            tournaments1.RefreshTournaments();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -86,6 +88,11 @@ namespace PixelVaultGUI
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void browseTournaments1_Load(object sender, EventArgs e)
         {
 
         }

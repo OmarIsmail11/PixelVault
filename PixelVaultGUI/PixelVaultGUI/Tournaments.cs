@@ -27,6 +27,13 @@ namespace PixelVaultGUI
             EnrolledInTournaments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             EnrolledInTournaments.Refresh();
         }
+        public void RefreshTournaments()
+        {
+            DataTable tournaments = controllerObj.RetreieveTournamentsEntrolledIn(GamerUserName);
+            EnrolledInTournaments.DataSource = tournaments;
+            EnrolledInTournaments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            EnrolledInTournaments.Refresh();
+        }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {

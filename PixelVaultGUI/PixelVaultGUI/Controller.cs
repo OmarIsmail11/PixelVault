@@ -340,6 +340,17 @@ namespace DBapplication
             string query = "Insert into Tournament(TName,Capacity,AvailableSpots,TournamentType,Region,Organizer,Registration_Status) Values('" + name + "'," + Capacity + "," + Capacity + ",'" + type + "','"+region+"','" + org + "','" + Status + "')";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public int EnrollInTournament(string UserName, string TournamentName)
+        {
+            string query = "INSERT INTO ENROLL VALUES ('" + UserName + "', '" + TournamentName + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int CheckIfAlreadyEnrolledInTournament(string UserName, string TournamentName)
+        {
+            string query = "SELECT COUNT(*) FROM ENROLL WHERE GamerUserName = '" + UserName + "' AND TName = '" + TournamentName + "';";
+            return Convert.ToInt16(dbMan.ExecuteScalar(query));
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
