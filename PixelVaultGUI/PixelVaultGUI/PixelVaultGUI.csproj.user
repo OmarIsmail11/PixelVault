@@ -10,8 +10,14 @@
     <Compile Update="Admin_Edit.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="BrowseGames.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="BrowseTournaments.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="EditGamerProfile.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="GameLibrary.cs">
       <SubType>UserControl</SubType>

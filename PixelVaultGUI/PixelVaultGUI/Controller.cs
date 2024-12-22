@@ -365,13 +365,54 @@ namespace DBapplication
         }
         public DataTable FilterTournaments(string Genre, string Region, string Type, string Game, string SortBy)
         {
-            string query = "DECLARE @SortColumn AS VARCHAR(20) = '" + SortBy + "' SELECT T.* FROM Tournament T JOIN Game G ON T.GameName = G.GameName WHERE (G.Genre = '" + Genre + "' OR '" + Genre + "' = '') AND (T.Region = '" + Region + "' OR '" + Region + "' = '') AND (T.TournamentType = '" + Type + "' OR '" + Type + "' = '') AND (G.GameName = '" + Game + "' OR '" + Game + "' = '') ORDER BY CASE WHEN @SortColumn = 'Available Spots' THEN T.AvailableSpots END ASC, CASE WHEN @SortColumn = 'Prize Money' THEN T.PrizeMoney END DESC, CASE WHEN @SortColumn = 'Start Date' THEN T.StartDate END ASC;";
+            string query = "DECLARE @SortColumn AS VARCHAR(20) = '" + SortBy + "' SELECT T.* FROM Tournament T JOIN Game G ON T.GameName = G.GameName WHERE (G.Genre = '" + Genre + "' OR '" + Genre + "' = '') AND (T.Region = '" + Region + "' OR '" + Region + "' = '') AND (T.TournamentType = '" + Type + "' OR '" + Type + "' = '') AND (G.GameName = '" + Game + "' OR '" + Game + "' = '') ORDER BY CASE WHEN @SortColumn = 'Available Spots' THEN T.AvailableSpots END ASC, CASE WHEN @SortColumn = 'Start Date' THEN T.StartDate END ASC;";
             return dbMan.ExecuteReader(query);
         }
         public DataTable SearchTournamentGame(string search)
         {
             string query = "SELECT * FROM Tournament WHERE TName LIKE '%" + search + "%' OR GameName LIKE '%" + search + "%';";
             return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable RetreiveAllGames()
+        {
+            string query = "SELECT * FROM Game";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetGameRecommendations(string username)
+        {
+            string query = "SELECT * FROM Game WHERE Genre IN (SELECT TOP 2 G.Genre FROM Game AS G, Plays AS P WHERE P.GamerUserName = '" + username + "' AND G.GameName = P.GameName GROUP BY G.Genre ORDER BY COUNT(*) DESC);";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable FilterGames(string Genre)
+        {
+            string query = "SELECT * FROM Game WHERE Genre = '" + Genre + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int CheckIfGameIsInLibrary(string username, string gamename)
+        {
+            string query = "SELECT COUNT(*) FROM Plays WHERE GameName = '" + gamename + "' AND GamerUserName = '" + username + "';";
+            return Convert.ToInt16(dbMan.ExecuteScalar(query));
+        }
+
+        public int AddGameToLibrary(string username, string gamename)
+        {
+            string query = "INSERT INTO Plays VALUES ('" + gamename + "','" + username + "', NULL, NULL, NULL);";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable SearchGame(string search)
+        {
+            string query = "SELECT * From Game WHERE GameName LIKE '%" + search + "%';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int UpdatePassword(string username, string newpassword)
+        {
+            string query = "UPDATE UserPasswordsAuthorization SET Password = '" + newpassword + "' WHERE UserName = '" + username + "';";
+            return dbMan.ExecuteNonQuery(query);
         }
         public void TerminateConnection()
         {

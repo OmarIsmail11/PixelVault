@@ -49,6 +49,7 @@
             groupBox1 = new GroupBox();
             GenreCheckedListBox = new CheckedListBox();
             label2 = new Label();
+            panel2 = new Panel();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LiveTournamentsDataGrid).BeginInit();
             panel1.SuspendLayout();
@@ -57,6 +58,7 @@
             SortBy.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel3
@@ -147,16 +149,14 @@
             // 
             panel1.BackgroundImage = Properties.Resources.dark_purple_colour;
             panel1.Controls.Add(groupBox4);
-            panel1.Controls.Add(groupBox3);
-            panel1.Controls.Add(EnrollButton);
-            panel1.Controls.Add(FilterButton);
             panel1.Controls.Add(SortBy);
+            panel1.Controls.Add(groupBox3);
             panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(20, 390);
             panel1.Name = "panel1";
-            panel1.Size = new Size(967, 241);
+            panel1.Size = new Size(694, 241);
             panel1.TabIndex = 19;
             // 
             // groupBox4
@@ -165,9 +165,9 @@
             groupBox4.Controls.Add(GameComboBox);
             groupBox4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox4.ForeColor = SystemColors.ButtonFace;
-            groupBox4.Location = new Point(534, 144);
+            groupBox4.Location = new Point(382, 50);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(208, 76);
+            groupBox4.Size = new Size(286, 76);
             groupBox4.TabIndex = 24;
             groupBox4.TabStop = false;
             groupBox4.Text = "Game";
@@ -178,7 +178,7 @@
             GameComboBox.FormattingEnabled = true;
             GameComboBox.Location = new Point(16, 33);
             GameComboBox.Name = "GameComboBox";
-            GameComboBox.Size = new Size(176, 28);
+            GameComboBox.Size = new Size(254, 28);
             GameComboBox.TabIndex = 0;
             // 
             // groupBox3
@@ -187,9 +187,9 @@
             groupBox3.Controls.Add(TypeCheckedListBox);
             groupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox3.ForeColor = SystemColors.ButtonFace;
-            groupBox3.Location = new Point(399, 131);
+            groupBox3.Location = new Point(382, 132);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(110, 89);
+            groupBox3.Size = new Size(99, 89);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "Type";
@@ -205,7 +205,7 @@
             TypeCheckedListBox.Items.AddRange(new object[] { "1v1", "Teams" });
             TypeCheckedListBox.Location = new Point(16, 33);
             TypeCheckedListBox.Name = "TypeCheckedListBox";
-            TypeCheckedListBox.Size = new Size(84, 50);
+            TypeCheckedListBox.Size = new Size(75, 50);
             TypeCheckedListBox.TabIndex = 0;
             TypeCheckedListBox.ItemCheck += TypeCheckedListBox_ItemCheck;
             // 
@@ -213,9 +213,9 @@
             // 
             EnrollButton.BackColor = Color.FromArgb(186, 186, 212);
             EnrollButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            EnrollButton.Location = new Point(683, 39);
+            EnrollButton.Location = new Point(46, 142);
             EnrollButton.Name = "EnrollButton";
-            EnrollButton.Size = new Size(167, 43);
+            EnrollButton.Size = new Size(159, 49);
             EnrollButton.TabIndex = 23;
             EnrollButton.Text = "Enroll";
             EnrollButton.UseVisualStyleBackColor = false;
@@ -225,9 +225,9 @@
             // 
             FilterButton.BackColor = Color.FromArgb(186, 186, 212);
             FilterButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            FilterButton.Location = new Point(437, 39);
+            FilterButton.Location = new Point(46, 48);
             FilterButton.Name = "FilterButton";
-            FilterButton.Size = new Size(155, 43);
+            FilterButton.Size = new Size(159, 52);
             FilterButton.TabIndex = 22;
             FilterButton.Text = "Filter";
             FilterButton.UseVisualStyleBackColor = false;
@@ -239,9 +239,9 @@
             SortBy.Controls.Add(SortByCheckedListBox);
             SortBy.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SortBy.ForeColor = SystemColors.ButtonFace;
-            SortBy.Location = new Point(766, 99);
+            SortBy.Location = new Point(501, 134);
             SortBy.Name = "SortBy";
-            SortBy.Size = new Size(167, 121);
+            SortBy.Size = new Size(167, 87);
             SortBy.TabIndex = 4;
             SortBy.TabStop = false;
             SortBy.Text = "Sort By";
@@ -254,10 +254,10 @@
             SortByCheckedListBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SortByCheckedListBox.ForeColor = SystemColors.ButtonHighlight;
             SortByCheckedListBox.FormattingEnabled = true;
-            SortByCheckedListBox.Items.AddRange(new object[] { "Available Spots", "Start Date", "Prize Money" });
+            SortByCheckedListBox.Items.AddRange(new object[] { "Available Spots", "Start Date" });
             SortByCheckedListBox.Location = new Point(16, 33);
             SortByCheckedListBox.Name = "SortByCheckedListBox";
-            SortByCheckedListBox.Size = new Size(145, 75);
+            SortByCheckedListBox.Size = new Size(145, 50);
             SortByCheckedListBox.TabIndex = 0;
             SortByCheckedListBox.ItemCheck += SortByCheckedListBox_ItemCheck;
             // 
@@ -267,7 +267,7 @@
             groupBox2.Controls.Add(RegionCheckedListBox);
             groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox2.ForeColor = SystemColors.ButtonFace;
-            groupBox2.Location = new Point(206, 50);
+            groupBox2.Location = new Point(196, 50);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(167, 170);
             groupBox2.TabIndex = 3;
@@ -329,11 +329,22 @@
             label2.TabIndex = 1;
             label2.Text = "Filter Results By";
             // 
+            // panel2
+            // 
+            panel2.BackgroundImage = Properties.Resources.dark_purple_colour;
+            panel2.Controls.Add(FilterButton);
+            panel2.Controls.Add(EnrollButton);
+            panel2.Location = new Point(739, 392);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(248, 232);
+            panel2.TabIndex = 20;
+            // 
             // BrowseTournaments
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 188, 212);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(ExitButton);
             Controls.Add(panel3);
@@ -350,6 +361,7 @@
             SortBy.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -377,5 +389,6 @@
         private ComboBox GameComboBox;
         private Button SearchButton;
         private CheckedListBox GenreCheckedListBox;
+        private Panel panel2;
     }
 }

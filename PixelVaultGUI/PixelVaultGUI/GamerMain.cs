@@ -21,9 +21,11 @@ namespace PixelVaultGUI
             gameLibrary1.GamerUserName = UserName;
             tournaments1.GamerUserName = UserName;
             browseTournaments1.UserName = UserName;
+            browseGames1.UserName = UserName;
             gameLibrary1.Visible = true;
             tournaments1.Visible = false;
             browseTournaments1.Visible = false;
+            browseGames1.Visible = false;
         }
 
         private void GamerMain_Load(object sender, EventArgs e)
@@ -33,12 +35,15 @@ namespace PixelVaultGUI
 
         private void GamerLibraryButton_Click(object sender, EventArgs e)
         {
+            gameLibrary1.RefreshLibrary();
             GamerLibraryButton.BackColor = Color.Thistle;
             TournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             BrowseTournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            BrowseGamesButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             gameLibrary1.Visible = true;
             tournaments1.Visible = false;
             browseTournaments1.Visible = false;
+            browseGames1.Visible = false;
         }
 
         private void gameLibrary1_Load(object sender, EventArgs e)
@@ -51,9 +56,11 @@ namespace PixelVaultGUI
             TournamentsButton.BackColor = Color.Thistle;
             GamerLibraryButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             BrowseTournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            BrowseGamesButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             tournaments1.Visible = true;
             gameLibrary1.Visible = false;
             browseTournaments1.Visible = false;
+            browseGames1.Visible = false;
             tournaments1.RefreshTournaments();
         }
 
@@ -81,9 +88,11 @@ namespace PixelVaultGUI
             BrowseTournamentsButton.BackColor = Color.Thistle;
             TournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             GamerLibraryButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            BrowseGamesButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             browseTournaments1.Visible = true;
             gameLibrary1.Visible = false;
             tournaments1.Visible = false;
+            browseGames1.Visible = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -94,6 +103,32 @@ namespace PixelVaultGUI
         private void browseTournaments1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BrowseGamesButton_Click(object sender, EventArgs e)
+        {
+            BrowseGamesButton.BackColor = Color.Thistle;
+            TournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            GamerLibraryButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            BrowseTournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            browseGames1.Visible = true;
+            gameLibrary1.Visible = false;
+            tournaments1.Visible = false;
+            browseTournaments1.Visible = false;
+        }
+
+        private void browseGames1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditProfile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditGamerProfile editGamerProfile = new EditGamerProfile();
+            editGamerProfile.GamerUserName = UserName;
+            editGamerProfile.ShowDialog();
+            this.Show();
         }
     }
 }

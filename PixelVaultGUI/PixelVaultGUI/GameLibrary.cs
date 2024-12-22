@@ -31,7 +31,13 @@ namespace PixelVaultGUI
             YourGamesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             YourGamesDataGridView.Refresh();
         }
-
+        public void RefreshLibrary()
+        {
+            DataTable yourGames = controllerObj.RetreiveGamerGamesLibrary(GamerUserName);
+            YourGamesDataGridView.DataSource = yourGames;
+            YourGamesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            YourGamesDataGridView.Refresh();
+        }
         private void button1_Click(object sender, EventArgs e) //Remove Game Button
         {
             string gameName;
