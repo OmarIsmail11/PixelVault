@@ -414,6 +414,11 @@ namespace DBapplication
             string query = "UPDATE UserPasswordsAuthorization SET Password = '" + newpassword + "' WHERE UserName = '" + username + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable GetInventory(string username)
+        {
+            string query = "Select I.GameName,Price,Genre from Inventory I,Game G Where StoreName='" + username + "'AND I.GameName=G.GameName";
+            return dbMan.ExecuteReader(query);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
