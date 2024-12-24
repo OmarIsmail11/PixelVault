@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StoreMain));
             Store_Info = new PictureBox();
             panel1 = new Panel();
             Manage_TReg = new Button();
@@ -38,7 +39,7 @@
             Promotions = new Button();
             Manage_Inventory = new Button();
             Welcome = new Label();
-            ManageInventoryPanel = new Panel();
+            manageInventory1 = new ManageInventory();
             ((System.ComponentModel.ISupportInitialize)Store_Info).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -74,10 +75,10 @@
             // Manage_TReg
             // 
             Manage_TReg.BackColor = Color.FromArgb(186, 186, 212);
-            Manage_TReg.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            Manage_TReg.Location = new Point(22, 462);
+            Manage_TReg.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Manage_TReg.Location = new Point(22, 492);
             Manage_TReg.Name = "Manage_TReg";
-            Manage_TReg.Size = new Size(370, 56);
+            Manage_TReg.Size = new Size(370, 45);
             Manage_TReg.TabIndex = 28;
             Manage_TReg.Text = "Manage Registration";
             Manage_TReg.UseVisualStyleBackColor = false;
@@ -86,10 +87,10 @@
             // Manage_Partner
             // 
             Manage_Partner.BackColor = Color.FromArgb(186, 186, 212);
-            Manage_Partner.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            Manage_Partner.Location = new Point(22, 196);
+            Manage_Partner.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Manage_Partner.Location = new Point(22, 233);
             Manage_Partner.Name = "Manage_Partner";
-            Manage_Partner.Size = new Size(370, 56);
+            Manage_Partner.Size = new Size(370, 45);
             Manage_Partner.TabIndex = 27;
             Manage_Partner.Text = "Manage Partenerships";
             Manage_Partner.UseVisualStyleBackColor = false;
@@ -123,10 +124,10 @@
             // Add_Tournament
             // 
             Add_Tournament.BackColor = Color.FromArgb(186, 186, 212);
-            Add_Tournament.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            Add_Tournament.Location = new Point(22, 382);
+            Add_Tournament.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Add_Tournament.Location = new Point(22, 427);
             Add_Tournament.Name = "Add_Tournament";
-            Add_Tournament.Size = new Size(370, 56);
+            Add_Tournament.Size = new Size(370, 45);
             Add_Tournament.TabIndex = 24;
             Add_Tournament.Text = "Add Tournament";
             Add_Tournament.UseVisualStyleBackColor = false;
@@ -135,10 +136,10 @@
             // Promotions
             // 
             Promotions.BackColor = Color.FromArgb(186, 186, 212);
-            Promotions.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            Promotions.Location = new Point(22, 320);
+            Promotions.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Promotions.Location = new Point(22, 359);
             Promotions.Name = "Promotions";
-            Promotions.Size = new Size(370, 56);
+            Promotions.Size = new Size(370, 45);
             Promotions.TabIndex = 23;
             Promotions.Text = "Promotions";
             Promotions.UseVisualStyleBackColor = false;
@@ -146,10 +147,10 @@
             // Manage_Inventory
             // 
             Manage_Inventory.BackColor = Color.FromArgb(186, 186, 212);
-            Manage_Inventory.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            Manage_Inventory.Location = new Point(22, 258);
+            Manage_Inventory.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Manage_Inventory.Location = new Point(22, 294);
             Manage_Inventory.Name = "Manage_Inventory";
-            Manage_Inventory.Size = new Size(370, 56);
+            Manage_Inventory.Size = new Size(370, 45);
             Manage_Inventory.TabIndex = 1;
             Manage_Inventory.Text = "Manage Inventory";
             Manage_Inventory.UseVisualStyleBackColor = false;
@@ -159,28 +160,30 @@
             // 
             Welcome.AutoSize = true;
             Welcome.BackColor = Color.Transparent;
-            Welcome.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            Welcome.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             Welcome.ForeColor = Color.White;
-            Welcome.Location = new Point(201, 103);
+            Welcome.Location = new Point(10, 168);
             Welcome.Name = "Welcome";
-            Welcome.Size = new Size(121, 48);
+            Welcome.Size = new Size(110, 45);
             Welcome.TabIndex = 0;
             Welcome.Text = "label1";
             // 
-            // ManageInventoryPanel
+            // manageInventory1
             // 
-            ManageInventoryPanel.Location = new Point(423, 1);
-            ManageInventoryPanel.Name = "ManageInventoryPanel";
-            ManageInventoryPanel.Size = new Size(780, 622);
-            ManageInventoryPanel.TabIndex = 29;
+            manageInventory1.AutoSize = true;
+            manageInventory1.BackgroundImage = (Image)resources.GetObject("manageInventory1.BackgroundImage");
+            manageInventory1.Location = new Point(411, 0);
+            manageInventory1.Name = "manageInventory1";
+            manageInventory1.Size = new Size(813, 620);
+            manageInventory1.TabIndex = 2;
             // 
             // StoreMain
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.solid_color_image__1_;
-            ClientSize = new Size(1204, 622);
-            Controls.Add(ManageInventoryPanel);
+            BackColor = SystemColors.ActiveCaptionText;
+            ClientSize = new Size(1225, 622);
+            Controls.Add(manageInventory1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "StoreMain";
@@ -191,6 +194,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -205,6 +209,6 @@
         private Label label1;
         private Button Manage_Partner;
         private Button Manage_TReg;
-        private Panel ManageInventoryPanel;
+        private ManageInventory manageInventory1;
     }
 }

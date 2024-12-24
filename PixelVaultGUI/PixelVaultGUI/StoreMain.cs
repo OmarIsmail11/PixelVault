@@ -22,7 +22,8 @@ namespace PixelVaultGUI
             InitializeComponent();
             UserName = username_in;
             Welcome.Text = "Welcome, " + UserName + "";
-            
+            manageInventory1.UserName= username_in;
+            manageInventory1.Visible = false;
         }
 
         private void StoreMain_Load(object sender, EventArgs e)
@@ -67,9 +68,7 @@ namespace PixelVaultGUI
             Manage_Partner.BackColor= System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Manage_Inventory.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
-            this.Hide();
-            Add_Tournament add_Tournament = new Add_Tournament(UserName);
-            add_Tournament.Show();
+            
         }
 
 
@@ -81,9 +80,7 @@ namespace PixelVaultGUI
             Manage_Partner.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Manage_Inventory.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
-            this.Hide();
-            ManageRegistration manageRegistration = new ManageRegistration(UserName);
-            manageRegistration.Show();
+            
         }
 
         private void Manage_Inventory_Click(object sender, EventArgs e)
@@ -93,9 +90,7 @@ namespace PixelVaultGUI
             Manage_Partner.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Manage_Inventory.BackColor =Color.Thistle;
             Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
-            ManageInventory manageInventory = new ManageInventory();
-            manageInventory.UserName= UserName;
-            manageInventory.Show();
+            manageInventory1.Visible = true;
         }
     }
 }

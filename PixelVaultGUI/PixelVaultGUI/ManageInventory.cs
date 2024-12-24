@@ -18,9 +18,11 @@ namespace PixelVaultGUI
         public string UserName;
         public ManageInventory()
         {
-            
+
             InitializeComponent();
-            dataGridView1.DataSource = controller.GetInventory(UserName);
+            DataTable dt = controller.GetInventory(UserName);
+            dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
         }
 
@@ -32,6 +34,14 @@ namespace PixelVaultGUI
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void ManageInventory_Load(object sender, EventArgs e)
+        {
+            DataTable dt = controller.GetInventory(UserName);
+            dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Refresh();
         }
     }
 }

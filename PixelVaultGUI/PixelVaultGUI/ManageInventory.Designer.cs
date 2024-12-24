@@ -39,7 +39,7 @@
             dataGridView1.Location = new Point(3, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(855, 321);
+            dataGridView1.Size = new Size(689, 291);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -49,7 +49,7 @@
             ExitButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ExitButton.ForeColor = SystemColors.ActiveCaptionText;
             ExitButton.Image = Properties.Resources.solid_color_image__1_;
-            ExitButton.Location = new Point(904, 3);
+            ExitButton.Location = new Point(728, 3);
             ExitButton.Margin = new Padding(4, 0, 4, 0);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(42, 45);
@@ -65,7 +65,8 @@
             Controls.Add(ExitButton);
             Controls.Add(dataGridView1);
             Name = "ManageInventory";
-            Size = new Size(950, 471);
+            Size = new Size(774, 471);
+            Load += ManageInventory_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
