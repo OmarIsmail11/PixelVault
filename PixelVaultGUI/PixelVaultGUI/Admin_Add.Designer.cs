@@ -75,113 +75,160 @@
             label19 = new Label();
             label20 = new Label();
             manhead = new ComboBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)storrate).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(392, 98);
+            label1.BackColor = Color.White;
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Image = Properties.Resources.solid_color_image;
+            label1.Location = new Point(373, 96);
             label1.Name = "label1";
-            label1.Size = new Size(119, 25);
+            label1.Size = new Size(141, 28);
             label1.TabIndex = 0;
             label1.Text = "Headquarters";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 296);
+            label2.BackColor = Color.White;
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Image = Properties.Resources.solid_color_image;
+            label2.Location = new Point(5, 325);
             label2.Name = "label2";
-            label2.Size = new Size(128, 25);
+            label2.Size = new Size(148, 28);
             label2.TabIndex = 1;
             label2.Text = "Console Name";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(1076, 49);
+            label3.BackColor = Color.White;
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Image = Properties.Resources.solid_color_image;
+            label3.Location = new Point(1087, 44);
             label3.Name = "label3";
-            label3.Size = new Size(133, 25);
+            label3.Size = new Size(161, 28);
             label3.TabIndex = 2;
             label3.Text = "Reviewer Name";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(1076, 111);
+            label4.BackColor = Color.White;
+            label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.ButtonHighlight;
+            label4.Image = Properties.Resources.solid_color_image;
+            label4.Location = new Point(1087, 106);
             label4.Name = "label4";
-            label4.Size = new Size(43, 25);
+            label4.Size = new Size(49, 28);
             label4.TabIndex = 3;
             label4.Text = "URL";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(392, 52);
+            label5.BackColor = Color.White;
+            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Image = Properties.Resources.solid_color_image;
+            label5.Location = new Point(373, 47);
             label5.Name = "label5";
-            label5.Size = new Size(104, 25);
+            label5.Size = new Size(124, 28);
             label5.TabIndex = 4;
             label5.Text = "Enter Name";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(729, 110);
+            label6.BackColor = Color.White;
+            label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.ButtonHighlight;
+            label6.Image = Properties.Resources.solid_color_image;
+            label6.Location = new Point(714, 96);
             label6.Name = "label6";
-            label6.Size = new Size(80, 25);
+            label6.Size = new Size(95, 28);
             label6.TabIndex = 5;
             label6.Text = "Platform";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(729, 46);
+            label7.BackColor = Color.White;
+            label7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.ButtonHighlight;
+            label7.Image = Properties.Resources.solid_color_image;
+            label7.Location = new Point(714, 44);
             label7.Name = "label7";
-            label7.Size = new Size(117, 25);
+            label7.Size = new Size(138, 28);
             label7.TabIndex = 6;
             label7.Text = "Engine Name";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(1076, 164);
+            label8.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.ButtonHighlight;
+            label8.Image = Properties.Resources.solid_color_image;
+            label8.Location = new Point(1087, 159);
             label8.Name = "label8";
-            label8.Size = new Size(109, 25);
+            label8.Size = new Size(130, 28);
             label8.TabIndex = 7;
             label8.Text = "Launch Date";
             // 
             // label9
             // 
             label9.AutoSize = true;
+            label9.BackColor = Color.White;
+            label9.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.ButtonHighlight;
+            label9.Image = Properties.Resources.solid_color_image;
             label9.Location = new Point(12, 101);
             label9.Name = "label9";
-            label9.Size = new Size(132, 25);
+            label9.Size = new Size(157, 28);
             label9.TabIndex = 8;
             label9.Text = "Enter Password";
             // 
             // label10
             // 
             label10.AutoSize = true;
+            label10.BackColor = Color.White;
+            label10.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = SystemColors.ButtonHighlight;
+            label10.Image = Properties.Resources.solid_color_image;
             label10.Location = new Point(12, 46);
             label10.Name = "label10";
-            label10.Size = new Size(136, 25);
+            label10.Size = new Size(162, 28);
             label10.TabIndex = 9;
             label10.Text = "Enter Username";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(729, 161);
+            label11.BackColor = Color.White;
+            label11.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = SystemColors.ButtonHighlight;
+            label11.Image = Properties.Resources.solid_color_image;
+            label11.Location = new Point(714, 156);
             label11.Name = "label11";
-            label11.Size = new Size(130, 25);
+            label11.Size = new Size(151, 28);
             label11.TabIndex = 10;
             label11.Text = "language Used";
             // 
             // addstor
             // 
-            addstor.Location = new Point(521, 494);
+            addstor.ForeColor = SystemColors.ActiveCaptionText;
+            addstor.Image = Properties.Resources.solid_color_image__1_;
+            addstor.Location = new Point(542, 568);
             addstor.Name = "addstor";
-            addstor.Size = new Size(180, 34);
+            addstor.Size = new Size(180, 44);
             addstor.TabIndex = 11;
             addstor.Text = "Add Game Store";
             addstor.UseVisualStyleBackColor = true;
@@ -189,19 +236,24 @@
             // 
             // addpub
             // 
-            addpub.Location = new Point(879, 537);
+            addpub.BackColor = Color.White;
+            addpub.ForeColor = SystemColors.ActiveCaptionText;
+            addpub.Image = Properties.Resources.solid_color_image__1_;
+            addpub.Location = new Point(927, 568);
             addpub.Name = "addpub";
-            addpub.Size = new Size(231, 34);
+            addpub.Size = new Size(231, 44);
             addpub.TabIndex = 12;
             addpub.Text = "Add Game Publisher";
-            addpub.UseVisualStyleBackColor = true;
+            addpub.UseVisualStyleBackColor = false;
             addpub.Click += addpub_Click_1;
             // 
             // addcon
             // 
-            addcon.Location = new Point(156, 487);
+            addcon.ForeColor = SystemColors.ActiveCaptionText;
+            addcon.Image = Properties.Resources.solid_color_image__1_;
+            addcon.Location = new Point(166, 568);
             addcon.Name = "addcon";
-            addcon.Size = new Size(201, 34);
+            addcon.Size = new Size(201, 44);
             addcon.TabIndex = 13;
             addcon.Text = "Add Console";
             addcon.UseVisualStyleBackColor = true;
@@ -209,9 +261,11 @@
             // 
             // addrev
             // 
-            addrev.Location = new Point(1215, 213);
+            addrev.ForeColor = SystemColors.ActiveCaptionText;
+            addrev.Image = Properties.Resources.solid_color_image__1_;
+            addrev.Location = new Point(1266, 202);
             addrev.Name = "addrev";
-            addrev.Size = new Size(184, 34);
+            addrev.Size = new Size(184, 70);
             addrev.TabIndex = 14;
             addrev.Text = "Add Game Reviewer";
             addrev.UseVisualStyleBackColor = true;
@@ -219,71 +273,84 @@
             // 
             // addeng
             // 
+            addeng.BackColor = Color.White;
+            addeng.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addeng.ForeColor = SystemColors.ActiveCaptionText;
+            addeng.Image = Properties.Resources.solid_color_image__1_;
             addeng.Location = new Point(879, 213);
             addeng.Name = "addeng";
-            addeng.Size = new Size(182, 34);
+            addeng.Size = new Size(182, 43);
             addeng.TabIndex = 15;
             addeng.Text = "Add Game Engine";
-            addeng.UseVisualStyleBackColor = true;
+            addeng.UseVisualStyleBackColor = false;
             addeng.Click += addeng_Click_1;
             // 
             // addman
             // 
+            addman.BackColor = Color.White;
+            addman.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addman.ForeColor = SystemColors.ActiveCaptionText;
+            addman.Image = Properties.Resources.solid_color_image__1_;
             addman.Location = new Point(530, 155);
             addman.Name = "addman";
-            addman.Size = new Size(171, 34);
+            addman.Size = new Size(171, 83);
             addman.TabIndex = 16;
             addman.Text = "Add Manufacturer";
-            addman.UseVisualStyleBackColor = true;
+            addman.UseVisualStyleBackColor = false;
             addman.Click += addman_Click_1;
             // 
             // addmin
             // 
+            addmin.BackColor = Color.White;
+            addmin.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addmin.ForeColor = SystemColors.ActiveCaptionText;
+            addmin.Image = Properties.Resources.solid_color_image__1_;
             addmin.Location = new Point(188, 152);
             addmin.Name = "addmin";
-            addmin.Size = new Size(169, 34);
+            addmin.Size = new Size(169, 37);
             addmin.TabIndex = 17;
             addmin.Text = "Add Admin";
-            addmin.UseVisualStyleBackColor = true;
+            addmin.UseVisualStyleBackColor = false;
             addmin.Click += addmin_Click_1;
             // 
             // manname1
             // 
             manname1.FormattingEnabled = true;
-            manname1.Location = new Point(156, 422);
+            manname1.Location = new Point(166, 454);
             manname1.Name = "manname1";
-            manname1.Size = new Size(201, 33);
+            manname1.Size = new Size(201, 36);
             manname1.TabIndex = 18;
             // 
             // engplat
             // 
             engplat.FormattingEnabled = true;
-            engplat.Location = new Point(879, 105);
+            engplat.Location = new Point(877, 96);
             engplat.Name = "engplat";
-            engplat.Size = new Size(182, 33);
+            engplat.Size = new Size(182, 36);
             engplat.TabIndex = 19;
             // 
             // revdate
             // 
-            revdate.Location = new Point(1215, 156);
+            revdate.Location = new Point(1266, 153);
             revdate.Name = "revdate";
-            revdate.Size = new Size(184, 31);
+            revdate.Size = new Size(184, 34);
             revdate.TabIndex = 21;
             // 
             // condate
             // 
-            condate.Location = new Point(156, 364);
+            condate.Location = new Point(166, 393);
             condate.Name = "condate";
-            condate.Size = new Size(201, 31);
+            condate.Size = new Size(201, 34);
             condate.TabIndex = 22;
             // 
             // storrate
             // 
+            storrate.BackColor = Color.White;
             storrate.LargeChange = 1;
-            storrate.Location = new Point(515, 419);
+            storrate.Location = new Point(542, 455);
             storrate.Maximum = 5;
             storrate.Name = "storrate";
-            storrate.Size = new Size(186, 69);
+            storrate.Size = new Size(180, 69);
             storrate.TabIndex = 23;
             // 
             // admin_username
@@ -323,146 +390,182 @@
             // 
             // pubname
             // 
-            pubname.Location = new Point(879, 287);
+            pubname.Location = new Point(927, 316);
             pubname.Name = "pubname";
-            pubname.Size = new Size(231, 31);
+            pubname.Size = new Size(231, 34);
             pubname.TabIndex = 29;
             // 
             // revurl
             // 
-            revurl.Location = new Point(1215, 105);
+            revurl.Location = new Point(1266, 103);
             revurl.Name = "revurl";
-            revurl.Size = new Size(184, 31);
+            revurl.Size = new Size(184, 34);
             revurl.TabIndex = 30;
             // 
             // conname
             // 
-            conname.Location = new Point(156, 293);
+            conname.Location = new Point(166, 325);
             conname.Name = "conname";
-            conname.Size = new Size(201, 31);
+            conname.Size = new Size(201, 34);
             conname.TabIndex = 31;
             // 
             // revname
             // 
-            revname.Location = new Point(1215, 46);
+            revname.Location = new Point(1266, 44);
             revname.Name = "revname";
-            revname.Size = new Size(184, 31);
+            revname.Size = new Size(184, 34);
             revname.TabIndex = 32;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(12, 370);
+            label12.BackColor = Color.White;
+            label12.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label12.ForeColor = SystemColors.ButtonHighlight;
+            label12.Image = Properties.Resources.solid_color_image;
+            label12.Location = new Point(10, 399);
             label12.Name = "label12";
-            label12.Size = new Size(112, 25);
+            label12.Size = new Size(135, 28);
             label12.TabIndex = 34;
             label12.Text = "Release Date";
             // 
             // pubdate
             // 
-            pubdate.Location = new Point(879, 357);
+            pubdate.Location = new Point(927, 387);
             pubdate.Name = "pubdate";
-            pubdate.Size = new Size(231, 31);
+            pubdate.Size = new Size(231, 34);
             pubdate.TabIndex = 35;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(12, 429);
+            label13.BackColor = Color.White;
+            label13.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label13.ForeColor = SystemColors.ButtonHighlight;
+            label13.Image = Properties.Resources.solid_color_image;
+            label13.Location = new Point(10, 457);
             label13.Name = "label13";
-            label13.Size = new Size(122, 25);
+            label13.Size = new Size(143, 28);
             label13.TabIndex = 36;
             label13.Text = "Developed By";
             // 
             // storname
             // 
-            storname.Location = new Point(521, 290);
+            storname.Location = new Point(542, 323);
             storname.Name = "storname";
-            storname.Size = new Size(180, 31);
+            storname.Size = new Size(180, 34);
             storname.TabIndex = 37;
             // 
             // storhot
             // 
-            storhot.Location = new Point(521, 360);
+            storhot.Location = new Point(542, 396);
             storhot.Name = "storhot";
-            storhot.Size = new Size(180, 31);
+            storhot.Size = new Size(180, 34);
             storhot.TabIndex = 38;
             // 
             // pubhead
             // 
             pubhead.FormattingEnabled = true;
-            pubhead.Location = new Point(879, 480);
+            pubhead.Location = new Point(927, 504);
             pubhead.Name = "pubhead";
-            pubhead.Size = new Size(231, 33);
+            pubhead.Size = new Size(231, 36);
             pubhead.TabIndex = 39;
             // 
             // pubtype
             // 
-            pubtype.Location = new Point(879, 417);
+            pubtype.Location = new Point(927, 448);
             pubtype.Name = "pubtype";
-            pubtype.Size = new Size(231, 31);
+            pubtype.Size = new Size(231, 34);
             pubtype.TabIndex = 40;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(392, 299);
+            label14.BackColor = Color.White;
+            label14.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label14.ForeColor = SystemColors.ButtonHighlight;
+            label14.Image = Properties.Resources.solid_color_image;
+            label14.Location = new Point(399, 325);
             label14.Name = "label14";
-            label14.Size = new Size(105, 25);
+            label14.Size = new Size(124, 28);
             label14.TabIndex = 41;
             label14.Text = "Store Name";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(394, 369);
+            label15.BackColor = Color.White;
+            label15.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label15.ForeColor = SystemColors.ButtonHighlight;
+            label15.Image = Properties.Resources.solid_color_image;
+            label15.Location = new Point(399, 393);
             label15.Name = "label15";
-            label15.Size = new Size(69, 25);
+            label15.Size = new Size(82, 28);
             label15.TabIndex = 42;
             label15.Text = "Hotline";
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(397, 429);
+            label16.BackColor = Color.White;
+            label16.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label16.ForeColor = SystemColors.ButtonHighlight;
+            label16.Image = Properties.Resources.solid_color_image;
+            label16.Location = new Point(399, 454);
             label16.Name = "label16";
-            label16.Size = new Size(63, 25);
+            label16.Size = new Size(74, 28);
             label16.TabIndex = 43;
             label16.Text = "Rating";
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(729, 290);
+            label17.BackColor = Color.White;
+            label17.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label17.ForeColor = SystemColors.ButtonHighlight;
+            label17.Image = Properties.Resources.solid_color_image;
+            label17.Location = new Point(747, 319);
             label17.Name = "label17";
-            label17.Size = new Size(136, 25);
+            label17.Size = new Size(162, 28);
             label17.TabIndex = 44;
             label17.Text = "Publisher Name";
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(729, 364);
+            label18.BackColor = Color.White;
+            label18.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label18.ForeColor = SystemColors.ButtonHighlight;
+            label18.Image = Properties.Resources.solid_color_image;
+            label18.Location = new Point(747, 393);
             label18.Name = "label18";
-            label18.Size = new Size(90, 25);
+            label18.Size = new Size(110, 28);
             label18.TabIndex = 45;
             label18.Text = "Start Date";
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(729, 425);
+            label19.BackColor = Color.White;
+            label19.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label19.ForeColor = SystemColors.ButtonHighlight;
+            label19.Image = Properties.Resources.solid_color_image;
+            label19.Location = new Point(747, 454);
             label19.Name = "label19";
-            label19.Size = new Size(118, 25);
+            label19.Size = new Size(137, 28);
             label19.TabIndex = 46;
             label19.Text = "Console Type";
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(729, 483);
+            label20.BackColor = Color.White;
+            label20.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label20.ForeColor = SystemColors.ButtonHighlight;
+            label20.Image = Properties.Resources.solid_color_image;
+            label20.Location = new Point(747, 512);
             label20.Name = "label20";
-            label20.Size = new Size(119, 25);
+            label20.Size = new Size(141, 28);
             label20.TabIndex = 47;
             label20.Text = "Headquarters";
             // 
@@ -475,62 +578,76 @@
             manhead.TabIndex = 48;
             manhead.SelectedIndexChanged += manhead_SelectedIndexChanged;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.BackgroundImage = Properties.Resources.solid_color_image;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label12);
+            panel1.Controls.Add(label13);
+            panel1.Controls.Add(storhot);
+            panel1.Controls.Add(label20);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label19);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label18);
+            panel1.Controls.Add(engplat);
+            panel1.Controls.Add(label17);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(storrate);
+            panel1.Controls.Add(label11);
+            panel1.Controls.Add(label16);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label15);
+            panel1.Controls.Add(addstor);
+            panel1.Controls.Add(conname);
+            panel1.Controls.Add(revname);
+            panel1.Controls.Add(label14);
+            panel1.Controls.Add(storname);
+            panel1.Controls.Add(revurl);
+            panel1.Controls.Add(pubhead);
+            panel1.Controls.Add(manname1);
+            panel1.Controls.Add(condate);
+            panel1.Controls.Add(pubtype);
+            panel1.Controls.Add(addcon);
+            panel1.Controls.Add(revdate);
+            panel1.Controls.Add(addrev);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(pubdate);
+            panel1.Controls.Add(pubname);
+            panel1.Controls.Add(addpub);
+            panel1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            panel1.ForeColor = SystemColors.ButtonHighlight;
+            panel1.Location = new Point(2, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1519, 641);
+            panel1.TabIndex = 49;
+            // 
             // Admin_Add
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1426, 641);
+            ClientSize = new Size(1520, 644);
             Controls.Add(manhead);
-            Controls.Add(label20);
-            Controls.Add(label19);
-            Controls.Add(label18);
-            Controls.Add(label17);
-            Controls.Add(label16);
-            Controls.Add(label15);
-            Controls.Add(label14);
-            Controls.Add(pubtype);
-            Controls.Add(pubhead);
-            Controls.Add(storhot);
-            Controls.Add(storname);
-            Controls.Add(label13);
-            Controls.Add(pubdate);
-            Controls.Add(label12);
-            Controls.Add(revname);
-            Controls.Add(conname);
-            Controls.Add(revurl);
-            Controls.Add(pubname);
             Controls.Add(manname);
             Controls.Add(englang);
             Controls.Add(engname);
             Controls.Add(adminpass);
             Controls.Add(admin_username);
-            Controls.Add(storrate);
-            Controls.Add(condate);
-            Controls.Add(revdate);
-            Controls.Add(engplat);
-            Controls.Add(manname1);
             Controls.Add(addmin);
             Controls.Add(addman);
             Controls.Add(addeng);
-            Controls.Add(addrev);
-            Controls.Add(addcon);
-            Controls.Add(addpub);
-            Controls.Add(addstor);
-            Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(panel1);
             Name = "Admin_Add";
             Text = "Admin_Add";
             Load += Admin_Add_Load;
             ((System.ComponentModel.ISupportInitialize)storrate).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -584,5 +701,6 @@
         private Label label19;
         private Label label20;
         private ComboBox manhead;
+        private Panel panel1;
     }
 }

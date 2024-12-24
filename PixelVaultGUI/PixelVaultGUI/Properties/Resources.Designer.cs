@@ -63,6 +63,46 @@ namespace PixelVaultGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _141p {
+            get {
+                object obj = ResourceManager.GetObject("141p", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _142p {
+            get {
+                object obj = ResourceManager.GetObject("142p", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _44ed30cb_ef59_4a04_a108_d600f4bf6cca {
+            get {
+                object obj = ResourceManager.GetObject("44ed30cb-ef59-4a04-a108-d600f4bf6cca", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _60p {
+            get {
+                object obj = ResourceManager.GetObject("60p", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
@@ -103,6 +143,66 @@ namespace PixelVaultGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap b7d2f8b0_a70b_49b0_ae72_e095eed0f73d {
+            get {
+                object obj = ResourceManager.GetObject("b7d2f8b0-a70b-49b0-ae72-e095eed0f73d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b7d2f8b0_a70b_49b0_ae72_e095eed0f73d1 {
+            get {
+                object obj = ResourceManager.GetObject("b7d2f8b0-a70b-49b0-ae72-e095eed0f73d1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b7d2f8b0_a70b_49b0_ae72_e095eed0f73d2 {
+            get {
+                object obj = ResourceManager.GetObject("b7d2f8b0-a70b-49b0-ae72-e095eed0f73d2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b7d2f8b0_a70b_49b0_ae72_e095eed0f73d3 {
+            get {
+                object obj = ResourceManager.GetObject("b7d2f8b0-a70b-49b0-ae72-e095eed0f73d3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b90acc99_7446_47da_83e5_efb84bc873f5 {
+            get {
+                object obj = ResourceManager.GetObject("b90acc99-7446-47da-83e5-efb84bc873f5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b90acc99_7446_47da_83e5_efb84bc873f51 {
+            get {
+                object obj = ResourceManager.GetObject("b90acc99-7446-47da-83e5-efb84bc873f51", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back {
             get {
                 object obj = ResourceManager.GetObject("back", resourceCulture);
@@ -136,6 +236,16 @@ namespace PixelVaultGUI.Properties {
         internal static System.Drawing.Bitmap dark_purple_colour {
             get {
                 object obj = ResourceManager.GetObject("dark purple colour", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dark_purple_colour1 {
+            get {
+                object obj = ResourceManager.GetObject("dark purple colour1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

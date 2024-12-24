@@ -49,6 +49,8 @@
             remrev = new Button();
             rev = new ComboBox();
             label7 = new Label();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // man
@@ -94,53 +96,71 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(60, 97);
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Image = Properties.Resources.solid_color_image;
+            label1.Location = new Point(26, 94);
             label1.Name = "label1";
-            label1.Size = new Size(135, 25);
+            label1.Size = new Size(163, 28);
             label1.TabIndex = 5;
             label1.Text = "Select Publisher";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(60, 165);
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Image = Properties.Resources.solid_color_image;
+            label2.Location = new Point(26, 162);
             label2.Name = "label2";
-            label2.Size = new Size(155, 25);
+            label2.Size = new Size(185, 28);
             label2.TabIndex = 6;
             label2.Text = "Select Game Store";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(60, 241);
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Image = Properties.Resources.solid_color_image;
+            label3.Location = new Point(26, 238);
             label3.Name = "label3";
-            label3.Size = new Size(127, 25);
+            label3.Size = new Size(149, 28);
             label3.TabIndex = 7;
             label3.Text = "Select Console";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(60, 315);
+            label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.ButtonHighlight;
+            label4.Image = Properties.Resources.solid_color_image;
+            label4.Location = new Point(26, 312);
             label4.Name = "label4";
-            label4.Size = new Size(168, 25);
+            label4.Size = new Size(205, 28);
             label4.TabIndex = 8;
             label4.Text = "Select Manufacturer";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(60, 377);
+            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Image = Properties.Resources.solid_color_image;
+            label5.Location = new Point(26, 374);
             label5.Name = "label5";
-            label5.Size = new Size(167, 25);
+            label5.Size = new Size(199, 28);
             label5.TabIndex = 9;
             label5.Text = "Select Game Engine";
             // 
             // remeng
             // 
-            remeng.Location = new Point(512, 372);
+            remeng.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            remeng.ForeColor = SystemColors.ActiveCaptionText;
+            remeng.Image = Properties.Resources.solid_color_image__1_;
+            remeng.Location = new Point(510, 368);
             remeng.Name = "remeng";
-            remeng.Size = new Size(208, 34);
+            remeng.Size = new Size(208, 40);
             remeng.TabIndex = 10;
             remeng.Text = "Remove Engine";
             remeng.UseVisualStyleBackColor = true;
@@ -148,9 +168,12 @@
             // 
             // remman
             // 
-            remman.Location = new Point(512, 310);
+            remman.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            remman.ForeColor = SystemColors.ActiveCaptionText;
+            remman.Image = Properties.Resources.solid_color_image__1_;
+            remman.Location = new Point(512, 287);
             remman.Name = "remman";
-            remman.Size = new Size(208, 34);
+            remman.Size = new Size(208, 67);
             remman.TabIndex = 11;
             remman.Text = "Remove Manufacturer";
             remman.UseVisualStyleBackColor = true;
@@ -158,9 +181,12 @@
             // 
             // remstor
             // 
-            remstor.Location = new Point(512, 160);
+            remstor.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            remstor.ForeColor = SystemColors.ActiveCaptionText;
+            remstor.Image = Properties.Resources.solid_color_image__1_;
+            remstor.Location = new Point(512, 155);
             remstor.Name = "remstor";
-            remstor.Size = new Size(208, 34);
+            remstor.Size = new Size(208, 43);
             remstor.TabIndex = 12;
             remstor.Text = "Remove Store";
             remstor.UseVisualStyleBackColor = true;
@@ -168,9 +194,12 @@
             // 
             // remcon
             // 
-            remcon.Location = new Point(512, 232);
+            remcon.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            remcon.ForeColor = SystemColors.ActiveCaptionText;
+            remcon.Image = Properties.Resources.solid_color_image__1_;
+            remcon.Location = new Point(512, 222);
             remcon.Name = "remcon";
-            remcon.Size = new Size(208, 34);
+            remcon.Size = new Size(208, 45);
             remcon.TabIndex = 13;
             remcon.Text = "Remove Console";
             remcon.UseVisualStyleBackColor = true;
@@ -178,9 +207,12 @@
             // 
             // rempub
             // 
-            rempub.Location = new Point(512, 88);
+            rempub.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            rempub.ForeColor = SystemColors.ActiveCaptionText;
+            rempub.Image = Properties.Resources.solid_color_image__1_;
+            rempub.Location = new Point(512, 80);
             rempub.Name = "rempub";
-            rempub.Size = new Size(208, 34);
+            rempub.Size = new Size(208, 46);
             rempub.TabIndex = 14;
             rempub.Text = "Remove Publisher";
             rempub.UseVisualStyleBackColor = true;
@@ -188,9 +220,12 @@
             // 
             // remgamer
             // 
-            remgamer.Location = new Point(512, 439);
+            remgamer.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            remgamer.ForeColor = SystemColors.ActiveCaptionText;
+            remgamer.Image = Properties.Resources.solid_color_image__1_;
+            remgamer.Location = new Point(512, 429);
             remgamer.Name = "remgamer";
-            remgamer.Size = new Size(208, 34);
+            remgamer.Size = new Size(208, 40);
             remgamer.TabIndex = 15;
             remgamer.Text = "Remove Gamer";
             remgamer.UseVisualStyleBackColor = true;
@@ -207,17 +242,23 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(60, 444);
+            label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label6.ForeColor = SystemColors.ButtonHighlight;
+            label6.Image = Properties.Resources.solid_color_image;
+            label6.Location = new Point(26, 441);
             label6.Name = "label6";
-            label6.Size = new Size(115, 25);
+            label6.Size = new Size(137, 28);
             label6.TabIndex = 17;
             label6.Text = "Select Gamer";
             // 
             // remrev
             // 
-            remrev.Location = new Point(512, 497);
+            remrev.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            remrev.ForeColor = SystemColors.ActiveCaptionText;
+            remrev.Image = Properties.Resources.solid_color_image__1_;
+            remrev.Location = new Point(512, 490);
             remrev.Name = "remrev";
-            remrev.Size = new Size(208, 34);
+            remrev.Size = new Size(208, 40);
             remrev.TabIndex = 18;
             remrev.Text = "Remove Reviewer";
             remrev.UseVisualStyleBackColor = true;
@@ -234,17 +275,29 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(60, 505);
+            label7.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label7.ForeColor = SystemColors.ButtonHighlight;
+            label7.Image = Properties.Resources.solid_color_image;
+            label7.Location = new Point(26, 502);
             label7.Name = "label7";
-            label7.Size = new Size(183, 25);
+            label7.Size = new Size(222, 28);
             label7.TabIndex = 21;
             label7.Text = "Select Game Reviewer";
+            // 
+            // panel1
+            // 
+            panel1.BackgroundImage = Properties.Resources.solid_color_image;
+            panel1.Controls.Add(remeng);
+            panel1.Location = new Point(2, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(918, 608);
+            panel1.TabIndex = 22;
             // 
             // Remove
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(996, 609);
+            ClientSize = new Size(920, 609);
             Controls.Add(label7);
             Controls.Add(rev);
             Controls.Add(remrev);
@@ -255,7 +308,6 @@
             Controls.Add(remcon);
             Controls.Add(remstor);
             Controls.Add(remman);
-            Controls.Add(remeng);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -266,9 +318,11 @@
             Controls.Add(pub);
             Controls.Add(con);
             Controls.Add(man);
+            Controls.Add(panel1);
             Name = "Remove";
             Text = "Remove";
             Load += Remove_Load;
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -296,5 +350,6 @@
         private Button remrev;
         private ComboBox rev;
         private Label label7;
+        private Panel panel1;
     }
 }
