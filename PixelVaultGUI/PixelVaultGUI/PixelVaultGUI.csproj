@@ -10,7 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
-    <PackageReference Include="Microsoft.Report.Viewer" Version="11.0.0" />
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1652.0" />
+    <PackageReference Include="Microsoft.SqlServer.Types" Version="160.1000.6" />
   </ItemGroup>
 
   <ItemGroup>
