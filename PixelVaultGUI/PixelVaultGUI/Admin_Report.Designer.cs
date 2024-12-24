@@ -37,7 +37,6 @@
             ClientSize = new Size(800, 450);
             Name = "Admin_Report";
             Text = "Admin_Report";
-            Load += Admin_Report_Load;
             ResumeLayout(false);
         }
 

@@ -1,10 +1,14 @@
 {
   "version": 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "s/Z5mQAcCns=",
 =======
   "dgSpecHash": "VV4U2Sud4lc=",
 >>>>>>> 41c7a135fcd5c3e68c4264963a941553bb7bd84b
+=======
+  "dgSpecHash": "rgxWwwZSBBc=",
+>>>>>>> parent of 828ff04 (Report form)
   "success": true,
   "projectFilePath": "D:\\Uni\\Upper Level\\Junior\\First Term\\CMPS202-Introduction to database\\Project\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
   "expectedPackageFiles": [
@@ -25,9 +29,8 @@
     "C:\\Users\\osama\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.35.0\\microsoft.identitymodel.tokens.6.35.0.nupkg.sha512",
     "C:\\Users\\osama\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\osama\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
-    "C:\\Users\\osama\\.nuget\\packages\\microsoft.reportingservices.reportviewercontrol.winforms\\150.1652.0\\microsoft.reportingservices.reportviewercontrol.winforms.150.1652.0.nupkg.sha512",
+    "C:\\Users\\osama\\.nuget\\packages\\microsoft.report.viewer\\11.0.0\\microsoft.report.viewer.11.0.0.nupkg.sha512",
     "C:\\Users\\osama\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
-    "C:\\Users\\osama\\.nuget\\packages\\microsoft.sqlserver.types\\160.1000.6\\microsoft.sqlserver.types.160.1000.6.nupkg.sha512",
     "C:\\Users\\osama\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\osama\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
     "C:\\Users\\osama\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
@@ -88,8 +91,8 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.ReportingServices.ReportViewerControl.Winforms 150.1652.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.ReportingServices.ReportViewerControl.Winforms",
+      "message": "Package 'Microsoft.Report.Viewer 11.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Report.Viewer",
       "targetGraphs": [
         "net8.0-windows7.0"
       ]

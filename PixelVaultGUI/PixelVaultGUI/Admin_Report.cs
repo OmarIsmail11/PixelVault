@@ -16,10 +16,5 @@ namespace PixelVaultGUI
         {
             InitializeComponent();
         }
-
-        private void Admin_Report_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
