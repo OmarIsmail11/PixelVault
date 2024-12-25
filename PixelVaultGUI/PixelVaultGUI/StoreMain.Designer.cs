@@ -39,9 +39,9 @@
             Promotions = new Button();
             Manage_Inventory = new Button();
             Welcome = new Label();
-            manageInventory1 = new ManageInventory();
             panel2 = new Panel();
-            managePartnerships1 = new ManagePartnerships();
+            managePartnerships2 = new ManagePartnerships();
+            manageInventory2 = new ManageInventory();
             ((System.ComponentModel.ISupportInitialize)Store_Info).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -147,6 +147,7 @@
             Promotions.TabIndex = 23;
             Promotions.Text = "Promotions";
             Promotions.UseVisualStyleBackColor = false;
+            Promotions.Click += Promotions_Click;
             // 
             // Manage_Inventory
             // 
@@ -172,33 +173,32 @@
             Welcome.TabIndex = 0;
             Welcome.Text = "label1";
             // 
-            // manageInventory1
-            // 
-            manageInventory1.AutoSize = true;
-            manageInventory1.BackgroundImage = (Image)resources.GetObject("manageInventory1.BackgroundImage");
-            manageInventory1.Location = new Point(0, 0);
-            manageInventory1.Name = "manageInventory1";
-            manageInventory1.Size = new Size(802, 621);
-            manageInventory1.TabIndex = 2;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
             panel2.BackgroundImage = Properties.Resources.solid_color_image__1_;
-            panel2.Controls.Add(manageInventory1);
-            panel2.Controls.Add(managePartnerships1);
+            panel2.Controls.Add(managePartnerships2);
+            panel2.Controls.Add(manageInventory2);
             panel2.Location = new Point(419, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(813, 620);
+            panel2.Size = new Size(805, 620);
             panel2.TabIndex = 3;
             // 
-            // managePartnerships1
+            // managePartnerships2
             // 
-            managePartnerships1.BackgroundImage = (Image)resources.GetObject("managePartnerships1.BackgroundImage");
-            managePartnerships1.Location = new Point(2, 3);
-            managePartnerships1.Name = "managePartnerships1";
-            managePartnerships1.Size = new Size(802, 621);
-            managePartnerships1.TabIndex = 0;
+            managePartnerships2.BackgroundImage = (Image)resources.GetObject("managePartnerships2.BackgroundImage");
+            managePartnerships2.Location = new Point(0, 0);
+            managePartnerships2.Name = "managePartnerships2";
+            managePartnerships2.Size = new Size(805, 620);
+            managePartnerships2.TabIndex = 1;
+            // 
+            // manageInventory2
+            // 
+            manageInventory2.BackgroundImage = (Image)resources.GetObject("manageInventory2.BackgroundImage");
+            manageInventory2.Location = new Point(0, -1);
+            manageInventory2.Name = "manageInventory2";
+            manageInventory2.Size = new Size(805, 620);
+            manageInventory2.TabIndex = 0;
             // 
             // StoreMain
             // 
@@ -217,7 +217,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -236,5 +235,7 @@
         private ManageInventory manageInventory1;
         private Panel panel2;
         private ManagePartnerships managePartnerships1;
+        private ManageInventory manageInventory2;
+        private ManagePartnerships managePartnerships2;
     }
 }
