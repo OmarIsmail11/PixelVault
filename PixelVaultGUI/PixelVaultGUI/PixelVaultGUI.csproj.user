@@ -40,8 +40,14 @@
     <Compile Update="GamerSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ManageRegistration.cs">
-      <SubType>Form</SubType>
+    <Compile Update="ManageInventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManagePartnerships.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="manageregisteration.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="PublisherGames.cs">
       <SubType>UserControl</SubType>

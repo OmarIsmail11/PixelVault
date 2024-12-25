@@ -192,6 +192,19 @@
 		PRIMARY KEY (UserName)
 	);
 
+	CREATE TABLE Partners
+	(
+		SUserName varchar(30),
+		PUserName varchar(30),
+		PRIMARY KEY(SUserName,PUserName),
+		FOREIGN KEY (SUserName) REFERENCES GamingStore(StoreUserName)
+			ON DELETE CASCADE
+			ON UPDATE CASCADE,
+		FOREIGN KEY (PUserName) REFERENCES GamePublisher(PublisherUserName)
+			ON DELETE CASCADE
+			ON UPDATE CASCADE
+	);
+
 	INSERT INTO GameEngine VALUES
 	('Unity', 'C#', 'Cross-Platform'),
 	('Unreal', 'C++', 'Cross-Platform'),
@@ -509,3 +522,9 @@
 	('Fortnite','Epic_Games',25.00),
 	('Apex Legends','PlayStation_Store',300.000),
 	('FIFA 23','PlayStation_Store',600.00);
+
+	INSERT INTO Partners VALUES
+	('PlayStation_Store','Sony_Interactive'),
+	('Epic_Games','Capcom'),
+	('PlayStation_Store','Rockstar_Games'),
+	('PlayStation_Store','Electronic_Arts');

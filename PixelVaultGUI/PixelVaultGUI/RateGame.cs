@@ -17,6 +17,13 @@ namespace PixelVaultGUI
         public string GameName;
         private DataGridViewRow rowToUpdate;
         private Button button2;
+        private RadioButton HardRadioButton;
+        private RadioButton MediumRadioButton;
+        private RadioButton EasyRadioButton;
+        private GroupBox groupBox1;
+        private Label label2;
+        private GroupBox groupBox2;
+        private Label label1;
         Controller controllerObj = new Controller();
         public RateGame(string gamerusername, string gamename, DataGridViewRow row)
         {
@@ -29,121 +36,39 @@ namespace PixelVaultGUI
 
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            numericUpDown1 = new NumericUpDown();
+            button1 = new Button();
+            button2 = new Button();
             HardRadioButton = new RadioButton();
             MediumRadioButton = new RadioButton();
             EasyRadioButton = new RadioButton();
-            Rating = new Label();
-            panel2 = new Panel();
-            numericUpDown1 = new NumericUpDown();
+            groupBox1 = new GroupBox();
+            label2 = new Label();
+            groupBox2 = new GroupBox();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
             ((ISupportInitialize)numericUpDown1).BeginInit();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackgroundImage = Properties.Resources.dark_purple_colour;
-            panel1.Controls.Add(HardRadioButton);
-            panel1.Controls.Add(MediumRadioButton);
-            panel1.Controls.Add(EasyRadioButton);
-            panel1.Controls.Add(Rating);
-            panel1.Location = new Point(43, 78);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(583, 144);
-            panel1.TabIndex = 0;
-            // 
-            // HardRadioButton
-            // 
-            HardRadioButton.AutoSize = true;
-            HardRadioButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            HardRadioButton.Location = new Point(430, 68);
-            HardRadioButton.Name = "HardRadioButton";
-            HardRadioButton.Size = new Size(77, 32);
-            HardRadioButton.TabIndex = 3;
-            HardRadioButton.TabStop = true;
-            HardRadioButton.Text = "Hard";
-            HardRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // MediumRadioButton
-            // 
-            MediumRadioButton.AutoSize = true;
-            MediumRadioButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            MediumRadioButton.Location = new Point(232, 68);
-            MediumRadioButton.Name = "MediumRadioButton";
-            MediumRadioButton.Size = new Size(109, 32);
-            MediumRadioButton.TabIndex = 2;
-            MediumRadioButton.TabStop = true;
-            MediumRadioButton.Text = "Medium";
-            MediumRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // EasyRadioButton
-            // 
-            EasyRadioButton.AutoSize = true;
-            EasyRadioButton.BackColor = Color.White;
-            EasyRadioButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            EasyRadioButton.Location = new Point(52, 69);
-            EasyRadioButton.Name = "EasyRadioButton";
-            EasyRadioButton.Size = new Size(72, 32);
-            EasyRadioButton.TabIndex = 1;
-            EasyRadioButton.TabStop = true;
-            EasyRadioButton.Text = "Easy";
-            EasyRadioButton.UseVisualStyleBackColor = false;
-            // 
-            // Rating
-            // 
-            Rating.AutoSize = true;
-            Rating.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Rating.ForeColor = SystemColors.ButtonHighlight;
-            Rating.Image = Properties.Resources.dark_purple_colour;
-            Rating.Location = new Point(213, 12);
-            Rating.Name = "Rating";
-            Rating.Size = new Size(151, 41);
-            Rating.TabIndex = 0;
-            Rating.Text = "Difficulty";
-            // 
-            // panel2
-            // 
-            panel2.BackgroundImage = Properties.Resources.dark_purple_colour;
-            panel2.Controls.Add(numericUpDown1);
-            panel2.Controls.Add(label1);
-            panel2.Location = new Point(151, 250);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(403, 85);
-            panel2.TabIndex = 4;
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(239, 34);
+            numericUpDown1.Location = new Point(283, 37);
             numericUpDown1.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
             numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(73, 27);
+            numericUpDown1.ReadOnly = true;
+            numericUpDown1.Size = new Size(73, 38);
             numericUpDown1.TabIndex = 1;
             numericUpDown1.TextAlign = HorizontalAlignment.Center;
             numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Image = Properties.Resources.dark_purple_colour;
-            label1.Location = new Point(100, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(112, 41);
-            label1.TabIndex = 0;
-            label1.Text = "Rating";
-            // 
             // button1
             // 
-            button1.BackgroundImage = Properties.Resources.solid_color_image;
+            button1.BackgroundImage = Properties.Resources.solid_color_image__1_;
             button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(279, 356);
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(169, 309);
             button1.Name = "button1";
             button1.Size = new Size(163, 67);
             button1.TabIndex = 5;
@@ -161,36 +86,127 @@ namespace PixelVaultGUI
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // HardRadioButton
+            // 
+            HardRadioButton.AutoSize = true;
+            HardRadioButton.BackgroundImage = Properties.Resources.dark_purple_colour1;
+            HardRadioButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            HardRadioButton.ForeColor = SystemColors.Control;
+            HardRadioButton.Location = new Point(283, 37);
+            HardRadioButton.Name = "HardRadioButton";
+            HardRadioButton.Size = new Size(77, 32);
+            HardRadioButton.TabIndex = 23;
+            HardRadioButton.TabStop = true;
+            HardRadioButton.Text = "Hard";
+            HardRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // MediumRadioButton
+            // 
+            MediumRadioButton.AutoSize = true;
+            MediumRadioButton.BackgroundImage = Properties.Resources.dark_purple_colour1;
+            MediumRadioButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MediumRadioButton.ForeColor = SystemColors.Control;
+            MediumRadioButton.Location = new Point(138, 37);
+            MediumRadioButton.Name = "MediumRadioButton";
+            MediumRadioButton.Size = new Size(109, 32);
+            MediumRadioButton.TabIndex = 22;
+            MediumRadioButton.TabStop = true;
+            MediumRadioButton.Text = "Medium";
+            MediumRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // EasyRadioButton
+            // 
+            EasyRadioButton.AutoSize = true;
+            EasyRadioButton.BackColor = Color.White;
+            EasyRadioButton.BackgroundImage = Properties.Resources.dark_purple_colour1;
+            EasyRadioButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            EasyRadioButton.ForeColor = SystemColors.Control;
+            EasyRadioButton.Location = new Point(18, 37);
+            EasyRadioButton.Name = "EasyRadioButton";
+            EasyRadioButton.Size = new Size(72, 32);
+            EasyRadioButton.TabIndex = 21;
+            EasyRadioButton.TabStop = true;
+            EasyRadioButton.Text = "Easy";
+            EasyRadioButton.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            groupBox1.BackgroundImage = Properties.Resources.solid_color_image;
+            groupBox1.Controls.Add(EasyRadioButton);
+            groupBox1.Controls.Add(HardRadioButton);
+            groupBox1.Controls.Add(MediumRadioButton);
+            groupBox1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = SystemColors.ButtonHighlight;
+            groupBox1.Location = new Point(44, 89);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(378, 84);
+            groupBox1.TabIndex = 24;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Difficulty";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Image = Properties.Resources.dark_purple_colour;
+            label2.Location = new Point(169, 22);
+            label2.Name = "label2";
+            label2.Size = new Size(170, 41);
+            label2.TabIndex = 2;
+            label2.Text = "Rate Game";
+            // 
+            // groupBox2
+            // 
+            groupBox2.BackgroundImage = Properties.Resources.solid_color_image;
+            groupBox2.Controls.Add(label1);
+            groupBox2.Controls.Add(numericUpDown1);
+            groupBox2.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.ForeColor = SystemColors.ButtonHighlight;
+            groupBox2.Location = new Point(44, 198);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(378, 93);
+            groupBox2.TabIndex = 25;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Rating";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Image = Properties.Resources.dark_purple_colour;
+            label1.Location = new Point(18, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(257, 28);
+            label1.TabIndex = 26;
+            label1.Text = "Choose a number from 1-5";
+            // 
             // RateGame
             // 
-            BackgroundImage = Properties.Resources.solid_color_image__1_;
-            ClientSize = new Size(682, 453);
+            BackgroundImage = Properties.Resources.solid_color_image;
+            ClientSize = new Size(482, 403);
+            Controls.Add(groupBox2);
+            Controls.Add(label2);
+            Controls.Add(groupBox1);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "RateGame";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Rate Game";
             Load += RateGame_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((ISupportInitialize)numericUpDown1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
-        private Panel panel1;
-        private RadioButton HardRadioButton;
-        private RadioButton MediumRadioButton;
-        private RadioButton EasyRadioButton;
-        private Panel panel2;
         private NumericUpDown numericUpDown1;
-        private Label label1;
         private Button button1;
-        private Label Rating;
 
         private void button1_Click(object sender, EventArgs e)
         {

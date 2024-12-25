@@ -16,18 +16,22 @@ namespace PixelVaultGUI
     {
         public string UserName;
         Controller controller = new Controller();
-     
+
         public StoreMain(string username_in)
         {
             InitializeComponent();
             UserName = username_in;
             Welcome.Text = "Welcome, " + UserName + "";
+            manageInventory1.UserName = username_in;
+            manageInventory1.Visible = false;
+            managePartnerships1.SUserName = username_in;
+            managePartnerships1.Visible = false;
         }
 
         private void StoreMain_Load(object sender, EventArgs e)
         {
 
-            
+
         }
 
         private void Store_Info_Click(object sender, EventArgs e)
@@ -61,21 +65,47 @@ namespace PixelVaultGUI
 
         private void Add_Tournament_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Add_Tournament add_Tournament = new Add_Tournament(UserName);
-            add_Tournament.Show();
+            Add_Tournament.BackColor = Color.Thistle;
+            Manage_TReg.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_Partner.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_Inventory.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+
         }
 
-       
+
 
         private void Manage_TReg_Click(object sender, EventArgs e)
         {
-            
-            this.Hide();
-            ManageRegistration manageRegistration= new ManageRegistration(UserName);
-            manageRegistration.Show();
+            Add_Tournament.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_TReg.BackColor = Color.Thistle;
+            Manage_Partner.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_Inventory.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+
         }
 
-        
+        private void Manage_Inventory_Click(object sender, EventArgs e)
+        {
+            manageInventory1.Refresh();
+            Add_Tournament.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_TReg.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_Partner.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_Inventory.BackColor = Color.Thistle;
+            Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            manageInventory1.Visible = true;
+        }
+
+        private void Manage_Partner_Click(object sender, EventArgs e)
+        {
+            managePartnerships1.Refresh();
+            Add_Tournament.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_TReg.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_Partner.BackColor = Color.Thistle;
+            Manage_Inventory.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            manageInventory1.Visible = false;
+            managePartnerships1.Visible = true;
+        }
     }
 }
