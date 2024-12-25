@@ -75,6 +75,8 @@ namespace PixelVaultGUI
                 this.Hide();
                 GamerMain gamerMain = new GamerMain(UserName);
                 gamerMain.ShowDialog();
+                this.UserNameSignInTextBox.Text = "";
+                this.PasswordSignInTextBox.Text = "";
                 this.Show();
 
 
