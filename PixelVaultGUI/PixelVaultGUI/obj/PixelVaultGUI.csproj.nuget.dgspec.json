@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\osama\\OneDrive\\Desktop\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj": {}
+    "D:\\University\\DataBases\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\osama\\OneDrive\\Desktop\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj": {
+    "D:\\University\\DataBases\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\osama\\OneDrive\\Desktop\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
+        "projectUniqueName": "D:\\University\\DataBases\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
         "projectName": "PixelVaultGUI",
-        "projectPath": "C:\\Users\\osama\\OneDrive\\Desktop\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
-        "packagesPath": "C:\\Users\\osama\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\osama\\OneDrive\\Desktop\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\obj\\",
+        "projectPath": "D:\\University\\DataBases\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\PixelVaultGUI.csproj",
+        "packagesPath": "C:\\Users\\mabue\\.nuget\\packages\\",
+        "outputPath": "D:\\University\\DataBases\\PixelVault\\PixelVaultGUI\\PixelVaultGUI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\osama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mabue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -52,6 +57,10 @@
             "Microsoft.Report.Viewer": {
               "target": "Package",
               "version": "[11.0.0, )"
+            },
+            "WinForms.DataVisualization": {
+              "target": "Package",
+              "version": "[1.9.2, )"
             }
           },
           "imports": [
@@ -73,7 +82,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

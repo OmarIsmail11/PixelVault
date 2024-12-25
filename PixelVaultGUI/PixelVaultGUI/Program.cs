@@ -1,3 +1,4 @@
+
 namespace PixelVaultGUI
 {
     internal static class Program

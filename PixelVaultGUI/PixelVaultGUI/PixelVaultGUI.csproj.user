@@ -13,6 +13,9 @@
     <Compile Update="Admin_Report.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Analystics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="BrowseGames.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -25,6 +28,9 @@
     <Compile Update="GameLibrary.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="GamePublisherMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GamePublisherSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -36,6 +42,9 @@
     </Compile>
     <Compile Update="ManageRegistration.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PublisherGames.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="RateGame.cs">
       <SubType>Form</SubType>

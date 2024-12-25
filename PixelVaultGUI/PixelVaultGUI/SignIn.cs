@@ -93,6 +93,10 @@ namespace PixelVaultGUI
             {
                 MessageBox.Show("Welcome back " + UserName + "! (Opens Publisher)");
                 //Open Game Publisher Form
+                this.Hide();
+                GamePublisherMain gamerpublisherMain = new GamePublisherMain(UserName);
+                gamerpublisherMain.ShowDialog();
+                this.Show();
             }
             else if (Authorization == "Admin")
             {

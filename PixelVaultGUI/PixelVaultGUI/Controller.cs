@@ -418,5 +418,19 @@ namespace DBapplication
         {
             dbMan.CloseConnection();
         }
+
+        //Tifa's Functions
+
+        public DataTable Get_All_Published_Games(string PublisherName)
+        {
+            string query = $"SELECT GameName,Genre,ReleaseDate,ConsoleName,Rating,Reviewer FROM Game WHERE Game.Publisher='{PublisherName}'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_Played_Games()
+        {
+            string query = $"SELECT \r\n    Game.GameName,\r\n    Game.Genre,\r\n    Game.ConsoleName,\r\n    Game.EngineName,\r\n    COUNT(Plays.GamerUserName) AS No_of_Players\r\nFROM \r\n    Game\r\nJOIN \r\n    Plays ON Plays.GameName = Game.GameName\r\nGROUP BY \r\n    Game.GameName, Game.Genre, Game.ConsoleName, Game.EngineName\r\nORDER BY \r\n    No_of_Players DESC;";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }
