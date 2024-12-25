@@ -43,9 +43,6 @@
     <Compile Update="manageregisteration.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Promotions.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="RateGame.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -427,25 +427,14 @@ namespace DBapplication
             string query = "Select I.GameName,Price,Genre from Inventory I,Game G Where StoreName='" + username + "'AND I.GameName=G.GameName";
             return dbMan.ExecuteReader(query);
         }
-        public DataTable getPartners(string Susername)
+        public DataTable getPartners(string username)
         {
-            string query = "Select * from Partners where SUserName='" + Susername + "'";
+            string query = "Select * from Partners where SUserName='" + username + "'";
             return dbMan.ExecuteReader(query);
         }
         public int RemovePartner(string Susername,string publisher)
         {
             string query= "DELETE from Partners where SUserName = '"+Susername+"' and PUserName = '"+publisher+"' DELETE I FROM Inventory I JOIN Game G ON I.GameName = G.GameName WHERE I.StoreName = '"+Susername+"' AND G.Publisher = '"+publisher+"'";
-            return dbMan.ExecuteNonQuery(query);
-        }
-
-        public DataTable GetGenre(string SuserName)
-        {
-            string query = "Select G.Genre From Game G,Inventory I Where G.GameName=I.GameName AND I.StorName='"+SuserName+"'";
-            return dbMan.ExecuteReader(query);
-        }
-        public int ApplyPromotion(string Susername,string Genre, int promotion)
-        {
-            string query = "Update Inventory Set Price=Price-(Price*" + promotion + "/100) From Game G Where Inventory.GameName = G.GameName And Inventory.StoreName = '" + Susername + "' And G.Genre = '" + Genre + "'";
             return dbMan.ExecuteNonQuery(query);
         }
         public void TerminateConnection()

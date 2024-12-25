@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -20,7 +19,15 @@ namespace PixelVaultGUI
         public manageregisteration()
         {
             InitializeComponent();
-            ReloadData();
+            DataTable dt = new DataTable();
+            dt = controller.Tournamentdata(UserName);
+            dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Refresh();
+            DataTable dt2 = new DataTable();
+            dt2 = controller.TName(UserName);
+            TName_combobox.DataSource = dt2;
+            TName_combobox.DisplayMember = "TName";
             Open.Checked = true;
         }
 
@@ -28,14 +35,7 @@ namespace PixelVaultGUI
         {
             Environment.Exit(0);
         }
-        public void ReloadData()
-        {
-            DataTable dt = new DataTable();
-            dt = controller.Tournamentdata(UserName);
-            dataGridView1.DataSource = dt;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.Refresh();
-        }
+
         private void Refresh_Click(object sender, EventArgs e)
         {
             string Status = " ";
@@ -43,35 +43,11 @@ namespace PixelVaultGUI
                 Status = "Open";
             if (Close.Checked == true)
                 Status = "Closed";
-            string TName;
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                TName = dataGridView1.SelectedRows[0].Cells["TName"].Value.ToString();
-
-
-
-                dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
-                int result = controller.RegStatus(TName,Status);
-                if (result == 0)
-                {
-                    MessageBox.Show("Failed to update Registration Status !");
-                    return;
-                }
-                else
-                {
-
-                    ReloadData();
-                    MessageBox.Show("Registration Status updated successfuly !");
-                    return;
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Please select a Tournament to Update.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            
+            controller.RegStatus(TName_combobox.Text, Status);
+            DataTable dt = new DataTable();
+            dt = controller.Tournamentdata(UserName);
+            dataGridView1.DataSource = dt;
+            dataGridView1.Refresh();
         }
 
         private void Open_CheckedChanged(object sender, EventArgs e)
@@ -88,7 +64,15 @@ namespace PixelVaultGUI
 
         private void manageregisteration_Load(object sender, EventArgs e)
         {
-            ReloadData();
+            DataTable dt = new DataTable();
+            dt = controller.Tournamentdata(UserName);
+            dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Refresh();
+            DataTable dt2 = new DataTable();
+            dt2 = controller.TName(UserName);
+            TName_combobox.DataSource = dt2;
+            TName_combobox.DisplayMember = "TName";
             Open.Checked = true;
         }
     }
