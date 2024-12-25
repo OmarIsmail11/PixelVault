@@ -384,7 +384,7 @@ namespace DBapplication
 
         public DataTable GetGameRecommendations(string username)
         {
-            string query = "SELECT * FROM Game WHERE Genre IN (SELECT TOP 2 G.Genre FROM Game AS G, Plays AS P WHERE P.GamerUserName = '" + username + "' AND G.GameName = P.GameName GROUP BY G.Genre ORDER BY COUNT(*) DESC);";
+            string query = "SELECT * FROM Game WHERE Genre IN (SELECT TOP 3 G.Genre FROM Game AS G, Plays AS P WHERE P.GamerUserName = '" + username + "' AND G.GameName = P.GameName GROUP BY G.Genre ORDER BY COUNT(*) DESC) AND GameName NOT IN (SELECT GameName FROM Plays WHERE GamerUserName = '" + username + "');";
             return dbMan.ExecuteReader(query);
         }
 
