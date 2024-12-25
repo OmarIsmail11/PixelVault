@@ -43,5 +43,49 @@ namespace PixelVaultGUI
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
         }
+
+        private void AdjustPrice_Click(object sender, EventArgs e)
+        {
+            if(this.Visible=true)
+            {
+                DataTable dt = controller.GetInventory(UserName);
+                dataGridView1.DataSource = dt;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.Refresh();
+            }
+            string GameName;
+            float price=float.Parse(NewPrice.Text);
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                GameName = dataGridView1.SelectedRows[0].Cells["GameName"].Value.ToString();
+
+
+                
+                    dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                    int result = controller.AdjustPrice(UserName,GameName,price);
+                    if (result == 0)
+                    {
+                        MessageBox.Show("Failed to remove Partner !");
+                        return;
+                    }
+                    else
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable = controller.GetInventory(UserName);
+                        dataGridView1.DataSource = dataTable;
+                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        dataGridView1.Refresh();
+
+                        MessageBox.Show("Game Price Updated Successfuly !");
+                        return;
+                    }
+                
+            }
+            else
+            {
+                MessageBox.Show("Please select a Partner to remove.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
     }
 }

@@ -40,14 +40,17 @@
             Manage_Inventory = new Button();
             Welcome = new Label();
             manageInventory1 = new ManageInventory();
+            panel2 = new Panel();
+            managePartnerships1 = new ManagePartnerships();
             ((System.ComponentModel.ISupportInitialize)Store_Info).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // Store_Info
             // 
             Store_Info.Image = Properties.Resources.store;
-            Store_Info.Location = new Point(10, 12);
+            Store_Info.Location = new Point(106, 12);
             Store_Info.Name = "Store_Info";
             Store_Info.Size = new Size(169, 139);
             Store_Info.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -94,6 +97,7 @@
             Manage_Partner.TabIndex = 27;
             Manage_Partner.Text = "Manage Partenerships";
             Manage_Partner.UseVisualStyleBackColor = false;
+            Manage_Partner.Click += Manage_Partner_Click;
             // 
             // LogOutButton
             // 
@@ -162,7 +166,7 @@
             Welcome.BackColor = Color.Transparent;
             Welcome.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             Welcome.ForeColor = Color.White;
-            Welcome.Location = new Point(10, 168);
+            Welcome.Location = new Point(22, 166);
             Welcome.Name = "Welcome";
             Welcome.Size = new Size(110, 45);
             Welcome.TabIndex = 0;
@@ -172,10 +176,29 @@
             // 
             manageInventory1.AutoSize = true;
             manageInventory1.BackgroundImage = (Image)resources.GetObject("manageInventory1.BackgroundImage");
-            manageInventory1.Location = new Point(411, 0);
+            manageInventory1.Location = new Point(0, 0);
             manageInventory1.Name = "manageInventory1";
-            manageInventory1.Size = new Size(813, 620);
+            manageInventory1.Size = new Size(802, 621);
             manageInventory1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.BackgroundImage = Properties.Resources.solid_color_image__1_;
+            panel2.Controls.Add(manageInventory1);
+            panel2.Controls.Add(managePartnerships1);
+            panel2.Location = new Point(419, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(813, 620);
+            panel2.TabIndex = 3;
+            // 
+            // managePartnerships1
+            // 
+            managePartnerships1.BackgroundImage = (Image)resources.GetObject("managePartnerships1.BackgroundImage");
+            managePartnerships1.Location = new Point(2, 3);
+            managePartnerships1.Name = "managePartnerships1";
+            managePartnerships1.Size = new Size(802, 621);
+            managePartnerships1.TabIndex = 0;
             // 
             // StoreMain
             // 
@@ -183,8 +206,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(1225, 622);
-            Controls.Add(manageInventory1);
             Controls.Add(panel1);
+            Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "StoreMain";
             StartPosition = FormStartPosition.CenterScreen;
@@ -193,8 +216,9 @@
             ((System.ComponentModel.ISupportInitialize)Store_Info).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -210,5 +234,7 @@
         private Button Manage_Partner;
         private Button Manage_TReg;
         private ManageInventory manageInventory1;
+        private Panel panel2;
+        private ManagePartnerships managePartnerships1;
     }
 }

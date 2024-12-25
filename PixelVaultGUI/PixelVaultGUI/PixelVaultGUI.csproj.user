@@ -37,11 +37,11 @@
     <Compile Update="ManageInventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="manageregisteration.cs">
+    <Compile Update="ManagePartnerships.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ManageRegistration.cs">
-      <SubType>Form</SubType>
+    <Compile Update="manageregisteration.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="RateGame.cs">
       <SubType>Form</SubType>

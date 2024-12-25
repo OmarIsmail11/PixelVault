@@ -5,6 +5,8 @@ using System.Text;
 using System.Data;
 using System.Windows.Forms;
 using System.Security.Permissions;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 
 namespace DBapplication
 {
@@ -403,6 +405,11 @@ namespace DBapplication
             string query = "INSERT INTO Plays VALUES ('" + gamename + "','" + username + "', NULL, NULL, NULL);";
             return dbMan.ExecuteNonQuery(query);
         }
+        public int AdjustPrice(string Susername,string GameName,float price)
+        {
+            string query = "UPDATE Inventory Set Price="+price+" Where GameName='"+GameName+"' AND StoreName='"+Susername+"' ";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public DataTable SearchGame(string search)
         {
             string query = "SELECT * From Game WHERE GameName LIKE '%" + search + "%';";
@@ -419,6 +426,16 @@ namespace DBapplication
         {
             string query = "Select I.GameName,Price,Genre from Inventory I,Game G Where StoreName='" + username + "'AND I.GameName=G.GameName";
             return dbMan.ExecuteReader(query);
+        }
+        public DataTable getPartners(string username)
+        {
+            string query = "Select * from Partners where SUserName='" + username + "'";
+            return dbMan.ExecuteReader(query);
+        }
+        public int RemovePartner(string Susername,string publisher)
+        {
+            string query= "DELETE from Partners where SUserName = '"+Susername+"' and PUserName = '"+publisher+"' DELETE I FROM Inventory I JOIN Game G ON I.GameName = G.GameName WHERE I.StoreName = '"+Susername+"' AND G.Publisher = '"+publisher+"'";
+            return dbMan.ExecuteNonQuery(query);
         }
         public void TerminateConnection()
         {
