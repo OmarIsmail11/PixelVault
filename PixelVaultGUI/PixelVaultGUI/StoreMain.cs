@@ -28,6 +28,10 @@ namespace PixelVaultGUI
             managePartnerships1.Visible = false;
             manageregisteration1.UserName = username_in;
             manageregisteration1.Visible = false;
+            promotions1.UserName = username_in;
+            promotions1.Visible = false;
+            addTournament1.UserName = username_in;
+            addTournament1.Visible = false;
         }
 
         private void StoreMain_Load(object sender, EventArgs e)
@@ -67,12 +71,18 @@ namespace PixelVaultGUI
 
         private void Add_Tournament_Click(object sender, EventArgs e)
         {
+            addTournament1.ReloadData();
+            addTournament1.Refresh();
             Add_Tournament.BackColor = Color.Thistle;
             Manage_TReg.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Manage_Partner.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Manage_Inventory.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
-
+            manageregisteration1.Visible = false;           
+            managePartnerships1.Visible = false;
+            promotions1.Visible = false;
+            manageInventory1.Visible = false;
+            addTournament1.Visible = true;
         }
 
 
@@ -88,6 +98,8 @@ namespace PixelVaultGUI
             Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             manageInventory1.Visible = false;
             managePartnerships1.Visible = false;
+            addTournament1.Visible = false;
+            promotions1.Visible = false;
             manageregisteration1.Visible = true;
         }
 
@@ -101,9 +113,11 @@ namespace PixelVaultGUI
             Manage_Inventory.BackColor = Color.Thistle;
             Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             manageregisteration1.Visible = false;
+            addTournament1.Visible = false;
             managePartnerships1.Visible = false;
+            promotions1.Visible = false;
             manageInventory1.Visible = true;
-            
+
         }
 
         private void Manage_Partner_Click(object sender, EventArgs e)
@@ -116,8 +130,26 @@ namespace PixelVaultGUI
             Manage_Inventory.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             manageInventory1.Visible = false;
-            manageregisteration1.Visible=false;
+            manageregisteration1.Visible = false;
+            addTournament1.Visible= false;
+            promotions1.Visible = false;
             managePartnerships1.Visible = true;
+        }
+
+        private void Promotions_Click(object sender, EventArgs e)
+        {
+            promotions1.ReloadData();
+            promotions1.Refresh();
+            Add_Tournament.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_TReg.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_Partner.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Manage_Inventory.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Promotions.BackColor = Color.Thistle;
+            manageInventory1.Visible = false;
+            manageregisteration1.Visible = false;
+            addTournament1.Visible = false;
+            managePartnerships1.Visible = false;
+            promotions1.Visible = true;
         }
     }
 }

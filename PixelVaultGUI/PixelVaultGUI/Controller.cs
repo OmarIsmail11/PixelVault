@@ -296,7 +296,7 @@ namespace DBapplication
       public int InsertNewTournament(string Tname,int Capacity,string gamename,string type,string region,string sdate,string org,float prizemoney)
         {
             string Status = "Open";
-            string query = "Insert into Tournament Values('" + Tname + "',"+Capacity+","+Capacity+",'"+gamename+"','"+type+"','"+sdate+"','"+org+"',"+prizemoney+",'"+Status+"')";
+            string query = "Insert into Tournament Values('" + Tname + "',"+Capacity+","+Capacity+",'"+gamename+"','"+type+ "', '" + region + "','" + sdate+"','"+org+"',"+prizemoney+",'"+Status+"')";
             return dbMan.ExecuteNonQuery(query);
         }
        public DataTable Tournamentdata(string Susername)
@@ -463,7 +463,7 @@ namespace DBapplication
         }
         public DataTable GetGenre(string SuserName)
         {
-            string query = "Select G.Genre From Game G,Inventory I Where G.GameName=I.GameName AND I.StorName='" + SuserName + "'";
+            string query = "Select G.Genre From Game G,Inventory I Where G.GameName=I.GameName AND I.StoreName='" + SuserName + "'";
             return dbMan.ExecuteReader(query);
         }
         public int ApplyPromotion(string Susername, string Genre, int promotion)
