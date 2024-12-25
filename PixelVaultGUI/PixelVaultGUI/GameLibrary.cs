@@ -79,15 +79,14 @@ namespace PixelVaultGUI
                 string gameName = selectedRow.Cells["Name"].Value.ToString();
 
                 string newStatus = Microsoft.VisualBasic.Interaction.InputBox(
-                    $"Enter the new Completion Status for '{gameName}' (YES/NO):",
+                    $"Did you finish '{gameName}' (YES/NO)?:",
                     "Update Completion Status",
                     selectedRow.Cells["Completed"].Value?.ToString() ?? "");
 
-                if (string.Equals(newStatus, "YES", StringComparison.OrdinalIgnoreCase) ||
-                    string.Equals(newStatus, "NO", StringComparison.OrdinalIgnoreCase))
+                if (newStatus.ToUpper() == "YES" || newStatus.ToUpper() == "NO")
                 {
                     selectedRow.Cells["Completed"].Value = newStatus.ToUpper();
-                    int result = controllerObj.UpdateCompletionStatus(gameName, newStatus, GamerUserName);
+                    int result = controllerObj.UpdateCompletionStatus(gameName, newStatus.ToUpper(), GamerUserName);
                     if (result == 0)
                     {
                         MessageBox.Show("Failed to update completion status");
@@ -110,7 +109,7 @@ namespace PixelVaultGUI
             }
             else
             {
-                MessageBox.Show("Please select a row to update.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a game.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

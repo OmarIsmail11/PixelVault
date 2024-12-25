@@ -55,7 +55,7 @@
             YourGamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             YourGamesDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             YourGamesDataGridView.GridColor = Color.Black;
-            YourGamesDataGridView.Location = new Point(24, 59);
+            YourGamesDataGridView.Location = new Point(24, 57);
             YourGamesDataGridView.Name = "YourGamesDataGridView";
             YourGamesDataGridView.RowHeadersWidth = 51;
             YourGamesDataGridView.Size = new Size(922, 236);
