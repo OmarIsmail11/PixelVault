@@ -52,18 +52,25 @@ namespace PixelVaultGUI
         {
             if (e.NewValue == CheckState.Checked)
             {
+                // Uncheck all other items
                 for (int i = 0; i < GenreCheckedListBox.Items.Count; i++)
                 {
                     if (i != e.Index)
                     {
-                        GenreCheckedListBox.SetItemChecked(i, false); // Uncheck all other items
+                        GenreCheckedListBox.SetItemChecked(i, false);
                     }
                 }
+
+                // Update the selected item to the newly checked item
+                GenreCheckedListBox.SelectedItem = GenreCheckedListBox.Items[e.Index];
             }
             else if (e.NewValue == CheckState.Unchecked)
             {
-                // Clear the selection when an item is unchecked
-                GenreCheckedListBox.SelectedItem = null;
+                // If the unchecked item was the selected item, clear the selection
+                if (GenreCheckedListBox.SelectedItem == GenreCheckedListBox.Items[e.Index])
+                {
+                    GenreCheckedListBox.SelectedItem = null;
+                }
             }
         }
 
@@ -90,6 +97,9 @@ namespace PixelVaultGUI
                     else
                     {
                         MessageBox.Show("Game was added to library succesfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DataTable recommendedGames = controllerObj.GetGameRecommendations(UserName);
+                        RecommendedGamesDataGrid.DataSource = recommendedGames;
+                        RecommendedGamesDataGrid.Refresh();
                         return;
                     }
                 }
@@ -123,6 +133,9 @@ namespace PixelVaultGUI
                     else
                     {
                         MessageBox.Show("Game was added to library succesfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DataTable recommendedGames = controllerObj.GetGameRecommendations(UserName);
+                        RecommendedGamesDataGrid.DataSource = recommendedGames;
+                        RecommendedGamesDataGrid.Refresh();
                         return;
                     }
                 }
