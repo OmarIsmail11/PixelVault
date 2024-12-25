@@ -455,5 +455,11 @@ namespace DBapplication
             string query = $"SELECT \r\n    Game.GameName,\r\n    Game.Genre,\r\n    Game.ConsoleName,\r\n    Game.EngineName,\r\n    COUNT(Plays.GamerUserName) AS No_of_Players\r\nFROM \r\n    Game\r\nJOIN \r\n    Plays ON Plays.GameName = Game.GameName\r\nGROUP BY \r\n    Game.GameName, Game.Genre, Game.ConsoleName, Game.EngineName\r\nORDER BY \r\n    No_of_Players DESC;";
             return dbMan.ExecuteReader(query);
         }
+
+        public int CheckIfNewPasswordAlreadyUsed(string username, string password)
+        {
+            string query = "SELECT COUNT(*) FROM UserPasswordsAuthorization WHERE UserName = '" + username + "' AND Password = '" + password + "';";
+            return Convert.ToInt16(dbMan.ExecuteScalar(query));
+        }
     }
 }

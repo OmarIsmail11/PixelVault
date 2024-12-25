@@ -42,6 +42,13 @@ namespace PixelVaultGUI
                 return;
             }
 
+            int isAlreadyUsed = controllerObj.CheckIfNewPasswordAlreadyUsed(GamerUserName, password);
+            if (isAlreadyUsed != 0)
+            {
+                MessageBox.Show("Invalid! New password can't be the same as your current password!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             int result = controllerObj.UpdatePassword(GamerUserName, password);
             if (result == 0)
             {
