@@ -19,16 +19,7 @@ namespace PixelVaultGUI
         public manageregisteration()
         {
             InitializeComponent();
-            DataTable dt = new DataTable();
-            dt = controller.Tournamentdata(UserName);
-            dataGridView1.DataSource = dt;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.Refresh();
-            DataTable dt2 = new DataTable();
-            dt2 = controller.TName(UserName);
-            TName_combobox.DataSource = dt2;
-            TName_combobox.DisplayMember = "TName";
-            Open.Checked = true;
+            ReloadData();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -43,11 +34,34 @@ namespace PixelVaultGUI
                 Status = "Open";
             if (Close.Checked == true)
                 Status = "Closed";
-            controller.RegStatus(TName_combobox.Text, Status);
-            DataTable dt = new DataTable();
-            dt = controller.Tournamentdata(UserName);
-            dataGridView1.DataSource = dt;
-            dataGridView1.Refresh();
+            string TName;
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                TName = dataGridView1.SelectedRows[0].Cells["TName"].Value.ToString();
+
+
+                
+                    dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                    int result = controller.RegStatus(TName,Status);
+                    if (result == 0)
+                    {
+                        MessageBox.Show("Failed to Update Registration Status !");
+                        return;
+                    }
+                    else
+                    {
+                        ReloadData();
+                        MessageBox.Show("Updated Registration Status succesfully !");
+                        return;
+                    }
+                
+            }
+            else
+            {
+                MessageBox.Show("Please select a Tournament.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
         }
 
         private void Open_CheckedChanged(object sender, EventArgs e)
@@ -61,19 +75,24 @@ namespace PixelVaultGUI
             if (Close.Checked == true)
                 Open.Checked = false;
         }
-
-        private void manageregisteration_Load(object sender, EventArgs e)
+        public void ReloadData()
         {
             DataTable dt = new DataTable();
             dt = controller.Tournamentdata(UserName);
             dataGridView1.DataSource = dt;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
-            DataTable dt2 = new DataTable();
-            dt2 = controller.TName(UserName);
-            TName_combobox.DataSource = dt2;
-            TName_combobox.DisplayMember = "TName";
+        }
+        private void manageregisteration_Load(object sender, EventArgs e)
+        {
+
+            ReloadData();
             Open.Checked = true;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

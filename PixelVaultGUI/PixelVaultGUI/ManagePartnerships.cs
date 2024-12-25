@@ -19,13 +19,17 @@ namespace PixelVaultGUI
         public ManagePartnerships()
         {
             InitializeComponent();
+            ReloadData();
+        }
+        public void ReloadData()
+        {
             DataTable dataTable = new DataTable();
             dataTable = controller.getPartners(SUserName);
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
-        }
 
+        }
         private void RemovePub_Click(object sender, EventArgs e)
         {
             string PName;
@@ -46,11 +50,7 @@ namespace PixelVaultGUI
                     }
                     else
                     {
-                        DataTable dataTable = new DataTable();
-                        dataTable = controller.getPartners(SUserName);
-                        dataGridView1.DataSource = dataTable;
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                        dataGridView1.Refresh();
+                        ReloadData();
 
                         MessageBox.Show("Partner was removed succesfully !");
                         return;
@@ -71,11 +71,7 @@ namespace PixelVaultGUI
 
         private void ManagePartnerships_Load(object sender, EventArgs e)
         {
-            DataTable dataTable = new DataTable();
-            dataTable = controller.getPartners(SUserName);
-            dataGridView1.DataSource = dataTable;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.Refresh();
+            ReloadData();
         }
     }
 }

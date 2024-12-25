@@ -20,10 +20,7 @@ namespace PixelVaultGUI
         {
 
             InitializeComponent();
-            DataTable dt = controller.GetInventory(UserName);
-            dataGridView1.DataSource = dt;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.Refresh();
+            ReloadData();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -38,24 +35,41 @@ namespace PixelVaultGUI
 
         private void ManageInventory_Load(object sender, EventArgs e)
         {
+            ReloadData();
+        }
+        public void ReloadData()
+        {
             DataTable dt = controller.GetInventory(UserName);
             dataGridView1.DataSource = dt;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
         }
-
         private void AdjustPrice_Click(object sender, EventArgs e)
         {
-            if(this.Visible=true)
+
+                string GameName;
+                float price = 0;
+            if (!(NewPrice.Text == ""))
             {
-                DataTable dt = controller.GetInventory(UserName);
-                dataGridView1.DataSource = dt;
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView1.Refresh();
+                if (Validations.Isfloat(NewPrice.Text, out price))
+                {
+                    if (Validations.IsPositive(NewPrice.Text))
+                    {
+                        price = float.Parse(NewPrice.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Price Money must be positive");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Price must be a number");
+                    return;
+                }
             }
-            string GameName;
-            float price=float.Parse(NewPrice.Text);
-            if (dataGridView1.SelectedRows.Count > 0)
+                if (dataGridView1.SelectedRows.Count > 0)
             {
                 GameName = dataGridView1.SelectedRows[0].Cells["GameName"].Value.ToString();
 
@@ -65,16 +79,12 @@ namespace PixelVaultGUI
                     int result = controller.AdjustPrice(UserName,GameName,price);
                     if (result == 0)
                     {
-                        MessageBox.Show("Failed to remove Partner !");
+                        MessageBox.Show("Failed to Adjust Price !");
                         return;
                     }
                     else
                     {
-                        DataTable dataTable = new DataTable();
-                        dataTable = controller.GetInventory(UserName);
-                        dataGridView1.DataSource = dataTable;
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                        dataGridView1.Refresh();
+                        ReloadData();
 
                         MessageBox.Show("Game Price Updated Successfuly !");
                         return;
@@ -83,7 +93,7 @@ namespace PixelVaultGUI
             }
             else
             {
-                MessageBox.Show("Please select a Partner to remove.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a Game.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
         }

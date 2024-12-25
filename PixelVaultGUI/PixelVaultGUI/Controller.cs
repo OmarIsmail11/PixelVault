@@ -461,5 +461,15 @@ namespace DBapplication
             string query = "SELECT COUNT(*) FROM UserPasswordsAuthorization WHERE UserName = '" + username + "' AND Password = '" + password + "';";
             return Convert.ToInt16(dbMan.ExecuteScalar(query));
         }
+        public DataTable GetGenre(string SuserName)
+        {
+            string query = "Select G.Genre From Game G,Inventory I Where G.GameName=I.GameName AND I.StorName='" + SuserName + "'";
+            return dbMan.ExecuteReader(query);
+        }
+        public int ApplyPromotion(string Susername, string Genre, int promotion)
+        {
+            string query = "Update Inventory Set Price=Price-(Price*" + promotion + "/100) From Game G Where Inventory.GameName = G.GameName And Inventory.StoreName = '" + Susername + "' And G.Genre = '" + Genre + "'";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }

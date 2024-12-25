@@ -11,9 +11,9 @@ namespace DBapplication
     public class DBManager
     {
         // TOOD: ADD your connection string here
-        static string DB_Connection_String = @"Data Source=OMAR-REDA\SQLEXPRESS;Initial Catalog=PixelVault;Integrated Security=True;Encrypt=False";
+        static string DB_Connection_String = @"Data Source=MICKOO\SQLEXPRESS;Initial Catalog=PixelVault;Integrated Security=True;Encrypt=False";
         // Reda   static string DB_Connection_String = @"Data Source=OMAR-REDA\SQLEXPRESS;Initial Catalog=PixelVault;Integrated Security=True;Encrypt=False";
-        // Mickoo static string DB_Connection_String = @"Data Source=MICKOO\SQLEXPRESS;Initial Catalog=PixelVault;Integrated Security=True;Encrypt=False";
+        // Mickoo 
         // DOKSH Data Source=LAPTOP-CSMG40TJ\SQLEXPRESS;Initial Catalog=PixelVault;Integrated Security=True;Encrypt=False;Trust Server Certificate=True
         SqlConnection myConnection;
 
