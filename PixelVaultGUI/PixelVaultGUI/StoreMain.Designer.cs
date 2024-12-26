@@ -41,10 +41,10 @@
             Welcome = new Label();
             manageInventory1 = new ManageInventory();
             panel2 = new Panel();
+            addTournament1 = new AddTournament();
             manageregisteration1 = new manageregisteration();
             managePartnerships1 = new ManagePartnerships();
             promotions1 = new Promotions();
-            addTournament1 = new AddTournament();
             ((System.ComponentModel.ISupportInitialize)Store_Info).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -175,12 +175,12 @@
             // 
             Welcome.AutoSize = true;
             Welcome.BackColor = Color.Transparent;
-            Welcome.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            Welcome.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             Welcome.ForeColor = Color.White;
-            Welcome.Location = new Point(22, 166);
+            Welcome.Location = new Point(2, 176);
             Welcome.Margin = new Padding(2, 0, 2, 0);
             Welcome.Name = "Welcome";
-            Welcome.Size = new Size(110, 45);
+            Welcome.Size = new Size(96, 38);
             Welcome.TabIndex = 0;
             Welcome.Text = "label1";
             // 
@@ -197,7 +197,7 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
-            panel2.BackgroundImage = Properties.Resources.solid_color_image__1_;
+            panel2.BackgroundImage = Properties.Resources.solid_color_image;
             panel2.Controls.Add(addTournament1);
             panel2.Controls.Add(manageregisteration1);
             panel2.Controls.Add(manageInventory1);
@@ -208,6 +208,13 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(812, 620);
             panel2.TabIndex = 3;
+            // 
+            // addTournament1
+            // 
+            addTournament1.Location = new Point(3, -2);
+            addTournament1.Name = "addTournament1";
+            addTournament1.Size = new Size(812, 620);
+            addTournament1.TabIndex = 29;
             // 
             // manageregisteration1
             // 
@@ -230,18 +237,12 @@
             // promotions1
             // 
             promotions1.AutoSize = true;
+            promotions1.BackgroundImage = (Image)resources.GetObject("promotions1.BackgroundImage");
             promotions1.Location = new Point(2, -2);
             promotions1.Margin = new Padding(2);
             promotions1.Name = "promotions1";
             promotions1.Size = new Size(812, 620);
             promotions1.TabIndex = 2;
-            // 
-            // addTournament1
-            // 
-            addTournament1.Location = new Point(3, -2);
-            addTournament1.Name = "addTournament1";
-            addTournament1.Size = new Size(812, 620);
-            addTournament1.TabIndex = 29;
             // 
             // StoreMain
             // 
