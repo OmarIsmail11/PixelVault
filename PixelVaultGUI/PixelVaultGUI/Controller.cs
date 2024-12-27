@@ -223,6 +223,31 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public DataTable Report1()
+        {
+            string query = "SELECT COUNT(*) AS 'Number of Games',AVG(Rating) AS 'Average Games Rating' FROM Game;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Report2()
+        {
+            string query = "SELECT COUNT(*) AS 'Number of Gamers' FROM Gamer;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Report3()
+        {
+            string query = "SELECT COUNT(*) AS 'Number of Stores',AVG(Rating) AS 'Average Rating of Stores' FROM GamingStore;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Report4()
+        {
+            string query = "SELECT COUNT(*) AS 'Number of Game Publishers' FROM GamePublisher;";
+            return dbMan.ExecuteReader(query);
+        }
+
+
         //**********************************************************************************
 
         public int CheckIfEmailAlreadyAssociatedWithAnAccount(string email)

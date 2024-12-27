@@ -32,5 +32,13 @@ namespace PixelVaultGUI
             form1.ShowDialog();
             Show();
         }
+
+        private void reports_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Admin_Report form1 = new Admin_Report();
+            form1.ShowDialog();
+            Show();
+        }
     }
 }

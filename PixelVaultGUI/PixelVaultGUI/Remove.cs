@@ -35,8 +35,8 @@ namespace PixelVaultGUI
 
             DataTable dt3 = controllerObj.selectgamer();
             gamer.DataSource = dt3;
-            gamer.DisplayMember = "RegUserName";
-            gamer.ValueMember = "RegUserName";
+            gamer.DisplayMember = "UserName";
+            gamer.ValueMember = "UserName";
 
             DataTable dt4 = controllerObj.selecteng();
             eng.DataSource = dt4;
