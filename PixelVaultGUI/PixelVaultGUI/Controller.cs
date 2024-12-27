@@ -452,8 +452,26 @@ namespace DBapplication
 
         public DataTable Get_Played_Games()
         {
-            string query = $"SELECT \r\n    Game.GameName,\r\n    Game.Genre,\r\n    Game.ConsoleName,\r\n    Game.EngineName,\r\n    COUNT(Plays.GamerUserName) AS No_of_Players\r\nFROM \r\n    Game\r\nJOIN \r\n    Plays ON Plays.GameName = Game.GameName\r\nGROUP BY \r\n    Game.GameName, Game.Genre, Game.ConsoleName, Game.EngineName\r\nORDER BY \r\n    No_of_Players DESC;";
+            string query = $"SELECT  Game.GameName,Game.Genre,Game.ConsoleName, Game.EngineName,Game.Publisher, COUNT(Plays.GamerUserName) AS No_of_Players FROM Game JOIN  Plays ON Plays.GameName = Game.GameName GROUP BY Game.GameName, Game.Genre, Game.ConsoleName, Game.EngineName, Game.Publisher ORDER BY  No_of_Players DESC;";
             return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_Played_Games_By_Userrating()
+        {
+            string query = $"SELECT \r\n    Game.GameName,\r\n    Game.Genre,\r\n    Game.ConsoleName,\r\n    Game.EngineName,Game.Publisher,\r\n    AVG(Plays.UserRating) AS Average_User_Rating\r\nFROM \r\n    Game\r\nJOIN \r\n    Plays ON Plays.GameName = Game.GameName\r\nGROUP BY \r\n    Game.GameName, Game.Genre, Game.ConsoleName, Game.EngineName, Game.Publisher\r\nORDER BY \r\n    Average_User_Rating DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_Played_Games_By_Rating()
+        {
+            string query = $"SELECT  Game.GameName, Game.Genre, Game.ConsoleName,Game.Publisher ,Game.EngineName,Game.Rating FROM Game JOIN  Plays ON Plays.GameName = Game.GameName GROUP BY  Game.GameName, Game.Genre, Game.ConsoleName, Game.EngineName,Game.Rating ,Game.Publisher Order BY  Game.Rating DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int Add_Game(string GameName,string Genre,string ReleaseDate,string ConsoleName,string EngineName,string Reviewer,string Publisherusername,int rating)
+        {
+            string query = $"INSERT INTO Game Values ('{GameName}','{Genre}','{ReleaseDate}','{ConsoleName}','{EngineName}','{Publisherusername}',{rating},'{Reviewer}');";
+            return dbMan.ExecuteNonQuery(query);
         }
     }
 }

@@ -54,5 +54,15 @@ namespace PixelVaultGUI
             publisherGames1.Visible = true;
             analystics1.Visible = false;
         }
+
+        private void analystics1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

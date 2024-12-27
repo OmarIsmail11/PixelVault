@@ -528,3 +528,10 @@
 	('Epic_Games','Capcom'),
 	('PlayStation_Store','Rockstar_Games'),
 	('PlayStation_Store','Electronic_Arts');
+
+
+	INSERT INTO Plays VALUES
+	('Fortnite', 'OmarReda', NULL, NULL, NULL),
+	('Apex Legends', 'OmarReda', NULL, NULL, NULL),
+	('FIFA 23', 'OmarReda', NULL, NULL, NULL),
+	('FIFA 22', 'OmarReda', NULL, NULL, NULL);

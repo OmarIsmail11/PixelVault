@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GamePublisherMain));
             panel1 = new Panel();
+            ManagePartnerButton = new Button();
             textBox2 = new TextBox();
             LogOutButton = new Button();
             WelcomeTextBox = new TextBox();
@@ -48,6 +49,7 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.dark_purple_colour;
+            panel1.Controls.Add(ManagePartnerButton);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(LogOutButton);
             panel1.Controls.Add(WelcomeTextBox);
@@ -58,6 +60,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(450, 1045);
             panel1.TabIndex = 0;
+            // 
+            // ManagePartnerButton
+            // 
+            ManagePartnerButton.BackColor = Color.FromArgb(186, 186, 212);
+            ManagePartnerButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            ManagePartnerButton.Location = new Point(67, 629);
+            ManagePartnerButton.Name = "ManagePartnerButton";
+            ManagePartnerButton.Size = new Size(315, 99);
+            ManagePartnerButton.TabIndex = 28;
+            ManagePartnerButton.Text = "Manage Partnership";
+            ManagePartnerButton.UseVisualStyleBackColor = false;
+            ManagePartnerButton.Click += button3_Click;
             // 
             // textBox2
             // 
@@ -90,9 +104,9 @@
             WelcomeTextBox.BorderStyle = BorderStyle.None;
             WelcomeTextBox.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold);
             WelcomeTextBox.ForeColor = SystemColors.Window;
-            WelcomeTextBox.Location = new Point(42, 322);
+            WelcomeTextBox.Location = new Point(3, 322);
             WelcomeTextBox.Name = "WelcomeTextBox";
-            WelcomeTextBox.Size = new Size(359, 49);
+            WelcomeTextBox.Size = new Size(438, 49);
             WelcomeTextBox.TabIndex = 4;
             WelcomeTextBox.Text = "Welcome, User";
             WelcomeTextBox.TextAlign = HorizontalAlignment.Center;
@@ -101,7 +115,7 @@
             // 
             button2.BackColor = Color.FromArgb(186, 186, 212);
             button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            button2.Location = new Point(67, 539);
+            button2.Location = new Point(67, 534);
             button2.Name = "button2";
             button2.Size = new Size(315, 73);
             button2.TabIndex = 3;
@@ -156,6 +170,7 @@
             analystics1.Name = "analystics1";
             analystics1.Size = new Size(3286, 2090);
             analystics1.TabIndex = 2;
+            analystics1.Load += analystics1_Load;
             // 
             // GamePublisherMain
             // 
@@ -188,5 +203,6 @@
         private Analystics analystics1;
         private Button LogOutButton;
         private TextBox textBox2;
+        private Button ManagePartnerButton;
     }
 }

@@ -43,5 +43,24 @@ namespace PixelVaultGUI
         {
 
         }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PublishGameButton_Click(object sender, EventArgs e)
+        {
+            Form F = new Publish_Game(PublisherUsername);
+            F.Show();
+        }
+
+        private void RefreshListButton_Click(object sender, EventArgs e)
+        {
+            DataTable dt = controllerObj.Get_All_Published_Games(PublisherUsername);
+            dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Refresh();
+        }
     }
 }
