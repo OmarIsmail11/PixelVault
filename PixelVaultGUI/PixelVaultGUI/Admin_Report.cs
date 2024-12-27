@@ -17,10 +17,6 @@ namespace PixelVaultGUI
         public Admin_Report()
         {
             InitializeComponent();
-            dataGridView1.DataSource = controllerObj.Report1();
-            dataGridView2.DataSource = controllerObj.Report2();
-            dataGridView3.DataSource = controllerObj.Report3();
-            dataGridView4.DataSource = controllerObj.Report4();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -31,6 +27,28 @@ namespace PixelVaultGUI
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = controllerObj.Report1();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            dataGridView1.DataSource = controllerObj.Report3();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = controllerObj.Report4();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            dataGridView1.DataSource = controllerObj.Report2();
         }
     }
 }
