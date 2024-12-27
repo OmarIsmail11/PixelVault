@@ -19,6 +19,12 @@ namespace PixelVaultGUI
         {
             InitializeComponent();
             Publisherusername = PubisherUsername;
+            ConsoleNameCombo.DataSource = Controllerobj.Get_ConsoleName();
+            ConsoleNameCombo.DisplayMember = "ConsoleName";
+            EngineNameCombo.DataSource = Controllerobj.Get_EngineName();
+            EngineNameCombo.DisplayMember = "EngineName";
+            ReviewerCombo.DataSource = Controllerobj.Get_ReviewerName();
+            ReviewerCombo.DisplayMember = "ReviewerName";
         }
 
         private void Publish_Game_Load(object sender, EventArgs e)
@@ -32,10 +38,10 @@ namespace PixelVaultGUI
             string Genre = GenreCombo.Text;
             DateTime selectedDate = dateTimePicker1.Value;
             string ReleaseDate = selectedDate.ToString("yyyy-MM-dd");
-            string ConsoleName = ConsoleNameText.Text;
-            string EngineName = EngineNameText.Text;
+            string ConsoleName = ConsoleNameCombo.Text;
+            string EngineName = EngineNameCombo.Text;
             bool isint = Int32.TryParse(RatingText.Text, out int rating);
-            string Reviewer =ReviewerText.Text;
+            string Reviewer =ReviewerCombo.Text;
             if (GameName == "")
             {
                 MessageBox.Show("Please Enter a Game Name");

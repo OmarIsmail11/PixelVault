@@ -49,6 +49,12 @@ namespace PixelVaultGUI
             {
                 var selectedrow = dataGridView1.SelectedRows[0];
                 string selectedstore = selectedrow.Cells["StoreUserName"].Value.ToString();
+                int res1 = Controllerobj.Check_Partner(Publisherusername, selectedstore);
+                if (res1 == 1)
+                {
+                    MessageBox.Show("The Partnership already exists");
+                    return;
+                }
                 int res = Controllerobj.Add_Partner(Publisherusername, selectedstore);
                 if (res == 0)
                 {
@@ -63,7 +69,38 @@ namespace PixelVaultGUI
                 dataGridView1.DataSource = dt;
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView1.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Please Select a Partner to Add");
+            }
+        }
 
+        private void DeletePartnerButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var selectedrow = dataGridView1.SelectedRows[0];
+                string selectedstore = selectedrow.Cells["StoreRealName"].Value.ToString().Replace(' ', '_');
+                
+                int res = Controllerobj.Delete_Partner(Publisherusername, selectedstore);
+                if (res == 0)
+                {
+                    MessageBox.Show("PartnerShip Deletion Failed");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Partnership Deletion Successful");
+                }
+                DataTable dt = Controllerobj.Get_Partnered_Stores(Publisherusername);
+                dataGridView1.DataSource = dt;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Please Select a Partner to Delete");
             }
         }
     }

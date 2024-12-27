@@ -32,7 +32,6 @@
             GenreCombo = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
             RatingText = new TextBox();
-            ReviewerText = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -41,14 +40,9 @@
             label6 = new Label();
             label7 = new Label();
             button1 = new Button();
-            ConsoleNameText = new TextBox();
-            EngineNameText = new TextBox();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
+            ConsoleNameCombo = new ComboBox();
+            EngineNameCombo = new ComboBox();
+            ReviewerCombo = new ComboBox();
             SuspendLayout();
             // 
             // GameNameText
@@ -76,17 +70,10 @@
             // 
             // RatingText
             // 
-            RatingText.Location = new Point(285, 577);
+            RatingText.Location = new Point(285, 610);
             RatingText.Name = "RatingText";
             RatingText.Size = new Size(128, 39);
             RatingText.TabIndex = 5;
-            // 
-            // ReviewerText
-            // 
-            ReviewerText.Location = new Point(285, 669);
-            ReviewerText.Name = "ReviewerText";
-            ReviewerText.Size = new Size(274, 39);
-            ReviewerText.TabIndex = 6;
             // 
             // label1
             // 
@@ -184,73 +171,29 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // ConsoleNameText
+            // ConsoleNameCombo
             // 
-            ConsoleNameText.Location = new Point(285, 372);
-            ConsoleNameText.Name = "ConsoleNameText";
-            ConsoleNameText.Size = new Size(274, 39);
-            ConsoleNameText.TabIndex = 15;
+            ConsoleNameCombo.FormattingEnabled = true;
+            ConsoleNameCombo.Location = new Point(292, 369);
+            ConsoleNameCombo.Name = "ConsoleNameCombo";
+            ConsoleNameCombo.Size = new Size(304, 40);
+            ConsoleNameCombo.TabIndex = 23;
             // 
-            // EngineNameText
+            // EngineNameCombo
             // 
-            EngineNameText.Location = new Point(285, 463);
-            EngineNameText.Name = "EngineNameText";
-            EngineNameText.Size = new Size(274, 39);
-            EngineNameText.TabIndex = 16;
+            EngineNameCombo.FormattingEnabled = true;
+            EngineNameCombo.Location = new Point(295, 468);
+            EngineNameCombo.Name = "EngineNameCombo";
+            EngineNameCombo.Size = new Size(319, 40);
+            EngineNameCombo.TabIndex = 24;
             // 
-            // label8
+            // ReviewerCombo
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(657, 116);
-            label8.Name = "label8";
-            label8.Size = new Size(227, 32);
-            label8.TabIndex = 17;
-            label8.Text = "Most Populer Genre";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(657, 171);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 32);
-            label9.TabIndex = 18;
-            label9.Text = "label9";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(657, 349);
-            label10.Name = "label10";
-            label10.Size = new Size(249, 32);
-            label10.TabIndex = 19;
-            label10.Text = "Most Populer Console";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(657, 399);
-            label11.Name = "label11";
-            label11.Size = new Size(91, 32);
-            label11.TabIndex = 20;
-            label11.Text = "label11";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(657, 476);
-            label12.Name = "label12";
-            label12.Size = new Size(236, 32);
-            label12.TabIndex = 21;
-            label12.Text = "Most Populer Engine";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(657, 532);
-            label13.Name = "label13";
-            label13.Size = new Size(91, 32);
-            label13.TabIndex = 22;
-            label13.Text = "label13";
+            ReviewerCombo.FormattingEnabled = true;
+            ReviewerCombo.Location = new Point(289, 693);
+            ReviewerCombo.Name = "ReviewerCombo";
+            ReviewerCombo.Size = new Size(299, 40);
+            ReviewerCombo.TabIndex = 25;
             // 
             // Publish_Game
             // 
@@ -258,14 +201,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.dark_purple_colour;
             ClientSize = new Size(1234, 801);
-            Controls.Add(label13);
-            Controls.Add(label12);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(EngineNameText);
-            Controls.Add(ConsoleNameText);
+            Controls.Add(ReviewerCombo);
+            Controls.Add(EngineNameCombo);
+            Controls.Add(ConsoleNameCombo);
             Controls.Add(button1);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -274,7 +212,6 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(ReviewerText);
             Controls.Add(RatingText);
             Controls.Add(dateTimePicker1);
             Controls.Add(GenreCombo);
@@ -292,7 +229,6 @@
         private ComboBox GenreCombo;
         private DateTimePicker dateTimePicker1;
         private TextBox RatingText;
-        private TextBox ReviewerText;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -301,13 +237,8 @@
         private Label label6;
         private Label label7;
         private Button button1;
-        private TextBox ConsoleNameText;
-        private TextBox EngineNameText;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private Label label12;
-        private Label label13;
+        private ComboBox ConsoleNameCombo;
+        private ComboBox EngineNameCombo;
+        private ComboBox ReviewerCombo;
     }
 }

@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            GameNametext = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            AwardNametext = new TextBox();
             button1 = new Button();
             AwardYearText = new TextBox();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             SuspendLayout();
-            // 
-            // GameNametext
-            // 
-            GameNametext.Location = new Point(331, 91);
-            GameNametext.Name = "GameNametext";
-            GameNametext.Size = new Size(291, 39);
-            GameNametext.TabIndex = 0;
             // 
             // label1
             // 
@@ -80,13 +73,6 @@
             label3.TabIndex = 10;
             label3.Text = "Award Name";
             // 
-            // AwardNametext
-            // 
-            AwardNametext.Location = new Point(331, 310);
-            AwardNametext.Name = "AwardNametext";
-            AwardNametext.Size = new Size(291, 39);
-            AwardNametext.TabIndex = 11;
-            // 
             // button1
             // 
             button1.BackColor = Color.Thistle;
@@ -106,33 +92,49 @@
             AwardYearText.Size = new Size(291, 39);
             AwardYearText.TabIndex = 13;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(332, 310);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(297, 40);
+            comboBox1.TabIndex = 14;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(332, 91);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(281, 40);
+            comboBox2.TabIndex = 15;
+            // 
             // UpdateAward
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.dark_purple_colour;
             ClientSize = new Size(799, 653);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
             Controls.Add(AwardYearText);
             Controls.Add(button1);
-            Controls.Add(AwardNametext);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(GameNametext);
             Name = "UpdateAward";
             Text = "UpdateAward";
+            Load += UpdateAward_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox GameNametext;
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox AwardNametext;
         private Button button1;
         private TextBox AwardYearText;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }

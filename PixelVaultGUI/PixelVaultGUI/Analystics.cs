@@ -20,12 +20,24 @@ namespace PixelVaultGUI
         {
             InitializeComponent();
             dataGridView1.DataSource = controllerobj.Get_Played_Games();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
             MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
-            MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
-            MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
-            MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
+            //MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
+            //MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            //MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
+            //---------
+            dataGridView1.DataSource = controllerobj.Get_Populer_Genre();
+            dataGridView1.Refresh();
+            MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
+            //----------
+            dataGridView1.DataSource = controllerobj.Get_Populer_Engine();
+            dataGridView1.Refresh();
+            MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
+            //-----------
+            dataGridView1.DataSource = controllerobj.Get_Populer_Platform();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Refresh();
+            MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
         }
 
         private void Analystics_Load(object sender, EventArgs e)
@@ -38,10 +50,10 @@ namespace PixelVaultGUI
             dataGridView1.DataSource = controllerobj.Get_Played_Games();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
-            MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
-            MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
-            MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
-            MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
+            //MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
+            //MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
+            //MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            //MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -67,10 +79,10 @@ namespace PixelVaultGUI
             dataGridView1.DataSource = controllerobj.Get_Played_Games_By_Userrating();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
-            MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
-            MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
-            MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
-            MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
+            //MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
+            //MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
+            //MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            //MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -78,21 +90,22 @@ namespace PixelVaultGUI
             dataGridView1.DataSource = controllerobj.Get_Played_Games_By_Rating();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
-            MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
-            MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
-            MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
-            MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[4].Value.ToString();
         }
+        //    MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
+        //    MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
+        //    MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+        //    MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[4].Value.ToString();
+        //}
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource = controllerobj.Get_Played_Games();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
-            MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
-            MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
-            MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
-            MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
+            //MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
+            //MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
+            //MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            //MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -107,6 +120,31 @@ namespace PixelVaultGUI
             dataGridView1.DataSource = controllerobj.Get_Rewarded_Games();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = controllerobj.Get_Populer_Genre();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Refresh();
+            MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = controllerobj.Get_Populer_Engine();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Refresh();
+            MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = controllerobj.Get_Populer_Platform();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Refresh();
+            MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
 
         }
     }

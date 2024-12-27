@@ -40,5 +40,17 @@ namespace PixelVaultGUI
             form1.ShowDialog();
             Show();
         }
+
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+            var output = MessageBox.Show($"Are you sure you want to sign out ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (output == DialogResult.Yes)
+            {
+                MessageBox.Show("Logged out successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else return;
+        }
     }
 }

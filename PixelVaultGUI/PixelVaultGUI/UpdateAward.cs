@@ -13,24 +13,30 @@ namespace PixelVaultGUI
 {
     public partial class UpdateAward : Form
     {
-        Controller controllerobj =new Controller();
-        public UpdateAward()
+        Controller controllerobj = new Controller();
+        public UpdateAward(string Publisherusername)
         {
             InitializeComponent();
+            DataTable dt = controllerobj.Get_Award_Name();
+            comboBox1.DataSource = dt;
+            comboBox1.DisplayMember = "AwardName";
+            DataTable dt2 = controllerobj.Get_Game_Name(Publisherusername);
+            comboBox2.DataSource = dt2;
+            comboBox2.DisplayMember = "GameName";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string GameName= GameNametext.Text;
-            string AwardName = AwardNametext.Text;
+            string GameName = comboBox2.Text;
+            string AwardName = comboBox1.Text;
             bool isint = Int32.TryParse(AwardYearText.Text, out int AwardYear);
-            if(GameName=="")
+            if (GameName == "")
             {
                 MessageBox.Show("Please Enter a GameName");
                 return;
             }
 
-            if(AwardName=="")
+            if (AwardName == "")
             {
                 MessageBox.Show("Please Enter a AwardName");
                 return;
@@ -46,7 +52,7 @@ namespace PixelVaultGUI
                 return;
             }
 
-            int res = controllerobj.Award_Game(GameName, AwardName,AwardYear);
+            int res = controllerobj.Award_Game(GameName, AwardName, AwardYear);
             if (res == 0)
             {
                 MessageBox.Show("Game Was not Rewarded");
@@ -58,7 +64,12 @@ namespace PixelVaultGUI
                 return;
             }
 
-            
+
+        }
+
+        private void UpdateAward_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,6 +33,7 @@
             dataGridView1 = new DataGridView();
             ExitButton = new Label();
             panel2 = new Panel();
+            UpdateAwardButton = new Button();
             DeleteGameButton = new Button();
             AwardedGamesButton = new Button();
             RefreshListButton = new Button();
@@ -50,7 +51,6 @@
             label12 = new Label();
             MostTrendingEngine = new Label();
             PublishGameButton = new Button();
-            UpdateAwardButton = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -118,6 +118,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1575, 379);
             panel2.TabIndex = 22;
+            // 
+            // UpdateAwardButton
+            // 
+            UpdateAwardButton.BackColor = Color.FromArgb(186, 186, 212);
+            UpdateAwardButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            UpdateAwardButton.Location = new Point(326, 147);
+            UpdateAwardButton.Name = "UpdateAwardButton";
+            UpdateAwardButton.Size = new Size(271, 104);
+            UpdateAwardButton.TabIndex = 11;
+            UpdateAwardButton.Text = "Update Award";
+            UpdateAwardButton.UseVisualStyleBackColor = false;
+            UpdateAwardButton.Click += UpdateAwardButton_Click;
             // 
             // DeleteGameButton
             // 
@@ -230,7 +242,7 @@
             groupBox4.Size = new Size(487, 354);
             groupBox4.TabIndex = 6;
             groupBox4.TabStop = false;
-            groupBox4.Text = "Most Trending";
+            groupBox4.Text = "Your Most Populer";
             // 
             // MostTrendingGenre
             // 
@@ -240,9 +252,9 @@
             MostTrendingGenre.Image = Properties.Resources.dark_purple_colour;
             MostTrendingGenre.Location = new Point(212, 130);
             MostTrendingGenre.Name = "MostTrendingGenre";
-            MostTrendingGenre.Size = new Size(110, 45);
+            MostTrendingGenre.Size = new Size(85, 45);
             MostTrendingGenre.TabIndex = 7;
-            MostTrendingGenre.Text = "label7";
+            MostTrendingGenre.Text = "-----";
             // 
             // label7
             // 
@@ -276,9 +288,9 @@
             MostTrendingGame.Image = Properties.Resources.solid_color_image;
             MostTrendingGame.Location = new Point(212, 57);
             MostTrendingGame.Name = "MostTrendingGame";
-            MostTrendingGame.Size = new Size(110, 45);
+            MostTrendingGame.Size = new Size(85, 45);
             MostTrendingGame.TabIndex = 0;
-            MostTrendingGame.Text = "label3";
+            MostTrendingGame.Text = "-----";
             // 
             // MostTrendingPlatform
             // 
@@ -288,9 +300,9 @@
             MostTrendingPlatform.Image = Properties.Resources.dark_purple_colour;
             MostTrendingPlatform.Location = new Point(212, 285);
             MostTrendingPlatform.Name = "MostTrendingPlatform";
-            MostTrendingPlatform.Size = new Size(110, 45);
+            MostTrendingPlatform.Size = new Size(85, 45);
             MostTrendingPlatform.TabIndex = 5;
-            MostTrendingPlatform.Text = "label7";
+            MostTrendingPlatform.Text = "-----";
             // 
             // label11
             // 
@@ -324,9 +336,9 @@
             MostTrendingEngine.Image = Properties.Resources.dark_purple_colour;
             MostTrendingEngine.Location = new Point(212, 206);
             MostTrendingEngine.Name = "MostTrendingEngine";
-            MostTrendingEngine.Size = new Size(110, 45);
+            MostTrendingEngine.Size = new Size(85, 45);
             MostTrendingEngine.TabIndex = 3;
-            MostTrendingEngine.Text = "label5";
+            MostTrendingEngine.Text = "-----";
             // 
             // PublishGameButton
             // 
@@ -339,18 +351,6 @@
             PublishGameButton.Text = "Publish Game";
             PublishGameButton.UseVisualStyleBackColor = false;
             PublishGameButton.Click += PublishGameButton_Click;
-            // 
-            // UpdateAwardButton
-            // 
-            UpdateAwardButton.BackColor = Color.FromArgb(186, 186, 212);
-            UpdateAwardButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            UpdateAwardButton.Location = new Point(326, 147);
-            UpdateAwardButton.Name = "UpdateAwardButton";
-            UpdateAwardButton.Size = new Size(271, 104);
-            UpdateAwardButton.TabIndex = 11;
-            UpdateAwardButton.Text = "Update Award";
-            UpdateAwardButton.UseVisualStyleBackColor = false;
-            UpdateAwardButton.Click += UpdateAwardButton_Click;
             // 
             // PublisherGames
             // 

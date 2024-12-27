@@ -143,9 +143,9 @@
 	AwardName CHAR(30) NOT NULL,
 	Genre CHAR(20) NOT NULL,
 	Reviewer VARCHAR(30) ,
-	Won	VARCHAR(50) ,
-	YearWon	INT ,
-	PRIMARY KEY (AwardName,YearWon),
+	Won	VARCHAR(50) NULL,
+	YearWon	INT NULL,
+	PRIMARY KEY (AwardName),
 	FOREIGN KEY (Reviewer) REFERENCES GameReviewer(ReviewerName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
@@ -507,13 +507,13 @@
 	('Best Fighting Game', 'Fighting', 'Kotaku', 'Street Fighter V', 2018),
 	('Best Art Direction', 'Action', 'Kotaku', 'Valorant', 2017),
 	('Best Multiplayer', 'FPS', 'GameSpot', 'Overwatch', 2019),
-	('Best Narrative', 'RPG', 'Polygon', 'Tekken 7', 2018),
+	('Best Narrative2', 'RPG', 'Polygon', 'Tekken 7', 2018),
 	('Best Soundtrack', 'All', 'PC Gamer', 'Fortnite', 2020),
 	('Game of the Year', 'All', 'IGN', 'Halo Infinite', 2021),  
 	('Best Indie Game', 'Indie', 'PC Gamer', 'Overwatch', 2021),      
-	('Best Art Direction', 'Adventure', 'IGN', 'CS:GO', 2020), 
+	('Best Art Direction2', 'Adventure', 'IGN', 'CS:GO', 2020), 
 	('Best Narrative', 'Adventure', 'Polygon', 'Need for Speed Heat', 2021), 
-	('Best Soundtrack', 'Action', 'GameSpot', 'Need for Speed Heat', 2010), 
+	('Best Soundtrack2', 'Action', 'GameSpot', 'Need for Speed Heat', 2010), 
 	('Best VR Game', 'VR', 'IGN', 'Rocket League', 2020);        
 
 

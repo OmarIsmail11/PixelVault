@@ -562,6 +562,8 @@ namespace DBapplication
 
         public int Delete_Game(string selectedgame)
         {
+            string query1 = $"UPDATE Award SET Won=NULL WHERE Won='{selectedgame}' ";
+            dbMan .ExecuteNonQuery (query1);
             string query = $"DELETE FROM Game WHERE GameName='{selectedgame}'";
             return dbMan.ExecuteNonQuery (query);
         }
@@ -570,6 +572,66 @@ namespace DBapplication
         {
             string query = $"UPDATE Award SET Won='{GameName}',YearWon={AwardDate} WHERE AwardName='{AwardName}'";
             return dbMan.ExecuteNonQuery (query);
+        }
+
+        public DataTable Get_Award_Name()
+        {
+            string query = $"SELECT AwardName FROM Award WHERE Won is NULL";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_Game_Name(string Publisherusername)
+        {
+            string query = $"SELECT GameName FROM Game WHERE Publisher='{Publisherusername}'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_Populer_Genre()
+        {
+            string query = $"SELECT Game.Genre,Game.Publisher,COUNT(Plays.GamerUserName) AS No_of_Players FROM Plays JOIN Game ON Plays.GameName = Game.GameName GROUP BY Game.Genre,Game.Publisher ORDER BY No_of_Players DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int Delete_Partner(string Publisherusername, string selectedstore)
+        {
+            string query = $"DELETE FROM Partners WHERE SUserName='{selectedstore}' AND PUserName='{Publisherusername}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int Check_Partner(string Publisherusername, string selectedstore)
+        {
+            string query = $"SELECT COUNT(*) FROM Partners WHERE SUserName='{selectedstore}' AND PUserName='{Publisherusername}'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public DataTable Get_Populer_Engine()
+        {
+            string query = $"SELECT Game.EngineName, Game.Publisher, COUNT(Plays.GamerUserName) AS No_of_Players FROM Plays JOIN Game ON Plays.GameName = Game.GameName GROUP BY Game.EngineName, Game.Publisher ORDER BY No_of_Players DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_Populer_Platform()
+        {
+            string query = $"SELECT Game.ConsoleName,Game.Publisher ,COUNT(Plays.GamerUserName) AS No_of_Players FROM Plays JOIN Game ON Plays.GameName = Game.GameName GROUP BY Game.ConsoleName,Game.Publisher ORDER BY No_of_Players DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_ConsoleName()
+        {
+            string query = $"SELECT ConsoleName FROM Console";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_EngineName()
+        {
+            string query = $"SELECT EngineName FROM GameEngine";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_ReviewerName()
+        {
+            string query = $"SELECT ReviewerName FROM GameReviewer";
+            return dbMan.ExecuteReader(query);
         }
 
         //--------------------------------------------------------
@@ -608,6 +670,7 @@ namespace DBapplication
             string query = "Select Organizer, Avg(PrizeMoney) AS 'Average Prize Money' From Tournament Group By Organizer ORDER BY AVG(PrizeMoney) DESC";
             return dbMan.ExecuteReader(query);
         }
+
 
     }
 }

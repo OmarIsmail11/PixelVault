@@ -42,11 +42,14 @@
             label2 = new Label();
             groupBox1 = new GroupBox();
             panel2 = new Panel();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            AwardedGamesButton = new Button();
             groupBox2 = new GroupBox();
             radioButton3 = new RadioButton();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
-            AwardedGamesButton = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
@@ -90,9 +93,9 @@
             // 
             TrendingGamesButton.BackColor = Color.FromArgb(186, 186, 212);
             TrendingGamesButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            TrendingGamesButton.Location = new Point(22, 27);
+            TrendingGamesButton.Location = new Point(22, 40);
             TrendingGamesButton.Name = "TrendingGamesButton";
-            TrendingGamesButton.Size = new Size(413, 104);
+            TrendingGamesButton.Size = new Size(272, 104);
             TrendingGamesButton.TabIndex = 2;
             TrendingGamesButton.Text = "View Trending Games";
             TrendingGamesButton.UseVisualStyleBackColor = false;
@@ -217,6 +220,9 @@
             // panel2
             // 
             panel2.BackgroundImage = Properties.Resources.dark_purple_colour;
+            panel2.Controls.Add(button3);
+            panel2.Controls.Add(button2);
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(AwardedGamesButton);
             panel2.Controls.Add(groupBox2);
             panel2.Controls.Add(groupBox1);
@@ -226,6 +232,54 @@
             panel2.Size = new Size(1575, 379);
             panel2.TabIndex = 7;
             // 
+            // button3
+            // 
+            button3.BackgroundImage = Properties.Resources.solid_color_image__1_;
+            button3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(355, 263);
+            button3.Name = "button3";
+            button3.Size = new Size(219, 59);
+            button3.TabIndex = 11;
+            button3.Text = "Populer Platform";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = Properties.Resources.solid_color_image__1_;
+            button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(353, 151);
+            button2.Name = "button2";
+            button2.Size = new Size(221, 60);
+            button2.TabIndex = 10;
+            button2.Text = "Populer Engine";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = Properties.Resources.solid_color_image__1_;
+            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(353, 40);
+            button1.Name = "button1";
+            button1.Size = new Size(218, 59);
+            button1.TabIndex = 9;
+            button1.Text = "Populer Genres";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_2;
+            // 
+            // AwardedGamesButton
+            // 
+            AwardedGamesButton.BackColor = Color.FromArgb(186, 186, 212);
+            AwardedGamesButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            AwardedGamesButton.Location = new Point(22, 218);
+            AwardedGamesButton.Name = "AwardedGamesButton";
+            AwardedGamesButton.Size = new Size(272, 104);
+            AwardedGamesButton.TabIndex = 8;
+            AwardedGamesButton.Text = "View Awarded Games";
+            AwardedGamesButton.UseVisualStyleBackColor = false;
+            AwardedGamesButton.Click += AwardedGamesButton_Click;
+            // 
             // groupBox2
             // 
             groupBox2.BackgroundImage = Properties.Resources.dark_purple_colour;
@@ -234,7 +288,7 @@
             groupBox2.Controls.Add(radioButton2);
             groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox2.ForeColor = SystemColors.ButtonFace;
-            groupBox2.Location = new Point(590, 40);
+            groupBox2.Location = new Point(667, 40);
             groupBox2.Margin = new Padding(5);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(5);
@@ -283,18 +337,6 @@
             radioButton2.UseVisualStyleBackColor = true;
             radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
-            // AwardedGamesButton
-            // 
-            AwardedGamesButton.BackColor = Color.FromArgb(186, 186, 212);
-            AwardedGamesButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            AwardedGamesButton.Location = new Point(22, 218);
-            AwardedGamesButton.Name = "AwardedGamesButton";
-            AwardedGamesButton.Size = new Size(413, 104);
-            AwardedGamesButton.TabIndex = 8;
-            AwardedGamesButton.Text = "View Awarded Games";
-            AwardedGamesButton.UseVisualStyleBackColor = false;
-            AwardedGamesButton.Click += AwardedGamesButton_Click;
-            // 
             // Analystics
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -337,5 +379,8 @@
         private RadioButton radioButton2;
         private RadioButton radioButton1;
         private Button AwardedGamesButton;
+        private Button button3;
+        private Button button2;
+        private Button button1;
     }
 }

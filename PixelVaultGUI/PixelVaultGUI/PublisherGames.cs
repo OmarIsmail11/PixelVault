@@ -48,6 +48,11 @@ namespace PixelVaultGUI
         {
             DataTable dt = controllerObj.Get_Played_Games_By_userrating_pub(PublisherUsername);
             dataGridView1.DataSource = dt;
+            if (dt == null)
+            {
+                MessageBox.Show("There is no players playing this publisher Games");
+                return;
+            }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
             MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
@@ -75,6 +80,11 @@ namespace PixelVaultGUI
         {
             DataTable dt = controllerObj.Get_Played_Games_By_Rating_Pub(PublisherUsername);
             dataGridView1.DataSource = dt;
+            if (dt == null)
+            {
+                MessageBox.Show("There is no players playing this publisher Games");
+                return;
+            }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
             MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
@@ -87,6 +97,11 @@ namespace PixelVaultGUI
         {
             DataTable dt = controllerObj.Get_Played_Games_Pub(PublisherUsername);
             dataGridView1.DataSource = dt;
+            if (dt == null)
+            {
+                MessageBox.Show("There is no players playing this publisher Games");
+                return;
+            }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
             MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
@@ -99,6 +114,7 @@ namespace PixelVaultGUI
         {
             DataTable dt = controllerObj.Get_Rewarded_Games_pub(PublisherUsername);
             dataGridView1.DataSource = dt;
+
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
 
@@ -124,13 +140,16 @@ namespace PixelVaultGUI
                 dataGridView1.DataSource = dt;
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView1.Refresh();
-
+            }
+            else
+            {
+                MessageBox.Show("Please choose a game to delete");
             }
         }
 
         private void UpdateAwardButton_Click(object sender, EventArgs e)
         {
-            Form form = new UpdateAward();
+            Form form = new UpdateAward(PublisherUsername);
             form.Show();
         }
     }
