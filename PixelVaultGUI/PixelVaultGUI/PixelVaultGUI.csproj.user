@@ -67,6 +67,9 @@
     <Compile Update="Remove.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ShowReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,4 +89,5 @@
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
 </Project>

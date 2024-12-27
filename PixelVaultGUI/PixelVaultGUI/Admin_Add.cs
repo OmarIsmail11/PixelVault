@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PixelVaultGUI
 {
@@ -34,6 +36,14 @@ namespace PixelVaultGUI
             manname1.DisplayMember = "ManufacturerName";
             manname1.ValueMember = "ManufacturerName";
 
+            awardgenre.DataSource = controllerObj.selectgenre();
+            awardgenre.DisplayMember = "Genre";
+            awardgenre.ValueMember = "Genre";
+
+            awardrev.DataSource = controllerObj.selectawardrev();
+            awardrev.DisplayMember = "ReviewerName";
+            awardrev.ValueMember = "ReviewerName";
+
         }
 
         private void Admin_Add_Load(object sender, EventArgs e)
@@ -51,6 +61,18 @@ namespace PixelVaultGUI
 
             if (!Validations.CheckIfNewUserNameNotAlreadyExisiting(UserName)) return;
 
+            string repassword = renterpass.Text;
+            if (repassword == "")
+            {
+                MessageBox.Show("Invalid! Please re-enter password in the required field!");
+                return;
+            }
+            if (password != repassword)
+            {
+                MessageBox.Show("Invalid! Passwords must be the same!");
+                return;
+            }
+
             if (controllerObj.addadmin(admin_username.Text, adminpass.Text) > 0)
             {
                 MessageBox.Show("Admin added succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -66,7 +88,7 @@ namespace PixelVaultGUI
         private void addman_Click_1(object sender, EventArgs e)
         {
             string name = manname.Text;
-            if (!Validations.ValidateName(name)) return;
+            if (!Validations.ValidateRealName(name)) return;
 
             if (!Validations.IsComboBoxEmpty(manhead)) return;
 
@@ -85,7 +107,7 @@ namespace PixelVaultGUI
         private void addeng_Click_1(object sender, EventArgs e)
         {
             string name = engname.Text;
-            if (!Validations.ValidateName(name)) return;
+            if (!Validations.ValidateRealName(name)) return;
 
             if (!Validations.IsComboBoxEmpty(engplat)) return;
 
@@ -111,7 +133,7 @@ namespace PixelVaultGUI
         private void addrev_Click_1(object sender, EventArgs e)
         {
             string name = revname.Text;
-            if (!Validations.ValidateName(name)) return;
+            if (!Validations.ValidateRealName(name)) return;
 
             DateTime selectedDate = revdate.Value;
             string Date = selectedDate.ToString("yyyy-MM-dd");
@@ -134,14 +156,14 @@ namespace PixelVaultGUI
         private void addcon_Click_1(object sender, EventArgs e)
         {
             string name = conname.Text;
-            if (!Validations.ValidateName(name)) return;
+            if (!Validations.ValidateRealName(name)) return;
 
             if (!Validations.IsComboBoxEmpty(manname1)) return;
 
             DateTime selectedDate = condate.Value;
             string Date = selectedDate.ToString("yyyy-MM-dd");
 
-            if (controllerObj.addcon(name, Date, Convert.ToString(manname1.SelectedItem)) > 0)
+            if (controllerObj.addcon(name, Date, Convert.ToString(manname1.SelectedValue)) > 0)
             {
                 MessageBox.Show("Console added succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -156,14 +178,19 @@ namespace PixelVaultGUI
         private void addstor_Click_1(object sender, EventArgs e)
         {
             string name = storname.Text;
-            if (!Validations.ValidateName(name)) return;
+            if (!Validations.ValidateRealName(name)) return;
+
+            string username = storusername.Text;
+            if (!Validations.ValidateUserName(username)) return;
+
+            if (!Validations.CheckIfNewUserNameNotAlreadyExisiting(username)) return;
 
             string hotline = storhot.Text;
             if (!Validations.Isint(hotline)) return;
 
             int rating = storrate.Value;
 
-            if (controllerObj.addstor(name, rating, Convert.ToInt32(hotline)) > 0)
+            if (controllerObj.addstor(username, name, rating, Convert.ToInt32(hotline)) > 0)
             {
                 MessageBox.Show("Game Store added succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -178,7 +205,12 @@ namespace PixelVaultGUI
         private void addpub_Click_1(object sender, EventArgs e)
         {
             string name = pubname.Text;
-            if (!Validations.ValidateName(name)) return;
+            if (!Validations.ValidateRealName(name)) return;
+
+            string username = pubusername.Text;
+            if (!Validations.ValidateUserName(username)) return;
+
+            if (!Validations.CheckIfNewUserNameNotAlreadyExisiting(username)) return;
 
             if (!Validations.IsComboBoxEmpty(pubhead)) return;
 
@@ -192,7 +224,7 @@ namespace PixelVaultGUI
             DateTime selectedDate = revdate.Value;
             string Date = selectedDate.ToString("yyyy-MM-dd");
 
-            if (controllerObj.addpub(name, Convert.ToString(pubhead.SelectedItem), type, Date) > 0)
+            if (controllerObj.addpub(username, name, Convert.ToString(pubhead.SelectedItem), type, Date) > 0)
             {
                 MessageBox.Show("Game Publisher added succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -206,6 +238,33 @@ namespace PixelVaultGUI
 
         private void manhead_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void addaward_Click(object sender, EventArgs e)
+        {
+            string name = awardname.Text;
+            if (!Validations.ValidateRealName(name)) return;
+
+            if (!Validations.IsComboBoxEmpty(awardgenre)) return;
+
+            if (!Validations.IsComboBoxEmpty(awardrev)) return;
+
+            if (controllerObj.addaward(name, Convert.ToString(awardgenre.SelectedValue), Convert.ToString(awardrev.SelectedValue)) > 0)
+            {
+                MessageBox.Show("Game Award added succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Error ! Game Award was not added!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
         }
     }

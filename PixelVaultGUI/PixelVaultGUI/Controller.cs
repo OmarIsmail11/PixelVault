@@ -35,20 +35,20 @@ namespace DBapplication
 
         public int CheckIfUserNameExists(string UserName)
         {
-            string query = "SELECT COUNT(*) FROM UserPasswordsAuthorization WHERE RegUserName = '" + UserName + "';";
+            string query = "SELECT COUNT(*) FROM UserPasswordsAuthorization WHERE UserName = '" + UserName + "';";
             return Convert.ToInt16(dbMan.ExecuteScalar(query));
         }
 
         public int InsertNewGamerIntoGamerTable(string UserName, string FirstName, string LastName, string Email, string Country, string BirthDate)
         {
-            string query = "INSERT INTO Gamer (RegUserName, FirstName, LastName, Email, Country, BirthDate) VALUES " +
+            string query = "INSERT INTO Gamer (UserName, FirstName, LastName, Email, Country, BirthDate) VALUES " +
                 "('" + UserName + "','" + FirstName + "', '" + LastName + "', '" + Email + "', '" + Country + "', '" + BirthDate + "');";
             return dbMan.ExecuteNonQuery(query);
         }
 
         public int InsertNewGamerIntoUserPasswordsAuthorizationTable(string UserName, string Password)
         {
-            string query = "INSERT INTO UserPasswordsAuthorization (RegUserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Gamer');";
+            string query = "INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Gamer');";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -67,7 +67,7 @@ namespace DBapplication
 
         public int InsertNewGamePublisherIntoUserPasswordsAuthorizationTable(string UserName, string Password)
         {
-            string query = "INSERT INTO UserPasswordsAuthorization (RegUserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Publisher');";
+            string query = "INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Publisher');";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -136,6 +136,18 @@ namespace DBapplication
         public DataTable selectrev()
         {
             string query = "SELECT * FROM GameReviewer;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable selectawardrev()
+        {
+            string query = "SELECT ReviewerName FROM GameReviewer;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable selectgenre()
+        {
+            string query = "SELECT DISTINCT Genre FROM Game;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -211,15 +223,21 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int addstor(string Name, int rate, int hotline)
+        public int addstor(string username,string Name, int rate, int hotline)
         {
-            string query = $"INSERT INTO GamingStore VALUES ('{Name}',{rate},{hotline});";
+            string query = $"INSERT INTO GamingStore VALUES ('{username}','{Name}',{rate},{hotline});";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int addpub(string Name, string country, string type, string date)
+        public int addpub(string username,string Name, string country, string type, string date)
         {
-            string query = $"INSERT INTO GamingStore VALUES ('{Name}','{country}','{type}','{date}');";
+            string query = $"INSERT INTO GamingStore VALUES ('{username}','{Name}','{country}','{type}','{date}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int addaward(string Name, string genre, string reviewer)
+        {
+            string query = $"INSERT INTO Award VALUES ('{Name}','{genre}','{reviewer}');";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -512,6 +530,26 @@ namespace DBapplication
         {
             string query = "Update Inventory Set Price=Price-(Price*" + promotion + "/100) From Game G Where Inventory.GameName = G.GameName And Inventory.StoreName = '" + Susername + "' And G.Genre = '" + Genre + "'";
             return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable PartnersNum(string UserName)
+        {
+            string query = "Select SUserName, Count(*) AS 'Number of Partners' From Partners Group By SUserName";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable AvgGPrice(string UserName)
+        {
+            string query = "Select StoreName,AVG(Price) AS 'Average Game Price'  From Inventory Group By StoreName";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable TNum(string UserName)
+        {
+            string query = "Select Organizer, Count(*) AS 'Tournaments Count' From Tournament Group By Organizer";
+            return dbMan.ExecuteReader (query);
+        }
+        public DataTable AvgPMoney(string UserName)
+        {
+            string query = "Select Organizer, Avg(PrizeMoney) AS 'Average Prize Money' From Tournament Group By Organizer";
+            return dbMan.ExecuteReader(query);
         }
     }
 }
