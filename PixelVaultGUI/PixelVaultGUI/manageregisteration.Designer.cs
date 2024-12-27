@@ -33,7 +33,6 @@
             Open = new CheckBox();
             Close = new CheckBox();
             Refresh = new Button();
-            TName_combobox = new ComboBox();
             label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -41,11 +40,12 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 3);
+            dataGridView1.Location = new Point(3, 96);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(665, 246);
+            dataGridView1.Size = new Size(793, 246);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ExitButton
             // 
@@ -100,31 +100,22 @@
             Refresh.UseVisualStyleBackColor = true;
             Refresh.Click += Refresh_Click;
             // 
-            // TName_combobox
-            // 
-            TName_combobox.FormattingEnabled = true;
-            TName_combobox.Location = new Point(268, 293);
-            TName_combobox.Name = "TName_combobox";
-            TName_combobox.Size = new Size(257, 33);
-            TName_combobox.TabIndex = 31;
-            // 
             // label9
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label9.Location = new Point(0, 293);
+            label9.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            label9.Location = new Point(185, 29);
             label9.Name = "label9";
-            label9.Size = new Size(262, 38);
+            label9.Size = new Size(417, 54);
             label9.TabIndex = 30;
-            label9.Text = "Tournament Name";
+            label9.Text = "Manage Registration";
             // 
             // manageregisteration
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.solid_color_image__1_;
-            Controls.Add(TName_combobox);
             Controls.Add(label9);
             Controls.Add(Refresh);
             Controls.Add(Close);
@@ -132,7 +123,7 @@
             Controls.Add(ExitButton);
             Controls.Add(dataGridView1);
             Name = "manageregisteration";
-            Size = new Size(813, 620);
+            Size = new Size(800, 600);
             Load += manageregisteration_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -146,7 +137,6 @@
         private CheckBox Open;
         private CheckBox Close;
         private Button Refresh;
-        private ComboBox TName_combobox;
         private Label label9;
     }
 }

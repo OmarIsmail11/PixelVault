@@ -76,6 +76,8 @@
             label20 = new Label();
             manhead = new ComboBox();
             panel1 = new Panel();
+            label21 = new Label();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)storrate).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -87,7 +89,7 @@
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Image = Properties.Resources.solid_color_image;
-            label1.Location = new Point(373, 96);
+            label1.Location = new Point(399, 99);
             label1.Name = "label1";
             label1.Size = new Size(141, 28);
             label1.TabIndex = 0;
@@ -113,7 +115,7 @@
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Image = Properties.Resources.solid_color_image;
-            label3.Location = new Point(1087, 44);
+            label3.Location = new Point(1135, 47);
             label3.Name = "label3";
             label3.Size = new Size(161, 28);
             label3.TabIndex = 2;
@@ -126,7 +128,7 @@
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Image = Properties.Resources.solid_color_image;
-            label4.Location = new Point(1087, 106);
+            label4.Location = new Point(1135, 109);
             label4.Name = "label4";
             label4.Size = new Size(49, 28);
             label4.TabIndex = 3;
@@ -139,7 +141,7 @@
             label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Image = Properties.Resources.solid_color_image;
-            label5.Location = new Point(373, 47);
+            label5.Location = new Point(399, 49);
             label5.Name = "label5";
             label5.Size = new Size(124, 28);
             label5.TabIndex = 4;
@@ -152,7 +154,7 @@
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Image = Properties.Resources.solid_color_image;
-            label6.Location = new Point(714, 96);
+            label6.Location = new Point(762, 99);
             label6.Name = "label6";
             label6.Size = new Size(95, 28);
             label6.TabIndex = 5;
@@ -165,7 +167,7 @@
             label7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = SystemColors.ButtonHighlight;
             label7.Image = Properties.Resources.solid_color_image;
-            label7.Location = new Point(714, 44);
+            label7.Location = new Point(762, 47);
             label7.Name = "label7";
             label7.Size = new Size(138, 28);
             label7.TabIndex = 6;
@@ -177,7 +179,7 @@
             label8.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Image = Properties.Resources.solid_color_image;
-            label8.Location = new Point(1087, 159);
+            label8.Location = new Point(1135, 162);
             label8.Name = "label8";
             label8.Size = new Size(130, 28);
             label8.TabIndex = 7;
@@ -216,7 +218,7 @@
             label11.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = SystemColors.ButtonHighlight;
             label11.Image = Properties.Resources.solid_color_image;
-            label11.Location = new Point(714, 156);
+            label11.Location = new Point(762, 159);
             label11.Name = "label11";
             label11.Size = new Size(151, 28);
             label11.TabIndex = 10;
@@ -263,7 +265,7 @@
             // 
             addrev.ForeColor = SystemColors.ActiveCaptionText;
             addrev.Image = Properties.Resources.solid_color_image__1_;
-            addrev.Location = new Point(1266, 202);
+            addrev.Location = new Point(1314, 205);
             addrev.Name = "addrev";
             addrev.Size = new Size(184, 70);
             addrev.TabIndex = 14;
@@ -277,7 +279,7 @@
             addeng.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addeng.ForeColor = SystemColors.ActiveCaptionText;
             addeng.Image = Properties.Resources.solid_color_image__1_;
-            addeng.Location = new Point(879, 213);
+            addeng.Location = new Point(927, 219);
             addeng.Name = "addeng";
             addeng.Size = new Size(182, 43);
             addeng.TabIndex = 15;
@@ -291,7 +293,7 @@
             addman.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addman.ForeColor = SystemColors.ActiveCaptionText;
             addman.Image = Properties.Resources.solid_color_image__1_;
-            addman.Location = new Point(530, 155);
+            addman.Location = new Point(563, 153);
             addman.Name = "addman";
             addman.Size = new Size(171, 83);
             addman.TabIndex = 16;
@@ -305,7 +307,7 @@
             addmin.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addmin.ForeColor = SystemColors.ActiveCaptionText;
             addmin.Image = Properties.Resources.solid_color_image__1_;
-            addmin.Location = new Point(188, 152);
+            addmin.Location = new Point(205, 199);
             addmin.Name = "addmin";
             addmin.Size = new Size(169, 37);
             addmin.TabIndex = 17;
@@ -324,14 +326,14 @@
             // engplat
             // 
             engplat.FormattingEnabled = true;
-            engplat.Location = new Point(877, 96);
+            engplat.Location = new Point(925, 99);
             engplat.Name = "engplat";
             engplat.Size = new Size(182, 36);
             engplat.TabIndex = 19;
             // 
             // revdate
             // 
-            revdate.Location = new Point(1266, 153);
+            revdate.Location = new Point(1314, 156);
             revdate.Name = "revdate";
             revdate.Size = new Size(184, 34);
             revdate.TabIndex = 21;
@@ -355,37 +357,37 @@
             // 
             // admin_username
             // 
-            admin_username.Location = new Point(188, 46);
+            admin_username.Location = new Point(205, 46);
             admin_username.Name = "admin_username";
-            admin_username.Size = new Size(169, 31);
+            admin_username.Size = new Size(169, 34);
             admin_username.TabIndex = 24;
             // 
             // adminpass
             // 
-            adminpass.Location = new Point(188, 95);
+            adminpass.Location = new Point(205, 96);
             adminpass.Name = "adminpass";
-            adminpass.Size = new Size(169, 31);
+            adminpass.Size = new Size(169, 34);
             adminpass.TabIndex = 25;
             // 
             // engname
             // 
-            engname.Location = new Point(879, 43);
+            engname.Location = new Point(927, 47);
             engname.Name = "engname";
-            engname.Size = new Size(182, 31);
+            engname.Size = new Size(182, 34);
             engname.TabIndex = 26;
             // 
             // englang
             // 
-            englang.Location = new Point(879, 158);
+            englang.Location = new Point(927, 162);
             englang.Name = "englang";
-            englang.Size = new Size(182, 31);
+            englang.Size = new Size(182, 34);
             englang.TabIndex = 27;
             // 
             // manname
             // 
-            manname.Location = new Point(530, 40);
+            manname.Location = new Point(563, 46);
             manname.Name = "manname";
-            manname.Size = new Size(171, 31);
+            manname.Size = new Size(171, 34);
             manname.TabIndex = 28;
             // 
             // pubname
@@ -397,7 +399,7 @@
             // 
             // revurl
             // 
-            revurl.Location = new Point(1266, 103);
+            revurl.Location = new Point(1314, 106);
             revurl.Name = "revurl";
             revurl.Size = new Size(184, 34);
             revurl.TabIndex = 30;
@@ -411,7 +413,7 @@
             // 
             // revname
             // 
-            revname.Location = new Point(1266, 44);
+            revname.Location = new Point(1314, 47);
             revname.Name = "revname";
             revname.Size = new Size(184, 34);
             revname.TabIndex = 32;
@@ -572,9 +574,9 @@
             // manhead
             // 
             manhead.FormattingEnabled = true;
-            manhead.Location = new Point(530, 90);
+            manhead.Location = new Point(563, 90);
             manhead.Name = "manhead";
-            manhead.Size = new Size(171, 33);
+            manhead.Size = new Size(171, 36);
             manhead.TabIndex = 48;
             manhead.SelectedIndexChanged += manhead_SelectedIndexChanged;
             // 
@@ -582,10 +584,21 @@
             // 
             panel1.BackColor = Color.White;
             panel1.BackgroundImage = Properties.Resources.solid_color_image;
+            panel1.Controls.Add(adminpass);
+            panel1.Controls.Add(engname);
+            panel1.Controls.Add(admin_username);
+            panel1.Controls.Add(englang);
+            panel1.Controls.Add(addeng);
+            panel1.Controls.Add(manname);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(label21);
+            panel1.Controls.Add(manhead);
+            panel1.Controls.Add(addman);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label13);
             panel1.Controls.Add(storhot);
+            panel1.Controls.Add(addmin);
             panel1.Controls.Add(label20);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label19);
@@ -618,27 +631,37 @@
             panel1.Controls.Add(pubdate);
             panel1.Controls.Add(pubname);
             panel1.Controls.Add(addpub);
+            panel1.Dock = DockStyle.Fill;
             panel1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             panel1.ForeColor = SystemColors.ButtonHighlight;
-            panel1.Location = new Point(2, 2);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1519, 641);
+            panel1.Size = new Size(1547, 644);
             panel1.TabIndex = 49;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.BackColor = Color.White;
+            label21.Image = Properties.Resources.solid_color_image;
+            label21.Location = new Point(10, 156);
+            label21.Name = "label21";
+            label21.Size = new Size(189, 28);
+            label21.TabIndex = 49;
+            label21.Text = "Re-Enter Password";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(205, 150);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(169, 34);
+            textBox1.TabIndex = 50;
             // 
             // Admin_Add
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1520, 644);
-            Controls.Add(manhead);
-            Controls.Add(manname);
-            Controls.Add(englang);
-            Controls.Add(engname);
-            Controls.Add(adminpass);
-            Controls.Add(admin_username);
-            Controls.Add(addmin);
-            Controls.Add(addman);
-            Controls.Add(addeng);
+            ClientSize = new Size(1547, 644);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(panel1);
@@ -702,5 +725,7 @@
         private Label label20;
         private ComboBox manhead;
         private Panel panel1;
+        private TextBox textBox1;
+        private Label label21;
     }
 }

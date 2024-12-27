@@ -33,16 +33,17 @@
             label1 = new Label();
             NewPrice = new TextBox();
             AdjustPrice = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 3);
+            dataGridView1.Location = new Point(14, 94);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(689, 291);
+            dataGridView1.Size = new Size(689, 220);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -65,7 +66,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            label1.Location = new Point(13, 318);
+            label1.Location = new Point(14, 343);
             label1.Name = "label1";
             label1.Size = new Size(227, 45);
             label1.TabIndex = 26;
@@ -74,7 +75,7 @@
             // NewPrice
             // 
             NewPrice.Font = new Font("Segoe UI", 14F);
-            NewPrice.Location = new Point(261, 318);
+            NewPrice.Location = new Point(262, 343);
             NewPrice.Name = "NewPrice";
             NewPrice.Size = new Size(276, 45);
             NewPrice.TabIndex = 27;
@@ -85,7 +86,7 @@
             AdjustPrice.BackgroundImage = Properties.Resources.solid_color_image;
             AdjustPrice.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             AdjustPrice.ForeColor = SystemColors.ButtonHighlight;
-            AdjustPrice.Location = new Point(409, 387);
+            AdjustPrice.Location = new Point(409, 399);
             AdjustPrice.Name = "AdjustPrice";
             AdjustPrice.Size = new Size(309, 51);
             AdjustPrice.TabIndex = 28;
@@ -93,11 +94,23 @@
             AdjustPrice.UseVisualStyleBackColor = false;
             AdjustPrice.Click += AdjustPrice_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            label2.Location = new Point(166, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(372, 54);
+            label2.TabIndex = 29;
+            label2.Text = "Manage Inventory";
+            // 
             // ManageInventory
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.solid_color_image__1_;
+            Controls.Add(label2);
             Controls.Add(AdjustPrice);
             Controls.Add(NewPrice);
             Controls.Add(label1);
@@ -118,5 +131,6 @@
         private Label label1;
         private TextBox NewPrice;
         private Button AdjustPrice;
+        private Label label2;
     }
 }

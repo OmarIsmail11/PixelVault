@@ -288,9 +288,10 @@
             // 
             panel1.BackgroundImage = Properties.Resources.solid_color_image;
             panel1.Controls.Add(remeng);
-            panel1.Location = new Point(2, 0);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(918, 608);
+            panel1.Size = new Size(920, 609);
             panel1.TabIndex = 22;
             // 
             // Remove

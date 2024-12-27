@@ -11,14 +11,17 @@ using DBapplication;
 
 namespace PixelVaultGUI
 {
-    public partial class Add_Tournament : Form
+    public partial class AddTournament : UserControl
     {
         public string UserName;
         Controller controller = new Controller();
-        public Add_Tournament(string userName)
+        public AddTournament()
         {
             InitializeComponent();
-            UserName = userName;
+            ReloadData();
+        }
+        public void ReloadData()
+        {
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             Region.DataSource = controller.Regions();
@@ -28,17 +31,14 @@ namespace PixelVaultGUI
             GameName.DataSource = controller.GameNameInventory(UserName);
             GameName.DisplayMember = "GameName";
         }
-
-        private void ExitButton_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-            this.Close();
-            StoreMain storeMain = new StoreMain(UserName);
-            storeMain.Show();
+
         }
 
-        private void Add_Tournament_val_Click_1(object sender, EventArgs e)
+        private void Add_Tournament_val_Click(object sender, EventArgs e)
         {
-            if (TName.Text == "") 
+            if (TName.Text == "")
             {
                 MessageBox.Show("Please Enter Tournament Name");
                 return;
@@ -104,7 +104,7 @@ namespace PixelVaultGUI
             }
             else
             {
-                    result = controller.InsertNewTournamentWithoutMoney(tname, capacity,gamename, type, region, StartDate, organizer);
+                result = controller.InsertNewTournamentWithoutMoney(tname, capacity, gamename, type, region, StartDate, organizer);
             }
             if (result == 0)
             {
@@ -113,19 +113,24 @@ namespace PixelVaultGUI
             }
             else
             {
+                ReloadData();
+                
                 MessageBox.Show("Tournament added succesfuly");
+                TName.Text = "";
+                Capacity.Text = "";
+                PMoney.Text = "";
                 return;
             }
         }
 
-        private void PMoney_TextChanged(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
-        }
-        
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void Add_Tournament_Panel_Paint(object sender, PaintEventArgs e)

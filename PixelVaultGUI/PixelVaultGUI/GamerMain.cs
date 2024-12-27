@@ -75,9 +75,7 @@ namespace PixelVaultGUI
 
             if (output == DialogResult.Yes)
             {
-                MessageBox.Show("Logged out successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SignIn signIn = new SignIn();
-                signIn.Show();
+                MessageBox.Show("Signed out successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else return;

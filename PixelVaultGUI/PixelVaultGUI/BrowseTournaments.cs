@@ -145,18 +145,25 @@ namespace PixelVaultGUI
         {
             if (e.NewValue == CheckState.Checked)
             {
+                // Uncheck all other items
                 for (int i = 0; i < GenreCheckedListBox.Items.Count; i++)
                 {
                     if (i != e.Index)
                     {
-                        GenreCheckedListBox.SetItemChecked(i, false); // Uncheck all other items
+                        GenreCheckedListBox.SetItemChecked(i, false);
                     }
                 }
+
+                // Update the selected item to the newly checked item
+                GenreCheckedListBox.SelectedItem = GenreCheckedListBox.Items[e.Index];
             }
             else if (e.NewValue == CheckState.Unchecked)
             {
-                // Clear the selection when an item is unchecked
-                GenreCheckedListBox.SelectedItem = null;
+                // If the unchecked item was the selected item, clear the selection
+                if (GenreCheckedListBox.SelectedItem == GenreCheckedListBox.Items[e.Index])
+                {
+                    GenreCheckedListBox.SelectedItem = null;
+                }
             }
         }
 
@@ -164,18 +171,25 @@ namespace PixelVaultGUI
         {
             if (e.NewValue == CheckState.Checked)
             {
+                // Uncheck all other items
                 for (int i = 0; i < RegionCheckedListBox.Items.Count; i++)
                 {
                     if (i != e.Index)
                     {
-                        RegionCheckedListBox.SetItemChecked(i, false); // Uncheck all other items
+                        RegionCheckedListBox.SetItemChecked(i, false);
                     }
                 }
+
+                // Update the selected item to the newly checked item
+                RegionCheckedListBox.SelectedItem = RegionCheckedListBox.Items[e.Index];
             }
             else if (e.NewValue == CheckState.Unchecked)
             {
-                // Clear the selection when an item is unchecked
-                RegionCheckedListBox.SelectedItem = null;
+                // If the unchecked item was the selected item, clear the selection
+                if (RegionCheckedListBox.SelectedItem == RegionCheckedListBox.Items[e.Index])
+                {
+                    RegionCheckedListBox.SelectedItem = null;
+                }
             }
         }
 
@@ -183,18 +197,25 @@ namespace PixelVaultGUI
         {
             if (e.NewValue == CheckState.Checked)
             {
+                // Uncheck all other items
                 for (int i = 0; i < TypeCheckedListBox.Items.Count; i++)
                 {
                     if (i != e.Index)
                     {
-                        TypeCheckedListBox.SetItemChecked(i, false); // Uncheck all other items
+                        TypeCheckedListBox.SetItemChecked(i, false);
                     }
                 }
+
+                // Update the selected item to the newly checked item
+                TypeCheckedListBox.SelectedItem = TypeCheckedListBox.Items[e.Index];
             }
             else if (e.NewValue == CheckState.Unchecked)
             {
-                // Clear the selection when an item is unchecked
-                TypeCheckedListBox.SelectedItem = null;
+                // If the unchecked item was the selected item, clear the selection
+                if (TypeCheckedListBox.SelectedItem == TypeCheckedListBox.Items[e.Index])
+                {
+                    TypeCheckedListBox.SelectedItem = null;
+                }
             }
         }
 
@@ -202,18 +223,25 @@ namespace PixelVaultGUI
         {
             if (e.NewValue == CheckState.Checked)
             {
+                // Uncheck all other items
                 for (int i = 0; i < SortByCheckedListBox.Items.Count; i++)
                 {
                     if (i != e.Index)
                     {
-                        SortByCheckedListBox.SetItemChecked(i, false); // Uncheck all other items
+                        SortByCheckedListBox.SetItemChecked(i, false);
                     }
                 }
+
+                // Update the selected item to the newly checked item
+                SortByCheckedListBox.SelectedItem = SortByCheckedListBox.Items[e.Index];
             }
             else if (e.NewValue == CheckState.Unchecked)
             {
-                // Clear the selection when an item is unchecked
-                SortByCheckedListBox.SelectedItem = null;
+                // If the unchecked item was the selected item, clear the selection
+                if (SortByCheckedListBox.SelectedItem == SortByCheckedListBox.Items[e.Index])
+                {
+                    SortByCheckedListBox.SelectedItem = null;
+                }
             }
         }
     }
