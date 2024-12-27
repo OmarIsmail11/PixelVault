@@ -123,7 +123,7 @@
 	);
 
 	CREATE TABLE Award(
-	AwardName CHAR(25) NOT NULL,
+	AwardName CHAR(30) NOT NULL,
 	Genre CHAR(20) NOT NULL,
 	Reviewer VARCHAR(30) ,
 	Won	VARCHAR(50) ,

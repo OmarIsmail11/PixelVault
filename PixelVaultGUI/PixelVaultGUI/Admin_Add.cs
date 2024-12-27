@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PixelVaultGUI
@@ -34,6 +35,14 @@ namespace PixelVaultGUI
             manname1.DataSource = controllerObj.selectman();
             manname1.DisplayMember = "ManufacturerName";
             manname1.ValueMember = "ManufacturerName";
+
+            awardgenre.DataSource = controllerObj.selectgenre();
+            awardgenre.DisplayMember = "Genre";
+            awardgenre.ValueMember = "Genre";
+
+            awardrev.DataSource = controllerObj.selectawardrev();
+            awardrev.DisplayMember = "ReviewerName";
+            awardrev.ValueMember = "ReviewerName";
 
         }
 
@@ -154,7 +163,7 @@ namespace PixelVaultGUI
             DateTime selectedDate = condate.Value;
             string Date = selectedDate.ToString("yyyy-MM-dd");
 
-            if (controllerObj.addcon(name, Date, Convert.ToString(manname1.SelectedItem)) > 0)
+            if (controllerObj.addcon(name, Date, Convert.ToString(manname1.SelectedValue)) > 0)
             {
                 MessageBox.Show("Console added succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -181,7 +190,7 @@ namespace PixelVaultGUI
 
             int rating = storrate.Value;
 
-            if (controllerObj.addstor(username, name,rating, Convert.ToInt32(hotline)) > 0)
+            if (controllerObj.addstor(username, name, rating, Convert.ToInt32(hotline)) > 0)
             {
                 MessageBox.Show("Game Store added succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -215,7 +224,7 @@ namespace PixelVaultGUI
             DateTime selectedDate = revdate.Value;
             string Date = selectedDate.ToString("yyyy-MM-dd");
 
-            if (controllerObj.addpub(username,name, Convert.ToString(pubhead.SelectedItem), type, Date) > 0)
+            if (controllerObj.addpub(username, name, Convert.ToString(pubhead.SelectedItem), type, Date) > 0)
             {
                 MessageBox.Show("Game Publisher added succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -229,6 +238,33 @@ namespace PixelVaultGUI
 
         private void manhead_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void addaward_Click(object sender, EventArgs e)
+        {
+            string name = awardname.Text;
+            if (!Validations.ValidateRealName(name)) return;
+
+            if (!Validations.IsComboBoxEmpty(awardgenre)) return;
+
+            if (!Validations.IsComboBoxEmpty(awardrev)) return;
+
+            if (controllerObj.addaward(name, Convert.ToString(awardgenre.SelectedValue), Convert.ToString(awardrev.SelectedValue)) > 0)
+            {
+                MessageBox.Show("Game Award added succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Error ! Game Award was not added!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
         }
     }

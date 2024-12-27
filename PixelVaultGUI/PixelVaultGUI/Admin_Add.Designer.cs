@@ -82,6 +82,13 @@
             label22 = new Label();
             renterpass = new TextBox();
             label21 = new Label();
+            label24 = new Label();
+            label25 = new Label();
+            label26 = new Label();
+            awardname = new TextBox();
+            awardgenre = new ComboBox();
+            awardrev = new ComboBox();
+            addaward = new Button();
             ((System.ComponentModel.ISupportInitialize)storrate).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -271,7 +278,7 @@
             addrev.Image = Properties.Resources.solid_color_image__1_;
             addrev.Location = new Point(1314, 205);
             addrev.Name = "addrev";
-            addrev.Size = new Size(284, 70);
+            addrev.Size = new Size(284, 54);
             addrev.TabIndex = 14;
             addrev.Text = "Add Game Reviewer";
             addrev.UseVisualStyleBackColor = true;
@@ -588,6 +595,13 @@
             // 
             panel1.BackColor = Color.White;
             panel1.BackgroundImage = Properties.Resources.solid_color_image;
+            panel1.Controls.Add(addaward);
+            panel1.Controls.Add(awardrev);
+            panel1.Controls.Add(awardgenre);
+            panel1.Controls.Add(awardname);
+            panel1.Controls.Add(label26);
+            panel1.Controls.Add(label25);
+            panel1.Controls.Add(label24);
             panel1.Controls.Add(pubusername);
             panel1.Controls.Add(label23);
             panel1.Controls.Add(storusername);
@@ -647,6 +661,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1670, 763);
             panel1.TabIndex = 49;
+            panel1.Paint += panel1_Paint;
             // 
             // pubusername
             // 
@@ -699,6 +714,71 @@
             label21.Size = new Size(189, 28);
             label21.TabIndex = 49;
             label21.Text = "Re-Enter Password";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Image = Properties.Resources.solid_color_image;
+            label24.Location = new Point(1203, 319);
+            label24.Name = "label24";
+            label24.Size = new Size(135, 28);
+            label24.TabIndex = 55;
+            label24.Text = "Award Name";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Image = Properties.Resources.solid_color_image;
+            label25.Location = new Point(1203, 375);
+            label25.Name = "label25";
+            label25.Size = new Size(68, 28);
+            label25.TabIndex = 56;
+            label25.Text = "Genre";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Image = Properties.Resources.solid_color_image;
+            label26.Location = new Point(1203, 433);
+            label26.Name = "label26";
+            label26.Size = new Size(99, 28);
+            label26.TabIndex = 57;
+            label26.Text = "Reviewer";
+            // 
+            // awardname
+            // 
+            awardname.Location = new Point(1357, 323);
+            awardname.Name = "awardname";
+            awardname.Size = new Size(182, 34);
+            awardname.TabIndex = 58;
+            // 
+            // awardgenre
+            // 
+            awardgenre.FormattingEnabled = true;
+            awardgenre.Location = new Point(1357, 378);
+            awardgenre.Name = "awardgenre";
+            awardgenre.Size = new Size(182, 36);
+            awardgenre.TabIndex = 59;
+            // 
+            // awardrev
+            // 
+            awardrev.FormattingEnabled = true;
+            awardrev.Location = new Point(1357, 433);
+            awardrev.Name = "awardrev";
+            awardrev.Size = new Size(182, 36);
+            awardrev.TabIndex = 60;
+            // 
+            // addaward
+            // 
+            addaward.ForeColor = SystemColors.ActiveCaptionText;
+            addaward.Image = Properties.Resources.solid_color_image__1_;
+            addaward.Location = new Point(1357, 504);
+            addaward.Name = "addaward";
+            addaward.Size = new Size(182, 49);
+            addaward.TabIndex = 61;
+            addaward.Text = "Add Award";
+            addaward.UseVisualStyleBackColor = true;
+            addaward.Click += addaward_Click;
             // 
             // Admin_Add
             // 
@@ -773,5 +853,12 @@
         private Label label22;
         private TextBox pubusername;
         private Label label23;
+        private ComboBox awardrev;
+        private ComboBox awardgenre;
+        private TextBox awardname;
+        private Label label26;
+        private Label label25;
+        private Label label24;
+        private Button addaward;
     }
 }

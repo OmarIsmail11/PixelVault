@@ -139,6 +139,18 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable selectawardrev()
+        {
+            string query = "SELECT ReviewerName FROM GameReviewer;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable selectgenre()
+        {
+            string query = "SELECT DISTINCT Genre FROM Game;";
+            return dbMan.ExecuteReader(query);
+        }
+
         public int deletecon(string name)
         {
             string query = $"DELETE FROM Console WHERE ConsoleName = '{name}'";
@@ -220,6 +232,12 @@ namespace DBapplication
         public int addpub(string username,string Name, string country, string type, string date)
         {
             string query = $"INSERT INTO GamingStore VALUES ('{username}','{Name}','{country}','{type}','{date}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int addaward(string Name, string genre, string reviewer)
+        {
+            string query = $"INSERT INTO Award VALUES ('{Name}','{genre}','{reviewer}');";
             return dbMan.ExecuteNonQuery(query);
         }
 
