@@ -20,8 +20,10 @@ namespace PixelVaultGUI
             UserName = username;
             WelcomeTextBox.Text = "Welcome, " + UserName + "";
             publisherGames1.PublisherUsername = UserName;
+            manage_Partners1.Publisherusername = UserName;
             publisherGames1.Visible = true;
             analystics1.Visible = false;
+            manage_Partners1.Visible = false;
         }
 
         private void GamePublisherMain_Load(object sender, EventArgs e)
@@ -33,6 +35,7 @@ namespace PixelVaultGUI
         {
             publisherGames1.Visible = false;
             analystics1.Visible = true;
+            manage_Partners1.Visible = false;
         }
 
         private void LogOutButton_Click(object sender, EventArgs e)
@@ -62,7 +65,9 @@ namespace PixelVaultGUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            publisherGames1.Visible = false;
+            analystics1.Visible = false;
+            manage_Partners1.Visible = true;
         }
     }
 }
