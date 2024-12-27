@@ -513,5 +513,25 @@ namespace DBapplication
             string query = "Update Inventory Set Price=Price-(Price*" + promotion + "/100) From Game G Where Inventory.GameName = G.GameName And Inventory.StoreName = '" + Susername + "' And G.Genre = '" + Genre + "'";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable PartnersNum(string UserName)
+        {
+            string query = "Select SUserName, Count(*) AS 'Number of Partners' From Partners Group By SUserName";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable AvgGPrice(string UserName)
+        {
+            string query = "Select StoreName,AVG(Price) AS 'Average Game Price'  From Inventory Group By StoreName";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable TNum(string UserName)
+        {
+            string query = "Select Organizer, Count(*) AS 'Tournaments Count' From Tournament Group By Organizer";
+            return dbMan.ExecuteReader (query);
+        }
+        public DataTable AvgPMoney(string UserName)
+        {
+            string query = "Select Organizer, Avg(PrizeMoney) AS 'Average Prize Money' From Tournament Group By Organizer";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }
