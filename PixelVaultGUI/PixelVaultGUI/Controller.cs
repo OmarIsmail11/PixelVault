@@ -493,9 +493,11 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
-        public int Add_Game(string GameName,string Genre,string ReleaseDate,string ConsoleName,string EngineName,string Reviewer,string Publisherusername,int rating)
+        public int Add_Game(string GameName, string Genre, string ReleaseDate, string ConsoleName, string EngineName, string Reviewer, string Publisherusername, int rating)
         {
             string query = $"INSERT INTO Game Values ('{GameName}','{Genre}','{ReleaseDate}','{ConsoleName}','{EngineName}','{Publisherusername}',{rating},'{Reviewer}');";
+            return dbMan.ExecuteNonQuery (query);
+        }
         public int CheckIfNewPasswordAlreadyUsed(string username, string password)
         {
             string query = "SELECT COUNT(*) FROM UserPasswordsAuthorization WHERE UserName = '" + username + "' AND Password = '" + password + "';";
