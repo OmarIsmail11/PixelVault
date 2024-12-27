@@ -49,6 +49,9 @@
     <Compile Update="manageregisteration.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Manage_Partners.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Promotions.cs">
       <SubType>UserControl</SubType>
     </Compile>

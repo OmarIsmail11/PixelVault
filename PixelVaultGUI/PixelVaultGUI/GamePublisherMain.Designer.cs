@@ -42,6 +42,7 @@
             sqlConnection1 = new Microsoft.Data.SqlClient.SqlConnection();
             sqlConnection2 = new Microsoft.Data.SqlClient.SqlConnection();
             analystics1 = new Analystics();
+            manage_Partners1 = new Manage_Partners();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -172,11 +173,20 @@
             analystics1.TabIndex = 2;
             analystics1.Load += analystics1_Load;
             // 
+            // manage_Partners1
+            // 
+            manage_Partners1.BackgroundImage = (Image)resources.GetObject("manage_Partners1.BackgroundImage");
+            manage_Partners1.Location = new Point(445, 2);
+            manage_Partners1.Name = "manage_Partners1";
+            manage_Partners1.Size = new Size(3286, 2090);
+            manage_Partners1.TabIndex = 3;
+            // 
             // GamePublisherMain
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2057, 974);
+            Controls.Add(manage_Partners1);
             Controls.Add(analystics1);
             Controls.Add(publisherGames1);
             Controls.Add(panel1);
@@ -204,5 +214,6 @@
         private Button LogOutButton;
         private TextBox textBox2;
         private Button ManagePartnerButton;
+        private Manage_Partners manage_Partners1;
     }
 }
