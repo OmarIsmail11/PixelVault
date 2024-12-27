@@ -9,8 +9,16 @@
 	USE PixelVault;
 	GO	
 
+	CREATE TABLE UserPasswordsAuthorization
+	(
+		UserName VARCHAR(30),
+		Password VARCHAR(20) NOT NULL,
+		AuthorizationLevel VARCHAR(30) NOT NULL CHECK (AuthorizationLevel in ('Gamer', 'Game Publisher', 'Game Store', 'Admin')),
+		PRIMARY KEY (UserName)
+	);
+
 	CREATE TABLE GameEngine(
-	EngineName CHAR(30) ,
+	EngineName VARCHAR(30) ,
 	Language VARCHAR(20) NOT NULL ,
 	Platform CHAR(20) NOT NULL CHECK(Platform in ('Windows','Mobile','Cross-Platform','Playstation')) ,
 	PRIMARY KEY(EngineName)
@@ -36,7 +44,7 @@
 
 
 	CREATE TABLE Console(
-	ConsoleName	CHAR(30) ,
+	ConsoleName	VARCHAR(30) ,
 	ReleaseDate	DATE NOT NULL,
 	Develop CHAR(30) ,
 	PRIMARY KEY (ConsoleName),
@@ -53,7 +61,10 @@
     Country char(30) NOT NULL,
     ConsoleType varchar(30) NOT NULL,
     StartDate date,
-    PRIMARY KEY (PublisherUserName)
+    PRIMARY KEY (PublisherUserName),
+	FOREIGN KEY (PublisherUserName) REFERENCES UserPasswordsAuthorization(UserName)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 	);
 
 
@@ -63,8 +74,11 @@
 		StoreUserName varchar(30),
 		StoreRealName varchar(30) UNIQUE NOT NULL,
 		Rating int not null CHECK (Rating Between 1 AND 5),
-		Hotline int not null ,
-		PRIMARY KEY (StoreUserName)
+		Hotline int UNIQUE not null ,
+		PRIMARY KEY (StoreUserName),
+		FOREIGN KEY (StoreUserName) REFERENCES UserPasswordsAuthorization (UserName)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 	);
 
 	CREATE TABLE Tournament(
@@ -93,7 +107,10 @@
 	Email		NVARCHAR(255) UNIQUE NOT NULL,
 	Country		CHAR(20)	NOT NULL,
 	BirthDate	DATE,
-	PRIMARY KEY(UserName)
+	PRIMARY KEY(UserName),
+	FOREIGN KEY (UserName) REFERENCES UserPasswordsAuthorization (UserName)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 	);
 
 	
@@ -102,8 +119,8 @@
     GameName varchar(50),
     Genre varchar(30) not null check (Genre IN ('Sports', 'Racing', 'Fighting', 'Battle Royale', 'FPS')),
     ReleaseDate date,
-    ConsoleName char(20),
-    EngineName char(20),
+    ConsoleName VARCHAR(30),
+    EngineName VARCHAR(30),
     Publisher varchar(30),
     Rating int default 0,
     Reviewer varchar(30),
@@ -145,9 +162,7 @@
 	StoreName varchar(30),
 	Price	Decimal(6,2) NOT NULL,
 	PRIMARY KEY(GameName,StoreName),
-	FOREIGN KEY (GameName) REFERENCES Game(GameName)
-		ON DELETE CASCADE
-		ON UPDATE CASCADE,
+	FOREIGN KEY (GameName) REFERENCES Game(GameName),
 	FOREIGN KEY (StoreName) REFERENCES GamingStore(StoreUserName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
@@ -163,8 +178,8 @@
 	UserRating INT CHECK(UserRating Between 1 AND 5),
 	PRIMARY KEY(GameName,GamerUserName),
 	FOREIGN KEY (GameName) REFERENCES Game(GameName)
-		ON DELETE CASCADE
-		ON UPDATE CASCADE,
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
 	FOREIGN KEY (GamerUserName) REFERENCES Gamer(UserName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
@@ -177,20 +192,13 @@
 	TName CHAR(20),
 	PRIMARY KEY(GamerUserName,TName),
 	FOREIGN KEY (GamerUserName) REFERENCES Gamer(UserName)
-		ON DELETE CASCADE
-		ON UPDATE CASCADE,
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
 	FOREIGN KEY(TName) REFERENCES Tournament(TName)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 	);
 
-	CREATE TABLE UserPasswordsAuthorization
-	(
-		UserName VARCHAR(30),
-		Password VARCHAR(20) NOT NULL,
-		AuthorizationLevel VARCHAR(30) NOT NULL CHECK (AuthorizationLevel in ('Gamer', 'Game Publisher', 'Game Store', 'Admin')),
-		PRIMARY KEY (UserName)
-	);
 
 	CREATE TABLE Partners
 	(
@@ -198,12 +206,81 @@
 		PUserName varchar(30),
 		PRIMARY KEY(SUserName,PUserName),
 		FOREIGN KEY (SUserName) REFERENCES GamingStore(StoreUserName)
-			ON DELETE CASCADE
-			ON UPDATE CASCADE,
+			ON DELETE NO ACTION
+			ON UPDATE NO ACTION,
 		FOREIGN KEY (PUserName) REFERENCES GamePublisher(PublisherUserName)
 			ON DELETE CASCADE
 			ON UPDATE CASCADE
 	);
+
+
+		INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES
+	('OmarReda', 'TestTest12_','Gamer'),
+	('NoobMaster69', 'Y6m5o2#F9z', 'Gamer'),
+	('AliceTheAce', 'N7u!lQm1Pz', 'Gamer'),
+	('DragonHunter92', 'H@2Xn8lZ0d', 'Gamer'),
+	('Pixel_Queen97', 'Q!7zP4iZm0', 'Gamer'),
+	('FireFuryX', 'Sx9l#jF1yP', 'Gamer'),
+	('Sophia_Warrior', 'Q8r8ZxF@w', 'Gamer'),
+	('Oliver007', 'd0x1I!9sKq', 'Gamer'),
+	('IceDragonXX', 'V9rLk@pE2u', 'Gamer'),
+	('BattleKing94', 'X5vXg8W!b0', 'Gamer'),
+	('QuickMia9', 'J3zX9qQ#M0', 'Gamer'),
+	('Dark.Knight', 'B5uL!l7G2R', 'Gamer'),
+	('SpeedyElla14', 'Y8c8U!zB3j', 'Gamer'),
+	('SavageWolf1999', 'C6h3qX9lD2m', 'Gamer'),
+	('BlazeStorm202', 'A2o3R6z!P1s', 'Gamer'),
+	('Thunder_Hawk', 'Q5aX8gW9Jz', 'Gamer'),
+	('EpicGamer123', 'P7rL#9G2dB', 'Gamer'),
+	('MagicMia', 'W9lA0!yV8z', 'Gamer'),
+	('StealthyFox', 'M8qL1wS4zB', 'Gamer'),
+	('FirePhoenix', 'T7vX2wK3qR', 'Gamer'),
+	('HyperHunter', 'C4yU8Zl6pT', 'Gamer'),
+
+	('Steam', 'd#V8gZp1Q3', 'Game Store'),
+	('Epic_Games', 'rP7xW0!uQ2', 'Game Store'),
+	('OG_Games', 'H3lT1#uX9', 'Game Store'),
+	('PlayStation_Store', 'V5yB8!P2hL', 'Game Store'),
+	('Microsoft_Store', 'R6cI9#qB4U', 'Game Store'),
+	('Nintendo_eShop', 'F3tS!0Z9pW', 'Game Store'),
+	('Origin', 'B4iO7s#3Q1', 'Game Store'),
+	('Uplay', 'J7hD3!tN9X', 'Game Store'),
+	('Itch.io', 'Y6cX0uP2#R', 'Game Store'),
+	('Green_Man_Gaming', 'M5pX1bQ4yR', 'Game Store'),
+	('Humble_Bundle', 'Z2wD5lE9pJ', 'Game Store'),
+	('Fanatical', 'C8hI2tF0qA', 'Game Store'),
+	('GameStop', 'X9jF5!wL2p', 'Game Store'),
+	('Best_Buy', 'J4yZ!8wV0g', 'Game Store'),
+	('Walmart', 'F7nD2zQ#6K', 'Game Store'),
+	('Battle.net', 'Y8qP3gR9zH', 'Game Store'),
+	('Rockstar_Games_Store', 'D7cQ!xF3yT', 'Game Store'),
+	('Ubisoft_Store', 'P1oQ2gR9zU', 'Game Store'),
+	('CD_Projekt_Red', 'S8iT4yJ3Wz', 'Game Store'),
+	('Discord_Store', 'V6hF1eJ9qN', 'Game Store'),
+
+	('Nintendo', 'A9s3l!oP2r', 'Game Publisher'),
+	('Sony_Interactive', 'X1dV5#yM3p', 'Game Publisher'),
+	('Microsoft_Studios', 'B7vZ9kT2aQ', 'Game Publisher'),
+	('Electronic_Arts', 'P8wB2rI5nK', 'Game Publisher'),
+	('Ubisoft', 'Q6jC4#zM9h', 'Game Publisher'),
+	('Square_Enix', 'L2vP1zF7yB', 'Game Publisher'),
+	('Bethesda', 'U9dK4rJ2wX', 'Game Publisher'),
+	('Activision', 'W3mN0vX5pT', 'Game Publisher'),
+	('Rockstar_Games', 'J8tF4kL9wZ', 'Game Publisher'),
+	('Bandai_Namco', 'A0pQ3wG1tY', 'Game Publisher'),
+	('Take-Two', 'N5xC2zH8lB', 'Game Publisher'),
+	('CD_Projekt', 'P9tV4fJ3Wm', 'Game Publisher'),
+	('Capcom', 'S7jZ2oA9qB', 'Game Publisher'),
+	('Konami', 'D3yQ8rL1uF', 'Game Publisher'),
+	('Sega', 'V0iS2bF9jX', 'Game Publisher'),
+	('FromSoftware', 'Q5wZ8yP3mJ', 'Game Publisher'),
+	('GearBox', 'L4bJ1mO9xY', 'Game Publisher'),
+	('Insomniac_Games', 'M8pV3rZ2tF', 'Game Publisher'),
+	('Naughty_Dog', 'T9nB5wP0uS', 'Game Publisher'),
+	('Valve', 'I0dJ2fM6oQ', 'Game Publisher'),
+	('THQ_Nordic', 'N6yZ5tP1xA', 'Game Publisher'),
+	('FiveHundredFive_Games', 'L7jQ9pV2rB', 'Game Publisher'),
+	('Doksh', 'Doksh1234_', 'Admin');
 
 	INSERT INTO GameEngine VALUES
 	('Unity', 'C#', 'Cross-Platform'),
@@ -326,22 +403,22 @@
 
 	INSERT INTO GamingStore VALUES
 	('Steam', 'Steam', 5, 1800123456),
-	('Epic_Games', 'Epic Games', 4, 1800123457),
-	('OG_Games', 'OG Games', 5, 1800123458),
-	('PlayStation_Store', 'PlayStation Store', 5, 1800123459),
-	('Microsoft_Store', 'Microsoft Store', 4, 1800123460),
-	('Nintendo_eShop', 'Nintendo eShop', 4, 1800123461),
+	('Epic_Games', 'Epic Games', 4, 18123457),
+	('OG_Games', 'OG Games', 5, 180123458),
+	('PlayStation_Store', 'PlayStation Store', 5, 180123459),
+	('Microsoft_Store', 'Microsoft Store', 4, 18123460),
+	('Nintendo_eShop', 'Nintendo eShop', 4, 181234601),
 	('Origin', 'Origin', 3, 1800123462),
 	('Uplay', 'Uplay', 3, 1800123463),
-	('Itch.io', 'Itch.io', 5, 1800123464),
-	('Green_Man_Gaming', 'Green Man Gaming', 4, 1800123465),
-	('Humble_Bundle', 'Humble Bundle', 5, 1800123466),
-	('Fanatical', 'Fanatical', 4, 1800123467),
+	('Itch.io', 'Itch.io', 5, 18123464),
+	('Green_Man_Gaming', 'Green Man Gaming', 4, 180123465),
+	('Humble_Bundle', 'Humble Bundle', 5, 181723466),
+	('Fanatical', 'Fanatical', 4, 180123467),
 	('GameStop', 'GameStop', 3, 1800123468),
-	('Best_Buy', 'Best Buy', 4, 1800123469),
-	('Walmart', 'Walmart', 3, 1800123470),
+	('Best_Buy', 'Best Buy', 4, 181293469),
+	('Walmart', 'Walmart', 3, 1812354470),
 	('Battle.net', 'Battle.net', 4, 1800123457),
-	('Rockstar_Games_Store', 'Rockstar Games Store', 5, 1800123492),
+	('Rockstar_Games_Store', 'Rockstar Games Store', 5, 1801234592),
 	('Ubisoft_Store', 'Ubisoft Store', 4, 1800123493),
 	('CD_Projekt_Red', 'CD Projekt Red', 5, 1800123494),
 	('Discord_Store', 'Discord Store', 3, 1800123496);
@@ -439,76 +516,9 @@
 	('Best Soundtrack', 'Action', 'GameSpot', 'Need for Speed Heat', 2010), 
 	('Best VR Game', 'VR', 'IGN', 'Rocket League', 2020);        
 
-	INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES
-	('OmarReda', 'TestTest12_','Gamer'),
-	('NoobMaster69', 'Y6m5o2#F9z', 'Gamer'),
-	('AliceTheAce', 'N7u!lQm1Pz', 'Gamer'),
-	('DragonHunter92', 'H@2Xn8lZ0d', 'Gamer'),
-	('Pixel_Queen97', 'Q!7zP4iZm0', 'Gamer'),
-	('FireFuryX', 'Sx9l#jF1yP', 'Gamer'),
-	('Sophia_Warrior', 'Q8r8ZxF@w', 'Gamer'),
-	('Oliver007', 'd0x1I!9sKq', 'Gamer'),
-	('IceDragonXX', 'V9rLk@pE2u', 'Gamer'),
-	('BattleKing94', 'X5vXg8W!b0', 'Gamer'),
-	('QuickMia9', 'J3zX9qQ#M0', 'Gamer'),
-	('Dark.Knight', 'B5uL!l7G2R', 'Gamer'),
-	('SpeedyElla14', 'Y8c8U!zB3j', 'Gamer'),
-	('SavageWolf1999', 'C6h3qX9lD2m', 'Gamer'),
-	('BlazeStorm202', 'A2o3R6z!P1s', 'Gamer'),
-	('Thunder_Hawk', 'Q5aX8gW9Jz', 'Gamer'),
-	('EpicGamer123', 'P7rL#9G2dB', 'Gamer'),
-	('MagicMia', 'W9lA0!yV8z', 'Gamer'),
-	('StealthyFox', 'M8qL1wS4zB', 'Gamer'),
-	('FirePhoenix', 'T7vX2wK3qR', 'Gamer'),
-	('HyperHunter', 'C4yU8Zl6pT', 'Gamer'),
 
-	('Steam', 'd#V8gZp1Q3', 'Game Store'),
-	('Epic_Games', 'rP7xW0!uQ2', 'Game Store'),
-	('OG_Games', 'H3lT1#uX9', 'Game Store'),
-	('PlayStation_Store', 'V5yB8!P2hL', 'Game Store'),
-	('Microsoft_Store', 'R6cI9#qB4U', 'Game Store'),
-	('Nintendo_eShop', 'F3tS!0Z9pW', 'Game Store'),
-	('Origin', 'B4iO7s#3Q1', 'Game Store'),
-	('Uplay', 'J7hD3!tN9X', 'Game Store'),
-	('Itch.io', 'Y6cX0uP2#R', 'Game Store'),
-	('Green_Man_Gaming', 'M5pX1bQ4yR', 'Game Store'),
-	('Humble_Bundle', 'Z2wD5lE9pJ', 'Game Store'),
-	('Fanatical', 'C8hI2tF0qA', 'Game Store'),
-	('GameStop', 'X9jF5!wL2p', 'Game Store'),
-	('Best_Buy', 'J4yZ!8wV0g', 'Game Store'),
-	('Walmart', 'F7nD2zQ#6K', 'Game Store'),
-	('Battle.net', 'Y8qP3gR9zH', 'Game Store'),
-	('Rockstar_Games_Store', 'D7cQ!xF3yT', 'Game Store'),
-	('Ubisoft_Store', 'P1oQ2gR9zU', 'Game Store'),
-	('CD_Projekt_Red', 'S8iT4yJ3Wz', 'Game Store'),
-	('Discord_Store', 'V6hF1eJ9qN', 'Game Store'),
-
-	('Nintendo', 'A9s3l!oP2r', 'Game Publisher'),
-	('Sony_Interactive', 'X1dV5#yM3p', 'Game Publisher'),
-	('Microsoft_Studios', 'B7vZ9kT2aQ', 'Game Publisher'),
-	('Electronic_Arts', 'P8wB2rI5nK', 'Game Publisher'),
-	('Ubisoft', 'Q6jC4#zM9h', 'Game Publisher'),
-	('Square_Enix', 'L2vP1zF7yB', 'Game Publisher'),
-	('Bethesda', 'U9dK4rJ2wX', 'Game Publisher'),
-	('Activision', 'W3mN0vX5pT', 'Game Publisher'),
-	('Rockstar_Games', 'J8tF4kL9wZ', 'Game Publisher'),
-	('Bandai_Namco', 'A0pQ3wG1tY', 'Game Publisher'),
-	('Take-Two', 'N5xC2zH8lB', 'Game Publisher'),
-	('CD_Projekt', 'P9tV4fJ3Wm', 'Game Publisher'),
-	('Capcom', 'S7jZ2oA9qB', 'Game Publisher'),
-	('Konami', 'D3yQ8rL1uF', 'Game Publisher'),
-	('Sega', 'V0iS2bF9jX', 'Game Publisher'),
-	('FromSoftware', 'Q5wZ8yP3mJ', 'Game Publisher'),
-	('GearBox', 'L4bJ1mO9xY', 'Game Publisher'),
-	('Insomniac Games', 'M8pV3rZ2tF', 'Game Publisher'),
-	('Naughty_Dog', 'T9nB5wP0uS', 'Game Publisher'),
-	('Valve', 'I0dJ2fM6oQ', 'Game Publisher'),
-	('THQ_Nordic', 'N6yZ5tP1xA', 'Game Publisher'),
-	('FiveHundredFive_Games', 'L7jQ9pV2rB', 'Game Publisher'),
-	('Doksh', 'Doksh1234_', 'Admin');
 
 	INSERT INTO Plays VALUES
-	('Fortnite', 'OmarReda', NULL, NULL, NULL),
 	('Apex Legends', 'OmarReda', NULL, NULL, NULL),
 	('FIFA 23', 'OmarReda', NULL, NULL, NULL),
 	('FIFA 22', 'OmarReda', NULL, NULL, NULL);
@@ -531,7 +541,4 @@
 
 
 	INSERT INTO Plays VALUES
-	('Fortnite', 'OmarReda', NULL, NULL, NULL),
-	('Apex Legends', 'OmarReda', NULL, NULL, NULL),
-	('FIFA 23', 'OmarReda', NULL, NULL, NULL),
-	('FIFA 22', 'OmarReda', NULL, NULL, NULL);
+	('Fortnite', 'OmarReda', NULL, NULL, NULL);

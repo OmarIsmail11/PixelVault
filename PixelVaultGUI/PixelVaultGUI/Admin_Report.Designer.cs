@@ -29,88 +29,107 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            dataGridView2 = new DataGridView();
-            dataGridView3 = new DataGridView();
-            dataGridView4 = new DataGridView();
             panel1 = new Panel();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(337, 184);
+            dataGridView1.Size = new Size(334, 240);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(343, 190);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.Size = new Size(211, 157);
-            dataGridView2.TabIndex = 1;
-            // 
-            // dataGridView3
-            // 
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(343, 0);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 62;
-            dataGridView3.Size = new Size(324, 184);
-            dataGridView3.TabIndex = 2;
-            dataGridView3.CellContentClick += dataGridView3_CellContentClick;
-            // 
-            // dataGridView4
-            // 
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(0, 190);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.RowHeadersWidth = 62;
-            dataGridView4.Size = new Size(233, 165);
-            dataGridView4.TabIndex = 3;
             // 
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.dark_purple_colour;
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(dataGridView1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(669, 359);
+            panel1.Size = new Size(669, 274);
             panel1.TabIndex = 4;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Image = Properties.Resources.solid_color_image__1_;
+            button1.Location = new Point(414, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(226, 50);
+            button1.TabIndex = 1;
+            button1.Text = "Number of Games";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Image = Properties.Resources.solid_color_image__1_;
+            button2.Location = new Point(414, 80);
+            button2.Name = "button2";
+            button2.Size = new Size(226, 47);
+            button2.TabIndex = 2;
+            button2.Text = "Number of Stores";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Image = Properties.Resources.solid_color_image__1_;
+            button3.Location = new Point(414, 145);
+            button3.Name = "button3";
+            button3.Size = new Size(226, 43);
+            button3.TabIndex = 3;
+            button3.Text = "Number of Publishers";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.Image = Properties.Resources.solid_color_image__1_;
+            button4.Location = new Point(414, 208);
+            button4.Name = "button4";
+            button4.Size = new Size(226, 44);
+            button4.TabIndex = 4;
+            button4.Text = "Number of Gamers";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Admin_Report
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(669, 359);
-            Controls.Add(dataGridView4);
-            Controls.Add(dataGridView3);
-            Controls.Add(dataGridView2);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(669, 274);
             Controls.Add(panel1);
             Name = "Admin_Report";
             Text = "Admin_Report";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
-        private DataGridView dataGridView3;
-        private DataGridView dataGridView4;
         private Panel panel1;
+        private Button button4;
+        private Button button3;
+        private Button button2;
+        private Button button1;
     }
 }
