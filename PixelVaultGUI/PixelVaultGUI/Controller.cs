@@ -211,15 +211,15 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int addstor(string Name, int rate, int hotline)
+        public int addstor(string username,string Name, int rate, int hotline)
         {
-            string query = $"INSERT INTO GamingStore VALUES ('{Name}',{rate},{hotline});";
+            string query = $"INSERT INTO GamingStore VALUES ('{username}','{Name}',{rate},{hotline});";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int addpub(string Name, string country, string type, string date)
+        public int addpub(string username,string Name, string country, string type, string date)
         {
-            string query = $"INSERT INTO GamingStore VALUES ('{Name}','{country}','{type}','{date}');";
+            string query = $"INSERT INTO GamingStore VALUES ('{username}','{Name}','{country}','{type}','{date}');";
             return dbMan.ExecuteNonQuery(query);
         }
 

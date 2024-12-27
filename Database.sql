@@ -10,7 +10,7 @@
 	GO	
 
 	CREATE TABLE GameEngine(
-	EngineName CHAR(20) ,
+	EngineName CHAR(30) ,
 	Language VARCHAR(20) NOT NULL ,
 	Platform CHAR(20) NOT NULL CHECK(Platform in ('Windows','Mobile','Cross-Platform','Playstation')) ,
 	PRIMARY KEY(EngineName)
@@ -36,7 +36,7 @@
 
 
 	CREATE TABLE Console(
-	ConsoleName	CHAR(20) ,
+	ConsoleName	CHAR(30) ,
 	ReleaseDate	DATE NOT NULL,
 	Develop CHAR(30) ,
 	PRIMARY KEY (ConsoleName),

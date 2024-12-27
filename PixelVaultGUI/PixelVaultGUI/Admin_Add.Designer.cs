@@ -76,8 +76,12 @@
             label20 = new Label();
             manhead = new ComboBox();
             panel1 = new Panel();
+            pubusername = new TextBox();
+            label23 = new Label();
+            storusername = new TextBox();
+            label22 = new Label();
+            renterpass = new TextBox();
             label21 = new Label();
-            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)storrate).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -192,7 +196,7 @@
             label9.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Image = Properties.Resources.solid_color_image;
-            label9.Location = new Point(12, 101);
+            label9.Location = new Point(17, 109);
             label9.Name = "label9";
             label9.Size = new Size(157, 28);
             label9.TabIndex = 8;
@@ -228,7 +232,7 @@
             // 
             addstor.ForeColor = SystemColors.ActiveCaptionText;
             addstor.Image = Properties.Resources.solid_color_image__1_;
-            addstor.Location = new Point(542, 568);
+            addstor.Location = new Point(542, 594);
             addstor.Name = "addstor";
             addstor.Size = new Size(180, 44);
             addstor.TabIndex = 11;
@@ -241,7 +245,7 @@
             addpub.BackColor = Color.White;
             addpub.ForeColor = SystemColors.ActiveCaptionText;
             addpub.Image = Properties.Resources.solid_color_image__1_;
-            addpub.Location = new Point(927, 568);
+            addpub.Location = new Point(955, 621);
             addpub.Name = "addpub";
             addpub.Size = new Size(231, 44);
             addpub.TabIndex = 12;
@@ -267,7 +271,7 @@
             addrev.Image = Properties.Resources.solid_color_image__1_;
             addrev.Location = new Point(1314, 205);
             addrev.Name = "addrev";
-            addrev.Size = new Size(184, 70);
+            addrev.Size = new Size(284, 70);
             addrev.TabIndex = 14;
             addrev.Text = "Add Game Reviewer";
             addrev.UseVisualStyleBackColor = true;
@@ -307,7 +311,7 @@
             addmin.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addmin.ForeColor = SystemColors.ActiveCaptionText;
             addmin.Image = Properties.Resources.solid_color_image__1_;
-            addmin.Location = new Point(205, 199);
+            addmin.Location = new Point(205, 222);
             addmin.Name = "addmin";
             addmin.Size = new Size(169, 37);
             addmin.TabIndex = 17;
@@ -335,7 +339,7 @@
             // 
             revdate.Location = new Point(1314, 156);
             revdate.Name = "revdate";
-            revdate.Size = new Size(184, 34);
+            revdate.Size = new Size(284, 34);
             revdate.TabIndex = 21;
             // 
             // condate
@@ -349,7 +353,7 @@
             // 
             storrate.BackColor = Color.White;
             storrate.LargeChange = 1;
-            storrate.Location = new Point(542, 455);
+            storrate.Location = new Point(542, 504);
             storrate.Maximum = 5;
             storrate.Name = "storrate";
             storrate.Size = new Size(180, 69);
@@ -364,7 +368,7 @@
             // 
             // adminpass
             // 
-            adminpass.Location = new Point(205, 96);
+            adminpass.Location = new Point(205, 103);
             adminpass.Name = "adminpass";
             adminpass.Size = new Size(169, 34);
             adminpass.TabIndex = 25;
@@ -392,7 +396,7 @@
             // 
             // pubname
             // 
-            pubname.Location = new Point(927, 316);
+            pubname.Location = new Point(953, 313);
             pubname.Name = "pubname";
             pubname.Size = new Size(231, 34);
             pubname.TabIndex = 29;
@@ -401,7 +405,7 @@
             // 
             revurl.Location = new Point(1314, 106);
             revurl.Name = "revurl";
-            revurl.Size = new Size(184, 34);
+            revurl.Size = new Size(284, 34);
             revurl.TabIndex = 30;
             // 
             // conname
@@ -415,7 +419,7 @@
             // 
             revname.Location = new Point(1314, 47);
             revname.Name = "revname";
-            revname.Size = new Size(184, 34);
+            revname.Size = new Size(284, 34);
             revname.TabIndex = 32;
             // 
             // label12
@@ -433,7 +437,7 @@
             // 
             // pubdate
             // 
-            pubdate.Location = new Point(927, 387);
+            pubdate.Location = new Point(955, 431);
             pubdate.Name = "pubdate";
             pubdate.Size = new Size(231, 34);
             pubdate.TabIndex = 35;
@@ -460,7 +464,7 @@
             // 
             // storhot
             // 
-            storhot.Location = new Point(542, 396);
+            storhot.Location = new Point(542, 448);
             storhot.Name = "storhot";
             storhot.Size = new Size(180, 34);
             storhot.TabIndex = 38;
@@ -468,14 +472,14 @@
             // pubhead
             // 
             pubhead.FormattingEnabled = true;
-            pubhead.Location = new Point(927, 504);
+            pubhead.Location = new Point(955, 555);
             pubhead.Name = "pubhead";
             pubhead.Size = new Size(231, 36);
             pubhead.TabIndex = 39;
             // 
             // pubtype
             // 
-            pubtype.Location = new Point(927, 448);
+            pubtype.Location = new Point(955, 493);
             pubtype.Name = "pubtype";
             pubtype.Size = new Size(231, 34);
             pubtype.TabIndex = 40;
@@ -487,7 +491,7 @@
             label14.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label14.ForeColor = SystemColors.ButtonHighlight;
             label14.Image = Properties.Resources.solid_color_image;
-            label14.Location = new Point(399, 325);
+            label14.Location = new Point(378, 328);
             label14.Name = "label14";
             label14.Size = new Size(124, 28);
             label14.TabIndex = 41;
@@ -500,7 +504,7 @@
             label15.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label15.ForeColor = SystemColors.ButtonHighlight;
             label15.Image = Properties.Resources.solid_color_image;
-            label15.Location = new Point(399, 393);
+            label15.Location = new Point(399, 451);
             label15.Name = "label15";
             label15.Size = new Size(82, 28);
             label15.TabIndex = 42;
@@ -513,7 +517,7 @@
             label16.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label16.ForeColor = SystemColors.ButtonHighlight;
             label16.Image = Properties.Resources.solid_color_image;
-            label16.Location = new Point(399, 454);
+            label16.Location = new Point(407, 512);
             label16.Name = "label16";
             label16.Size = new Size(74, 28);
             label16.TabIndex = 43;
@@ -539,7 +543,7 @@
             label18.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label18.ForeColor = SystemColors.ButtonHighlight;
             label18.Image = Properties.Resources.solid_color_image;
-            label18.Location = new Point(747, 393);
+            label18.Location = new Point(747, 437);
             label18.Name = "label18";
             label18.Size = new Size(110, 28);
             label18.TabIndex = 45;
@@ -552,7 +556,7 @@
             label19.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label19.ForeColor = SystemColors.ButtonHighlight;
             label19.Image = Properties.Resources.solid_color_image;
-            label19.Location = new Point(747, 454);
+            label19.Location = new Point(747, 499);
             label19.Name = "label19";
             label19.Size = new Size(137, 28);
             label19.TabIndex = 46;
@@ -565,7 +569,7 @@
             label20.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label20.ForeColor = SystemColors.ButtonHighlight;
             label20.Image = Properties.Resources.solid_color_image;
-            label20.Location = new Point(747, 512);
+            label20.Location = new Point(747, 558);
             label20.Name = "label20";
             label20.Size = new Size(141, 28);
             label20.TabIndex = 47;
@@ -584,13 +588,18 @@
             // 
             panel1.BackColor = Color.White;
             panel1.BackgroundImage = Properties.Resources.solid_color_image;
+            panel1.Controls.Add(pubusername);
+            panel1.Controls.Add(label23);
+            panel1.Controls.Add(storusername);
+            panel1.Controls.Add(label22);
             panel1.Controls.Add(adminpass);
+            panel1.Controls.Add(label9);
             panel1.Controls.Add(engname);
             panel1.Controls.Add(admin_username);
             panel1.Controls.Add(englang);
             panel1.Controls.Add(addeng);
             panel1.Controls.Add(manname);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(renterpass);
             panel1.Controls.Add(label21);
             panel1.Controls.Add(manhead);
             panel1.Controls.Add(addman);
@@ -636,34 +645,67 @@
             panel1.ForeColor = SystemColors.ButtonHighlight;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1547, 644);
+            panel1.Size = new Size(1670, 763);
             panel1.TabIndex = 49;
+            // 
+            // pubusername
+            // 
+            pubusername.Location = new Point(953, 372);
+            pubusername.Name = "pubusername";
+            pubusername.Size = new Size(233, 34);
+            pubusername.TabIndex = 54;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Image = Properties.Resources.solid_color_image;
+            label23.Location = new Point(747, 378);
+            label23.Name = "label23";
+            label23.Size = new Size(200, 28);
+            label23.TabIndex = 53;
+            label23.Text = "Publisher Username";
+            // 
+            // storusername
+            // 
+            storusername.Location = new Point(542, 387);
+            storusername.Name = "storusername";
+            storusername.Size = new Size(180, 34);
+            storusername.TabIndex = 52;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Image = Properties.Resources.solid_color_image;
+            label22.Location = new Point(378, 392);
+            label22.Name = "label22";
+            label22.Size = new Size(162, 28);
+            label22.TabIndex = 51;
+            label22.Text = "Store Username";
+            // 
+            // renterpass
+            // 
+            renterpass.Location = new Point(205, 159);
+            renterpass.Name = "renterpass";
+            renterpass.Size = new Size(169, 34);
+            renterpass.TabIndex = 50;
             // 
             // label21
             // 
             label21.AutoSize = true;
             label21.BackColor = Color.White;
             label21.Image = Properties.Resources.solid_color_image;
-            label21.Location = new Point(10, 156);
+            label21.Location = new Point(10, 165);
             label21.Name = "label21";
             label21.Size = new Size(189, 28);
             label21.TabIndex = 49;
             label21.Text = "Re-Enter Password";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(205, 150);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(169, 34);
-            textBox1.TabIndex = 50;
-            // 
             // Admin_Add
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1547, 644);
+            ClientSize = new Size(1670, 763);
             Controls.Add(label10);
-            Controls.Add(label9);
             Controls.Add(panel1);
             Name = "Admin_Add";
             Text = "Admin_Add";
@@ -725,7 +767,11 @@
         private Label label20;
         private ComboBox manhead;
         private Panel panel1;
-        private TextBox textBox1;
+        private TextBox renterpass;
         private Label label21;
+        private TextBox storusername;
+        private Label label22;
+        private TextBox pubusername;
+        private Label label23;
     }
 }
