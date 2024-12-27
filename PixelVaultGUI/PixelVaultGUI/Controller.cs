@@ -533,22 +533,22 @@ namespace DBapplication
         }
         public DataTable PartnersNum(string UserName)
         {
-            string query = "Select SUserName, Count(*) AS 'Number of Partners' From Partners Group By SUserName";
+            string query = "Select SUserName, Count(*) AS 'Number of Partners' From Partners Group By SUserName ORDER BY Count(*) DESC";
             return dbMan.ExecuteReader(query);
         }
         public DataTable AvgGPrice(string UserName)
         {
-            string query = "Select StoreName,AVG(Price) AS 'Average Game Price'  From Inventory Group By StoreName";
+            string query = "Select StoreName,AVG(Price) AS 'Average Game Price'  From Inventory Group By StoreName ORDER BY AVG(Price) DESC";
             return dbMan.ExecuteReader(query);
         }
         public DataTable TNum(string UserName)
         {
-            string query = "Select Organizer, Count(*) AS 'Tournaments Count' From Tournament Group By Organizer";
+            string query = "Select Organizer, Count(*) AS 'Tournaments Count' From Tournament Group By Organizer ORDER BY COUNT(*) DESC";
             return dbMan.ExecuteReader (query);
         }
         public DataTable AvgPMoney(string UserName)
         {
-            string query = "Select Organizer, Avg(PrizeMoney) AS 'Average Prize Money' From Tournament Group By Organizer";
+            string query = "Select Organizer, Avg(PrizeMoney) AS 'Average Prize Money' From Tournament Group By Organizer ORDER BY AVG(PrizeMoney) DESC";
             return dbMan.ExecuteReader(query);
         }
     }
