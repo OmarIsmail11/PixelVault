@@ -31,8 +31,13 @@
             panel1 = new Panel();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            panel2 = new Panel();
+            ViewPartnersButton = new Button();
+            ViewStroresButton = new Button();
+            AddPartnershipButton = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -67,11 +72,59 @@
             dataGridView1.Size = new Size(1498, 378);
             dataGridView1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            panel2.BackgroundImage = Properties.Resources.dark_purple_colour;
+            panel2.Controls.Add(AddPartnershipButton);
+            panel2.Controls.Add(ViewPartnersButton);
+            panel2.Controls.Add(ViewStroresButton);
+            panel2.Location = new Point(32, 644);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1575, 354);
+            panel2.TabIndex = 2;
+            // 
+            // ViewPartnersButton
+            // 
+            ViewPartnersButton.BackColor = Color.FromArgb(186, 186, 212);
+            ViewPartnersButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            ViewPartnersButton.Location = new Point(39, 208);
+            ViewPartnersButton.Name = "ViewPartnersButton";
+            ViewPartnersButton.Size = new Size(413, 104);
+            ViewPartnersButton.TabIndex = 4;
+            ViewPartnersButton.Text = "View Partners";
+            ViewPartnersButton.UseVisualStyleBackColor = false;
+            ViewPartnersButton.Click += ViewPartnersButton_Click;
+            // 
+            // ViewStroresButton
+            // 
+            ViewStroresButton.BackColor = Color.FromArgb(186, 186, 212);
+            ViewStroresButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            ViewStroresButton.Location = new Point(39, 41);
+            ViewStroresButton.Name = "ViewStroresButton";
+            ViewStroresButton.Size = new Size(413, 104);
+            ViewStroresButton.TabIndex = 3;
+            ViewStroresButton.Text = "View All Stores";
+            ViewStroresButton.UseVisualStyleBackColor = false;
+            ViewStroresButton.Click += ViewStroresButton_Click;
+            // 
+            // AddPartnershipButton
+            // 
+            AddPartnershipButton.BackColor = Color.FromArgb(186, 186, 212);
+            AddPartnershipButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            AddPartnershipButton.Location = new Point(599, 41);
+            AddPartnershipButton.Name = "AddPartnershipButton";
+            AddPartnershipButton.Size = new Size(413, 104);
+            AddPartnershipButton.TabIndex = 5;
+            AddPartnershipButton.Text = "Add Partnership";
+            AddPartnershipButton.UseVisualStyleBackColor = false;
+            AddPartnershipButton.Click += AddPartnershipButton_Click;
+            // 
             // Manage_Partners
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.solid_color_image__1_;
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Manage_Partners";
             Size = new Size(1643, 1045);
@@ -79,6 +132,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -87,5 +141,9 @@
         private Panel panel1;
         private Label label1;
         private DataGridView dataGridView1;
+        private Panel panel2;
+        private Button ViewStroresButton;
+        private Button ViewPartnersButton;
+        private Button AddPartnershipButton;
     }
 }

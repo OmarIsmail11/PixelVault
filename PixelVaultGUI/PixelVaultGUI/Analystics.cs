@@ -15,7 +15,7 @@ namespace PixelVaultGUI
     {
         Controller controllerobj = new Controller();
         public string Publisherusername;
-        public bool By_Pusblisher = false; 
+        public bool By_Pusblisher = false;
         public Analystics()
         {
             InitializeComponent();
@@ -81,7 +81,7 @@ namespace PixelVaultGUI
             MostTrendingGame.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
             MostTrendingGenre.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
             MostTrendingPlatform.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
-            MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
+            MostTrendingEngine.Text = dataGridView1.Rows[0].Cells[4].Value.ToString();
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
@@ -99,6 +99,14 @@ namespace PixelVaultGUI
         {
             By_Pusblisher = false;
 
+
+        }
+
+        private void AwardedGamesButton_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = controllerobj.Get_Rewarded_Games();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Refresh();
 
         }
     }

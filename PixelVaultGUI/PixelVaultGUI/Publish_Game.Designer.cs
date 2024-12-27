@@ -43,6 +43,12 @@
             button1 = new Button();
             ConsoleNameText = new TextBox();
             EngineNameText = new TextBox();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
             SuspendLayout();
             // 
             // GameNameText
@@ -65,7 +71,7 @@
             // 
             dateTimePicker1.Location = new Point(285, 270);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(290, 39);
+            dateTimePicker1.Size = new Size(392, 39);
             dateTimePicker1.TabIndex = 2;
             // 
             // RatingText
@@ -192,12 +198,72 @@
             EngineNameText.Size = new Size(274, 39);
             EngineNameText.TabIndex = 16;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(657, 116);
+            label8.Name = "label8";
+            label8.Size = new Size(227, 32);
+            label8.TabIndex = 17;
+            label8.Text = "Most Populer Genre";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(657, 171);
+            label9.Name = "label9";
+            label9.Size = new Size(78, 32);
+            label9.TabIndex = 18;
+            label9.Text = "label9";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(657, 349);
+            label10.Name = "label10";
+            label10.Size = new Size(249, 32);
+            label10.TabIndex = 19;
+            label10.Text = "Most Populer Console";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(657, 399);
+            label11.Name = "label11";
+            label11.Size = new Size(91, 32);
+            label11.TabIndex = 20;
+            label11.Text = "label11";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(657, 476);
+            label12.Name = "label12";
+            label12.Size = new Size(236, 32);
+            label12.TabIndex = 21;
+            label12.Text = "Most Populer Engine";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(657, 532);
+            label13.Name = "label13";
+            label13.Size = new Size(91, 32);
+            label13.TabIndex = 22;
+            label13.Text = "label13";
+            // 
             // Publish_Game
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.dark_purple_colour;
             ClientSize = new Size(1234, 801);
+            Controls.Add(label13);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
             Controls.Add(EngineNameText);
             Controls.Add(ConsoleNameText);
             Controls.Add(button1);
@@ -237,5 +303,11 @@
         private Button button1;
         private TextBox ConsoleNameText;
         private TextBox EngineNameText;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
     }
 }

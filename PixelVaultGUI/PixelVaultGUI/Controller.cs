@@ -237,7 +237,7 @@ namespace DBapplication
 
         public int addaward(string Name, string genre, string reviewer)
         {
-            string query = $"INSERT INTO Award VALUES ('{Name}','{genre}','{reviewer}');";
+            string query = $"INSERT INTO Award VALUES ('{Name}','{genre}','{reviewer}',NULL,NULL);";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -511,11 +511,68 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable Get_Played_Games_Pub(string PublisherName)
+        {
+            string query = $"SELECT  Game.GameName,Game.Genre,Game.ConsoleName, Game.EngineName,Game.Publisher, COUNT(Plays.GamerUserName) AS No_of_Players FROM Game JOIN  Plays ON Plays.GameName = Game.GameName where Game.Publisher='{PublisherName}' GROUP BY Game.GameName, Game.Genre, Game.ConsoleName, Game.EngineName, Game.Publisher ORDER BY  No_of_Players DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_Played_Games_By_userrating_pub(string PublisherName)
+        {
+            string query = $"SELECT \r\n    Game.GameName,\r\n    Game.Genre,\r\n    Game.ConsoleName,\r\n    Game.EngineName,Game.Publisher,\r\n    AVG(Plays.UserRating) AS Average_User_Rating\r\nFROM \r\n    Game\r\nJOIN \r\n    Plays ON Plays.GameName = Game.GameName\r\n WHERE Game.Publisher='{PublisherName}'GROUP BY \r\n    Game.GameName, Game.Genre, Game.ConsoleName, Game.EngineName, Game.Publisher\r\nORDER BY \r\n    Average_User_Rating DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_Played_Games_By_Rating_Pub(string PublisherName)
+        {
+            string query = $"SELECT  Game.GameName, Game.Genre, Game.ConsoleName,Game.Publisher ,Game.EngineName,Game.Rating FROM Game JOIN  Plays ON Plays.GameName = Game.GameName WHERE Game.Publisher ='{PublisherName}' GROUP BY  Game.GameName, Game.Genre, Game.ConsoleName, Game.EngineName,Game.Rating ,Game.Publisher Order BY  Game.Rating DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+
         public int Add_Game(string GameName, string Genre, string ReleaseDate, string ConsoleName, string EngineName, string Reviewer, string Publisherusername, int rating)
         {
             string query = $"INSERT INTO Game Values ('{GameName}','{Genre}','{ReleaseDate}','{ConsoleName}','{EngineName}','{Publisherusername}',{rating},'{Reviewer}');";
             return dbMan.ExecuteNonQuery (query);
         }
+
+
+        public DataTable Get_Rewarded_Games()
+        {
+            string query = $"SELECT Award.AwardName, Game.GameName, Game.Publisher, COUNT(Plays.GamerUserName) AS No_of_Players FROM Award JOIN Game ON Award.Won = Game.GameName LEFT JOIN Plays ON Plays.GameName = Game.GameName GROUP BY Award.AwardName, Game.GameName, Game.Publisher ORDER BY No_of_Players DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_Rewarded_Games_pub(string PublisherUsername)
+        {
+            string query = $"SELECT Award.AwardName, Game.GameName, Game.Publisher, COUNT(Plays.GamerUserName) AS No_of_Players FROM Award JOIN Game ON Award.Won = Game.GameName LEFT JOIN Plays ON Plays.GameName = Game.GameName WHERE Game.Publisher='{PublisherUsername}' GROUP BY Award.AwardName, Game.GameName, Game.Publisher ORDER BY No_of_Players DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Get_Partnered_Stores(string Publisherusername)
+        {
+            string query = $"SELECT GamingStore.StoreRealName,GamingStore.Rating,GamingStore.Hotline FROM GamingStore,Partners WHERE Partners.PUserName='{Publisherusername}' AND GamingStore.StoreUserName=Partners.SUserName";
+            return dbMan.ExecuteReader(query);
+        }
+        public int Add_Partner(string PUsername,string SUsername)
+        {
+            string query = $"INSERT INTO Partners Values ('{SUsername}','{PUsername}')";
+            return dbMan.ExecuteNonQuery (query);
+        }
+
+        public int Delete_Game(string selectedgame)
+        {
+            string query = $"DELETE FROM Game WHERE GameName='{selectedgame}'";
+            return dbMan.ExecuteNonQuery (query);
+        }
+
+        public int Award_Game(string GameName,string AwardName,int AwardDate)
+        {
+            string query = $"UPDATE Award SET Won='{GameName}',YearWon={AwardDate} WHERE AwardName='{AwardName}'";
+            return dbMan.ExecuteNonQuery (query);
+        }
+
+        //--------------------------------------------------------
         public int CheckIfNewPasswordAlreadyUsed(string username, string password)
         {
             string query = "SELECT COUNT(*) FROM UserPasswordsAuthorization WHERE UserName = '" + username + "' AND Password = '" + password + "';";
@@ -551,5 +608,6 @@ namespace DBapplication
             string query = "Select Organizer, Avg(PrizeMoney) AS 'Average Prize Money' From Tournament Group By Organizer";
             return dbMan.ExecuteReader(query);
         }
+
     }
 }

@@ -56,6 +56,7 @@ namespace PixelVaultGUI
         {
             publisherGames1.Visible = true;
             analystics1.Visible = false;
+            manage_Partners1.Visible=false;
         }
 
         private void analystics1_Load(object sender, EventArgs e)

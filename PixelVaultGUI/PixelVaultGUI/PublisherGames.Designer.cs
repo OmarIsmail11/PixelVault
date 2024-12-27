@@ -33,21 +33,24 @@
             dataGridView1 = new DataGridView();
             ExitButton = new Label();
             panel2 = new Panel();
+            DeleteGameButton = new Button();
+            AwardedGamesButton = new Button();
+            RefreshListButton = new Button();
             groupBox3 = new GroupBox();
             radioButton4 = new RadioButton();
             radioButton5 = new RadioButton();
             radioButton6 = new RadioButton();
             groupBox4 = new GroupBox();
-            label3 = new Label();
+            MostTrendingGenre = new Label();
             label7 = new Label();
             label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
+            MostTrendingGame = new Label();
+            MostTrendingPlatform = new Label();
             label11 = new Label();
             label12 = new Label();
-            label13 = new Label();
+            MostTrendingEngine = new Label();
             PublishGameButton = new Button();
-            RefreshListButton = new Button();
+            UpdateAwardButton = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -104,6 +107,9 @@
             // panel2
             // 
             panel2.BackgroundImage = Properties.Resources.dark_purple_colour;
+            panel2.Controls.Add(UpdateAwardButton);
+            panel2.Controls.Add(DeleteGameButton);
+            panel2.Controls.Add(AwardedGamesButton);
             panel2.Controls.Add(RefreshListButton);
             panel2.Controls.Add(groupBox3);
             panel2.Controls.Add(groupBox4);
@@ -112,6 +118,42 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1575, 379);
             panel2.TabIndex = 22;
+            // 
+            // DeleteGameButton
+            // 
+            DeleteGameButton.BackColor = Color.FromArgb(186, 186, 212);
+            DeleteGameButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            DeleteGameButton.Location = new Point(326, 27);
+            DeleteGameButton.Name = "DeleteGameButton";
+            DeleteGameButton.Size = new Size(271, 104);
+            DeleteGameButton.TabIndex = 10;
+            DeleteGameButton.Text = "Delete Game";
+            DeleteGameButton.UseVisualStyleBackColor = false;
+            DeleteGameButton.Click += DeleteGameButton_Click;
+            // 
+            // AwardedGamesButton
+            // 
+            AwardedGamesButton.BackColor = Color.FromArgb(186, 186, 212);
+            AwardedGamesButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            AwardedGamesButton.Location = new Point(22, 262);
+            AwardedGamesButton.Name = "AwardedGamesButton";
+            AwardedGamesButton.Size = new Size(575, 104);
+            AwardedGamesButton.TabIndex = 9;
+            AwardedGamesButton.Text = "View All Awarded Games";
+            AwardedGamesButton.UseVisualStyleBackColor = false;
+            AwardedGamesButton.Click += AwardedGamesButton_Click;
+            // 
+            // RefreshListButton
+            // 
+            RefreshListButton.BackColor = Color.FromArgb(186, 186, 212);
+            RefreshListButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            RefreshListButton.Location = new Point(22, 147);
+            RefreshListButton.Name = "RefreshListButton";
+            RefreshListButton.Size = new Size(271, 104);
+            RefreshListButton.TabIndex = 8;
+            RefreshListButton.Text = "Refresh List";
+            RefreshListButton.UseVisualStyleBackColor = false;
+            RefreshListButton.Click += RefreshListButton_Click;
             // 
             // groupBox3
             // 
@@ -141,6 +183,7 @@
             radioButton4.TabStop = true;
             radioButton4.Text = "Number of Players";
             radioButton4.UseVisualStyleBackColor = true;
+            radioButton4.CheckedChanged += radioButton4_CheckedChanged;
             // 
             // radioButton5
             // 
@@ -167,18 +210,19 @@
             radioButton6.TabStop = true;
             radioButton6.Text = "Rating";
             radioButton6.UseVisualStyleBackColor = true;
+            radioButton6.CheckedChanged += radioButton6_CheckedChanged;
             // 
             // groupBox4
             // 
             groupBox4.BackgroundImage = Properties.Resources.dark_purple_colour;
-            groupBox4.Controls.Add(label3);
+            groupBox4.Controls.Add(MostTrendingGenre);
             groupBox4.Controls.Add(label7);
             groupBox4.Controls.Add(label8);
-            groupBox4.Controls.Add(label9);
-            groupBox4.Controls.Add(label10);
+            groupBox4.Controls.Add(MostTrendingGame);
+            groupBox4.Controls.Add(MostTrendingPlatform);
             groupBox4.Controls.Add(label11);
             groupBox4.Controls.Add(label12);
-            groupBox4.Controls.Add(label13);
+            groupBox4.Controls.Add(MostTrendingEngine);
             groupBox4.Font = new Font("Segoe UI Semibold", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox4.ForeColor = SystemColors.ButtonHighlight;
             groupBox4.Location = new Point(1021, 0);
@@ -188,17 +232,17 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Most Trending";
             // 
-            // label3
+            // MostTrendingGenre
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Image = Properties.Resources.dark_purple_colour;
-            label3.Location = new Point(212, 130);
-            label3.Name = "label3";
-            label3.Size = new Size(110, 45);
-            label3.TabIndex = 7;
-            label3.Text = "label7";
+            MostTrendingGenre.AutoSize = true;
+            MostTrendingGenre.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            MostTrendingGenre.ForeColor = SystemColors.ButtonHighlight;
+            MostTrendingGenre.Image = Properties.Resources.dark_purple_colour;
+            MostTrendingGenre.Location = new Point(212, 130);
+            MostTrendingGenre.Name = "MostTrendingGenre";
+            MostTrendingGenre.Size = new Size(110, 45);
+            MostTrendingGenre.TabIndex = 7;
+            MostTrendingGenre.Text = "label7";
             // 
             // label7
             // 
@@ -224,29 +268,29 @@
             label8.TabIndex = 6;
             label8.Text = "Genre :";
             // 
-            // label9
+            // MostTrendingGame
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label9.ForeColor = SystemColors.Window;
-            label9.Image = Properties.Resources.solid_color_image;
-            label9.Location = new Point(212, 57);
-            label9.Name = "label9";
-            label9.Size = new Size(110, 45);
-            label9.TabIndex = 0;
-            label9.Text = "label3";
+            MostTrendingGame.AutoSize = true;
+            MostTrendingGame.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            MostTrendingGame.ForeColor = SystemColors.Window;
+            MostTrendingGame.Image = Properties.Resources.solid_color_image;
+            MostTrendingGame.Location = new Point(212, 57);
+            MostTrendingGame.Name = "MostTrendingGame";
+            MostTrendingGame.Size = new Size(110, 45);
+            MostTrendingGame.TabIndex = 0;
+            MostTrendingGame.Text = "label3";
             // 
-            // label10
+            // MostTrendingPlatform
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label10.ForeColor = SystemColors.ButtonHighlight;
-            label10.Image = Properties.Resources.dark_purple_colour;
-            label10.Location = new Point(212, 285);
-            label10.Name = "label10";
-            label10.Size = new Size(110, 45);
-            label10.TabIndex = 5;
-            label10.Text = "label7";
+            MostTrendingPlatform.AutoSize = true;
+            MostTrendingPlatform.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            MostTrendingPlatform.ForeColor = SystemColors.ButtonHighlight;
+            MostTrendingPlatform.Image = Properties.Resources.dark_purple_colour;
+            MostTrendingPlatform.Location = new Point(212, 285);
+            MostTrendingPlatform.Name = "MostTrendingPlatform";
+            MostTrendingPlatform.Size = new Size(110, 45);
+            MostTrendingPlatform.TabIndex = 5;
+            MostTrendingPlatform.Text = "label7";
             // 
             // label11
             // 
@@ -272,17 +316,17 @@
             label12.TabIndex = 4;
             label12.Text = "Platform :";
             // 
-            // label13
+            // MostTrendingEngine
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label13.ForeColor = SystemColors.ButtonFace;
-            label13.Image = Properties.Resources.dark_purple_colour;
-            label13.Location = new Point(212, 206);
-            label13.Name = "label13";
-            label13.Size = new Size(110, 45);
-            label13.TabIndex = 3;
-            label13.Text = "label5";
+            MostTrendingEngine.AutoSize = true;
+            MostTrendingEngine.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            MostTrendingEngine.ForeColor = SystemColors.ButtonFace;
+            MostTrendingEngine.Image = Properties.Resources.dark_purple_colour;
+            MostTrendingEngine.Location = new Point(212, 206);
+            MostTrendingEngine.Name = "MostTrendingEngine";
+            MostTrendingEngine.Size = new Size(110, 45);
+            MostTrendingEngine.TabIndex = 3;
+            MostTrendingEngine.Text = "label5";
             // 
             // PublishGameButton
             // 
@@ -290,23 +334,23 @@
             PublishGameButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             PublishGameButton.Location = new Point(22, 27);
             PublishGameButton.Name = "PublishGameButton";
-            PublishGameButton.Size = new Size(413, 104);
+            PublishGameButton.Size = new Size(271, 104);
             PublishGameButton.TabIndex = 2;
             PublishGameButton.Text = "Publish Game";
             PublishGameButton.UseVisualStyleBackColor = false;
             PublishGameButton.Click += PublishGameButton_Click;
             // 
-            // RefreshListButton
+            // UpdateAwardButton
             // 
-            RefreshListButton.BackColor = Color.FromArgb(186, 186, 212);
-            RefreshListButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            RefreshListButton.Location = new Point(22, 206);
-            RefreshListButton.Name = "RefreshListButton";
-            RefreshListButton.Size = new Size(413, 104);
-            RefreshListButton.TabIndex = 8;
-            RefreshListButton.Text = "Refresh List";
-            RefreshListButton.UseVisualStyleBackColor = false;
-            RefreshListButton.Click += RefreshListButton_Click;
+            UpdateAwardButton.BackColor = Color.FromArgb(186, 186, 212);
+            UpdateAwardButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            UpdateAwardButton.Location = new Point(326, 147);
+            UpdateAwardButton.Name = "UpdateAwardButton";
+            UpdateAwardButton.Size = new Size(271, 104);
+            UpdateAwardButton.TabIndex = 11;
+            UpdateAwardButton.Text = "Update Award";
+            UpdateAwardButton.UseVisualStyleBackColor = false;
+            UpdateAwardButton.Click += UpdateAwardButton_Click;
             // 
             // PublisherGames
             // 
@@ -344,15 +388,18 @@
         private RadioButton radioButton5;
         private RadioButton radioButton6;
         private GroupBox groupBox4;
-        private Label label3;
+        private Label MostTrendingGenre;
         private Label label7;
         private Label label8;
-        private Label label9;
-        private Label label10;
+        private Label MostTrendingGame;
+        private Label MostTrendingPlatform;
         private Label label11;
         private Label label12;
-        private Label label13;
+        private Label MostTrendingEngine;
         private Button PublishGameButton;
         private Button RefreshListButton;
+        private Button AwardedGamesButton;
+        private Button DeleteGameButton;
+        private Button UpdateAwardButton;
     }
 }
