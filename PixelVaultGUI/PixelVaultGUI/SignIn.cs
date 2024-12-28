@@ -90,7 +90,7 @@ namespace PixelVaultGUI
                 storeMain.ShowDialog();
                 this.UserNameSignInTextBox.Text = "";
                 this.PasswordSignInTextBox.Text = "";
-                storeMain.Show();
+                this.Show();
                 //Open Game Store Form
             }
             else if (Authorization == "Game Publisher")

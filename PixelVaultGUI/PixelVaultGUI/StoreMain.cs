@@ -60,8 +60,6 @@ namespace PixelVaultGUI
             if (output == DialogResult.Yes)
             {
                 MessageBox.Show("Logged out successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SignIn signIn = new SignIn();
-                signIn.Show();
                 this.Close();
             }
             else return;
@@ -165,18 +163,27 @@ namespace PixelVaultGUI
 
         private void ShowReport_Click(object sender, EventArgs e)
         {
-            Add_Tournament.BackColor =  System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            Add_Tournament.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Manage_TReg.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Manage_Partner.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Manage_Inventory.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             Promotions.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
-            ShowReport.BackColor =Color.Thistle;
+            ShowReport.BackColor = Color.Thistle;
             manageregisteration1.Visible = false;
             managePartnerships1.Visible = false;
             promotions1.Visible = false;
             manageInventory1.Visible = false;
             addTournament1.Visible = false;
             showReports1.Visible = true;
+        }
+
+        private void EditProfile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditProfile editGamerProfile = new EditProfile();
+            editGamerProfile.UserName = UserName;
+            editGamerProfile.ShowDialog();
+            this.Show();
         }
     }
 }

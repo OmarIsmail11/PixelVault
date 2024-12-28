@@ -171,7 +171,7 @@ namespace DBapplication
 
         public int deletegamer(string name)
         {
-            string query = $"DELETE FROM Gamer WHERE Anumber = '{name}'";
+            string query = $"DELETE FROM Gamer WHERE UserName = '{name}'";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -311,7 +311,7 @@ namespace DBapplication
 
         public int InsertNewStoreIntoUserPasswordsAuthorizationTable(string UserName, string Password)
         {
-            string query = "INSERT INTO UserPasswordsAuthorization (RegUserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Store');";
+            string query = "INSERT INTO UserPasswordsAuthorization (UserName, Password, AuthorizationLevel) VALUES ('" + UserName + "','" + Password + "', 'Game Store');";
             return dbMan.ExecuteNonQuery(query);
         }
 

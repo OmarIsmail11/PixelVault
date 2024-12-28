@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            EditProfile = new Button();
             WelcomeTextBox = new TextBox();
             BrowseTournamentsButton = new Button();
             BrowseGamesButton = new Button();
@@ -41,9 +44,6 @@
             browseTournaments1 = new BrowseTournaments();
             tournaments1 = new Tournaments();
             gameLibrary1 = new GameLibrary();
-            EditProfile = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -66,6 +66,45 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(277, 653);
             panel1.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.FromArgb(29, 29, 57);
+            textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox2.ForeColor = SystemColors.Window;
+            textBox2.Location = new Point(104, 598);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(124, 31);
+            textBox2.TabIndex = 26;
+            textBox2.Text = "Sign Out";
+            textBox2.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(29, 29, 57);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.ForeColor = SystemColors.Window;
+            textBox1.Location = new Point(104, 535);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(143, 31);
+            textBox1.TabIndex = 25;
+            textBox1.Text = "Edit Profile";
+            textBox1.TextAlign = HorizontalAlignment.Center;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // EditProfile
+            // 
+            EditProfile.Image = Properties.Resources.settings1;
+            EditProfile.Location = new Point(43, 532);
+            EditProfile.Name = "EditProfile";
+            EditProfile.Size = new Size(55, 44);
+            EditProfile.TabIndex = 24;
+            EditProfile.UseVisualStyleBackColor = true;
+            EditProfile.Click += EditProfile_Click;
             // 
             // WelcomeTextBox
             // 
@@ -197,44 +236,6 @@
             gameLibrary1.Size = new Size(1264, 816);
             gameLibrary1.TabIndex = 0;
             gameLibrary1.Load += gameLibrary1_Load;
-            // 
-            // EditProfile
-            // 
-            EditProfile.Image = Properties.Resources.settings1;
-            EditProfile.Location = new Point(43, 532);
-            EditProfile.Name = "EditProfile";
-            EditProfile.Size = new Size(55, 44);
-            EditProfile.TabIndex = 24;
-            EditProfile.UseVisualStyleBackColor = true;
-            EditProfile.Click += EditProfile_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(29, 29, 57);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = SystemColors.Window;
-            textBox1.Location = new Point(104, 535);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(143, 31);
-            textBox1.TabIndex = 25;
-            textBox1.Text = "Edit Profile";
-            textBox1.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = Color.FromArgb(29, 29, 57);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = SystemColors.Window;
-            textBox2.Location = new Point(104, 598);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(124, 31);
-            textBox2.TabIndex = 26;
-            textBox2.Text = "Sign Out";
-            textBox2.TextAlign = HorizontalAlignment.Center;
             // 
             // GamerMain
             // 

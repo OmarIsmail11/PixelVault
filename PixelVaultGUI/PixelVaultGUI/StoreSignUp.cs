@@ -92,13 +92,13 @@ namespace PixelVaultGUI
             }
             if (!Validations.CheckIfNewUserNameNotAlreadyExisiting(UserName)) return;
 
-            int result = controller.InsertNewStoreIntoStoreTable(UserName, RealName, Ratings, hotline);
+            int result = controller.InsertNewStoreIntoUserPasswordsAuthorizationTable(UserName, password);
             if (result == 0)
             {
                 MessageBox.Show("Error Acount was not created!");
                 return;
             }
-            int InsertResult2 = controller.InsertNewStoreIntoUserPasswordsAuthorizationTable(UserName, password);
+            int InsertResult2 = controller.InsertNewStoreIntoStoreTable(UserName, RealName, Ratings, hotline);
             if (InsertResult2 == 0)
             {
                 MessageBox.Show("Error ! Account was not created!");

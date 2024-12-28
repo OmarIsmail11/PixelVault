@@ -80,7 +80,7 @@ namespace PixelVaultGUI
             DataTable dt = new DataTable();
             dt = controller.Tournamentdata(UserName);
             dataGridView1.DataSource = dt;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
         }
         private void manageregisteration_Load(object sender, EventArgs e)
