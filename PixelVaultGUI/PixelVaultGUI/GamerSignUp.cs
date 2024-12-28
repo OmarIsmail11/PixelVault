@@ -81,15 +81,15 @@ namespace PixelVaultGUI
 
             if (!Validations.CheckIfNewUserNameNotAlreadyExisiting(UserName)) return;
 
-            int InsertResult = controllerObj.InsertNewGamerIntoGamerTable(UserName, FirstName, LastName, email, country, BirthDate);
+            int InsertResult = controllerObj.InsertNewGamerIntoUserPasswordsAuthorizationTable(UserName, password);
             if (InsertResult == 0)
             {
                 MessageBox.Show("Error ! Account was not created!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            int InsertResult2 = controllerObj.InsertNewGamerIntoUserPasswordsAuthorizationTable(UserName, password);
-            if (InsertResult == 0)
+            int InsertResult2 = controllerObj.InsertNewGamerIntoGamerTable(UserName, FirstName, LastName, email, country, BirthDate);
+            if (InsertResult2 == 0)
             {
                 MessageBox.Show("Error ! Account was not created!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

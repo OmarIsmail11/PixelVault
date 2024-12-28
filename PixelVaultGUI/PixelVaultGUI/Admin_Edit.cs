@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PixelVaultGUI
 {
     public partial class Admin_Edit : Form
     {
+        public string AdminUserName;
         public Admin_Edit()
         {
             InitializeComponent();
@@ -51,6 +53,15 @@ namespace PixelVaultGUI
                 this.Close();
             }
             else return;
+        }
+
+        private void EditProfile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditProfile editGamerProfile = new EditProfile();
+            editGamerProfile.UserName = AdminUserName;
+            editGamerProfile.ShowDialog();
+            this.Show();
         }
     }
 }

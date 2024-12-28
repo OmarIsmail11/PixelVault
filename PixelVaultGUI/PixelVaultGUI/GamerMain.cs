@@ -113,6 +113,7 @@ namespace PixelVaultGUI
             gameLibrary1.Visible = false;
             tournaments1.Visible = false;
             browseTournaments1.Visible = false;
+            browseGames1.RefreshBrowseGames();
         }
 
         private void browseGames1_Load(object sender, EventArgs e)
@@ -123,8 +124,8 @@ namespace PixelVaultGUI
         private void EditProfile_Click(object sender, EventArgs e)
         {
             this.Hide();
-            EditGamerProfile editGamerProfile = new EditGamerProfile();
-            editGamerProfile.GamerUserName = UserName;
+            EditProfile editGamerProfile = new EditProfile();
+            editGamerProfile.UserName = UserName;
             editGamerProfile.ShowDialog();
             this.Show();
         }

@@ -51,7 +51,11 @@ namespace PixelVaultGUI
                 MessageBox.Show("Please Enter A number In the Awarded Date");
                 return;
             }
-
+            if (AwardYear > 2024 || AwardYear < 2000)
+            {
+                MessageBox.Show("Please enter a valid year (2000-2024)");
+                return;
+            }
             int res = controllerobj.Award_Game(GameName, AwardName, AwardYear);
             if (res == 0)
             {

@@ -88,24 +88,31 @@ namespace PixelVaultGUI
                 this.Hide();
                 StoreMain storeMain = new StoreMain(UserName);
                 storeMain.ShowDialog();
+                this.UserNameSignInTextBox.Text = "";
+                this.PasswordSignInTextBox.Text = "";
                 storeMain.Show();
                 //Open Game Store Form
             }
             else if (Authorization == "Game Publisher")
             {
-                MessageBox.Show("Welcome back " + UserName + "! (Opens Publisher)");
+                MessageBox.Show("Welcome back " + UserName + "!");
                 //Open Game Publisher Form
                 this.Hide();
                 GamePublisherMain gamerpublisherMain = new GamePublisherMain(UserName);
                 gamerpublisherMain.ShowDialog();
+                this.UserNameSignInTextBox.Text = "";
+                this.PasswordSignInTextBox.Text = "";
                 this.Show();
             }
             else if (Authorization == "Admin")
             {
-                MessageBox.Show("Welcome back " + UserName + "! (Opens Admin)");
+                MessageBox.Show("Welcome back " + UserName + "!");
                 this.Hide();
                 Admin_Edit admin_Edit = new Admin_Edit();
+                admin_Edit.AdminUserName = UserName;
                 admin_Edit.ShowDialog();
+                this.UserNameSignInTextBox.Text = "";
+                this.PasswordSignInTextBox.Text = "";
                 this.Show();
                 //Open Admin Form
                 //Ba2ollak ya tarek ma3ak shelen ? Eh ? Arken Belen.

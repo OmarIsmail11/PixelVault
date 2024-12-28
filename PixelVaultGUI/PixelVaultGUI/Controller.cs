@@ -588,7 +588,7 @@ namespace DBapplication
 
         public DataTable Get_Populer_Genre()
         {
-            string query = $"SELECT Game.Genre,Game.Publisher,COUNT(Plays.GamerUserName) AS No_of_Players FROM Plays JOIN Game ON Plays.GameName = Game.GameName GROUP BY Game.Genre,Game.Publisher ORDER BY No_of_Players DESC;";
+            string query = $"  SELECT Game.Genre, COUNT(Plays.GamerUserName) AS No_of_Players FROM Plays JOIN Game ON Plays.GameName = Game.GameName GROUP BY Game.Genre ORDER BY No_of_Players DESC;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -606,13 +606,13 @@ namespace DBapplication
 
         public DataTable Get_Populer_Engine()
         {
-            string query = $"SELECT Game.EngineName, Game.Publisher, COUNT(Plays.GamerUserName) AS No_of_Players FROM Plays JOIN Game ON Plays.GameName = Game.GameName GROUP BY Game.EngineName, Game.Publisher ORDER BY No_of_Players DESC;";
+            string query = $"SELECT Game.EngineName, COUNT(Plays.GamerUserName) AS No_of_Players FROM Plays JOIN Game ON Plays.GameName = Game.GameName GROUP BY Game.EngineName ORDER BY No_of_Players DESC;";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable Get_Populer_Platform()
         {
-            string query = $"SELECT Game.ConsoleName,Game.Publisher ,COUNT(Plays.GamerUserName) AS No_of_Players FROM Plays JOIN Game ON Plays.GameName = Game.GameName GROUP BY Game.ConsoleName,Game.Publisher ORDER BY No_of_Players DESC;";
+            string query = $"SELECT Game.ConsoleName, COUNT(Plays.GamerUserName) AS No_of_Players FROM Plays JOIN Game ON Plays.GameName = Game.GameName GROUP BY Game.ConsoleName ORDER BY No_of_Players DESC;";
             return dbMan.ExecuteReader(query);
         }
 

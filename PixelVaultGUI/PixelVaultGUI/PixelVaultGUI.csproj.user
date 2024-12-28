@@ -22,7 +22,7 @@
     <Compile Update="BrowseTournaments.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="EditGamerProfile.cs">
+    <Compile Update="EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="GameLibrary.cs">

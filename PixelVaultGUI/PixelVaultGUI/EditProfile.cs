@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace PixelVaultGUI
 {
-    public partial class EditGamerProfile : Form
+    public partial class EditProfile : Form
     {
-        public string GamerUserName;
+        public string UserName;
         Controller controllerObj = new Controller();
-        public EditGamerProfile()
+        public EditProfile()
         {
             InitializeComponent();
         }
@@ -42,14 +42,14 @@ namespace PixelVaultGUI
                 return;
             }
 
-            int isAlreadyUsed = controllerObj.CheckIfNewPasswordAlreadyUsed(GamerUserName, password);
+            int isAlreadyUsed = controllerObj.CheckIfNewPasswordAlreadyUsed(UserName, password);
             if (isAlreadyUsed != 0)
             {
                 MessageBox.Show("Invalid! New password can't be the same as your current password!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            int result = controllerObj.UpdatePassword(GamerUserName, password);
+            int result = controllerObj.UpdatePassword(UserName, password);
             if (result == 0)
             {
                 MessageBox.Show("Error! Password wasn't updated!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);

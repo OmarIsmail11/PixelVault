@@ -92,14 +92,14 @@ namespace PixelVaultGUI
 
             if (!Validations.CheckIfNewUserNameNotAlreadyExisiting(UserName)) return;
 
-            int InsertResult = controllerObj.InsertNewGamePublisherIntoGamePublisherTable(UserName, RealName, country, ConsoleType, StartDate);
+            int InsertResult = controllerObj.InsertNewGamePublisherIntoUserPasswordsAuthorizationTable(UserName, password);
             if (InsertResult == 0)
             {
                 MessageBox.Show("Error ! Account was not created!");
                 return;
             }
 
-            int InsertResult2 = controllerObj.InsertNewGamePublisherIntoUserPasswordsAuthorizationTable(UserName, password);
+            int InsertResult2 = controllerObj.InsertNewGamePublisherIntoGamePublisherTable(UserName, RealName, country, ConsoleType, StartDate);
             if (InsertResult2 == 0)
             {
                 MessageBox.Show("Error ! Account was not created!");

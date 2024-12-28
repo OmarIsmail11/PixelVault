@@ -54,7 +54,7 @@ namespace PixelVaultGUI
         {
             publisherGames1.Visible = true;
             analystics1.Visible = false;
-            manage_Partners1.Visible=false;
+            manage_Partners1.Visible = false;
         }
 
         private void analystics1_Load(object sender, EventArgs e)
@@ -67,6 +67,15 @@ namespace PixelVaultGUI
             publisherGames1.Visible = false;
             analystics1.Visible = false;
             manage_Partners1.Visible = true;
+        }
+
+        private void EditProfile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditProfile editProfile = new EditProfile();
+            editProfile.UserName = UserName;
+            editProfile.ShowDialog();
+            this.Show();
         }
     }
 }

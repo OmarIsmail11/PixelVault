@@ -32,6 +32,16 @@ namespace PixelVaultGUI
             RecommendedGamesDataGrid.Refresh();
         }
 
+        public void RefreshBrowseGames()
+        {
+            DataTable allGames = controllerObj.RetreiveAllGames();
+            AllGamesDataGridView.DataSource = allGames;
+            AllGamesDataGridView.Refresh();
+
+            DataTable recommendedGames = controllerObj.GetGameRecommendations(UserName);
+            RecommendedGamesDataGrid.DataSource = recommendedGames;
+            RecommendedGamesDataGrid.Refresh();
+        }
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);

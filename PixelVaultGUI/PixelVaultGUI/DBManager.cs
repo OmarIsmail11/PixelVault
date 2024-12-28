@@ -11,11 +11,12 @@ namespace DBapplication
     public class DBManager
     {
         // TOOD: ADD your connection string here
-        static string DB_Connection_String = @"Data Source=MOSTAFA-PC\SQLEXPRESS03;Initial Catalog=PixelVault;Integrated Security=True;Encrypt=False";
+        static string DB_Connection_String = @"Server = db11984.public.databaseasp.net; Database=db11984; User Id = db11984; Password=jG%6B2h+_nF9; Encrypt=True; TrustServerCertificate=True; MultipleActiveResultSets=True;";
         // Reda   static string DB_Connection_String = @"Data Source=OMAR-REDA\SQLEXPRESS;Initial Catalog=PixelVault;Integrated Security=True;Encrypt=False";
         // Mickoo static string DB_Connection_String = @"Data Source=MICKOO\SQLEXPRESS;Initial Catalog=PixelVault;Integrated Security=True;Encrypt=False";
         // DOKSH Data Source=LAPTOP-CSMG40TJ\SQLEXPRESS;Initial Catalog=PixelVault;Integrated Security=True;Encrypt=False;Trust Server Certificate=True
         // Tifa   static string DB_Connection_String = @"Data Source=MOSTAFA-PC\SQLEXPRESS03;Initial Catalog=PixelVault;Integrated Security=True;Encrypt=False";
+
         SqlConnection myConnection;
 
         public DBManager()

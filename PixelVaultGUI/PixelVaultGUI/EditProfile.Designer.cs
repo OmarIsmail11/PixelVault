@@ -1,6 +1,6 @@
 ﻿namespace PixelVaultGUI
 {
-    partial class EditGamerProfile
+    partial class EditProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditGamerProfile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProfile));
             label1 = new Label();
             label2 = new Label();
             PasswordTextBox = new TextBox();
