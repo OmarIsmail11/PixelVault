@@ -27,7 +27,6 @@ namespace PixelVaultGUI
             };
 
             manhead.DataSource = countries;
-            pubhead.DataSource = countries;
 
             string[] Platforms = { "Cross-Platform", "Mobile", "Windows", "Playstation" };
             engplat.DataSource = Platforms;
@@ -171,67 +170,6 @@ namespace PixelVaultGUI
             else
             {
                 MessageBox.Show("Error ! Console was not added!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-
-        private void addstor_Click_1(object sender, EventArgs e)
-        {
-            string name = storname.Text;
-            if (!Validations.ValidateRealName(name)) return;
-
-            string username = storusername.Text;
-            if (!Validations.ValidateUserName(username)) return;
-
-            if (!Validations.CheckIfNewUserNameNotAlreadyExisiting(username)) return;
-
-            string hotline = storhot.Text;
-            if (!Validations.Isint(hotline)) return;
-
-            int rating = storrate.Value;
-
-            if (controllerObj.addstor(username, name, rating, Convert.ToInt32(hotline)) > 0)
-            {
-                MessageBox.Show("Game Store added succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Error ! Game Store was not added!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-
-        private void addpub_Click_1(object sender, EventArgs e)
-        {
-            string name = pubname.Text;
-            if (!Validations.ValidateRealName(name)) return;
-
-            string username = pubusername.Text;
-            if (!Validations.ValidateUserName(username)) return;
-
-            if (!Validations.CheckIfNewUserNameNotAlreadyExisiting(username)) return;
-
-            if (!Validations.IsComboBoxEmpty(pubhead)) return;
-
-            string type = pubtype.Text;
-            if (Validations.Isempty(type) || !(Validations.StringLengthIsinrange(type, 1, 30)))
-            {
-                MessageBox.Show("Error ! Console Type is either empty or too long", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            DateTime selectedDate = revdate.Value;
-            string Date = selectedDate.ToString("yyyy-MM-dd");
-
-            if (controllerObj.addpub(username, name, Convert.ToString(pubhead.SelectedItem), type, Date) > 0)
-            {
-                MessageBox.Show("Game Publisher added succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Error ! Game Publisher was not added!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
