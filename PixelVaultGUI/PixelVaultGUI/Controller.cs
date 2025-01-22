@@ -165,18 +165,24 @@ namespace DBapplication
 
         public int deletestor(string name)
         {
+            string query1 = $"DELETE FROM UserPasswordsAuthorization WHERE UserName = '{name}'";
+            dbMan.ExecuteNonQuery(query1);
             string query = $"DELETE FROM GamingStore WHERE StoreUserName = '{name}'";
             return dbMan.ExecuteNonQuery(query);
         }
 
         public int deletegamer(string name)
         {
+            string query1 = $"DELETE FROM UserPasswordsAuthorization WHERE UserName = '{name}'";
+            dbMan.ExecuteNonQuery(query1);
             string query = $"DELETE FROM Gamer WHERE UserName = '{name}'";
             return dbMan.ExecuteNonQuery(query);
         }
 
         public int deletepub(string name)
         {
+            string query1 = $"DELETE FROM UserPasswordsAuthorization WHERE UserName = '{name}'";
+            dbMan.ExecuteNonQuery(query1);
             string query = $"DELETE FROM GamePublisher WHERE PublisherUserName = '{name}'";
             return dbMan.ExecuteNonQuery(query);
         }
