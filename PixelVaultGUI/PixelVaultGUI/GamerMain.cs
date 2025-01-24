@@ -13,7 +13,8 @@ namespace PixelVaultGUI
     public partial class GamerMain : Form
     {
         public string UserName;
-        public GamerMain(string username)
+        public int SignInSignUpStatus;
+        public GamerMain(string username) // 1 for sign in & 0 for sign up
         {
             InitializeComponent();
             UserName = username;
@@ -77,6 +78,11 @@ namespace PixelVaultGUI
             {
                 MessageBox.Show("Signed out successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+                if (SignInSignUpStatus == 0)
+                {
+                    SignIn signIn = new SignIn();
+                    signIn.Show();
+                }
             }
             else return;
         }

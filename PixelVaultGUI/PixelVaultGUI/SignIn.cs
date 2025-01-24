@@ -74,12 +74,11 @@ namespace PixelVaultGUI
                 MessageBox.Show($"Welcome back, {UserName}!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 GamerMain gamerMain = new GamerMain(UserName);
+                gamerMain.SignInSignUpStatus = 1;
                 gamerMain.ShowDialog();
                 this.UserNameSignInTextBox.Text = "";
                 this.PasswordSignInTextBox.Text = "";
                 this.Show();
-
-
                 //Open Gamer Form
             }
             else if (Authorization == "Game Store")
@@ -87,6 +86,7 @@ namespace PixelVaultGUI
                 MessageBox.Show($"Welcome back, {UserName}!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 StoreMain storeMain = new StoreMain(UserName);
+                storeMain.SignInSignUpStatus = 1;
                 storeMain.ShowDialog();
                 this.UserNameSignInTextBox.Text = "";
                 this.PasswordSignInTextBox.Text = "";
@@ -99,6 +99,7 @@ namespace PixelVaultGUI
                 //Open Game Publisher Form
                 this.Hide();
                 GamePublisherMain gamerpublisherMain = new GamePublisherMain(UserName);
+                gamerpublisherMain.SignInSignUpStatus = 1;
                 gamerpublisherMain.ShowDialog();
                 this.UserNameSignInTextBox.Text = "";
                 this.PasswordSignInTextBox.Text = "";

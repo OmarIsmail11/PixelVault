@@ -108,6 +108,10 @@ namespace PixelVaultGUI
             else
             {
                 MessageBox.Show("Account created succesfully !");
+                GamePublisherMain gamePublisherMain = new GamePublisherMain(UserName);
+                gamePublisherMain.SignInSignUpStatus = 0;
+                gamePublisherMain.Show();
+                this.Hide();
                 return;
             }
         }

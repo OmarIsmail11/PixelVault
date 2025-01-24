@@ -15,6 +15,7 @@ namespace PixelVaultGUI
     public partial class StoreMain : Form
     {
         public string UserName;
+        public int SignInSignUpStatus;
         Controller controller = new Controller();
 
         public StoreMain(string username_in)
@@ -59,8 +60,13 @@ namespace PixelVaultGUI
 
             if (output == DialogResult.Yes)
             {
-                MessageBox.Show("Logged out successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Signed out successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+                if (SignInSignUpStatus == 0)
+                {
+                    SignIn signIn = new SignIn();
+                    signIn.Show();
+                }
             }
             else return;
         }

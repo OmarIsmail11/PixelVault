@@ -108,15 +108,16 @@ namespace PixelVaultGUI
             {
                 MessageBox.Show("Account created succesfully !");
                 this.Close();
-                SignIn signIn = new SignIn();
-                signIn.Show();
+                StoreMain storeMain = new StoreMain(UserName);
+                storeMain.Show();
+                this.Hide();
                 return;
             }
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             SignUp signUp = new SignUp();
             signUp.Show();
         }

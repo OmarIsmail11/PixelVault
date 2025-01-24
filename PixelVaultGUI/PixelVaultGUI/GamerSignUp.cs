@@ -24,10 +24,8 @@ namespace PixelVaultGUI
 
         private void GamerSignUp_Load(object sender, EventArgs e)
         {
-            // Set the DateTimePicker format to custom
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
 
-            // Set the custom format to display only day, month, and year
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
 
             string[] countries =
@@ -99,6 +97,7 @@ namespace PixelVaultGUI
                 MessageBox.Show("Account created succesfully !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MessageBox.Show($"Welcome, {UserName}!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 GamerMain gamer = new GamerMain(UserName);
+                gamer.SignInSignUpStatus = 0;
                 gamer.Show();
                 this.Hide();
                 return;
