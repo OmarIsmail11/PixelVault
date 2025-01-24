@@ -1,7 +1,27 @@
-# PixelVault: Archiving the World of Video Games
-## CMPS202 - Introduction to Database Systems Course Project
+# PixelVault : Archiving the World of Video Games
+![Logo](https://github.com/user-attachments/assets/a604e6f1-df31-48fb-a296-5db5d81c2980)
+## About
+PixelVault is an innovative database platform designed to catalog modern video games across various console platforms. Whether you're a casual gamer, a gaming store or a game publisher, PixelVault provides a centralized, open-source hub for comprehensive gaming information. This was the final the final project for the Intro to Database Managment Systems course.
+## Features
+This application was built using C# and the .Net Windows Forms framework, whereas Microsoft SQL Server Managment Studio was used for constructing the database and writing queries using SQL.
+PixelVault offers a wide array of features tailored for different user groups:
+#### For Gamers
+ - Add games to your library and track game completion.
+ - Rate and review games to share your thoughts.
+ - Participate in gaming tournaments hosted by stores.
+ - Discover new games to add to your library.
+ - Receive personalized game recommendations based on your play history.
 
-A comprehensive Wiki about digital games supporting multiple user interfaces for different users according 
-to their username and password: Admin, Gamer, Game Publisher, and Gaming store.
+#### For Game Publishers
+ - Upload new games with detailed data.
+ - Set pricing and partner with selected stores for monetization.
+ - Access analytics on downloads, sales and user ratings.
+ - Analyze trends in game genres, platforms, and game engines for better development strategies.
 
-![42239ae9-a2ef-4a81-a807-bf2a90b23c43](https://github.com/user-attachments/assets/6682f34e-522a-426b-96f4-d5ee13ff0c03)
+#### For Gaming Stores
+ - Manage partnerships with publishers and developers for new game listings.
+ - Set up promotional offers, discounts and seasonal sales.
+ - Access real-time dashboards and trends.
+ - Manage inventory and create customer loyalty programs.
+## Gamer User Demo
+Below is a demo showcasing the features and functionalities specifically designed for Gamer Users. This section of the project was my responsibility, which I contributed to its design and implementation, alongside the sign up forms for the different users
