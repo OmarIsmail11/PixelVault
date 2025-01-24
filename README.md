@@ -27,6 +27,7 @@ PixelVault offers a wide array of features tailored for different user groups:
 ## Gamer User Demo
 Below is a demo showcasing the features and functionalities specifically designed for Gamer Users. This section of the project was my responsibility, which I contributed to its design and implementation, alongside the sign up forms for the different users
 
+https://github.com/user-attachments/assets/2b9d99bd-747a-4afc-85a8-ba924a892771
 
 
 
