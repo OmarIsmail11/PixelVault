@@ -23,6 +23,7 @@ PixelVault offers a wide array of features tailored for different user groups:
  - Set up promotional offers, discounts and seasonal sales.
  - Access real-time dashboards and trends.
  - Manage inventory and create customer loyalty programs.
+ - Host Tournaments and manage registration.
 
 ## Gamer User Demo
 Below is a demo showcasing the features and functionalities specifically designed for Gamer Users. This section of the project was my responsibility, which I contributed to its design and implementation, alongside the sign up forms for the different users
