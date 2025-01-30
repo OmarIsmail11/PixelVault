@@ -113,7 +113,33 @@
 		ON UPDATE CASCADE
 	);
 
-	
+	-- Create GamerFriend table with computed columns for consistent ordering
+CREATE TABLE GamerFriend (
+    GamerUserName1 VARCHAR(30),
+    GamerUserName2 VARCHAR(30),
+    CHECK (GamerUserName1 <> GamerUserName2), -- Ensures no self-friendship
+    PRIMARY KEY(GamerUserName1, GamerUserName2),
+    FOREIGN KEY(GamerUserName1) REFERENCES Gamer(UserName)
+        ON DELETE NO ACTION,
+    FOREIGN KEY(GamerUserName2) REFERENCES Gamer(UserName)
+        ON DELETE NO ACTION,
+
+    FriendOrder1 AS (CASE WHEN GamerUserName1 < GamerUserName2 THEN GamerUserName1 ELSE GamerUserName2 END),
+    FriendOrder2 AS (CASE WHEN GamerUserName1 < GamerUserName2 THEN GamerUserName2 ELSE GamerUserName1 END),
+    
+    CONSTRAINT UC_GamerFriend UNIQUE (FriendOrder1, FriendOrder2)
+);
+
+
+	CREATE TABLE FriendRequest(
+	SenderUserName VARCHAR(30),
+	ReceiverUserName VARCHAR(30),
+	Status VARCHAR(10) NOT NULL DEFAULT('Pending'),
+	PRIMARY KEY(SenderUserName, ReceiverUserName),
+	FOREIGN KEY(SenderUserName) REFERENCES Gamer(UserName)
+		ON DELETE CASCADE,
+	FOREIGN KEY(ReceiverUserName) REFERENCES Gamer(UserName)
+	);
 
 	CREATE TABLE Game(
     GameName varchar(50),
@@ -542,3 +568,12 @@
 
 	INSERT INTO Plays VALUES
 	('Fortnite', 'OmarReda', NULL, NULL, NULL);
+
+	INSERT INTO GamerFriend VALUES
+	('OmarReda', 'AliceTheAce');
+
+	INSERT INTO FriendRequest VALUES
+	('Oliver007', 'OmarReda', 'Pending'),
+	('IceDragonXX', 'OmarReda', 'Pending');
+
+	
