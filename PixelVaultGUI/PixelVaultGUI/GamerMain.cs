@@ -23,10 +23,13 @@ namespace PixelVaultGUI
             tournaments1.GamerUserName = UserName;
             browseTournaments1.UserName = UserName;
             browseGames1.UserName = UserName;
+            friends1.UserName = UserName;
+            
             gameLibrary1.Visible = true;
             tournaments1.Visible = false;
             browseTournaments1.Visible = false;
             browseGames1.Visible = false;
+            friends1.Visible = false;
         }
 
         private void GamerMain_Load(object sender, EventArgs e)
@@ -41,10 +44,13 @@ namespace PixelVaultGUI
             TournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             BrowseTournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             BrowseGamesButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            FriendsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             gameLibrary1.Visible = true;
             tournaments1.Visible = false;
             browseTournaments1.Visible = false;
             browseGames1.Visible = false;
+            friends1.Visible = false;
+
         }
 
         private void gameLibrary1_Load(object sender, EventArgs e)
@@ -58,10 +64,12 @@ namespace PixelVaultGUI
             GamerLibraryButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             BrowseTournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             BrowseGamesButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            FriendsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             tournaments1.Visible = true;
             gameLibrary1.Visible = false;
             browseTournaments1.Visible = false;
             browseGames1.Visible = false;
+            friends1.Visible = false;
             tournaments1.RefreshTournaments();
         }
 
@@ -93,10 +101,12 @@ namespace PixelVaultGUI
             TournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             GamerLibraryButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             BrowseGamesButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            FriendsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             browseTournaments1.Visible = true;
             gameLibrary1.Visible = false;
             tournaments1.Visible = false;
             browseGames1.Visible = false;
+            friends1.Visible = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -115,10 +125,12 @@ namespace PixelVaultGUI
             TournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             GamerLibraryButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             BrowseTournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            FriendsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
             browseGames1.Visible = true;
             gameLibrary1.Visible = false;
             tournaments1.Visible = false;
             browseTournaments1.Visible = false;
+            friends1.Visible = false;
             browseGames1.RefreshBrowseGames();
         }
 
@@ -139,6 +151,20 @@ namespace PixelVaultGUI
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FriendsButton_Click(object sender, EventArgs e)
+        {
+            FriendsButton.BackColor = Color.Thistle;
+            TournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            GamerLibraryButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            BrowseGamesButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            BrowseTournamentsButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#BABAD4");
+            friends1.Visible = true;
+            browseTournaments1.Visible = false;
+            gameLibrary1.Visible = false;
+            tournaments1.Visible = false;
+            browseGames1.Visible = false;
         }
     }
 }

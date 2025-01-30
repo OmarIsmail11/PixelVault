@@ -4,9 +4,6 @@
     <Compile Update="AddTournament.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Add_Tournament.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Admin_Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -25,11 +22,11 @@
     <Compile Update="BrowseTournaments.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="EditGamerProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="EditProfile.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Friends.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="GameLibrary.cs">
       <SubType>UserControl</SubType>
@@ -54,9 +51,6 @@
     </Compile>
     <Compile Update="manageregisteration.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="ManageRegistration.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Manage_Partners.cs">
       <SubType>UserControl</SubType>

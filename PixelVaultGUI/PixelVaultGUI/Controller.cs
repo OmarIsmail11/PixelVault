@@ -676,7 +676,64 @@ namespace DBapplication
             string query = "Select Organizer, Avg(PrizeMoney) AS 'Average Prize Money' From Tournament Group By Organizer ORDER BY AVG(PrizeMoney) DESC";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable RetreiveUserFriends(string UserName)
+        {
+            string query = "SELECT CASE WHEN GamerUserName1 = '" + UserName + "' THEN GamerUserName2 ELSE GamerUserName1 END AS FriendUserName FROM GamerFriend WHERE GamerUserName1 = '" + UserName + "' OR GamerUserName2 = '" + UserName + "';";
+            return dbMan.ExecuteReader(query);
+        }
 
+        public int RemoveFriend(string UserName, string FriendName)
+        {
+            string query = "DELETE FROM GamerFriend WHERE (GamerUserName1 = '" + UserName + "' AND GamerUserName2 = '" + FriendName + "') OR (GamerUserName1 = '" + FriendName + "' AND GamerUserName2 = '" + UserName + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
+        public DataTable SearchGamers(string text, string UserName)
+        {
+            string query = "SELECT UserName FROM Gamer WHERE UserName LIKE '%" + text + "%' AND UserName <> '" + UserName + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int CreateFriendRequest(string UserName,string FriendName)
+        {
+            string query = "INSERT INTO FriendRequest VALUES ('" + UserName + "', '" + FriendName + "', 'Pending');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable RetreiveSentFriendRequests(string UserName)
+        {
+            string query = "SELECT ReceiverUserName AS UserName, Status FROM FriendRequest WHERE SenderUserName = '" + UserName + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable RetreiveReceivedFriendRequests(string UserName)
+        {
+            string query = "SELECT SenderUserName AS UserName, Status FROM FriendRequest WHERE ReceiverUserName = '" + UserName + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int CheckIfAlreadySentRequest(string Sender, string Receiver)
+        {
+            string query = "SELECT COUNT(*) FROM FriendRequest WHERE SenderUserName = '" + Sender + "' AND ReceiverUserName = '" + Receiver + "';";
+            return Convert.ToInt16(dbMan.ExecuteScalar(query));
+        }
+
+        public int AddFriend(string UserName, string FriendUserName)
+        {
+            string query = "INSERT INTO GamerFriend (GamerUserName1, GamerUserName2) VALUES (CASE WHEN '" + UserName + "' < '" + FriendUserName + "' THEN '" + UserName + "' ELSE '" + FriendUserName + "' END, CASE WHEN '" + UserName + "' < '" + FriendUserName + "' THEN '" + FriendUserName + "' ELSE '" + UserName + "' END);";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int DeleteRequest(string UserName, string FriendName)
+        {
+            string query = "DELETE FROM FriendRequest WHERE ReceiverUserName = '" + UserName + "' AND SenderUserName = '" + FriendName + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int CheckIfNotAlreadyFriend(string UserName, string FriendName)
+        {
+            string query = "SELECT COUNT(*) FROM GamerFriend WHERE (GamerUserName1 = '" + UserName + "' AND GamerUserName2 = '" + FriendName + "') OR (GamerUserName1 = '" + FriendName + "' AND GamerUserName2 = '" + UserName + "');";
+            return Convert.ToInt16(dbMan.ExecuteScalar(query));
+        }
     }
 }
