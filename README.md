@@ -9,6 +9,7 @@ PixelVault offers a wide array of features tailored for different user groups:
  - Add games to your library and track game completion.
  - Rate and review games to share your thoughts.
  - Participate in gaming tournaments hosted by stores.
+ - Be friends with other gamers on the platform.
  - Discover new games to add to your library.
  - Receive personalized game recommendations based on your play history.
 
