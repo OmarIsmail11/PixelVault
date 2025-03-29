@@ -3,7 +3,7 @@
 ## About
 PixelVault is an innovative database platform designed to catalog modern video games across various console platforms. Whether you're a casual gamer, a gaming store or a game publisher, PixelVault provides a centralized, open-source hub for comprehensive gaming information. This was the final the final project for the Intro to Database Managment Systems course.
 ## Features
-This application was built using C# and the .Net Windows Forms framework, whereas Microsoft SQL Server Managment Studio was used for constructing the database and writing queries using SQL.
+This application was built using C# and the .NET Windows Forms framework, with Microsoft SQL Server Management Studio used for database construction and SQL query writing.
 PixelVault offers a wide array of features tailored for different user groups:
 #### For Gamers
  - Add games to your library and track game completion.
